@@ -1,4 +1,4 @@
-const Categories = [{
+export const Categories = [{
   display: 'Violence'
 }, {
   display: 'Mental Health Crisis',
@@ -11,5 +11,3 @@ const Categories = [{
 }, {
   display: 'Substance Abuse',
 }];
-
-export default Categories;
