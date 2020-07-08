@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
-
+import { StyleSheet } from 'react-native';
 import { ButtonLink } from '../components'
 import { Categories } from '../constants';
 import EditScreenInfo from '../components/EditScreenInfo';
@@ -18,7 +17,7 @@ export default function TabOneScreen(props: any) {
           key={i}
           navigation={props.navigation}
           title={category.display}
-          to={'TabTwo'}
+          to={category.to}
           />
       ))}
       <EditScreenInfo path="/screens/TabOneScreen.tsx" />

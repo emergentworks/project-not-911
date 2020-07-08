@@ -16,6 +16,11 @@ export default {
               TabTwoScreen: 'two',
             },
           },
+          Violence: {
+            screens: {
+              ViolenceScreen: 'Violence',
+            },
+          },
         },
       },
       NotFound: '*',
