@@ -1,27 +1,33 @@
-import * as React from 'react';
-import { StyleSheet } from 'react-native';
-import { ButtonLink } from '../components'
+import React from 'react';
+import { StyleSheet, ScrollView } from 'react-native';
+
+import { ButtonLink, EditScreenInfo, Text, View } from '../components';
 import { Categories } from '../constants';
-import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
 
 export default function TabOneScreen(props: any) {
-  console.log('props => ', props);
-
+  console.log('process.env => ', process.env);
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>What is your emergency?</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.title}>
+        What is the nature of your emergency?
+      </Text>
+      <View
+        style={styles.separator}
+        lightColor="#eee"
+        darkColor="rgba(255,255,255,0.1)"
+      />
       {Categories.map((category, i) => (
         <ButtonLink
           key={i}
           navigation={props.navigation}
           title={category.display}
           to={category.to}
-          />
+        />
       ))}
-      <EditScreenInfo path="/screens/TabOneScreen.tsx" />
-    </View>
+      {process.env.NODE_ENV === 'development' && (
+        <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+      )}
+    </ScrollView>
   );
 }
 
@@ -34,6 +40,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
+    textAlign: 'center',
   },
   separator: {
     marginVertical: 30,

@@ -1,19 +1,20 @@
+
 export const Categories = [{
   display: 'Violence',
-  to: 'ViolenceScreen',
+  to: 'Violence',
 }, {
   display: 'Mental Health Crisis',
-  to: '',
+  to: 'mentalhealth',
 }, {
   display: 'Homelessness',
-  to: '',
+  to: 'homelessness',
 }, {
   display: 'Noise / Nuisances',
-  to: '',
+  to: 'noise',
 }, {
   display: 'Hate Crimes',
-  To: '',
+  To: 'hate',
 }, {
   display: 'Substance Abuse',
-  to: ''
+  to: 'substances'
 }];

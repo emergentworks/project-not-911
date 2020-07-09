@@ -9,6 +9,7 @@ export default {
           TabOne: {
             screens: {
               TabOneScreen: 'one',
+              // ViolenceScreen: 'viole',
             },
           },
           TabTwo: {
@@ -16,11 +17,11 @@ export default {
               TabTwoScreen: 'two',
             },
           },
-          Violence: {
-            screens: {
-              ViolenceScreen: 'Violence',
-            },
-          },
+        },
+      },
+      Violence: {
+        screens: {
+          ViolenceScreen: 'violence',
         },
       },
       NotFound: '*',
