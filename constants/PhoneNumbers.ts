@@ -12,7 +12,14 @@ export const PhoneNumbers = {
     display: 'NYC Gay and Lesbian Anti-Violence Project',
     tel: '212-714-1141',
   }],
-  mentalhealth: [{
+  HateCrimeScreen: [{
+    display: "NYC Well",
+    tel: "1-888-692-9355",
+  }, {
+    display: "NYC Mental Health Crisis Hotline",
+    tel: "1-800-854-7771",
+  }],
+    MentalHealthCrisisScreen: [{
     display: "NYC Well",
     tel: "1-888-692-9355",
   }, {
@@ -23,7 +30,7 @@ export const PhoneNumbers = {
     display: "ActionNYC Free Immigration Issues Hotline",
     tel: "1-800-354-0365",
   }],
-  homelessness: [{
+  Homelessness: [{
     display: "Homelessness Prevention Administration Hotline",
     tel: "718-557-1399",
   }, {
@@ -53,4 +60,4 @@ export const PhoneNumbers = {
     display: 'Safe Horizon Crime Victim 24hr hotline',
     tel: '1-866-689-4357',
   }],
-}
+};
