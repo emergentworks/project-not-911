@@ -1,5 +1,5 @@
 export const PhoneNumbers = {
-  Violence: [{
+  ViolenceScreen: [{
     display: 'NYC 24hr Domestic Violence Hotline',
     tel: '1-800-621–4673',
   }, {
