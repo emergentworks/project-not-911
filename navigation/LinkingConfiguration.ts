@@ -21,6 +21,31 @@ export default {
               ViolenceScreen: 'Violence',
             },
           },
+          MentalHealthCrisis: {
+            screens: {
+              MentalHealthCrisisScreen: 'Mental Health Crisis',
+            },
+          },
+          Homelessness: {
+            screens: {
+              HomelessnessScreen: 'Homelessness',
+            },
+          },
+          NoiseNuisances: {
+            screens: {
+              NoiseNuisancesScreen: 'Noise / Nuisances',
+            },
+          },
+          HateCrime: {
+            screens: {
+              HateCrimeScreen: 'Hate Crime',
+            },
+          },
+          SubstanceAbuse: {
+            screens: {
+              SubstanceAbuseScreen: 'Substance Abuse',
+            },
+          },
         },
       },
       NotFound: '*',

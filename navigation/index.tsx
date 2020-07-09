@@ -3,7 +3,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import { ColorSchemeName } from 'react-native';
 
-import ViolenceScreen from '../screens/ViolenceScreen'
+import ViolenceScreen from '../screens/ViolenceScreen';
+import MentalHealthCrisisScreen from '../screens/MentalHealthCrisisScreen';
+import HomelessnessScreen from '../screens/HomelessnessScreen';
+import NoiseNuisancesScreen from '../screens/NoiseNuisancesScreen';
+import HateCrimeScreen from '../screens/HateCrimeScreen';
+import SubstanceAbuseScreen from '../screens/SubstanceAbuseScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
 import BottomTabNavigator from './BottomTabNavigator';
@@ -30,6 +35,11 @@ function RootNavigator() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Root" component={BottomTabNavigator} />
       <Stack.Screen name="ViolenceScreen" component={ViolenceScreen}/>
+      <Stack.Screen name="MentalHealthCrisisScreen" component={MentalHealthCrisisScreen}/>
+      <Stack.Screen name="HomelessnessScreen" component={HomelessnessScreen}/>
+      <Stack.Screen name="NoiseNuisancesScreen" component={NoiseNuisancesScreen}/>
+      <Stack.Screen name="HateCrimeScreen" component={HateCrimeScreen}/>
+      <Stack.Screen name="SubstanceAbuseScreen" component={SubstanceAbuseScreen}/>
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     </Stack.Navigator>
   );

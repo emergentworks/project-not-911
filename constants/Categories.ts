@@ -3,17 +3,17 @@ export const Categories = [{
   to: 'ViolenceScreen',
 }, {
   display: 'Mental Health Crisis',
-  to: '',
+  to: 'MentalHealthCrisisScreen',
 }, {
   display: 'Homelessness',
-  to: '',
+  to: 'HomelessnessScreen',
 }, {
   display: 'Noise / Nuisances',
-  to: '',
+  to: 'NoiseNuisancesScreen',
 }, {
   display: 'Hate Crimes',
-  To: '',
+  To: 'HateCrimeScreen',
 }, {
   display: 'Substance Abuse',
-  to: ''
+  to: 'SubstanceAbuseScreen'
 }];
