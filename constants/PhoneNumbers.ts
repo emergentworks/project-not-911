@@ -19,7 +19,7 @@ export const PhoneNumbers = {
     display: "NYC Mental Health Crisis Hotline",
     tel: "1-800-854-7771",
   }],
-    MentalHealthCrisisScreen: [{
+  MentalHealthCrisisScreen: [{
     display: "NYC Well",
     tel: "1-888-692-9355",
   }, {
@@ -30,7 +30,7 @@ export const PhoneNumbers = {
     display: "ActionNYC Free Immigration Issues Hotline",
     tel: "1-800-354-0365",
   }],
-  Homelessness: [{
+  HomelessnessScreen: [{
     display: "Homelessness Prevention Administration Hotline",
     tel: "718-557-1399",
   }, {
@@ -43,7 +43,7 @@ export const PhoneNumbers = {
     display: "311: Specifically ask for non-emergency dispatch with no police",
     tel: "311",
   }],
-  noise: [{
+  NoiseNuisancesScreen: [{
     display: "Just call 311, or text HELP to 311-692",
     tel: "311",
   }],
@@ -59,5 +59,9 @@ export const PhoneNumbers = {
   }, {
     display: 'Safe Horizon Crime Victim 24hr hotline',
     tel: '1-866-689-4357',
+  }],
+  SubstanceAbuseScreen: [{
+    display: "Just call 311, or text HELP to 311-692",
+    tel: "311",
   }],
 };

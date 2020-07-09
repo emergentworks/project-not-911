@@ -6,7 +6,9 @@ import { EditScreenInfo, Text, View } from '../components';
 import { PhoneNumbers } from '../constants';
 
 export default function ViolenceScreen(props: any) {
-  console.log('violence props => ', props);
+    // @ts-ignore
+    const numbers = PhoneNumbers[props.route.name];
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
@@ -24,15 +26,15 @@ export default function ViolenceScreen(props: any) {
         Number List Below
       </Text>
       <ScrollView>
-        {!!PhoneNumbers[props.route.name]
-          && PhoneNumbers[props.route.name].map((entry: any) => (
+        {numbers instanceof Array
+          && numbers.map((entry: any) => (
             <View>
               <Text>{entry.display}</Text>
               <Text>{entry.tel}</Text>
             </View>
           ))}
       </ScrollView>
-      {/* <EditScreenInfo path="/screens/ViolenceScreen.tsx" /> */}
+      <EditScreenInfo path="/screens/ViolenceScreen.tsx" />
     </View>
   );
 }

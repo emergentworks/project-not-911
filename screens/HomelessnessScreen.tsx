@@ -1,10 +1,13 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 import * as Linking from 'expo-linking';
 
 import { EditScreenInfo, Text, View } from '../components';
+import { PhoneNumbers } from '../constants';
 
-export default function HomelessnessScreen() {
+export default function HomelessnessScreen(props: any) {
+    // @ts-ignore
+    const numbers = PhoneNumbers[props.route.name];
 
     return (
     <View style={styles.container}>
@@ -15,6 +18,15 @@ export default function HomelessnessScreen() {
         }}>
             call number
         </Text>
+        <ScrollView>
+        {numbers instanceof Array
+            && numbers.map((entry: any) => (
+            <View>
+                <Text>{entry.display}</Text>
+                <Text>{entry.tel}</Text>
+            </View>
+            ))}
+        </ScrollView>
         <EditScreenInfo path="/screens/HomelessnessScreen.tsx" />
     </View>
     );

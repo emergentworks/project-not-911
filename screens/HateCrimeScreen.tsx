@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 import * as Linking from 'expo-linking';
 
 import { EditScreenInfo, Text, View } from '../components';
 import { PhoneNumbers } from '../constants';
-import { ScrollView } from 'react-native-gesture-handler';
 
 export default function HateCrimeScreen(props: any) {
     // @ts-ignore
@@ -20,12 +19,13 @@ export default function HateCrimeScreen(props: any) {
             call number
         </Text>
         <ScrollView>
-            {numbers instanceof Array && numbers.map((entry: any) => (
-            <view>
-                <text>{entry.display}</text>
-                <text>{entry.tel}</text>
-            </view>
-            ))}
+        {numbers instanceof Array
+        && numbers.map((entry: any) => (
+            <View>
+            <Text>{entry.display}</Text>
+            <Text>{entry.tel}</Text>
+            </View>
+        ))}
         </ScrollView>
         <EditScreenInfo path="/screens/HateCrimeScreen.tsx" />
     </View>
