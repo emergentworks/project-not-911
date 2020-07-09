@@ -1,6 +1,7 @@
+
 export const Categories = [{
   display: 'Violence',
-  to: 'ViolenceScreen',
+  to: 'Violence',
 }, {
   display: 'Mental Health Crisis',
   to: 'MentalHealthCrisisScreen',

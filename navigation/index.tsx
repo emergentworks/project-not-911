@@ -28,7 +28,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
 
 // A root stack navigator is often used for displaying modals on top of all other content
 // Read more here: https://reactnavigation.org/docs/modal
-const Stack = createStackNavigator<RootStackParamList>();
+const Stack = createStackNavigator<any>();
 
 function RootNavigator() {
   return (
