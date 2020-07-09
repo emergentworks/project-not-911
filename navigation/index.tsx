@@ -29,18 +29,54 @@ function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Root" component={BottomTabNavigator} />
-      <Stack.Screen name="ViolenceScreen"
-        component={PhoneNumberScreen}/>
-      <Stack.Screen name="MentalHealthCrisisScreen"
-        component={PhoneNumberScreen}/>
-      <Stack.Screen name="HomelessnessScreen"
-        component={PhoneNumberScreen}/>
-      <Stack.Screen name="NoiseNuisancesScreen"
-        component={PhoneNumberScreen}/>
-      <Stack.Screen name="HateCrimeScreen"
-        component={PhoneNumberScreen}/>
-      <Stack.Screen name="SubstanceAbuseScreen"
-        component={PhoneNumberScreen}/>
+      <Stack.Screen name="ViolenceScreen">
+        {routeProps => (
+          <PhoneNumberScreen
+            {... routeProps}
+            title="Violence Hotlines"
+          />
+        )}
+      </Stack.Screen>
+            <Stack.Screen name="HateCrimeScreen">
+        {routeProps => (
+          <PhoneNumberScreen
+            {... routeProps}
+            title="Hate Crime Hotlines"
+          />
+        )}
+      </Stack.Screen>
+      <Stack.Screen name="HomelessnessScreen">
+        {routeProps => (
+          <PhoneNumberScreen
+            {... routeProps}
+            title="Homelessness Hotlines"
+          />
+        )}
+      </Stack.Screen>
+      <Stack.Screen name="MentalHealthCrisisScreen">
+        {routeProps => (
+          <PhoneNumberScreen
+            {... routeProps}
+            title="Mental Health Crisis Hotlines"
+          />
+        )}
+      </Stack.Screen>
+      <Stack.Screen name="NoiseNuisancesScreen">
+        {routeProps => (
+          <PhoneNumberScreen
+            {... routeProps}
+            title="Noise and/or Nuisances Hotlines"
+          />
+        )}
+      </Stack.Screen>
+      <Stack.Screen name="SubstanceAbuseScreen">
+        {routeProps => (
+          <PhoneNumberScreen
+            {... routeProps}
+            title="Substance Abuse Hotlines"
+          />
+        )}
+      </Stack.Screen>
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     </Stack.Navigator>
   );

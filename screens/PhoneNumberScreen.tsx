@@ -11,26 +11,26 @@ export default function PhoneNumberScreen(props: any) {
 
     return (
     <View style={styles.container}>
-        <Text style={styles.title}>Hate Crime</Text>
+        <Text style={styles.title}> {props.title} </Text>
         <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-        <Text onPress={() => {
-            Linking.openURL('tel:555 555 5555');
-        }}>
-            call number
-        </Text>
         <ScrollView>
         {numbers instanceof Array
-        && numbers.map((entry: any) => (
-            <View>
+        && numbers.map((entry: any, i) => (
+            <View key={i}>
             <Text>{entry.display}</Text>
-            <Text>{entry.tel}</Text>
-            </View>
+            <Text
+                onPress={() => {
+                    Linking.openURL( `tel:${entry.tel}` );
+                }}>
+                {entry.tel}
+            </Text>
+        </View>
         ))}
         </ScrollView>
         <EditScreenInfo path="/screens/PhoneNumberScreen.tsx" />
     </View>
     );
-}
+    }
 
 const styles = StyleSheet.create({
 container: {
