@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, ScrollView } from 'react-native';
 
 import { ButtonLink, EditScreenInfo, Text, View } from '../components';
-import { Categories } from '../constants';
+import { Routes } from '../constants';
 
 export default function TabOneScreen(props: any) {
   console.log('process.env => ', process.env);
@@ -16,12 +16,11 @@ export default function TabOneScreen(props: any) {
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
-      {Categories.map((category, i) => (
+      {Routes.map((route, i) => (
         <ButtonLink
           key={i}
           navigation={props.navigation}
-          title={category.display}
-          to={category.to}
+          route={route}
         />
       ))}
       {process.env.NODE_ENV === 'development' && (

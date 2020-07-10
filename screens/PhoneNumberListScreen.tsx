@@ -5,13 +5,14 @@ import * as Linking from 'expo-linking';
 import { EditScreenInfo, Text, View } from '../components';
 import { PhoneNumbers } from '../constants';
 
-export default function PhoneNumberScreen(props: any) {
+export default function PhoneNumberListScreen(props: any) {
     // @ts-ignore
-    const numbers = PhoneNumbers[props.route.name];
+    const numbers = PhoneNumbers[props.route.params.section];
+    console.log('props => ', props.route.params);
 
     return (
     <View style={styles.container}>
-        <Text style={styles.title}> {props.title} </Text>
+        <Text style={styles.title}> {props.route.params.title} </Text>
         <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
         <ScrollView>
         {numbers instanceof Array
@@ -27,7 +28,7 @@ export default function PhoneNumberScreen(props: any) {
         </View>
         ))}
         </ScrollView>
-        <EditScreenInfo path="/screens/PhoneNumberScreen.tsx" />
+        <EditScreenInfo path="/screens/PhoneNumberListScreen.tsx" />
     </View>
     );
     }

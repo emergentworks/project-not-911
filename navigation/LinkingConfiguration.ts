@@ -9,7 +9,6 @@ export default {
           TabOne: {
             screens: {
               TabOneScreen: 'one',
-              // ViolenceScreen: 'viole',
             },
           },
           TabTwo: {
@@ -17,34 +16,9 @@ export default {
               TabTwoScreen: 'two',
             },
           },
-          Violence: {
+          PhoneNumberList: {
             screens: {
-              ViolenceScreen: 'Violence',
-            },
-          },
-          MentalHealthCrisis: {
-            screens: {
-              MentalHealthCrisisScreen: 'Mental Health Crisis',
-            },
-          },
-          Homelessness: {
-            screens: {
-              HomelessnessScreen: 'Homelessness',
-            },
-          },
-          NoiseNuisances: {
-            screens: {
-              NoiseNuisancesScreen: 'Noise / Nuisances',
-            },
-          },
-          HateCrime: {
-            screens: {
-              HateCrimeScreen: 'Hate Crime',
-            },
-          },
-          SubstanceAbuse: {
-            screens: {
-              SubstanceAbuseScreen: 'Substance Abuse',
+              PhoneNumberListScreen: 'numbers/:section',
             },
           },
         },

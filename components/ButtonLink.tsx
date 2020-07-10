@@ -5,9 +5,12 @@ import { Text } from './Themed';
 export const ButtonLink = memo((props: any) => (
   <TouchableOpacity
     style={styles.button}
-    onPress={() => props.navigation.navigate(props.to)}>
+    onPress={() => props.navigation.navigate(
+      'PhoneNumberListScreen',
+      props.route.params,
+    )}>
     <Text style={styles.buttonText}>
-      {props.title}
+      {props.route.display}
     </Text>
   </TouchableOpacity>
 ));
