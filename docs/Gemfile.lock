@@ -24,10 +24,12 @@ GEM
       http_parser.rb (~> 0.6.0)
     ethon (0.12.0)
       ffi (>= 1.3.0)
+    eventmachine (1.2.7)
     eventmachine (1.2.7-x64-mingw32)
     execjs (2.7.0)
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
+    ffi (1.13.1)
     ffi (1.13.1-x64-mingw32)
     forwardable-extended (2.6.0)
     gemoji (3.0.1)
@@ -205,6 +207,8 @@ GEM
       jekyll-seo-tag (~> 2.1)
     minitest (5.14.1)
     multipart-post (2.1.1)
+    nokogiri (1.10.10)
+      mini_portile2 (~> 2.4.0)
     nokogiri (1.10.10-x64-mingw32)
       mini_portile2 (~> 2.4.0)
     octokit (4.18.0)
@@ -243,12 +247,13 @@ GEM
     zeitwerk (2.3.1)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
   github-pages (~> 206)
   jekyll-postcss
-  minima (~> 2.5)
+  jekyll-theme-primer (~> 0.4)
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.1)
