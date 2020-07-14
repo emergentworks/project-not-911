@@ -1,14 +1,12 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 
-import { EditScreenInfo, Text, View } from '../components';
+import { Text, View } from '../components';
 
 export default function TabTwoScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab Two</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
+      <Text style={styles.title}>Why we built Not 911</Text>
     </View>
   );
 }
@@ -18,14 +16,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'blue'
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+    color: 'white'
   },
 });
