@@ -6,7 +6,10 @@ import { Text, View } from '../components';
 export default function TabTwoScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Why we built Not 911</Text>
+      <Text style={[styles.marginBottom30, styles.title]}>Defunding the Police</Text>
+      <Text style={styles.title}>Public Safety First</Text>
+      <Text style={styles.paragraph}>asdfasdgadfgsdfgsdf</Text>
+      <Text style={styles.title}>Defund the police</Text>
     </View>
   );
 }
@@ -14,13 +17,24 @@ export default function TabTwoScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'blue'
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    backgroundColor: 'blue',
+    padding: 20,
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: 'white'
+    color: 'white',
+  },
+  paragraph: {
+    fontSize: 15,
+    color: 'white',
+    paddingTop: 10,
+    paddingLeft: 22,
+    paddingBottom: 22,
+  },
+  marginBottom30: {
+    marginBottom: 30,
   },
 });
