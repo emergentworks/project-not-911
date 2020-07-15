@@ -1,5 +1,7 @@
 import React, { memo } from 'react';
-import { TouchableOpacity, StyleSheet } from 'react-native'
+import { TouchableOpacity, StyleSheet } from 'react-native';
+
+import { Colors } from '../constants';
 import { Text } from './Themed';
 
 export const ButtonLink = memo((props: any) => (
@@ -17,14 +19,16 @@ export const ButtonLink = memo((props: any) => (
 
 const styles = StyleSheet.create({
   button: {
-    borderRadius: 8,
-    padding: 10,
+    backgroundColor: Colors.white,
+    borderTopLeftRadius: 4,
+    borderBottomLeftRadius: 4,
     marginBottom: 8,
-    width: '80%',
-    backgroundColor: 'blue',
+    padding: 25,
+    width: '100%',
   },
   buttonText: {
-    color: '#fff',
-    fontWeight: '600',
+    color: Colors.black,
+    fontSize: 20,
+    lineHeight: 20,
   },
 });

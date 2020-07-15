@@ -43,7 +43,7 @@ export const Routes = [
     },
   },
   {
-    display: 'Poisoning or Substance Abuse',
+    display: 'Drugs or Poisoning',
     params: {
       section: 'poison',
       title: 'Poison Control or Substance Abuse Hotlines',

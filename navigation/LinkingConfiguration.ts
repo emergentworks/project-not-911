@@ -6,14 +6,14 @@ export default {
     screens: {
       Root: {
         screens: {
-          TabOne: {
+          'Make A Call': {
             screens: {
-              TabOneScreen: 'one',
+              TabOneScreen: 'call',
             },
           },
-          TabTwo: {
+          'About Not 911': {
             screens: {
-              TabTwoScreen: 'two',
+              TabTwoScreen: 'about',
             },
           },
           PhoneNumberList: {
