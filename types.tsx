@@ -10,12 +10,12 @@ export type RootStackParamList = {
 export type CategoryTypes = keyof RootStackParamList;
 
 export type BottomTabParamList = {
-  TabOne: undefined,
-  TabTwo: undefined,
+  'Make A Call': undefined,
+  'About Not 911': undefined,
 };
 
 export type TabOneParamList = {
-  TabOneScreen: undefined,
+  HomeScreen: undefined,
 };
 
 export type TabTwoParamList = {
