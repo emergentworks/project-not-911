@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { Image, TouchableOpacity, StyleSheet } from 'react-native';
 
 import { Styles } from '../constants';
-import { Text } from './Themed';
+import { Text, View } from './Themed';
 
 type Props = {
   navigation: any,
@@ -26,10 +26,12 @@ export const ButtonLink = memo((props: Props) => {
         'PhoneNumberListScreen',
         props.route.params,
       )}>
-      <Image
-        source={require(`../assets/images/${props.route.btn.icon || 'poison'}.svg`)}
-        style={[styles.marginRight10, iconSize]}
-      />
+      <View style={styles.imgWrap}>
+        <Image
+          source={require(`../assets/images/${props.route.btn.icon || 'poison'}.svg`)}
+          style={[styles.marginRight10, iconSize]}
+        />
+      </View>
       <Text style={styles.buttonText}>
         {props.route.btn.display}
       </Text>
@@ -61,6 +63,10 @@ const styles = StyleSheet.create({
   caret: {
     height: 14,
     width: 7,
+  },
+  imgWrap: {
+    maxWidth: 35,
+    minWidth: 35,
   },
   marginRight10: {
     marginRight: 10,
