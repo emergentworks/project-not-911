@@ -8,7 +8,7 @@ export default {
         screens: {
           'Make A Call': {
             screens: {
-              TabOneScreen: 'call',
+              HomeScreen: 'call',
             },
           },
           'About Not 911': {

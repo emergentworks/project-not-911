@@ -1,34 +1,80 @@
 import React, { memo } from 'react';
-import { TouchableOpacity, StyleSheet } from 'react-native';
+import { Image, TouchableOpacity, StyleSheet } from 'react-native';
 
-import { Colors } from '../constants';
+import { Styles } from '../constants';
 import { Text } from './Themed';
 
-export const ButtonLink = memo((props: any) => (
-  <TouchableOpacity
-    style={styles.button}
-    onPress={() => props.navigation.navigate(
-      'PhoneNumberListScreen',
-      props.route.params,
-    )}>
-    <Text style={styles.buttonText}>
-      {props.route.display}
-    </Text>
-  </TouchableOpacity>
-));
+type Props = {
+  navigation: any,
+  route: {
+    btn: {
+      display: string,
+      icon: string,
+    },
+    params: object,
+  },
+}
+
+export const ButtonLink = memo((props: Props) => {
+  // @ts-ignore
+  const iconSize = styles[props.route.btn.icon];
+
+  return (
+    <TouchableOpacity
+      style={styles.button}
+      onPress={() => props.navigation.navigate(
+        'PhoneNumberListScreen',
+        props.route.params,
+      )}>
+      <Image
+        source={require(`../assets/images/${props.route.btn.icon || 'poison'}.svg`)}
+        style={[styles.marginRight10, iconSize]}
+      />
+      <Text style={styles.buttonText}>
+        {props.route.btn.display}
+      </Text>
+      <Image
+        source={require('../assets/images/caret.svg')}
+        style={styles.caret}
+      />
+    </TouchableOpacity>
+  );
+});
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: Colors.white,
-    borderTopLeftRadius: 4,
-    borderBottomLeftRadius: 4,
+    alignItems: 'center',
+    backgroundColor: Styles.white,
+    borderRadius: 4,
+    flex: 1,
+    flexDirection: 'row',
     marginBottom: 8,
     padding: 25,
     width: '100%',
   },
   buttonText: {
-    color: Colors.black,
+    color: Styles.blue,
     fontSize: 20,
     lineHeight: 20,
+    width: '100%',
+  },
+  caret: {
+    height: 14,
+    width: 7,
+  },
+  marginRight10: {
+    marginRight: 10,
+  },
+  mentalhealth: {
+    height: 36,
+    width: 29,
+  },
+  poison: {
+    height: 34,
+    width: 21,
+  },
+  noise: {
+    height: 28,
+    width: 20,
   },
 });

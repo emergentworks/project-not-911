@@ -1,12 +1,13 @@
 const tintColorLight = '#2f95dc';
 const tintColorDark = '#fff';
 
-export const Colors = {
+export const Styles = {
   black: '#333',
   white: '#fff',
   blue: '#3333ff',
   red: '#ff4d4a',
   teal: '#87ceda',
+  font: 'Helvetica, "Helvetica Neue", system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", sans-serif',
   light: {
     text: '#000',
     background: '#fff',
@@ -22,5 +23,3 @@ export const Colors = {
     tabIconSelected: tintColorDark,
   },
 };
-
-export default Colors;

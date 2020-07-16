@@ -1,27 +1,47 @@
 export const Routes = [
   {
-    display: 'Violence',
+    btn: {
+      display: 'Violence',
+      icon: 'poison',
+      height: 34,
+      width: 21,
+    },
     params: {
       section: 'violence',
       title: 'Violence Hotlines',
     },
   },
   {
-    display: 'Mental Health',
+    btn: {
+      display: 'Mental Health',
+      icon: 'mentalhealth',
+      height: 35,
+      width: 28,
+    },
     params: {
       section: 'mentalhealth',
       title: 'Mental Health Support and Crisis Hotlines',
     },
   },
   {
-    display: 'Homelessness',
+    btn: {
+      display: 'Homelessness',
+      icon: 'poison',
+      height: 28,
+      width: 20,
+    },
     params: {
       section: 'homelessness',
       title: 'Homelessness and Evictions Support',
     },
   },
   {
-    display: 'Noise / Nuisances',
+    btn: {
+      display: 'Noise / Nuisances',
+      icon: 'noise',
+      height: 28,
+      width: 20,
+    },
     params: {
       section: 'noise',
       title: 'Noise and Nuisances',
@@ -29,28 +49,48 @@ export const Routes = [
     },
   },
   {
-    display: 'Hate Crimes',
+    btn: {
+      display: 'Hate Crimes',
+      icon: 'poison',
+      height: 34,
+      width: 21,
+    },
     params: {
       section: 'hatecrimes',
       title: 'Report a Hate Crime',
     },
   },
   {
-    display: 'Legal',
+    btn: {
+      display: 'Legal',
+      icon: 'poison',
+      height: 34,
+      width: 21,
+    },
     params: {
       section: 'legal',
       title: 'Arrested? Witness a false arrest or police brutality? Get support here',
     },
   },
   {
-    display: 'Drugs or Poisoning',
+    btn: {
+      display: 'Drugs or Poisoning',
+      icon: 'poison',
+      height: 34,
+      width: 21,
+    },
     params: {
       section: 'poison',
       title: 'Poison Control or Substance Abuse Hotlines',
     },
   },
   {
-    display: 'Immigration Support',
+    btn: {
+      display: 'Immigration Support',
+      icon: 'poison',
+      height: 34,
+      width: 21,
+    },
     params: {
       section: 'immigration',
       title: 'Immigration Support Hotlines',

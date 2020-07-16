@@ -18,7 +18,6 @@ type Props = {
 };
 
 export const PhoneNumberListScreen = (props: Props) => {
-  console.log('props => ', props);
   const {route} = props;
   const numbers = PhoneNumbers[route.params.section];
 
