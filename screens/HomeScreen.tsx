@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
-import { Image, StyleSheet, ScrollView, Text, View } from 'react-native';
+import { Image, StyleSheet, ScrollView, Text } from 'react-native';
 import Constants from 'expo-constants';
 
 import { Styles } from '../constants';
-import { ButtonLink } from '../components';
+import { ButtonLink, View } from '../components';
 import { Routes } from '../constants';
-//
+
 export const HomeScreen = memo((props: any) => (
   <View style={styles.container}>
     <ScrollView>
@@ -34,16 +34,69 @@ export const HomeScreen = memo((props: any) => (
         ))}
       </View>
       <View style={styles.community}>
-        <Image
+        {/* <Image
           source={require('../assets/images/community.svg')}
           style={styles.communityImg}
-        />
-        <Text style={[styles.title, styles.blue, styles.marginBottom30]}>
+        /> */}
+        <Text style={[styles.title, styles.blue, styles.marginBottom40]}>
           Community Care Resources
         </Text>
-        <Text style={[styles.trusted, styles.blue]}>
+        <Text style={[styles.trusted, styles.blue, styles.bold]}>
           Trusted sources, vetted through community experience
         </Text>
+        <View
+          style={[styles.marginBottom30, styles.separator]}
+          lightColor={Styles.blue}
+          darkColor="rgba(255,255,255,0.1)"
+        />
+        <Text style={[styles.communityTxt, styles.blue]}>
+          BIPOC Community
+        </Text>
+        <View
+          style={[styles.marginVertical30, styles.separator]}
+          lightColor={Styles.blue}
+          darkColor="rgba(255,255,255,0.1)"
+        />
+        <Text style={[styles.communityTxt, styles.blue]}>
+          LGBTQIA+ Community
+        </Text>
+        <View
+          style={[styles.marginVertical30, styles.separator]}
+          lightColor={Styles.blue}
+          darkColor="rgba(255,255,255,0.1)"
+        />
+        <Text style={[styles.communityTxt, styles.blue]}>
+          Immigrant Community
+        </Text>
+        <View
+          style={[styles.marginVertical30, styles.separator]}
+          lightColor={Styles.blue}
+          darkColor="rgba(255,255,255,0.1)"
+        />
+        <Text style={[styles.communityTxt, styles.blue]}>
+          Substance Abuse Community
+        </Text>
+        <View
+          style={[styles.marginVertical30, styles.separator]}
+          lightColor={Styles.blue}
+          darkColor="rgba(255,255,255,0.1)"
+        />
+        <Text style={[styles.communityTxt, styles.blue]}>
+          Homeless Community
+        </Text>
+        <View
+          style={[styles.marginVertical30, styles.separator]}
+          lightColor={Styles.blue}
+          darkColor="rgba(255,255,255,0.1)"
+        />
+        <Text style={[styles.communityTxt, styles.blue]}>
+          Elderly Community
+        </Text>
+        <View
+          style={[styles.separator, styles.marginVertical30]}
+          lightColor={Styles.blue}
+          darkColor="rgba(255,255,255,0.1)"
+        />
       </View>
     </ScrollView>
   </View>
@@ -56,10 +109,14 @@ const styles = StyleSheet.create({
   community: {
     backgroundColor: Styles.white,
     padding: 20,
+    paddingTop: 30,
   },
   communityImg: {
     height: 42,
     width: 96,
+  },
+  communityTxt: {
+    fontSize: 20,
   },
   container: {
     backgroundColor: Styles.white,
@@ -85,11 +142,18 @@ const styles = StyleSheet.create({
   },
   innerView: {
     backgroundColor: Styles.blue,
-    // alignItems: 'center',
-    // flex: 1,
-    // justifyContent: 'center',
     padding: 20,
     paddingTop: 40,
+  },
+  separator: {
+    height: 1,
+    width: '100%',
+  },
+  marginBottom30: {
+    marginBottom: 30,
+  },
+  marginVertical30: {
+    marginVertical: 30,
   },
   title: {
     color: Styles.white,
@@ -101,11 +165,12 @@ const styles = StyleSheet.create({
   blue: {
     color: Styles.blue,
   },
-  marginBottom30: {
-    marginBottom: 30,
+  marginBottom40: {
+    marginBottom: 40,
   },
   trusted: {
-    fontSize: 15,
+    fontSize: 16,
     lineHeight: 20,
+    marginBottom: 20,
   },
 });

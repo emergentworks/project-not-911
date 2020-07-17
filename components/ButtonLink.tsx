@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Image, TouchableOpacity, StyleSheet } from 'react-native';
+import { Image, ImageSourcePropType, TouchableOpacity, StyleSheet } from 'react-native';
 
 import { Styles } from '../constants';
 import { Text, View } from './Themed';
@@ -9,7 +9,7 @@ type Props = {
   route: {
     btn: {
       display: string,
-      icon: string,
+      src: ImageSourcePropType,
     },
     params: object,
   },
@@ -17,7 +17,7 @@ type Props = {
 
 export const ButtonLink = memo((props: Props) => {
   // @ts-ignore
-  const iconSize = styles[props.route.btn.icon];
+  const iconSize = styles[props.route.btn.display];
 
   return (
     <TouchableOpacity
@@ -26,10 +26,10 @@ export const ButtonLink = memo((props: Props) => {
         'PhoneNumberListScreen',
         props.route.params,
       )}>
-      <View style={styles.imgWrap}>
+      <View style={[styles.marginRight10, styles.imgWrap]}>
         <Image
-          source={require(`../assets/images/${props.route.btn.icon || 'poison'}.svg`)}
-          style={[styles.marginRight10, iconSize]}
+          source={props.route.btn.src}
+          style={iconSize}
         />
       </View>
       <Text style={styles.buttonText}>
@@ -71,15 +71,35 @@ const styles = StyleSheet.create({
   marginRight10: {
     marginRight: 10,
   },
-  mentalhealth: {
+  Violence: {
+    height: 34,
+    width: 22,
+  },
+  Legal: {
+    height: 34,
+    width: 22,
+  },
+  'Hate Crimes': {
+    height: 34,
+    width: 22,
+  },
+  Homelessness: {
+    height: 34,
+    width: 22,
+  },
+  'Mental Health': {
     height: 36,
     width: 29,
   },
-  poison: {
+  'Immigration Support': {
     height: 34,
-    width: 21,
+    width: 22,
   },
-  noise: {
+  'Drugs or Poisoning': {
+    height: 34,
+    width: 22,
+  },
+  'Noise': {
     height: 28,
     width: 20,
   },
