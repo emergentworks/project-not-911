@@ -2,9 +2,7 @@ export const Routes = [
   {
     btn: {
       display: 'Violence',
-      icon: 'poison',
-      height: 34,
-      width: 21,
+      src: require('../assets/images/poison.svg'),
     },
     params: {
       section: 'violence',
@@ -14,9 +12,7 @@ export const Routes = [
   {
     btn: {
       display: 'Mental Health',
-      icon: 'mentalhealth',
-      height: 35,
-      width: 28,
+      src: require('../assets/images/mentalhealth.svg'),
     },
     params: {
       section: 'mentalhealth',
@@ -26,9 +22,7 @@ export const Routes = [
   {
     btn: {
       display: 'Homelessness',
-      icon: 'poison',
-      height: 28,
-      width: 20,
+      src: require('../assets/images/poison.svg'),
     },
     params: {
       section: 'homelessness',
@@ -37,10 +31,8 @@ export const Routes = [
   },
   {
     btn: {
-      display: 'Noise / Nuisances',
-      icon: 'noise',
-      height: 28,
-      width: 20,
+      display: 'Noise',
+      src: require('../assets/images/noise.svg'),
     },
     params: {
       section: 'noise',
@@ -51,9 +43,7 @@ export const Routes = [
   {
     btn: {
       display: 'Hate Crimes',
-      icon: 'poison',
-      height: 34,
-      width: 21,
+      src: require('../assets/images/poison.svg'),
     },
     params: {
       section: 'hatecrimes',
@@ -63,9 +53,7 @@ export const Routes = [
   {
     btn: {
       display: 'Legal',
-      icon: 'poison',
-      height: 34,
-      width: 21,
+      src: require('../assets/images/poison.svg'),
     },
     params: {
       section: 'legal',
@@ -75,9 +63,7 @@ export const Routes = [
   {
     btn: {
       display: 'Drugs or Poisoning',
-      icon: 'poison',
-      height: 34,
-      width: 21,
+      src: require('../assets/images/poison.svg'),
     },
     params: {
       section: 'poison',
@@ -87,9 +73,7 @@ export const Routes = [
   {
     btn: {
       display: 'Immigration Support',
-      icon: 'poison',
-      height: 34,
-      width: 21,
+      src: require('../assets/images/poison.svg'),
     },
     params: {
       section: 'immigration',
