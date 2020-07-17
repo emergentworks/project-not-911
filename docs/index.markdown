@@ -52,6 +52,7 @@ layout: not911
   </div>
   <div class='d:w-6/12 flex justify-center'>
     <img
+      class="absolute b"
       alt="A preview of the Not 911 app"
       src="/assets/img/app_preview.svg"
     />
