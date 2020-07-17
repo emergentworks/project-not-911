@@ -40,7 +40,7 @@ layout: not911
     <p class="text-blue-1 mb-3 pr-4">
       Not 911 was designed to support underrepresented communities in NYC, including: BIPOC, LGBTQIA+, immigrants, substance abuse addicts, homeless youth & adults, and the elderly.
     </p>
-    <div class='flex flex-col d:flex-row'>
+    <div class='d:flex d:flex-row'>
       <img
         class='mr-2'
         src="/assets/img/app-store.svg"
@@ -52,7 +52,7 @@ layout: not911
   </div>
   <div class='d:w-6/12 flex justify-center'>
     <img
-      class="absolute b"
+      class="d:absolute b"
       alt="A preview of the Not 911 app"
       src="/assets/img/app_preview.svg"
     />
