@@ -1,12 +1,10 @@
 import * as React from 'react';
 import { ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import * as Linking from 'expo-linking';
-import Constants from 'expo-constants';
 
 import { PhoneScreenNavigationProp } from '../types';
-import { EditScreenInfo, Text, View } from '../components';
+import { Text, View } from '../components';
 import { PhoneNumbers } from '../constants';
-import { Styles } from '../constants';
 
 type SectionsUnion = keyof typeof PhoneNumbers;
 type Props = {
@@ -39,16 +37,16 @@ export const PhoneNumberListScreen = (props: Props) => {
                 onPress={() => {
                   Linking.openURL(`tel:${entry.tel}`);
                 }}>
-            <Image
-        source={require('../assets/images/phone.svg')}
-        style={styles.phone}
-        />
+                <Image
+                  source={require('../assets/images/phone.svg')}
+                  style={styles.phone}
+                />
               </TouchableOpacity>
               <View
-        style={styles.separator}
-        lightColor="#eee"
-        darkColor="rgba(255,255,255,0.1)"
-      />
+                style={styles.separator}
+                lightColor="#eee"
+                darkColor="rgba(255,255,255,0.1)"
+              />
             </View>
           ))}
       </ScrollView>
@@ -96,7 +94,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 25,
-    // marginBottom: 25,
     borderRadius: 1000,
     padding: 10,
   },

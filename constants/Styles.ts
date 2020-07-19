@@ -7,7 +7,7 @@ export const Styles = {
   blue: '#3333ff',
   red: '#ff4d4a',
   teal: '#87ceda',
-  font: 'Helvetica, "Helvetica Neue", system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", sans-serif',
+  font: 'Helvetica, sans-serif',
   light: {
     text: '#000',
     background: '#fff',

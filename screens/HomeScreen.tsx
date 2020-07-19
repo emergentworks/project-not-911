@@ -157,7 +157,6 @@ const styles = StyleSheet.create({
   },
   title: {
     color: Styles.white,
-    fontFamily: Styles.font,
     fontSize: 28,
     lineHeight: 34,
     marginBottom: 16,
