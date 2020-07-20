@@ -1,29 +1,36 @@
 import React, { memo } from 'react';
-import { Image, StyleSheet, ScrollView, Text } from 'react-native';
+import { StyleSheet, ScrollView, Text, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
+import * as Linking from 'expo-linking';
 
 import { Styles } from '../constants';
 import { ButtonLink, View } from '../components';
 import { Routes } from '../constants';
+import { Phone } from '../svgs';
 
 export const HomeScreen = memo((props: any) => (
   <View style={styles.container}>
     <ScrollView>
       <View style={styles.danger}>
-        <Text style={styles.dangerText}>
-          Immediate Danger?
+        <Text style={styles.emergencyText}>
+          Life-Threatening Emergency?
         </Text>
-        <Image
-          source={require('../assets/images/phone_reverse.svg')}
-          style={styles.phone}
-        />
-        <Text style={[styles.dangerText, styles.bold]}>
-          Call 911
-        </Text>
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={() => {
+            Linking.openURL(`tel:911`);
+          }}>
+          <View style={styles.phoneImg}>
+            <Phone />
+          </View>
+          <Text style={styles.btnText}>
+            Call 911
+          </Text>
+        </TouchableOpacity>
       </View>
       <View style={styles.innerView}>
         <Text style={styles.title}>
-          What is the nature of your situation?
+          What do you need help with?
         </Text>
         {Routes.map((route, i) => (
           <ButtonLink
@@ -34,10 +41,6 @@ export const HomeScreen = memo((props: any) => (
         ))}
       </View>
       <View style={styles.community}>
-        {/* <Image
-          source={require('../assets/images/community.svg')}
-          style={styles.communityImg}
-        /> */}
         <Text style={[styles.title, styles.blue, styles.marginBottom40]}>
           Community Care Resources
         </Text>
@@ -106,14 +109,30 @@ const styles = StyleSheet.create({
   bold: {
     fontWeight: '600',
   },
+  btnText: {
+    color: Styles.red,
+    fontSize: 20,
+    fontWeight: '600',
+    width: '100%',
+  },
+  btn: {
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    borderRadius: 6,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    padding: 15,
+    width: '100%',
+  },
+  phoneImg: {
+    position: 'absolute',
+    left: 15,
+  },
   community: {
     backgroundColor: Styles.white,
     padding: 20,
     paddingTop: 30,
-  },
-  communityImg: {
-    height: 42,
-    width: 96,
   },
   communityTxt: {
     fontSize: 20,
@@ -124,16 +143,15 @@ const styles = StyleSheet.create({
     marginTop: Constants.statusBarHeight,
   },
   danger: {
-    alignItems: 'center',
     backgroundColor: Styles.red,
-    flex: 1,
-    justifyContent: 'center',
     padding: 20,
+    textAlign: 'center',
     width:'100%',
   },
-  dangerText: {
+  emergencyText: {
     color: Styles.white,
-    fontSize: 18,
+    fontSize: 20,
+    marginBottom: 10,
   },
   phone: {
     height: 50,

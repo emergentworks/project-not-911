@@ -32,8 +32,9 @@ export const PhoneNumberListScreen = (props: Props) => {
             <View key={i} style={styles.container}>
               <Text style={[styles.bold, styles.title]}>
                 {entry.display}
-                </Text>
-              <TouchableOpacity style={styles.phoneWrap}
+              </Text>
+              <TouchableOpacity
+                style={styles.phoneWrap}
                 onPress={() => {
                   Linking.openURL(`tel:${entry.tel}`);
                 }}>
