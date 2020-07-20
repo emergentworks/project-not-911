@@ -78,4 +78,28 @@ export const PhoneNumbers: Props = {
     display: "Just call 311, or text HELP to 311-692",
     tel: "311",
   }],
+  bipoc: [{
+    display: "Just call 311, or text HELP to 311-692",
+    tel: "311",
+  }],
+  lgbtqia: [{
+    display: "Just call 311, or text HELP to 311-692",
+    tel: "311",
+  }],
+  immigrant: [{
+    display: "Just call 311, or text HELP to 311-692",
+    tel: "311",
+  }],
+  substanceabuse: [{
+    display: "Just call 311, or text HELP to 311-692",
+    tel: "311",
+  }],
+  homeless: [{
+    display: "Just call 311, or text HELP to 311-692",
+    tel: "311",
+  }],
+  elderly: [{
+    display: "Just call 311, or text HELP to 311-692",
+    tel: "311",
+  }],
 };

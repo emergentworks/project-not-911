@@ -5,6 +5,7 @@ import Constants from 'expo-constants';
 import { Styles } from '../constants';
 import { ButtonLink, View } from '../components';
 import { Routes } from '../constants';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export const HomeScreen = memo((props: any) => (
   <View style={styles.container}>
@@ -172,5 +173,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 20,
     marginBottom: 20,
+  },
+  caret: {
+    height: 14,
+    width: 7,
   },
 });
