@@ -1,34 +1,34 @@
 import React, { memo } from 'react';
-import { StyleSheet, ScrollView, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, ScrollView, Text, TouchableOpacity, View as DefaultView } from 'react-native';
 import Constants from 'expo-constants';
 import * as Linking from 'expo-linking';
 
 import { Styles } from '../constants';
 import { ButtonLink, View } from '../components';
 import { Routes } from '../constants';
-import { Phone } from '../svgs';
+import { PhoneWhite } from '../svgs';
 
 export const HomeScreen = memo((props: any) => (
   <View style={styles.container}>
     <ScrollView>
       <View style={styles.danger}>
-        <Text style={styles.emergencyText}>
-          Life-Threatening Emergency?
-        </Text>
         <TouchableOpacity
           style={styles.btn}
           onPress={() => {
             Linking.openURL(`tel:911`);
           }}>
-          <View style={styles.phoneImg}>
-            <Phone />
-          </View>
+          <DefaultView style={styles.phoneImg}>
+            <PhoneWhite />
+          </DefaultView>
           <Text style={styles.btnText}>
             Call 911
           </Text>
         </TouchableOpacity>
       </View>
       <View style={styles.innerView}>
+        <Text style={styles.subtitle}>
+          Not 911
+        </Text>
         <Text style={styles.title}>
           What do you need help with?
         </Text>
@@ -110,14 +110,16 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   btnText: {
-    color: Styles.red,
+    alignSelf: 'stretch',
+    color: Styles.white,
     fontSize: 20,
     fontWeight: '600',
+    textAlign: 'center',
     width: '100%',
   },
   btn: {
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: Styles.red,
     borderRadius: 6,
     display: 'flex',
     flexDirection: 'row',
@@ -126,11 +128,12 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   phoneImg: {
+    backgroundColor: Styles.red,
     position: 'absolute',
     left: 15,
   },
   community: {
-    backgroundColor: Styles.white,
+    // backgroundColor: Styles.white,
     padding: 20,
     paddingTop: 30,
   },
@@ -138,14 +141,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   container: {
-    backgroundColor: Styles.white,
+    backgroundColor: Styles.blue,
     flex: 1,
     marginTop: Constants.statusBarHeight,
   },
   danger: {
-    backgroundColor: Styles.red,
     padding: 20,
-    textAlign: 'center',
     width:'100%',
   },
   emergencyText: {
@@ -159,7 +160,6 @@ const styles = StyleSheet.create({
     width: 50,
   },
   innerView: {
-    backgroundColor: Styles.blue,
     padding: 20,
     paddingTop: 40,
   },
@@ -173,11 +173,19 @@ const styles = StyleSheet.create({
   marginVertical30: {
     marginVertical: 30,
   },
+  subtitle: {
+    color: Styles.white,
+    fontSize: 19,
+    fontWeight: '600',
+    lineHeight: 22,
+    marginBottom: 22,
+  },
   title: {
     color: Styles.white,
     fontSize: 28,
+    fontWeight: '600',
     lineHeight: 34,
-    marginBottom: 16,
+    marginBottom: 32,
   },
   blue: {
     color: Styles.blue,

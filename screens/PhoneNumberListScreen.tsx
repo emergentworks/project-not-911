@@ -39,7 +39,7 @@ export const PhoneNumberListScreen = (props: Props) => {
                   Linking.openURL(`tel:${entry.tel}`);
                 }}>
                 <Image
-                  source={require('../assets/images/phone.svg')}
+                  source={require('../assets/images/phone_white.svg')}
                   style={styles.phone}
                 />
               </TouchableOpacity>

@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
-import { TouchableOpacity, StyleSheet } from 'react-native';
+import { TouchableOpacity, StyleSheet, View } from 'react-native';
 
 import { Styles } from '../constants';
-import { Text, View } from './Themed';
+import { Text } from './Themed';
 import { Caret, Homelessness, MentalHealth, Noise, Poison, Violence } from '../svgs';
 
 type Props = {
@@ -44,7 +44,7 @@ export const ButtonLink = memo((props: Props) => (
           <Poison />
         )}
     </View>
-    <Text style={styles.buttonText}>
+    <Text style={styles.btnText}>
       {props.route.btn.display}
     </Text>
     <Caret />
@@ -62,9 +62,10 @@ const styles = StyleSheet.create({
     padding: 25,
     width: '100%',
   },
-  buttonText: {
+  btnText: {
     color: Styles.blue,
     fontSize: 20,
+    fontWeight: '600',
     lineHeight: 20,
     width: '100%',
   },

@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import Svg, { Path, Mask } from "react-native-svg";
 
-export const Phone = memo((props: React.SVGProps<SVGSVGElement>) => (
+export const PhoneOrange = memo((props: React.SVGProps<SVGSVGElement>) => (
   // @ts-ignore
   <Svg width={32} height={31} fill="none" {...props}>
     <Mask

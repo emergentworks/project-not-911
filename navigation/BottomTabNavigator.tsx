@@ -6,7 +6,7 @@ import * as React from 'react';
 import { Styles } from '../constants';
 import useColorScheme from '../hooks/useColorScheme';
 import { HomeScreen } from '../screens/HomeScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
+import { AboutScreen } from '../screens/AboutScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -16,17 +16,17 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="Make A Call"
+      initialRouteName="Home"
       tabBarOptions={{ activeTintColor: Styles[colorScheme].tint }}>
       <BottomTab.Screen
-        name="Make A Call"
+        name="Home"
         component={TabOneNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
       />
       <BottomTab.Screen
-        name="About Not 911"
+        name="About"
         component={TabTwoNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
@@ -52,7 +52,18 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name="HomeScreen"
         component={HomeScreen}
-        options={{ headerTitle: 'Not 911' }}
+        options={{
+          headerTitle: 'Home',
+          headerStyle: {
+            backgroundColor: '#3333ff',
+            borderBottomColor: '#3333ff',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: '600',
+            textAlign: 'center',
+          },
+        }}
       />
     </TabOneStack.Navigator>
   );
@@ -64,9 +75,20 @@ function TabTwoNavigator() {
   return (
     <TabTwoStack.Navigator>
       <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
-        options={{ headerTitle: 'Why use Not 911?' }}
+        name="AboutScreen"
+        component={AboutScreen}
+        options={{
+          headerTitle: 'About',
+          headerStyle: {
+            backgroundColor: '#3333ff',
+            borderBottomColor: '#3333ff',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: '600',
+            textAlign: 'center',
+          },
+        }}
       />
     </TabTwoStack.Navigator>
   );
