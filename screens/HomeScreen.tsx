@@ -1,16 +1,15 @@
 import React, { memo } from 'react';
 import { StyleSheet, ScrollView, Text, TouchableOpacity, View as DefaultView } from 'react-native';
-import Constants from 'expo-constants';
 import * as Linking from 'expo-linking';
 
 import { Styles } from '../constants';
 import { ButtonLink, View } from '../components';
-import { Routes } from '../constants';
-import { PhoneWhite } from '../svgs';
+import { Routes, Community } from '../constants';
+import { PhoneWhite, CaretWhite } from '../svgs';
 
 export const HomeScreen = memo((props: any) => (
   <View style={styles.container}>
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.danger}>
         <TouchableOpacity
           style={styles.btn}
@@ -41,65 +40,37 @@ export const HomeScreen = memo((props: any) => (
         ))}
       </View>
       <View style={styles.community}>
-        <Text style={[styles.title, styles.blue, styles.marginBottom40]}>
+        <Text style={[styles.title, styles.marginBottom40]}>
           Community Care Resources
         </Text>
-        <Text style={[styles.trusted, styles.blue, styles.bold]}>
+        <Text style={[styles.trusted, styles.bold]}>
           Trusted sources, vetted through community experience
         </Text>
         <View
-          style={[styles.marginBottom30, styles.separator]}
+          style={styles.separator}
           lightColor={Styles.blue}
-          darkColor="rgba(255,255,255,0.1)"
+          darkColor={Styles.white}
         />
-        <Text style={[styles.communityTxt, styles.blue]}>
-          BIPOC Community
-        </Text>
-        <View
-          style={[styles.marginVertical30, styles.separator]}
+        {Community.map((route, i) => (
+          <>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => props.navigation.navigate(
+                'PhoneNumberListScreen',
+                route.params,
+              )}>
+              <Text style={styles.buttonText}>
+                {route.btn.display}
+              </Text>
+              <CaretWhite />
+            </TouchableOpacity>
+            <View
+          style={styles.separator}
           lightColor={Styles.blue}
-          darkColor="rgba(255,255,255,0.1)"
+          darkColor={Styles.white}
         />
-        <Text style={[styles.communityTxt, styles.blue]}>
-          LGBTQIA+ Community
-        </Text>
-        <View
-          style={[styles.marginVertical30, styles.separator]}
-          lightColor={Styles.blue}
-          darkColor="rgba(255,255,255,0.1)"
-        />
-        <Text style={[styles.communityTxt, styles.blue]}>
-          Immigrant Community
-        </Text>
-        <View
-          style={[styles.marginVertical30, styles.separator]}
-          lightColor={Styles.blue}
-          darkColor="rgba(255,255,255,0.1)"
-        />
-        <Text style={[styles.communityTxt, styles.blue]}>
-          Substance Abuse Community
-        </Text>
-        <View
-          style={[styles.marginVertical30, styles.separator]}
-          lightColor={Styles.blue}
-          darkColor="rgba(255,255,255,0.1)"
-        />
-        <Text style={[styles.communityTxt, styles.blue]}>
-          Homeless Community
-        </Text>
-        <View
-          style={[styles.marginVertical30, styles.separator]}
-          lightColor={Styles.blue}
-          darkColor="rgba(255,255,255,0.1)"
-        />
-        <Text style={[styles.communityTxt, styles.blue]}>
-          Elderly Community
-        </Text>
-        <View
-          style={[styles.separator, styles.marginVertical30]}
-          lightColor={Styles.blue}
-          darkColor="rgba(255,255,255,0.1)"
-        />
+          </>
+        ))}
       </View>
     </ScrollView>
   </View>
@@ -196,8 +167,27 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   trusted: {
+    color: Styles.white,
     fontSize: 16,
     lineHeight: 20,
     marginBottom: 20,
+  },
+  button: {
+    alignItems: 'center',
+    // backgroundColor: Styles.white,
+    // borderRadius: 4,
+    flex: 1,
+    flexDirection: 'row',
+    paddingVertical: 25,
+    width: '100%',
+  },
+  buttonText: {
+    color: Styles.white,
+    fontSize: 20,
+    lineHeight: 20,
+    width: '100%',
+  },
+  marginRight10: {
+    marginRight: 10,
   },
 });
