@@ -1,41 +1,37 @@
 import React, { memo } from 'react';
-import { StyleSheet } from 'react-native';
-import Unorderedlist from 'react-native-unordered-list';
+import { ScrollView, StyleSheet } from 'react-native';
 
 import { Text, View } from '../components';
 import { Styles } from '../constants';
 
 export const AboutScreen = memo(() => (
   <View style={styles.container}>
-    <Text style={[styles.marginBottom30, styles.title]}>Public Safety First</Text>
-    <Unorderedlist color="white" >
-      <Text style={styles.paragraph}>
-        Connecting people to trusted support communities.
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <Text style={styles.title}>
+        How to use the app.
       </Text>
-    </Unorderedlist>
-    <Unorderedlist color='white'>
       <Text style={styles.paragraph}>
-        Protect the Vulnerable communities (from police).
+        Not 911 is a list of community-based groups that offer preventative services and strategies for issues related to mental health, homelessness, legal aid and other topics.
       </Text>
-    </Unorderedlist>
-    <Text style={[styles.marginBottom30, styles.title]}>
-      Part of a bigger initiative Code
-    </Text>
-    <Unorderedlist color="white">
+      <Text style={[styles.paragraph, styles.marginBottom40]}>
+        These are not organizations that should be used in a life-threatening emergency. If someone is experiencing a life-threatening emergency, call 911 immediately.
+      </Text>
+      <Text style={styles.title}>
+        About Code Cooperative
+      </Text>
       <Text style={styles.paragraph}>
-        Step towards police defunding & Abolition.
+        The Code Cooperative is a community of people who learn, use, and build technology to create life changing possibilities for individuals and communities impacted by incarceration.
       </Text>
-    </Unorderedlist>
-    <Unorderedlist color="white">
-      <Text style={styles.paragraph}>
-        Decriminalizing unwanted community activity.
+      <Text style={[styles.paragraph, styles.marginBottom40]}>
+        We also build software for purpose-driven organizations and careers for our communities.
       </Text>
-    </Unorderedlist>
-    <Unorderedlist color="white">
-      <Text style={styles.paragraph}>
-        Moving away from police as the default resource.
+      <Text style={styles.title}>
+        Interested in hiring us?
       </Text>
-    </Unorderedlist>
+      <Text style={[styles.paragraph, styles.marginBottom40]}>
+        Reach us at hello@codecooperative.org
+      </Text>
+    </ScrollView>
   </View>
 ));
 
@@ -48,16 +44,18 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   title: {
-    fontSize: 20,
-    fontWeight: '600',
+    fontSize: 24,
+    fontWeight: 'bold',
     color: Styles.white,
+    marginBottom: 14,
   },
   paragraph: {
-    fontSize: 15,
+    fontSize: 20,
     color: Styles.white,
+    lineHeight: 24,
     marginBottom: 20,
   },
-  marginBottom30: {
-    marginBottom: 30,
+  marginBottom40: {
+    marginBottom: 40,
   },
 });
