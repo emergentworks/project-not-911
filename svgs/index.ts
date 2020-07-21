@@ -7,3 +7,4 @@ export { PhoneOrange } from './PhoneOrange';
 export { PhoneWhite } from './PhoneWhite';
 export { Poison } from './Poison';
 export { Violence } from './Violence';
+export { CaretWhite } from './CaretWhite';

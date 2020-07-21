@@ -5,7 +5,7 @@ import * as Linking from 'expo-linking';
 import { Styles } from '../constants';
 import { ButtonLink, View } from '../components';
 import { Routes, Community } from '../constants';
-import { PhoneWhite } from '../svgs';
+import { PhoneWhite, CaretWhite } from '../svgs';
 
 export const HomeScreen = memo((props: any) => (
   <View style={styles.container}>
@@ -40,16 +40,16 @@ export const HomeScreen = memo((props: any) => (
         ))}
       </View>
       <View style={styles.community}>
-        <Text style={[styles.title, styles.blue, styles.marginBottom40]}>
+        <Text style={[styles.title, styles.marginBottom40]}>
           Community Care Resources
         </Text>
-        <Text style={[styles.trusted, styles.blue, styles.bold]}>
+        <Text style={[styles.trusted, styles.bold]}>
           Trusted sources, vetted through community experience
         </Text>
         <View
           style={styles.separator}
           lightColor={Styles.blue}
-          darkColor="rgba(255,255,255,0.1)"
+          darkColor={Styles.white}
         />
         {Community.map((route, i) => (
           <>
@@ -62,15 +62,12 @@ export const HomeScreen = memo((props: any) => (
               <Text style={styles.buttonText}>
                 {route.btn.display}
               </Text>
-              <Image
-        source={require('../assets/images/caret.svg')}
-        style={styles.caret}
-      />
+              <CaretWhite />
             </TouchableOpacity>
             <View
           style={styles.separator}
           lightColor={Styles.blue}
-          darkColor="rgba(255,255,255,0.1)"
+          darkColor={Styles.white}
         />
           </>
         ))}
@@ -170,6 +167,7 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   trusted: {
+    color: Styles.white,
     fontSize: 16,
     lineHeight: 20,
     marginBottom: 20,
@@ -184,14 +182,10 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   buttonText: {
-    color: Styles.blue,
+    color: Styles.white,
     fontSize: 20,
     lineHeight: 20,
     width: '100%',
-  },
-  caret: {
-    height: 14,
-    width: 7,
   },
   marginRight10: {
     marginRight: 10,
