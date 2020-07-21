@@ -4,7 +4,8 @@ import Constants from 'expo-constants';
 
 import { Styles } from '../constants';
 import { ButtonLink, View } from '../components';
-import { Routes } from '../constants';
+import { Routes} from '../constants';
+import { Community } from '../constants';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export const HomeScreen = memo((props: any) => (
@@ -46,58 +47,33 @@ export const HomeScreen = memo((props: any) => (
           Trusted sources, vetted through community experience
         </Text>
         <View
-          style={[styles.marginBottom30, styles.separator]}
+          style={styles.separator}
           lightColor={Styles.blue}
           darkColor="rgba(255,255,255,0.1)"
         />
-        <Text style={[styles.communityTxt, styles.blue]}>
-          BIPOC Community
-        </Text>
-        <View
-          style={[styles.marginVertical30, styles.separator]}
+        {Community.map((route, i) => (
+          <>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => props.navigation.navigate(
+                'PhoneNumberListScreen',
+                route.params,
+              )}>
+              <Text style={styles.buttonText}>
+                {route.btn.display}
+              </Text>
+              <Image
+        source={require('../assets/images/caret.svg')}
+        style={styles.caret}
+      />
+            </TouchableOpacity>
+            <View
+          style={styles.separator}
           lightColor={Styles.blue}
           darkColor="rgba(255,255,255,0.1)"
         />
-        <Text style={[styles.communityTxt, styles.blue]}>
-          LGBTQIA+ Community
-        </Text>
-        <View
-          style={[styles.marginVertical30, styles.separator]}
-          lightColor={Styles.blue}
-          darkColor="rgba(255,255,255,0.1)"
-        />
-        <Text style={[styles.communityTxt, styles.blue]}>
-          Immigrant Community
-        </Text>
-        <View
-          style={[styles.marginVertical30, styles.separator]}
-          lightColor={Styles.blue}
-          darkColor="rgba(255,255,255,0.1)"
-        />
-        <Text style={[styles.communityTxt, styles.blue]}>
-          Substance Abuse Community
-        </Text>
-        <View
-          style={[styles.marginVertical30, styles.separator]}
-          lightColor={Styles.blue}
-          darkColor="rgba(255,255,255,0.1)"
-        />
-        <Text style={[styles.communityTxt, styles.blue]}>
-          Homeless Community
-        </Text>
-        <View
-          style={[styles.marginVertical30, styles.separator]}
-          lightColor={Styles.blue}
-          darkColor="rgba(255,255,255,0.1)"
-        />
-        <Text style={[styles.communityTxt, styles.blue]}>
-          Elderly Community
-        </Text>
-        <View
-          style={[styles.separator, styles.marginVertical30]}
-          lightColor={Styles.blue}
-          darkColor="rgba(255,255,255,0.1)"
-        />
+          </>
+        ))}
       </View>
     </ScrollView>
   </View>
@@ -174,8 +150,26 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     marginBottom: 20,
   },
+  button: {
+    alignItems: 'center',
+    // backgroundColor: Styles.white,
+    // borderRadius: 4,
+    flex: 1,
+    flexDirection: 'row',
+    paddingVertical: 25,
+    width: '100%',
+  },
+  buttonText: {
+    color: Styles.blue,
+    fontSize: 20,
+    lineHeight: 20,
+    width: '100%',
+  },
   caret: {
     height: 14,
     width: 7,
+  },
+  marginRight10: {
+    marginRight: 10,
   },
 });
