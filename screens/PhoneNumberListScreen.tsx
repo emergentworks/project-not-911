@@ -51,7 +51,6 @@ export const PhoneNumberListScreen = (props: Props) => {
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
