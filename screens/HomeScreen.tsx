@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import { StyleSheet, ScrollView, Text, TouchableOpacity, View as DefaultView } from 'react-native';
-import Constants from 'expo-constants';
 import * as Linking from 'expo-linking';
 
 import { Styles } from '../constants';
@@ -10,7 +9,7 @@ import { PhoneWhite } from '../svgs';
 
 export const HomeScreen = memo((props: any) => (
   <View style={styles.container}>
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.danger}>
         <TouchableOpacity
           style={styles.btn}

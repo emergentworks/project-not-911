@@ -23,10 +23,7 @@ export const PhoneNumberListScreen = (props: Props) => {
 
   return (
     <View style={styles.container}>
-      <Text style={[styles.hours, styles.bold]}>
-        24 Hour Access
-      </Text>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         {numbers instanceof Array
           && numbers.map((entry: any, i) => (
             <View key={i} style={styles.container}>
