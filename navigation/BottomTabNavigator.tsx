@@ -57,6 +57,7 @@ function TabOneNavigator() {
           headerStyle: {
             backgroundColor: '#3333ff',
             borderBottomColor: '#3333ff',
+            borderBottomWidth: 0,
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
@@ -82,6 +83,7 @@ function TabTwoNavigator() {
           headerStyle: {
             backgroundColor: '#3333ff',
             borderBottomColor: '#3333ff',
+            borderBottomWidth: 0,
           },
           headerTintColor: '#fff',
           headerTitleStyle: {

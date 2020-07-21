@@ -109,6 +109,9 @@ const styles = StyleSheet.create({
   bold: {
     fontWeight: '600',
   },
+  bgBlue: {
+    backgroundColor: Styles.blue,
+  },
   btnText: {
     alignSelf: 'stretch',
     color: Styles.white,
@@ -133,7 +136,6 @@ const styles = StyleSheet.create({
     left: 15,
   },
   community: {
-    // backgroundColor: Styles.white,
     padding: 20,
     paddingTop: 30,
   },
@@ -143,9 +145,9 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: Styles.blue,
     flex: 1,
-    marginTop: Constants.statusBarHeight,
   },
   danger: {
+    backgroundColor: Styles.blue,
     padding: 20,
     width:'100%',
   },

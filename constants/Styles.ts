@@ -1,4 +1,4 @@
-const tintColorLight = '#2f95dc';
+const tintColorLight = '#3333ff';
 const tintColorDark = '#fff';
 
 export const Styles = {
@@ -7,7 +7,7 @@ export const Styles = {
   blue: '#3333ff',
   red: '#ff4d4a',
   teal: '#87ceda',
-  font: 'Helvetica, sans-serif',
+  // font: 'Helvetica, sans-serif',
   light: {
     text: '#000',
     background: '#fff',
