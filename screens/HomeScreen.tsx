@@ -1,29 +1,36 @@
 import React, { memo } from 'react';
-import { Image, StyleSheet, ScrollView, Text } from 'react-native';
+import { StyleSheet, ScrollView, Text, TouchableOpacity, View as DefaultView } from 'react-native';
 import Constants from 'expo-constants';
+import * as Linking from 'expo-linking';
 
 import { Styles } from '../constants';
 import { ButtonLink, View } from '../components';
 import { Routes } from '../constants';
+import { PhoneWhite } from '../svgs';
 
 export const HomeScreen = memo((props: any) => (
   <View style={styles.container}>
     <ScrollView>
       <View style={styles.danger}>
-        <Text style={styles.dangerText}>
-          Immediate Danger?
-        </Text>
-        <Image
-          source={require('../assets/images/phone_reverse.svg')}
-          style={styles.phone}
-        />
-        <Text style={[styles.dangerText, styles.bold]}>
-          Call 911
-        </Text>
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={() => {
+            Linking.openURL(`tel:911`);
+          }}>
+          <DefaultView style={styles.phoneImg}>
+            <PhoneWhite />
+          </DefaultView>
+          <Text style={styles.btnText}>
+            Call 911
+          </Text>
+        </TouchableOpacity>
       </View>
       <View style={styles.innerView}>
+        <Text style={styles.subtitle}>
+          Not 911
+        </Text>
         <Text style={styles.title}>
-          What is the nature of your situation?
+          What do you need help with?
         </Text>
         {Routes.map((route, i) => (
           <ButtonLink
@@ -34,10 +41,6 @@ export const HomeScreen = memo((props: any) => (
         ))}
       </View>
       <View style={styles.community}>
-        {/* <Image
-          source={require('../assets/images/community.svg')}
-          style={styles.communityImg}
-        /> */}
         <Text style={[styles.title, styles.blue, styles.marginBottom40]}>
           Community Care Resources
         </Text>
@@ -106,34 +109,52 @@ const styles = StyleSheet.create({
   bold: {
     fontWeight: '600',
   },
+  bgBlue: {
+    backgroundColor: Styles.blue,
+  },
+  btnText: {
+    alignSelf: 'stretch',
+    color: Styles.white,
+    fontSize: 20,
+    fontWeight: '600',
+    textAlign: 'center',
+    width: '100%',
+  },
+  btn: {
+    alignItems: 'center',
+    backgroundColor: Styles.red,
+    borderRadius: 6,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    padding: 15,
+    width: '100%',
+  },
+  phoneImg: {
+    backgroundColor: Styles.red,
+    position: 'absolute',
+    left: 15,
+  },
   community: {
-    backgroundColor: Styles.white,
     padding: 20,
     paddingTop: 30,
-  },
-  communityImg: {
-    height: 42,
-    width: 96,
   },
   communityTxt: {
     fontSize: 20,
   },
   container: {
-    backgroundColor: Styles.white,
+    backgroundColor: Styles.blue,
     flex: 1,
-    marginTop: Constants.statusBarHeight,
   },
   danger: {
-    alignItems: 'center',
-    backgroundColor: Styles.red,
-    flex: 1,
-    justifyContent: 'center',
+    backgroundColor: Styles.blue,
     padding: 20,
     width:'100%',
   },
-  dangerText: {
+  emergencyText: {
     color: Styles.white,
-    fontSize: 18,
+    fontSize: 20,
+    marginBottom: 10,
   },
   phone: {
     height: 50,
@@ -141,7 +162,6 @@ const styles = StyleSheet.create({
     width: 50,
   },
   innerView: {
-    backgroundColor: Styles.blue,
     padding: 20,
     paddingTop: 40,
   },
@@ -155,12 +175,19 @@ const styles = StyleSheet.create({
   marginVertical30: {
     marginVertical: 30,
   },
+  subtitle: {
+    color: Styles.white,
+    fontSize: 19,
+    fontWeight: '600',
+    lineHeight: 22,
+    marginBottom: 22,
+  },
   title: {
     color: Styles.white,
-    fontFamily: Styles.font,
     fontSize: 28,
+    fontWeight: '600',
     lineHeight: 34,
-    marginBottom: 16,
+    marginBottom: 32,
   },
   blue: {
     color: Styles.blue,

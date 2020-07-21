@@ -6,14 +6,14 @@ export default {
     screens: {
       Root: {
         screens: {
-          'Make A Call': {
+          'Home': {
             screens: {
               HomeScreen: 'call',
             },
           },
-          'About Not 911': {
+          'About': {
             screens: {
-              TabTwoScreen: 'about',
+              AboutScreen: 'about',
             },
           },
           PhoneNumberList: {
