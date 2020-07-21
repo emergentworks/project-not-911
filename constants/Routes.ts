@@ -2,7 +2,6 @@ export const Routes = [
   {
     btn: {
       display: 'Violence',
-      src: require('../assets/images/poison.svg'),
     },
     params: {
       section: 'violence',
@@ -12,7 +11,6 @@ export const Routes = [
   {
     btn: {
       display: 'Mental Health',
-      src: require('../assets/images/mentalhealth.svg'),
     },
     params: {
       section: 'mentalhealth',
@@ -22,7 +20,6 @@ export const Routes = [
   {
     btn: {
       display: 'Homelessness',
-      src: require('../assets/images/poison.svg'),
     },
     params: {
       section: 'homelessness',
@@ -32,7 +29,6 @@ export const Routes = [
   {
     btn: {
       display: 'Noise',
-      src: require('../assets/images/noise.svg'),
     },
     params: {
       section: 'noise',
@@ -40,44 +36,40 @@ export const Routes = [
       additionalProps: 'test',
     },
   },
-  {
-    btn: {
-      display: 'Hate Crimes',
-      src: require('../assets/images/poison.svg'),
-    },
-    params: {
-      section: 'hatecrimes',
-      title: 'Report a Hate Crime',
-    },
-  },
-  {
-    btn: {
-      display: 'Legal',
-      src: require('../assets/images/poison.svg'),
-    },
-    params: {
-      section: 'legal',
-      title: 'Arrested? Witness a false arrest or police brutality? Get support here',
-    },
-  },
+  // {
+  //   btn: {
+  //     display: 'Hate Crimes',
+  //   },
+  //   params: {
+  //     section: 'hatecrimes',
+  //     title: 'Report a Hate Crime',
+  //   },
+  // },
+  // {
+  //   btn: {
+  //     display: 'Legal',
+  //   },
+  //   params: {
+  //     section: 'legal',
+  //     title: 'Arrested? Witness a false arrest or police brutality? Get support here',
+  //   },
+  // },
   {
     btn: {
       display: 'Drugs or Poisoning',
-      src: require('../assets/images/poison.svg'),
     },
     params: {
       section: 'poison',
       title: 'Poison Control or Substance Abuse Hotlines',
     },
   },
-  {
-    btn: {
-      display: 'Immigration Support',
-      src: require('../assets/images/poison.svg'),
-    },
-    params: {
-      section: 'immigration',
-      title: 'Immigration Support Hotlines',
-    },
-  },
+  // {
+  //   btn: {
+  //     display: 'Immigration Support',
+  //   },
+  //   params: {
+  //     section: 'immigration',
+  //     title: 'Immigration Support Hotlines',
+  //   },
+  // }
 ];

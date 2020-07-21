@@ -1,4 +1,4 @@
-const tintColorLight = '#2f95dc';
+const tintColorLight = '#3333ff';
 const tintColorDark = '#fff';
 
 export const Styles = {
@@ -7,7 +7,7 @@ export const Styles = {
   blue: '#3333ff',
   red: '#ff4d4a',
   teal: '#87ceda',
-  font: 'Helvetica, "Helvetica Neue", system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", sans-serif',
+  // font: 'Helvetica, sans-serif',
   light: {
     text: '#000',
     background: '#fff',
@@ -17,7 +17,7 @@ export const Styles = {
   },
   dark: {
     text: '#fff',
-    background: '#000',
+    background: '#3333ff',
     tint: tintColorDark,
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorDark,
