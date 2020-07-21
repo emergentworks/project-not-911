@@ -1,7 +1,12 @@
 type Props = {
   [key: string]: {
+    crisis?: true,
     display: string,
+    hours?: string,
+    tags?: string[],
+    text?: string,
     tel: string,
+    website?: string,
   }[];
 };
 
@@ -29,11 +34,32 @@ export const PhoneNumbers: Props = {
   }],
 
   mentalhealth: [{
+    crisis: true,
     display: "NYC Well",
+    hours: '24hr access',
+    tags: [
+      'Mobile Crisis Team can respond within 48 hours',
+      '711 (TTY for hearing impaired)',
+      'Anxiety',
+      'Counseling',
+      'Mental Health Crisis',
+      'Suicide Prevention',
+      'Addiction',
+    ],
     tel: "1-888-692-9355",
+    text: 'or text WELL to 65173',
   }, {
-    display: "NYC Mental Health Crisis Hotline",
-    tel: "1-800-854-7771",
+    display: 'NY State Emotional Support Helpline',
+    hours: 'M-F 9am-5pm',
+    tags: ['Anxiety', 'Counseling', 'COVID-19'],
+    tel: '1-844-863-9314',
+  }, {
+    display: 'SAMHSA Disaster Distress National Helpline',
+    hours: '24hr access',
+    tags: ['Post-Disaster', 'Crisis', 'Emotional Distress', 'Trauma', 'COVID-19', 'Unrest', 'Spanish'],
+    tel: '1-800-985-5990',
+    text: 'or text TalkWithUs or Hablanos to 66746',
+    website: 'https://www.samhsa.gov/find-help/disaster-distress-helpline',
   }],
 
   immigration: [{

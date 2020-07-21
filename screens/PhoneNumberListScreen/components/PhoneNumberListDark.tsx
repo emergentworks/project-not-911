@@ -2,24 +2,12 @@ import * as React from 'react';
 import { ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import * as Linking from 'expo-linking';
 
-import { PhoneScreenNavigationProp } from '../types';
-import { Text, View } from '../components';
-import { PhoneNumbers } from '../constants';
+import { Text, View } from '../../../components';
+import { PhoneWhite } from '../../../svgs';
+import { ComponentProps } from '../types';
 
-type SectionsUnion = keyof typeof PhoneNumbers;
-type Props = {
-  navigation: PhoneScreenNavigationProp,
-  route: {
-    params: {
-      section: SectionsUnion,
-      title: string,
-    },
-  },
-};
-
-export const PhoneNumberListScreen = (props: Props) => {
-  const {route} = props;
-  const numbers = PhoneNumbers[route.params.section];
+export const PhoneNumberListDark = (props: ComponentProps) => {
+  const {numbers} = props;
 
   return (
     <View style={styles.container}>
@@ -35,10 +23,7 @@ export const PhoneNumberListScreen = (props: Props) => {
                 onPress={() => {
                   Linking.openURL(`tel:${entry.tel}`);
                 }}>
-                <Image
-                  source={require('../assets/images/phone_white.svg')}
-                  style={styles.phone}
-                />
+                <PhoneWhite />
               </TouchableOpacity>
               <View
                 style={styles.separator}
