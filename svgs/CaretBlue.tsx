@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import Svg, { Path } from "react-native-svg";
 
-export const Caret = memo((props: React.SVGProps<SVGSVGElement>) => (
+export const CaretBlue = memo((props: React.SVGProps<SVGSVGElement>) => (
   // @ts-ignore
   <Svg width={9} height={16} fill="none" {...props}>
     <Path

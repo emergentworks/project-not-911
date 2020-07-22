@@ -8,7 +8,7 @@ export default {
         screens: {
           'Home': {
             screens: {
-              HomeScreen: 'call',
+              HomeScreen: 'home',
             },
           },
           'About': {

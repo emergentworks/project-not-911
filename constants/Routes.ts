@@ -26,16 +26,16 @@ export const Routes = [
       title: 'Homelessness and Evictions Support',
     },
   },
-  {
-    btn: {
-      display: 'Noise',
-    },
-    params: {
-      section: 'noise',
-      title: 'Noise and Nuisances',
-      additionalProps: 'test',
-    },
-  },
+  // {
+  //   btn: {
+  //     display: 'Noise',
+  //   },
+  //   params: {
+  //     section: 'noise',
+  //     title: 'Noise and Nuisances',
+  //     additionalProps: 'test',
+  //   },
+  // },
   // {
   //   btn: {
   //     display: 'Hate Crimes',
@@ -45,15 +45,15 @@ export const Routes = [
   //     title: 'Report a Hate Crime',
   //   },
   // },
-  // {
-  //   btn: {
-  //     display: 'Legal',
-  //   },
-  //   params: {
-  //     section: 'legal',
-  //     title: 'Arrested? Witness a false arrest or police brutality? Get support here',
-  //   },
-  // },
+  {
+    btn: {
+      display: 'Legal Support',
+    },
+    params: {
+      section: 'legal',
+      title: 'Arrested? Witness a false arrest or police brutality? Get support here',
+    },
+  },
   {
     btn: {
       display: 'Drugs or Poisoning',

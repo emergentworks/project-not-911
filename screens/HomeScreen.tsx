@@ -1,99 +1,120 @@
 import React, { memo } from 'react';
-import { StyleSheet, ScrollView, Text, TouchableOpacity, View as DefaultView } from 'react-native';
+import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import * as Linking from 'expo-linking';
 
 import { Styles } from '../constants';
-import { ButtonLink, View } from '../components';
-import { Routes, Community } from '../constants';
-import { PhoneWhite, CaretWhite } from '../svgs';
+import useColorScheme from '../hooks/useColorScheme';
+import { ButtonLink, RowLink, Text, View } from '../components';
+import { Routes, Communities } from '../constants';
+import { PhoneWhite, Community, CommunityWhite } from '../svgs';
 
-export const HomeScreen = memo((props: any) => (
-  <View style={styles.container}>
-    <ScrollView showsVerticalScrollIndicator={false}>
-      <View style={styles.danger}>
-        <TouchableOpacity
-          style={styles.btn}
-          onPress={() => {
-            Linking.openURL(`tel:911`);
-          }}>
-          <DefaultView style={styles.phoneImg}>
-            <PhoneWhite />
-          </DefaultView>
-          <Text style={styles.btnText}>
-            Call 911
+export const HomeScreen = memo((props: any) => {
+  const colorScheme = useColorScheme();
+
+  return (
+    <View
+      lightColor={Styles.blue}
+      darkColor={Styles.white}
+      style={styles.container}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.danger}>
+          <TouchableOpacity
+            style={styles.btn}
+            onPress={() => {
+              Linking.openURL(`tel:911`);
+            }}>
+            <View style={styles.phoneImg}>
+              <PhoneWhite />
+            </View>
+            <Text style={[styles.bold, styles.dangerText]}>
+              Call 911
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.innerView}>
+          {/* <Text
+            lightColor={Styles.blue}
+            darkColor={Styles.white}
+            style={styles.subtitle}>
+            Not 911
+          </Text> */}
+          <Text
+            lightColor={Styles.black}
+            darkColor={Styles.white}
+            style={[styles.bold, styles.title]}>
+            What do you need help with?
           </Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.innerView}>
-        <Text style={styles.subtitle}>
-          Not 911
-        </Text>
-        <Text style={styles.title}>
-          What do you need help with?
-        </Text>
-        {Routes.map((route, i) => (
-          <ButtonLink
-            key={i}
-            navigation={props.navigation}
-            route={route}
+          {Routes.map((route, i) => (
+            colorScheme === 'light'
+            ? (
+              <RowLink
+                key={i}
+                includeIcon
+                navigation={props.navigation}
+                route={route}
+              />
+            )
+            : (
+              <ButtonLink
+                key={i}
+                navigation={props.navigation}
+                route={route}
+              />
+            )
+          ))}
+        </View>
+        <View style={styles.community}>
+          {colorScheme === 'light'
+            ? (
+              <Community style={styles.marginBottom15} />
+            )
+            : (
+              <CommunityWhite style={styles.marginBottom15} />
+            )}
+          <Text
+            lightColor={Styles.blue}
+            darkColor={Styles.white}
+            style={[styles.title, styles.marginBottom40]}>
+            Community Care Resources
+          </Text>
+          <Text
+            lightColor={Styles.blue}
+            darkColor={Styles.white}
+            style={[styles.trusted, styles.bold]}>
+            Trusted sources, vetted through community experience
+          </Text>
+          <View
+            style={Styles.separator}
+            lightColor={Styles.blue}
+            darkColor={Styles.white}
           />
-        ))}
-      </View>
-      <View style={styles.community}>
-        <Text style={[styles.title, styles.marginBottom40]}>
-          Community Care Resources
-        </Text>
-        <Text style={[styles.trusted, styles.bold]}>
-          Trusted sources, vetted through community experience
-        </Text>
-        <View
-          style={styles.separator}
-          lightColor={Styles.blue}
-          darkColor={Styles.white}
-        />
-        {Community.map((route, i) => (
-          <>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => props.navigation.navigate(
-                'PhoneNumberListScreen',
-                route.params,
-              )}>
-              <Text style={styles.buttonText}>
-                {route.btn.display}
-              </Text>
-              <CaretWhite />
-            </TouchableOpacity>
-            <View
-          style={styles.separator}
-          lightColor={Styles.blue}
-          darkColor={Styles.white}
-        />
-          </>
-        ))}
-      </View>
-    </ScrollView>
-  </View>
-));
+          {Communities.map((route, i) => (
+            <RowLink
+              key={i}
+              navigation={props.navigation}
+              route={route}
+            />
+          ))}
+        </View>
+      </ScrollView>
+    </View>
+  );
+});
 
 const styles = StyleSheet.create({
   bold: {
-    fontWeight: '600',
+    fontWeight: 'bold',
   },
-  bgBlue: {
-    backgroundColor: Styles.blue,
-  },
-  btnText: {
+  dangerText: {
     alignSelf: 'stretch',
     color: Styles.white,
+    flex: 1,
     fontSize: 20,
-    fontWeight: '600',
     textAlign: 'center',
-    width: '100%',
   },
   btn: {
     alignItems: 'center',
-    backgroundColor: Styles.red,
+    backgroundColor: Styles.orange,
     borderRadius: 6,
     display: 'flex',
     flexDirection: 'row',
@@ -102,7 +123,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   phoneImg: {
-    backgroundColor: Styles.red,
+    backgroundColor: Styles.orange,
     position: 'absolute',
     left: 15,
   },
@@ -118,7 +139,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   danger: {
-    backgroundColor: Styles.blue,
     padding: 20,
     width:'100%',
   },
@@ -136,9 +156,8 @@ const styles = StyleSheet.create({
     padding: 20,
     paddingTop: 40,
   },
-  separator: {
-    height: 1,
-    width: '100%',
+  marginBottom15: {
+    marginBottom: 15,
   },
   marginBottom30: {
     marginBottom: 30,
@@ -147,16 +166,13 @@ const styles = StyleSheet.create({
     marginVertical: 30,
   },
   subtitle: {
-    color: Styles.white,
     fontSize: 19,
     fontWeight: '600',
     lineHeight: 22,
     marginBottom: 22,
   },
   title: {
-    color: Styles.white,
     fontSize: 28,
-    fontWeight: '600',
     lineHeight: 34,
     marginBottom: 32,
   },
@@ -167,25 +183,9 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   trusted: {
-    color: Styles.white,
     fontSize: 16,
     lineHeight: 20,
     marginBottom: 20,
-  },
-  button: {
-    alignItems: 'center',
-    // backgroundColor: Styles.white,
-    // borderRadius: 4,
-    flex: 1,
-    flexDirection: 'row',
-    paddingVertical: 25,
-    width: '100%',
-  },
-  buttonText: {
-    color: Styles.white,
-    fontSize: 20,
-    lineHeight: 20,
-    width: '100%',
   },
   marginRight10: {
     marginRight: 10,

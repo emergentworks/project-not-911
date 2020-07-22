@@ -3,7 +3,14 @@ import { TouchableOpacity, StyleSheet, View } from 'react-native';
 
 import { Styles } from '../constants';
 import { Text } from './Themed';
-import { Caret, Homelessness, MentalHealth, Noise, Poison, Violence } from '../svgs';
+import {
+  CaretBlue,
+  Homelessness,
+  Legal,
+  MentalHealth,
+  Poison,
+  Violence,
+} from '../svgs';
 
 type Props = {
   navigation: any,
@@ -35,9 +42,9 @@ export const ButtonLink = memo((props: Props) => (
         && (
           <Homelessness />
         )}
-      {props.route.btn.display === 'Noise'
+      {props.route.btn.display === 'Legal Support'
         && (
-          <Noise />
+          <Legal />
         )}
       {props.route.btn.display === 'Drugs or Poisoning'
         && (
@@ -47,7 +54,7 @@ export const ButtonLink = memo((props: Props) => (
     <Text style={styles.btnText}>
       {props.route.btn.display}
     </Text>
-    <Caret />
+    <CaretBlue />
   </TouchableOpacity>
 ));
 
@@ -56,18 +63,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: Styles.white,
     borderRadius: 4,
-    flex: 1,
+    display: 'flex',
+    height: 85,
     flexDirection: 'row',
     marginBottom: 8,
+    maxHeight: 85,
     padding: 25,
     width: '100%',
   },
   btnText: {
     color: Styles.blue,
+    flex: 1,
     fontSize: 20,
     fontWeight: '600',
     lineHeight: 20,
-    width: '100%',
   },
   marginRight10: {
     marginRight: 10,
