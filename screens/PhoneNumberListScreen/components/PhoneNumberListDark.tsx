@@ -1,38 +1,43 @@
 import * as React from 'react';
-import { ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { Dimensions, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import * as Linking from 'expo-linking';
 
 import { Text, View } from '../../../components';
-import { PhoneWhite, PhoneBlue, PhoneOrange } from '../../../svgs';
+import { PhoneBlue, PhoneOrange } from '../../../svgs';
 import { ComponentProps } from '../types';
 import { Styles } from '../../../constants';
 
 export const PhoneNumberListDark = (props: ComponentProps) => {
   const {numbers} = props;
+  const screenHeight = Dimensions.get('window').height;
 
   return (
-    <View style={[styles.container, styles.paddingTop30]}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+    <View style={[{height: screenHeight}, styles.container]}>
+      <ScrollView
+        contentContainerStyle={styles.scrollView}
+        showsVerticalScrollIndicator={false}>
         {numbers instanceof Array
           && numbers.map((entry: any, i) => (
-            <View key={i} style={[styles.container, entry.crisis && styles.crisis]}>
-              <Text style={[styles.hours, styles.bold]}>
+            <View
+              key={i}
+              style={[entry.crisis && styles.crisis]}>
+              <Text style={[styles.hours, styles.bold, styles.centerTxt]}>
                 {entry.hours}
               </Text>
-              <Text style={[styles.bold, styles.title]}>
+              <Text style={[styles.bold, styles.title, styles.centerTxt]}>
                 {entry.display}
               </Text>
-              <Text>
+              <Text style={[styles.centerTxt, styles.marginBottom25]}>
                 {entry.tel}
               </Text>
               <TouchableOpacity
-                style={styles.phoneWrap}
+                style={[styles.phoneWrap, i === numbers.length - 1 && styles.marginBottom25]}
                 onPress={() => {
                   Linking.openURL(`tel:${entry.tel}`);
                 }}>
                 {entry.crisis ? <PhoneOrange /> : <PhoneBlue />}
               </TouchableOpacity>
-              {!entry.crisis && (
+              {i !== numbers.length - 1 && !entry.crisis && (
                 <View
                   style={styles.separator}
                   lightColor="#eee"
@@ -47,27 +52,31 @@ export const PhoneNumberListDark = (props: ComponentProps) => {
 }
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
     flex: 1,
-    justifyContent: 'center',
+    paddingTop: 60,
+  },
+  scrollView: {
+    alignSelf: 'center',
+    display: 'flex',
+    width: '90%',
+  },
+  centerTxt: {
     textAlign: 'center',
   },
-  paddingTop30: {
-    paddingTop: 30,
+  marginBottom25: {
+    marginBottom: 25,
   },
   title: {
     fontSize: 24,
-    width: '80%',
+    marginHorizontal: 'auto',
     paddingBottom: 10,
+    paddingHorizontal: 10,
+    // width: '80%',
   },
   separator: {
     height: 1,
     marginVertical: 30,
-    width: '80%',
-  },
-  phone: {
-    height: 30,
-    width: 30,
+    width: '100%',
   },
   bold: {
     fontWeight: '600',
@@ -79,21 +88,27 @@ const styles = StyleSheet.create({
     color: Styles.white,
     paddingBottom: 5,
   },
+  phone: {
+    height: 35,
+    width: 35,
+  },
   phoneWrap: {
-    height: 50,
-    width: 50,
-    backgroundColor: Styles.white,
-    flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 25,
+    alignSelf: 'center',
+    backgroundColor: Styles.white,
     borderRadius: 1000,
-    padding: 10,
+    flex: 1,
+    height: 70,
+    justifyContent: 'center',
+    padding: 17,
+    width: 70,
   },
   crisis: {
-    padding: 30,
-    backgroundColor: Styles.red,
+    backgroundColor: Styles.orange,
     borderRadius: 10,
+    display: 'flex',
     marginBottom: 30,
+    padding: 30,
+    width: '100%',
   },
 });

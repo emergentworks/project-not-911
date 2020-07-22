@@ -5,8 +5,11 @@ export const Styles = {
   black: '#333',
   white: '#fff',
   blue: '#3333ff',
-  red: '#ff4d4a',
-  teal: '#87ceda',
+  orange: '#ff4d4a',
+  separator: {
+    height: 1,
+    width: '100%',
+  },
   // font: 'Helvetica, sans-serif',
   light: {
     text: '#000',
