@@ -10,7 +10,7 @@ export const PhoneNumberListScreen = (props: Props) => {
   const numbers = PhoneNumbers[route.params.section];
   const colorScheme = useColorScheme();
 
-  if (colorScheme === 'light') {
+  // if (colorScheme === 'light') {
     return (
       <PhoneNumberListLight
         navigation={navigation}
@@ -18,13 +18,13 @@ export const PhoneNumberListScreen = (props: Props) => {
         route={route}
       />
     );
-  }
+  // }
 
-  return (
-    <PhoneNumberListDark
-      navigation={navigation}
-      numbers={numbers}
-      route={route}
-    />
-  );
+  // return (
+  //   <PhoneNumberListDark
+  //     navigation={navigation}
+  //     numbers={numbers}
+  //     route={route}
+  //   />
+  // );
 }
