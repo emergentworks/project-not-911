@@ -19,9 +19,10 @@ export const AboutScreen = memo(() => {
           {colorScheme === 'light' ? <CrossBlue /> : <CrossWhite /> }
         </View>
         <Text
+          bold
           lightColor={Styles.blue}
           darkColor={Styles.white}
-          style={[styles.bold, styles.title]}>
+          style={styles.title}>
           About Not911
         </Text>
         <Text
@@ -31,18 +32,20 @@ export const AboutScreen = memo(() => {
           Not 911 is a list of community-based groups that offer preventative services and strategies for issues related to mental health, homelessness, legal aid and other topics.
         </Text>
         <Text
+          bold
           lightColor={Styles.blue}
           darkColor={Styles.white}
-          style={[styles.paragraph, styles.bold, styles.marginBottom40]}>
+          style={[styles.paragraph, styles.marginBottom40]}>
           These are not organizations that should be used in a life-threatening emergency. If someone is experiencing a life-threatening emergency, call 911 immediately.
         </Text>
         <View style={styles.marginBottom15}>
           {colorScheme === 'light' ? <HandBlue /> : <HandWhite /> }
         </View>
         <Text
+          bold
           lightColor={Styles.blue}
           darkColor={Styles.white}
-          style={[styles.bold, styles.title]}>
+          style={styles.title}>
           About Code Cooperative
         </Text>
         <Text
@@ -58,9 +61,10 @@ export const AboutScreen = memo(() => {
           We also build software for purpose-driven organizations and careers for our communities.
         </Text>
         <Text
+          bold
           lightColor={Styles.blue}
           darkColor={Styles.white}
-          style={[styles.bold, styles.title]}>
+          style={styles.title}>
           Interested in hiring us?
         </Text>
         <Text
@@ -75,9 +79,6 @@ export const AboutScreen = memo(() => {
 });
 
 const styles = StyleSheet.create({
-  bold: {
-    fontWeight: 'bold',
-  },
   container: {
     flex: 1,
     padding: 20,

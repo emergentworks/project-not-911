@@ -18,19 +18,18 @@ console.log('light')
         {numbers instanceof Array
           && numbers.map((entry: any, i) => (
             <View key={i} style={styles.container}>
-              <Text style={[styles.hours && styles.hours,
-              styles.bold,
-              entry.crisis && {color: Styles.red}]}>
+              <Text bold style={[styles.hours && styles.hours,
+              entry.crisis && {color: Styles.orange}]}>
                 {entry.hours}
               </Text>
-              <Text style={[styles.bold, styles.title]}>
+              <Text bold style={styles.title}>
                 {entry.display}
               </Text>
               <Text style={styles.tel}>
                 {entry.tel}
               </Text>
               <TouchableOpacity
-                style={[styles.phoneWrap, entry.crisis && {backgroundColor: Styles.red}]}
+                style={[styles.phoneWrap, entry.crisis && {backgroundColor: Styles.orange}]}
                 onPress={() => {
                   Linking.openURL(`tel:${entry.tel}`);
                 }}>
@@ -73,9 +72,6 @@ const styles = StyleSheet.create({
     height: 30,
     width: 30,
   },
-  bold: {
-    fontWeight: '600',
-  },
   marginBottom30: {
     marginBottom: 30,
   },
@@ -96,7 +92,7 @@ const styles = StyleSheet.create({
   },
   crisis: {
     padding: 30,
-    backgroundColor: Styles.red,
+    backgroundColor: Styles.orange,
     borderRadius: 10,
     marginBottom: 30,
   },
