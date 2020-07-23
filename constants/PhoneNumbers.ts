@@ -52,13 +52,16 @@ export const PhoneNumbers: Props = {
     display: "NYC Well",
     is24Hr: true,
     tags: [
-      'Mobile Crisis Team can respond within 48 hours',
+      'Mobile Mental Health Crisis Team can respond within 48 hours',
       '711 (TTY for hearing impaired)',
+      'Spanish, Mandarin and Cantonese Available',
       'Anxiety',
       'Counseling',
+      'Follow-up service',
       'Mental Health Crisis',
       'Suicide Prevention',
       'Addiction',
+      'Outpatient Detox',
     ],
     tel: "1-888-692-9355",
     text: 'or text WELL to 65173',
@@ -122,27 +125,70 @@ export const PhoneNumbers: Props = {
     tel: '212-941-9090',
   }],
 
-  noise: [{
-    display: "311",
-    is24Hr: true,
-    tel: "311",
-    text: 'or text HELP to 311-692',
-  }],
-
   legal: [{
-    display: 'National Lawyer Guild Arrest Support Hotline, if you or someone you know has been arrest',
-    tel: '212-725-6422',
+    display: 'National Lawyer Guild Arrest Support Hotline',
+    tags: [
+      'Legal Support',
+      'Arrested at Political Demonstration',
+    ],
+    tel: ' (212) 679-6018',
   }, {
-    display: 'Have you been falsely arrested or assaulted by NYPD? Call the National Lawyer Guild Case Support Hotline',
-    tel: '347.752.8070',
+    display: 'National Lawyer Guild Case Support Hotline',
+    tags: ['False arrest', 'Assault by NYPD'],
+    tel: '347-752-8070',
   }, {
     display: 'Safe Horizon Crime Victim 24hr hotline',
     tel: '1-866-689-4357',
-  },
-  ],
+  }],
 
   poison: [{
-    display: "Just call 311, or text HELP to 311-692",
-    tel: "311",
+    is24Hr: true,
+    display: "NYC Poison Control Center",
+    tags: [
+      "Treatment Advice",
+      "General Information",
+      "Supports 150 languages",
+      "Registered Nurses & Pharmacists"
+    ],
+    tel: "212-764-7667",
+  }, {
+    is24Hr: true,
+    display: "SAMHSA (Substance Abuse and Mental Health Services Administration) National Helpline",
+    tags: [
+      "Local Referrals",
+      "Spanish Available",
+      "General Information",
+    ],
+    tel: "1-800-662-4357",
+  }, {
+    crisis: true,
+    display: "NYC Well",
+    is24Hr: true,
+    tags: [
+      'Mobile Mental Health Crisis Team can respond within 48 hours',
+      '711 (TTY for hearing impaired)',
+      'Spanish, Mandarin and Cantonese Available',
+      'Anxiety',
+      'Counseling',
+      'Follow-up service',
+      'Mental Health Crisis',
+      'Suicide Prevention',
+      'Addiction',
+      'Outpatient Detox'
+    ],
+    tel: "1-888-692-9355",
+    text: 'or text WELL to 65173',
+  }, {
+    display: 'New York State Office of Addiction Services and Supports HOPEline',
+    is24Hr: true,
+    tags: [
+      'Substance Abuse',
+      'Gambling Addiction',
+      'General Information',
+      'Referrals',
+      'Multilingual support',
+    ],
+    tel: "1-877-846-7369",
+    text: 'or text HOPENY',
   }],
 };
