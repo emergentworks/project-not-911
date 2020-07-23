@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import useColorScheme from '../../hooks/useColorScheme';
+import { DialogModal } from '../../components';
 import { PhoneNumbers } from '../../constants';
 import { PhoneNumberListDark, PhoneNumberListLight } from './components';
 import { Props } from './types';
@@ -12,6 +13,7 @@ export const PhoneNumberListScreen = (props: Props) => {
 
   return (
     <>
+      <DialogModal />
       {colorScheme === 'light' && (
         <PhoneNumberListLight
           navigation={navigation}
