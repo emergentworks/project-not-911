@@ -5,8 +5,8 @@ import * as Linking from 'expo-linking';
 import { Styles } from '../constants';
 import useColorScheme from '../hooks/useColorScheme';
 import { RowLink, Text, View } from '../components';
-import { Routes, Communities } from '../constants';
-import { PhoneWhite, PhoneOrange, Community } from '../svgs';
+import { Routes } from '../constants';
+import { Phone } from '../svgs';
 
 export const HomeScreen = memo((props: any) => {
   const colorScheme = useColorScheme();
@@ -40,9 +40,9 @@ export const HomeScreen = memo((props: any) => {
                 lightColor={Styles.orange}
                 darkColor={Styles.white}
                 style={styles.phoneWrap}>
-                {colorScheme === 'light'
-                  ? <PhoneWhite />
-                  : <PhoneOrange />}
+                <Phone
+                  color={colorScheme === 'light' ? Styles.white : Styles.orange}
+                />
               </View>
               <Text
                 bold

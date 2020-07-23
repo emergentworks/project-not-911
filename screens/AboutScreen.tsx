@@ -1,95 +1,90 @@
 import React, { memo } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 
-import useColorScheme from '../hooks/useColorScheme';
 import { Text, View } from '../components';
 import { Styles } from '../constants';
-import { CrossBlue, CrossWhite, HandBlue, HandWhite } from '../svgs';
+import { Cross, Hand } from '../svgs';
 
-export const AboutScreen = memo(() => {
-  const colorScheme = useColorScheme();
-
-  return (
-    <View
-      lightColor={Styles.white}
-      darkColor={Styles.blue}
-      style={styles.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.marginBottom15}>
-          {colorScheme === 'light' ? <CrossBlue /> : <CrossWhite /> }
-        </View>
-        <Text
-          bold
-          lightColor={Styles.black}
-          darkColor={Styles.white}
-          style={styles.title}>
-          About Not911
-        </Text>
-        <Text
-          lightColor="#616161"
-          darkColor={Styles.white}
-          style={styles.paragraph}>
-          Not 911 is a list of community-based groups that offer preventative services and strategies for issues related to mental health, homelessness, legal aid and other topics.
-        </Text>
-        <Text
-          bold
-          lightColor="#616161"
-          darkColor={Styles.white}
-          style={[styles.paragraph, styles.marginBottom40]}>
-          These are not organizations that should be used in a life-threatening emergency. If someone is experiencing a life-threatening emergency, call 911 immediately.
-        </Text>
-        <Text
-          bold
-          lightColor={Styles.black}
-          darkColor={Styles.white}
-          style={styles.title}>
-          About Us
-        </Text>
-        <Text
-          lightColor="#353535"
-          darkColor={Styles.white}
-          style={styles.paragraph}>
-          The Code Cooperative is a community of people who learn, use, and build technology to create life changing possibilities for individuals and communities impacted by incarceration.
-        </Text>
-        <Text
-          lightColor="#353535"
-          darkColor={Styles.white}
-          style={[styles.paragraph, styles.marginBottom40]}>
-          We also build software for purpose-driven organizations and careers for our communities.
-        </Text>
-        <View style={styles.marginBottom15}>
-          {colorScheme === 'light' ? <HandBlue /> : <HandWhite /> }
-        </View>
-        <Text
-          bold
-          lightColor={Styles.black}
-          darkColor={Styles.white}
-          style={styles.title}>
-          Interested in hiring us?
-        </Text>
-        <Text
-          lightColor={Styles.blue}
-          darkColor={Styles.white}
-          style={[styles.paragraph, styles.marginBottom60]}>
-          hello@codecooperative.org
-        </Text>
-        <Text
-          bold
-          lightColor="#353535"
-          darkColor={Styles.white}
-          style={styles.builtBy}>
-          Built by Code Cooperative
-        </Text>
-        <Text
-          lightColor="#353535"
-          darkColor={Styles.white}
-          style={styles.builtBy}>
-          Tomás Correa, Ross Patton, Ashley Newcomer, Lauren Wilkinson, Army Armstead, Christina Entcheva, Jaclyn Perrone
-        </Text>
-      </ScrollView>
-    </View>
-  );
-});
+export const AboutScreen = memo(() => (
+  <View
+    lightColor={Styles.white}
+    darkColor={Styles.blue}
+    style={styles.container}>
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <View style={styles.marginBottom15}>
+        <Cross />
+      </View>
+      <Text
+        bold
+        lightColor={Styles.black}
+        darkColor={Styles.white}
+        style={styles.title}>
+        About Not911
+      </Text>
+      <Text
+        lightColor="#353535"
+        darkColor={Styles.white}
+        style={styles.paragraph}>
+        Not 911 is a list of community-based groups that offer preventative services and strategies for issues related to mental health, homelessness, legal aid and other topics.
+      </Text>
+      <Text
+        bold
+        lightColor="#353535"
+        darkColor={Styles.white}
+        style={[styles.paragraph, styles.marginBottom40]}>
+        These are not organizations that should be used in a life-threatening emergency. If someone is experiencing a life-threatening emergency, call 911 immediately.
+      </Text>
+      <Text
+        bold
+        lightColor={Styles.black}
+        darkColor={Styles.white}
+        style={styles.title}>
+        About Us
+      </Text>
+      <Text
+        lightColor="#353535"
+        darkColor={Styles.white}
+        style={styles.paragraph}>
+        The Code Cooperative is a community of people who learn, use, and build technology to create life changing possibilities for individuals and communities impacted by incarceration.
+      </Text>
+      <Text
+        lightColor="#353535"
+        darkColor={Styles.white}
+        style={[styles.paragraph, styles.marginBottom40]}>
+        We also build software for purpose-driven organizations and careers for our communities.
+      </Text>
+      <View style={styles.marginBottom15}>
+        <Hand />
+      </View>
+      <Text
+        bold
+        lightColor={Styles.black}
+        darkColor={Styles.white}
+        style={styles.title}>
+        Interested in hiring us?
+      </Text>
+      <Text
+        lightColor={Styles.blue}
+        darkColor={Styles.white}
+        style={[styles.paragraph, styles.marginBottom60]}>
+        hello@codecooperative.org
+      </Text>
+      <Text
+        bold
+        lightColor="#353535"
+        darkColor={Styles.white}
+        style={styles.builtBy}>
+        Built by Code Cooperative
+      </Text>
+      <Text
+        lightColor="#353535"
+        darkColor={Styles.white}
+        style={styles.builtBy}>
+        Tomás Correa, Ross Patton, Ashley Newcomer, Army Armstead, Lauren Wilkinson, Christina Entcheva, Jaclyn Perrone
+      </Text>
+    </ScrollView>
+  </View>
+));
 
 const styles = StyleSheet.create({
   builtBy: {
@@ -109,7 +104,7 @@ const styles = StyleSheet.create({
   },
   paragraph: {
     fontSize: 20,
-    lineHeight: 24,
+    lineHeight: 26,
     marginBottom: 20,
   },
   marginBottom40: {

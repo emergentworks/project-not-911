@@ -4,7 +4,7 @@ import * as Linking from 'expo-linking';
 
 import { PhoneNumbers } from '../../constants';
 import { Text, View } from '../../components';
-import { PhoneWhite } from '../../svgs';
+import { Phone } from '../../svgs';
 import { Props } from './types';
 import { Styles } from '../../constants';
 
@@ -12,57 +12,66 @@ export const PhoneNumberListScreen = (props: Props) => {
   const {route} = props;
   const numbers = PhoneNumbers[route.params.section];
 
+  if (!(numbers instanceof Array)) return null;
+
+  // lets always have 'crisis' hotlines at the top
+  // crisis meaning, mental health breakdowns, etc, but not an 'emergency'
+  // wherein someone is currently in physical danger
+  const sortedNumbers = numbers.sort(entry => {
+    if (entry.crisis) return -1;
+    return 1;
+  });
+
   return (
     <View
       darkColor="#000"
       lightColor={Styles.white}
       style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        {numbers instanceof Array
-          && numbers.map((entry: any, i) => (
+        {sortedNumbers.map((entry: any, i) => (
+          <View
+            darkColor="#000"
+            lightColor={Styles.white}
+            key={i}>
+            <Text
+              bold
+              darkColor={Styles.white}
+              lightColor={Styles.blue}
+              style={[
+                styles.hours,
+                styles.centerTxt,
+                entry.crisis && {color: Styles.orange},
+              ]}>
+              {entry.hours}
+            </Text>
+            <Text
+              bold
+              darkColor={Styles.white}
+              style={[styles.centerTxt, styles.title]}>
+              {entry.display}
+            </Text>
+            <Text
+              darkColor={Styles.white}
+              style={[styles.centerTxt, styles.tel]}>
+              {entry.tel}
+            </Text>
+            <TouchableOpacity
+              style={[
+                styles.phoneWrap,
+                entry.crisis && {backgroundColor: Styles.orange}
+              ]}
+              onPress={() => {
+                Linking.openURL(`tel://${entry.tel}`);
+              }}>
+              <Phone color={Styles.white} />
+            </TouchableOpacity>
             <View
+              style={styles.separator}
+              lightColor="#cfcfcf"
               darkColor="#000"
-              lightColor={Styles.white}
-              key={i}>
-              <Text
-                bold
-                darkColor={Styles.white}
-                lightColor={Styles.blue}
-                style={[
-                  styles.hours,
-                  styles.centerTxt,
-                  entry.crisis && {color: Styles.orange},
-                ]}>
-                {entry.hours}
-              </Text>
-              <Text
-                bold
-                darkColor={Styles.white}
-                style={[styles.centerTxt, styles.title]}>
-                {entry.display}
-              </Text>
-              <Text
-                darkColor={Styles.white}
-                style={[styles.centerTxt, styles.tel]}>
-                {entry.tel}
-              </Text>
-              <TouchableOpacity
-                style={[
-                  styles.phoneWrap,
-                  entry.crisis && {backgroundColor: Styles.orange}
-                ]}
-                onPress={() => {
-                  Linking.openURL(`tel://${entry.tel}`);
-                }}>
-                <PhoneWhite />
-              </TouchableOpacity>
-              <View
-                style={styles.separator}
-                lightColor="#cfcfcf"
-                darkColor="#000"
-              />
-            </View>
-          ))}
+            />
+          </View>
+        ))}
       </ScrollView>
     </View>
   );
