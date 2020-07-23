@@ -19,15 +19,15 @@ export const PhoneNumberListLight = (props: ComponentProps) => {
           && numbers.map((entry: any, i) => (
             <View key={i}>
               <Text
+                bold
                 style={[
                   styles.hours,
-                  styles.bold,
                   styles.centerTxt,
                   entry.crisis && {color: Styles.orange},
                 ]}>
                 {entry.hours}
               </Text>
-              <Text style={[styles.bold, styles.centerTxt, styles.title]}>
+              <Text bold style={[styles.centerTxt, styles.title]}>
                 {entry.display}
               </Text>
               <Text style={[styles.centerTxt, styles.tel]}>
@@ -80,9 +80,6 @@ const styles = StyleSheet.create({
   phone: {
     height: 30,
     width: 30,
-  },
-  bold: {
-    fontWeight: '600',
   },
   marginBottom30: {
     marginBottom: 30,

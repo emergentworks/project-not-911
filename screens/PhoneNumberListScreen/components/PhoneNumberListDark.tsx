@@ -21,10 +21,10 @@ export const PhoneNumberListDark = (props: ComponentProps) => {
             <View
               key={i}
               style={[entry.crisis && styles.crisis]}>
-              <Text style={[styles.hours, styles.bold, styles.centerTxt]}>
+              <Text bold style={[styles.hours, styles.centerTxt]}>
                 {entry.hours}
               </Text>
-              <Text style={[styles.bold, styles.title, styles.centerTxt]}>
+              <Text bold style={[styles.title, styles.centerTxt]}>
                 {entry.display}
               </Text>
               <Text style={[styles.centerTxt, styles.marginBottom25]}>
@@ -76,9 +76,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 'auto',
     marginVertical: 30,
     width: '100%',
-  },
-  bold: {
-    fontWeight: '600',
   },
   marginBottom30: {
     marginBottom: 30,

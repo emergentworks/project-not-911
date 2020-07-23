@@ -26,22 +26,17 @@ export const HomeScreen = memo((props: any) => {
             <View style={styles.phoneImg}>
               <PhoneWhite />
             </View>
-            <Text style={[styles.bold, styles.dangerText]}>
+            <Text bold style={styles.dangerText}>
               Call 911
             </Text>
           </TouchableOpacity>
         </View>
         <View style={styles.innerView}>
-          {/* <Text
-            lightColor={Styles.blue}
-            darkColor={Styles.white}
-            style={styles.subtitle}>
-            Not 911
-          </Text> */}
           <Text
+            bold
             lightColor={Styles.black}
             darkColor={Styles.white}
-            style={[styles.bold, styles.title]}>
+            style={styles.title}>
             What do you need help with?
           </Text>
           {Routes.map((route, i) => (
@@ -78,9 +73,10 @@ export const HomeScreen = memo((props: any) => {
             Community Care Resources
           </Text>
           <Text
+            bold
             lightColor={Styles.blue}
             darkColor={Styles.white}
-            style={[styles.trusted, styles.bold]}>
+            style={styles.trusted}>
             Trusted sources, vetted through community experience
           </Text>
           <View
@@ -102,9 +98,6 @@ export const HomeScreen = memo((props: any) => {
 });
 
 const styles = StyleSheet.create({
-  bold: {
-    fontWeight: 'bold',
-  },
   dangerText: {
     alignSelf: 'stretch',
     color: Styles.white,
@@ -164,12 +157,6 @@ const styles = StyleSheet.create({
   },
   marginVertical30: {
     marginVertical: 30,
-  },
-  subtitle: {
-    fontSize: 19,
-    fontWeight: '600',
-    lineHeight: 22,
-    marginBottom: 22,
   },
   title: {
     fontSize: 28,

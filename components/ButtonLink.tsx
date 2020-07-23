@@ -51,7 +51,7 @@ export const ButtonLink = memo((props: Props) => (
           <Poison />
         )}
     </View>
-    <Text style={styles.btnText}>
+    <Text bold style={styles.btnText}>
       {props.route.btn.display}
     </Text>
     <CaretBlue />
@@ -75,7 +75,6 @@ const styles = StyleSheet.create({
     color: Styles.blue,
     flex: 1,
     fontSize: 20,
-    fontWeight: '600',
     lineHeight: 20,
   },
   marginRight10: {
