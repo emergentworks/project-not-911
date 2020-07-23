@@ -36,7 +36,10 @@
     ],
     "android": {
       "package": "nyc.not911",
-      "versionCode": 1
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#3333ff"
+      }
     },
     "ios": {
       "bundleIdentifier": "nyc.not911",
