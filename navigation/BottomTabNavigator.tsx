@@ -3,13 +3,13 @@ import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import { View, StyleSheet } from 'react-native';
 
-import { Text } from '../components';
+// import { Text } from '../components';
 import { Styles } from '../constants';
 import useColorScheme from '../hooks/useColorScheme';
 import { HomeScreen } from '../screens/HomeScreen';
 import { AboutScreen } from '../screens/AboutScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
-import { About, Home, Not911 } from '../svgs';
+import { About, Home, Logo } from '../svgs';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -57,10 +57,7 @@ function TabOneNavigator() {
               display: 'flex',
               justifyContent: 'center',
             }}>
-              <Text style={styles.bold}>
-                NOT 911
-              </Text>
-              {/* <Not911 /> */}
+              <Logo />
             </View>
           ),
           headerStyle: {
@@ -92,10 +89,7 @@ function TabTwoNavigator() {
               display: 'flex',
               justifyContent: 'center',
             }}>
-              <Text style={styles.bold}>
-                NOT 911
-              </Text>
-              {/* <Not911 /> */}
+              <Logo />
             </View>
           ),
           headerStyle: {
@@ -109,10 +103,3 @@ function TabTwoNavigator() {
     </TabTwoStack.Navigator>
   );
 }
-
-const styles = StyleSheet.create({
-  bold: {
-    fontWeight: 'bold',
-    fontSize: 20,
-  },
-});
