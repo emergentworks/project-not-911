@@ -3,34 +3,55 @@ type Props = {
     crisis?: true,
     display: string,
     hours?: string,
+    is24Hr?: true,
     tags?: string[],
+    tel?: string,
     text?: string,
-    tel: string,
     website?: string,
+    voicemail?: true,
   }[];
 };
 
 export const PhoneNumbers: Props = {
   violence: [{
-    display: 'NYC 24hr Domestic Violence Hotline',
+    crisis: true,
+    display: 'Safe Horizons 24hr Domestic Violence Hotline',
+    tags: [
+      'Domestic Violence',
+      'Temporary Housing',
+      'Emergency Shelter',
+      'Counseling',
+      'Multilingual',
+    ],
     tel: '1-800-621–4673',
+    hours: '24hr access',
   }, {
-    display: 'New York State Domestic and Sexual Violence Hotline',
-    tel: '1-800-942-6906',
-  }, {
-    display: 'Safe Horizons Citywide Helpline',
+    display: 'Safe Horizons Citywide General Helpline',
+    hours: 'Mon-Fri. 9 a.m.- 5 p.m.',
+    tags: ['Accepts Voicemail', 'Multilingual', 'Lock Changes'],
     tel: '1-855-234-1042',
   }, {
+    display: 'Safe Horizons Rape & Sexual Assault Victims Hotline',
+    hours: '24hr access',
+    tags: ['Crisis counseling', 'Safety planning', 'General Information', 'Multilingual'],
+    tel: '1-855-234-1042',
+    website: 'https://www.safehorizon.org/get-help/rape-and-sexual-assault',
+  }, {
+    crisis: true,
     display: 'NYC Gay and Lesbian Anti-Violence Project',
     tel: '212-714-1141',
-  }],
-
-  hatecrimes: [{
-    display: "NYC Well",
-    tel: "1-888-692-9355",
+    hours: '24hr access',
   }, {
-    display: "NYC Mental Health Crisis Hotline",
-    tel: "1-800-854-7771",
+    crisis: true,
+    display: 'Violence Intervention Program',
+    tel: '1-800-664-5880',
+    hours: '24hr access',
+  }, {
+    crisis: true,
+    display: 'National Domestic Violence Hotline',
+    tel: '1-800-799-7233',
+    text: 'or text LOVEIS to 1-866-331-9474',
+    hours: '24hr access',
   }],
 
   mentalhealth: [{
@@ -38,21 +59,28 @@ export const PhoneNumbers: Props = {
     display: "NYC Well",
     hours: '24hr access',
     tags: [
-      'Mobile Crisis Team can respond within 48 hours',
+      'Mobile Mental Health Crisis Team can respond within 48 hours',
       '711 (TTY for hearing impaired)',
+      'Spanish, Mandarin and Cantonese Available',
       'Anxiety',
       'Counseling',
+      'Follow-up service',
       'Mental Health Crisis',
       'Suicide Prevention',
       'Addiction',
+      'Outpatient Detox',
     ],
     tel: "1-888-692-9355",
     text: 'or text WELL to 65173',
   }, {
     display: 'NY State Emotional Support Helpline',
-    hours: 'M-F 9am-5pm',
     tags: ['Anxiety', 'Counseling', 'COVID-19'],
     tel: '1-844-863-9314',
+  }, {
+    display: 'NYS/Crisis Text Line Partnership',
+    hours: '24hr access',
+    tags: ['Crisis', 'Counseling', 'COVID-19'],
+    text: 'Text GOT5 to 741741',
   }, {
     display: 'SAMHSA Disaster Distress National Helpline',
     hours: '24hr access',
@@ -69,63 +97,116 @@ export const PhoneNumbers: Props = {
 
   homelessness: [{
     display: "Homelessness Prevention Administration Hotline",
+    tags: ['Eviction prevention', 'Legal Assistance', 'Cash Assistance'],
     tel: "718-557-1399",
+    website: 'https://www1.nyc.gov/site/hra/help/homelessness-prevention.page',
   }, {
-    display: "If you are affected by Covid-19 and are facing threat of eviction or homelessness, call this HPA hotline",
+    display: "NYC Human Resources Administration's (HRA) Office of Civil Justice",
+    tags: ['Eviction prevention', 'Legal Assistance'],
     tel: "718-557-1379",
+    website: 'https://www1.nyc.gov/site/hra/help/legal-services-for-tenants.page',
   }, {
-    display: "Safe Horizons Youth Homelessness Hotline",
+    hours: '24hr access',
+    display: "311 (Ask for Tenant Helpline)",
+    tags: ['Eviction prevention', 'Legal Assistance'],
+    tel: "311",
+  }, {
+    display: "Safe Horizons Streetwork Project Youth Homelessness Hotline",
+    hours: 'Mon., Tues., Thurs. and Fri., 10 a.m. – 5 p.m.',
     tel: "1-800-708-6600",
+    tags: ['Overnight shelter', 'Up to age 25', ''],
+    website: 'https://www.safehorizon.org/get-help/homeless-youth/',
   }, {
-    display: "311: Specifically ask for non-emergency dispatch with no police",
+    display: "311 (Ask for homeless street outreach team)",
+    hours: '24hr access',
+    tags: [
+      'Request street outreach team',
+      'Homeless Outreach team can respond within 1 hour',
+    ],
     tel: "311",
-  }],
-
-  noise: [{
-    display: "Just call 311, or text HELP to 311-692",
-    tel: "311",
+    website: 'https://www1.nyc.gov/site/dhs/outreach/street-outreach.page',
+  }, {
+    display: 'The Door Runaway and Homeless Youth Services',
+    tags: [
+      'Use extension 3377 for homeless youth services',
+      'General Information',
+      'Counseling',
+      'Shelter referrals',
+    ],
+    tel: '212-941-9090',
+    website: 'https://door.org/programs-services/runaway-homeless-youth/',
   }],
 
   legal: [{
-    display: 'National Lawyer Guild Arrest Support Hotline, if you or someone you know has been arrest',
-    tel: '212-725-6422',
-  }, {
-    display: 'Have you been falsely arrested or assaulted by NYPD? Call the National Lawyer Guild Case Support Hotline',
-    tel: '347.752.8070',
-  }, {
+    display: 'National Lawyer Guild Arrest Support Hotline',
+    tags: [
+      'Legal Support',
+      'Arrested at Political Demonstration',
+      'Witnessed an arrest',
+    ],
+    tel: '212-679-6018',
+    website: 'https://nlgnyc.org/',
+  },
+  // {
+  //   display: 'National Lawyer Guild Case Support Hotline',
+  //   tags: ['False arrest', 'Assault by NYPD'],
+  //   tel: '347-752-8070',
+  // },
+  {
     display: 'Safe Horizon Crime Victim 24hr hotline',
-    tel: '1-866-689-4357',
-  }, {
-    display: 'Safe Horizon Crime Victim 24hr hotline',
+    hours: '24hr access',
+    tags: ['Counseling', 'Assault by NYPD'],
     tel: '1-866-689-4357',
   }],
 
   poison: [{
-    display: "Just call 311, or text HELP to 311-692",
-    tel: "311",
-  }],
-  bipoc: [{
-    display: "Just call 311, or text HELP to 311-692",
-    tel: "311",
-  }],
-  lgbtqia: [{
-    display: "Just call 311, or text HELP to 311-692",
-    tel: "311",
-  }],
-  immigrant: [{
-    display: "Just call 311, or text HELP to 311-692",
-    tel: "311",
-  }],
-  substanceabuse: [{
-    display: "Just call 311, or text HELP to 311-692",
-    tel: "311",
-  }],
-  homeless: [{
-    display: "Just call 311, or text HELP to 311-692",
-    tel: "311",
-  }],
-  elderly: [{
-    display: "Just call 311, or text HELP to 311-692",
-    tel: "311",
+    hours: '24hr access',
+    display: "NYC Poison Control Center",
+    tags: [
+      "Treatment Advice",
+      "General Information",
+      "Supports 150 languages",
+      "Registered Nurses & Pharmacists"
+    ],
+    tel: "212-764-7667",
+  }, {
+    hours: '24hr access',
+    display: "SAMHSA (Substance Abuse and Mental Health Services Administration) National Helpline",
+    tags: [
+      "Local Referrals",
+      "Spanish Available",
+      "General Information",
+    ],
+    tel: "1-800-662-4357",
+  }, {
+    crisis: true,
+    display: "NYC Well",
+    hours: '24hr access',
+    tags: [
+      'Mobile Mental Health Crisis Team can respond within 48 hours',
+      '711 (TTY for hearing impaired)',
+      'Spanish, Mandarin and Cantonese Available',
+      'Anxiety',
+      'Counseling',
+      'Follow-up service',
+      'Mental Health Crisis',
+      'Suicide Prevention',
+      'Addiction',
+      'Outpatient Detox'
+    ],
+    tel: "1-888-692-9355",
+    text: 'or text WELL to 65173',
+  }, {
+    display: 'New York State Office of Addiction Services and Supports HOPEline',
+    hours: '24hr access',
+    tags: [
+      'Substance Abuse',
+      'Gambling Addiction',
+      'General Information',
+      'Referrals',
+      'Multilingual support',
+    ],
+    tel: "1-877-846-7369",
+    text: 'or text HOPENY',
   }],
 };
