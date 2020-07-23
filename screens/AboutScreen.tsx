@@ -69,6 +69,21 @@ export const AboutScreen = memo(() => {
           style={[styles.paragraph, styles.marginBottom40]}>
           Reach us at hello@codecooperative.org
         </Text>
+        <View
+        style={styles.box}>
+        <Text
+            lightColor={Styles.blue}
+            darkColor={Styles.white}
+            style={[styles.bold2, styles.title]}>
+            Built by Code Cooperative:
+        </Text>
+        <Text
+          lightColor={Styles.blue}
+          darkColor={Styles.white}
+          style={styles.names}>
+          Tomas, Ross, Ashley etc.
+        </Text>
+        </View>
       </ScrollView>
     </View>
   );
@@ -77,6 +92,10 @@ export const AboutScreen = memo(() => {
 const styles = StyleSheet.create({
   bold: {
     fontWeight: 'bold',
+  },
+  bold2: {
+    fontWeight: 'bold',
+    color: Styles.blue,
   },
   container: {
     flex: 1,
@@ -96,5 +115,17 @@ const styles = StyleSheet.create({
   },
   marginBottom40: {
     marginBottom: 40,
+  },
+  names: {
+    fontSize: 20,
+    color: Styles.blue,
+  },
+  box: {
+    backgroundColor: Styles.white,
+    borderRadius: 10,
+    display: 'flex',
+    marginBottom: 30,
+    padding: 30,
+    width: '100%',
   },
 });

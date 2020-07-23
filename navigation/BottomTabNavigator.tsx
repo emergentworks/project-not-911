@@ -1,8 +1,9 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
+import { Text } from '../components';
 import { Styles } from '../constants';
 import useColorScheme from '../hooks/useColorScheme';
 import { HomeScreen } from '../screens/HomeScreen';
@@ -56,12 +57,15 @@ function TabOneNavigator() {
               display: 'flex',
               justifyContent: 'center',
             }}>
-              <Not911 />
+              <Text style={styles.bold}>
+                NOT 911
+              </Text>
+              {/* <Not911 /> */}
             </View>
           ),
           headerStyle: {
-            backgroundColor: colorScheme === 'light' ? Styles.white : Styles.blue,
-            borderBottomColor: colorScheme === 'light' ? Styles.white : Styles.blue,
+            backgroundColor: colorScheme === 'light' ? Styles.white : Styles.black,
+            borderBottomColor: colorScheme === 'light' ? Styles.white : Styles.black,
             borderBottomWidth: 0,
           },
           headerTintColor: '#fff',
@@ -88,12 +92,15 @@ function TabTwoNavigator() {
               display: 'flex',
               justifyContent: 'center',
             }}>
-              <Not911 />
+              <Text style={styles.bold}>
+                NOT 911
+              </Text>
+              {/* <Not911 /> */}
             </View>
           ),
           headerStyle: {
-            backgroundColor: colorScheme === 'light' ? Styles.white : Styles.blue,
-            borderBottomColor: colorScheme === 'light' ? Styles.white : Styles.blue,
+            backgroundColor: colorScheme === 'light' ? Styles.white : Styles.black,
+            borderBottomColor: colorScheme === 'light' ? Styles.white : Styles.black,
             borderBottomWidth: 0,
           },
           headerTintColor: '#fff',
@@ -102,3 +109,10 @@ function TabTwoNavigator() {
     </TabTwoStack.Navigator>
   );
 }
+
+const styles = StyleSheet.create({
+  bold: {
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
+});

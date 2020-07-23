@@ -6,7 +6,7 @@ import { Styles } from '../constants';
 import useColorScheme from '../hooks/useColorScheme';
 import { ButtonLink, RowLink, Text, View } from '../components';
 import { Routes, Communities } from '../constants';
-import { PhoneWhite, Community, CommunityWhite } from '../svgs';
+import { PhoneWhite, PhoneOrange, Community, CommunityWhite } from '../svgs';
 
 export const HomeScreen = memo((props: any) => {
   const colorScheme = useColorScheme();
@@ -17,6 +17,11 @@ export const HomeScreen = memo((props: any) => {
       darkColor={Styles.white}
       style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
+        <View
+          style={styles.crisis}>
+            <Text style={[styles.bold, styles.dangerText]}>
+              Life-threatening emergency?
+            </Text>
         <View style={styles.danger}>
           <TouchableOpacity
             style={styles.btn}
@@ -24,12 +29,13 @@ export const HomeScreen = memo((props: any) => {
               Linking.openURL(`tel:911`);
             }}>
             <View style={styles.phoneImg}>
-              <PhoneWhite />
+              <PhoneOrange />
             </View>
-            <Text style={[styles.bold, styles.dangerText]}>
+            <Text style={[styles.bold, styles.dangerText2]}>
               Call 911
             </Text>
           </TouchableOpacity>
+        </View>
         </View>
         <View style={styles.innerView}>
           {/* <Text
@@ -112,9 +118,18 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
   },
+  dangerText2: {
+    alignSelf: 'stretch',
+    color: Styles.orange,
+    flex: 1,
+    fontSize: 20,
+    textAlign: 'center',
+    shadowColor: Styles.blue,
+    shadowOpacity: 0.25,
+  },
   btn: {
     alignItems: 'center',
-    backgroundColor: Styles.orange,
+    backgroundColor: Styles.white,
     borderRadius: 6,
     display: 'flex',
     flexDirection: 'row',
@@ -123,7 +138,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   phoneImg: {
-    backgroundColor: Styles.orange,
+    backgroundColor: Styles.white,
     position: 'absolute',
     left: 15,
   },
@@ -189,5 +204,13 @@ const styles = StyleSheet.create({
   },
   marginRight10: {
     marginRight: 10,
+  },
+  crisis: {
+    backgroundColor: Styles.orange,
+    borderRadius: 10,
+    display: 'flex',
+    marginBottom: 30,
+    padding: 30,
+    width: '100%',
   },
 });
