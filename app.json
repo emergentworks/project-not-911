@@ -34,7 +34,13 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "android": {
+      "package": "nyc.not911",
+      "versionCode": 1
+    },
     "ios": {
+      "bundleIdentifier": "nyc.not911",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "web": {
