@@ -5,11 +5,16 @@
 layout: not911
 ---
 
-<div class='flex flex-col d:flex-row d:h-screen d:pb-4 pt-4'>
-  <div class='d:w-6/12 flex flex-col'>
-    <h1 class="text-3 font-bold text-black d:mr-5 mb-3 d:mb-0">
-      Not 911
-    </h1>
+<div class='flex flex-col d:flex-row d:h-screen'>
+  <div class='d:w-6/12 flex flex-col p-4'>
+    <!-- <h1 class="text-3 font-bold text-black d:mr-5 mb-3 d:mb-0"> -->
+      <img
+        class='d:mr-5 mb-3 d:mb-0'
+        width='45'
+        alt='Not 911'
+        src="/assets/img/Logo.svg"
+      />
+    <!-- </h1> -->
     <div class="d:h-screen flex flex-col d:justify-center">
       <h2 class="text-1 text-blue-1 mb-1 font-semibold">
         Community Based Alternatives to the Police
@@ -44,11 +49,11 @@ layout: not911
       </a>
     </p>
   </div>
-  <div class='d:w-6/12 flex justify-center'>
+  <div class='d:w-6/12 flex justify-center bg-mint pt-4 pr-4 pl-4'>
     <img
       class="d:absolute b"
       alt="A preview of the Not 911 app"
-      src="/assets/img/app_preview.svg"
+      src="/assets/img/Phone.svg"
     />
   </div>
 </div>
