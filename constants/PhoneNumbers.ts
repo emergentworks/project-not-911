@@ -24,7 +24,7 @@ export const PhoneNumbers: Props = {
       'Multilingual',
     ],
     tel: '1-800-621–4673',
-    hours: '24hr access',
+    hours: '24 Hour Access',
   }, {
     display: 'Safe Horizons Citywide General Helpline',
     hours: 'Mon-Fri. 9 a.m.- 5 p.m.',
@@ -32,7 +32,7 @@ export const PhoneNumbers: Props = {
     tel: '1-855-234-1042',
   }, {
     display: 'Safe Horizons Rape & Sexual Assault Victims Hotline',
-    hours: '24hr access',
+    hours: '24 Hour Access',
     tags: ['Crisis counseling', 'Safety planning', 'General Information', 'Multilingual'],
     tel: '1-855-234-1042',
     website: 'https://www.safehorizon.org/get-help/rape-and-sexual-assault',
@@ -40,24 +40,24 @@ export const PhoneNumbers: Props = {
     crisis: true,
     display: 'NYC Gay and Lesbian Anti-Violence Project',
     tel: '212-714-1141',
-    hours: '24hr access',
+    hours: '24 Hour Access',
   }, {
     crisis: true,
     display: 'Violence Intervention Program',
     tel: '1-800-664-5880',
-    hours: '24hr access',
+    hours: '24 Hour Access',
   }, {
     crisis: true,
     display: 'National Domestic Violence Hotline',
     tel: '1-800-799-7233',
     text: 'or text LOVEIS to 1-866-331-9474',
-    hours: '24hr access',
+    hours: '24 Hour Access',
   }],
 
   mentalhealth: [{
     crisis: true,
     display: "NYC Well",
-    hours: '24hr access',
+    hours: '24 Hour Access',
     tags: [
       'Mobile Mental Health Crisis Team can respond within 48 hours',
       '711 (TTY for hearing impaired)',
@@ -78,12 +78,12 @@ export const PhoneNumbers: Props = {
     tel: '1-844-863-9314',
   }, {
     display: 'NYS/Crisis Text Line Partnership',
-    hours: '24hr access',
+    hours: '24 Hour Access',
     tags: ['Crisis', 'Counseling', 'COVID-19'],
     text: 'Text GOT5 to 741741',
   }, {
     display: 'SAMHSA Disaster Distress National Helpline',
-    hours: '24hr access',
+    hours: '24 Hour Access',
     tags: ['Post-Disaster', 'Crisis', 'Emotional Distress', 'Trauma', 'COVID-19', 'Unrest', 'Spanish'],
     tel: '1-800-985-5990',
     text: 'or text TalkWithUs or Hablanos to 66746',
@@ -106,7 +106,7 @@ export const PhoneNumbers: Props = {
     tel: "718-557-1379",
     website: 'https://www1.nyc.gov/site/hra/help/legal-services-for-tenants.page',
   }, {
-    hours: '24hr access',
+    hours: '24 Hour Access',
     display: "311 (Ask for Tenant Helpline)",
     tags: ['Eviction prevention', 'Legal Assistance'],
     tel: "311",
@@ -118,7 +118,7 @@ export const PhoneNumbers: Props = {
     website: 'https://www.safehorizon.org/get-help/homeless-youth/',
   }, {
     display: "311 (Ask for homeless street outreach team)",
-    hours: '24hr access',
+    hours: '24 Hour Access',
     tags: [
       'Request street outreach team',
       'Homeless Outreach team can respond within 1 hour',
@@ -154,13 +154,13 @@ export const PhoneNumbers: Props = {
   // },
   {
     display: 'Safe Horizon Crime Victim 24hr hotline',
-    hours: '24hr access',
+    hours: '24 Hour Access',
     tags: ['Counseling', 'Assault by NYPD'],
     tel: '1-866-689-4357',
   }],
 
   poison: [{
-    hours: '24hr access',
+    hours: '24 Hour Access',
     display: "NYC Poison Control Center",
     tags: [
       "Treatment Advice",
@@ -170,7 +170,7 @@ export const PhoneNumbers: Props = {
     ],
     tel: "212-764-7667",
   }, {
-    hours: '24hr access',
+    hours: '24 Hour Access',
     display: "SAMHSA (Substance Abuse and Mental Health Services Administration) National Helpline",
     tags: [
       "Local Referrals",
@@ -181,7 +181,7 @@ export const PhoneNumbers: Props = {
   }, {
     crisis: true,
     display: "NYC Well",
-    hours: '24hr access',
+    hours: '24 Hour Access',
     tags: [
       'Mobile Mental Health Crisis Team can respond within 48 hours',
       '711 (TTY for hearing impaired)',
@@ -198,7 +198,7 @@ export const PhoneNumbers: Props = {
     text: 'or text WELL to 65173',
   }, {
     display: 'New York State Office of Addiction Services and Supports HOPEline',
-    hours: '24hr access',
+    hours: '24 Hour Access',
     tags: [
       'Substance Abuse',
       'Gambling Addiction',

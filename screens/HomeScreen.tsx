@@ -4,31 +4,54 @@ import * as Linking from 'expo-linking';
 
 import { Styles } from '../constants';
 import useColorScheme from '../hooks/useColorScheme';
-import { ButtonLink, RowLink, Text, View } from '../components';
+import { RowLink, Text, View } from '../components';
 import { Routes, Communities } from '../constants';
-import { PhoneWhite, Community, CommunityWhite } from '../svgs';
+import { PhoneWhite, PhoneOrange, Community } from '../svgs';
 
 export const HomeScreen = memo((props: any) => {
   const colorScheme = useColorScheme();
 
   return (
     <View
-      lightColor={Styles.blue}
-      darkColor={Styles.white}
+      lightColor={Styles.white}
+      darkColor={Styles.blue}
       style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.danger}>
+        <View
+          lightColor={Styles.white}
+          darkColor={Styles.orange}
+          style={styles.danger}>
+          <Text
+            bold
+            lightColor={Styles.orange}
+            darkColor={Styles.white}
+            style={styles.dangerTxt}>
+            Life-threatening emergency?
+          </Text>
           <TouchableOpacity
-            style={styles.btn}
             onPress={() => {
-              Linking.openURL(`tel:911`);
+              Linking.openURL(`tel://911`);
             }}>
-            <View style={styles.phoneImg}>
-              <PhoneWhite />
+            <View
+              style={styles.dangerBtn}
+              lightColor={Styles.orange}
+              darkColor={Styles.white}>
+              <View
+                lightColor={Styles.orange}
+                darkColor={Styles.white}
+                style={styles.phoneWrap}>
+                {colorScheme === 'light'
+                  ? <PhoneWhite />
+                  : <PhoneOrange />}
+              </View>
+              <Text
+                bold
+                lightColor={Styles.white}
+                darkColor={Styles.orange}
+                style={styles.dangerBtnTxt}>
+                Call 911
+              </Text>
             </View>
-            <Text bold style={styles.dangerText}>
-              Call 911
-            </Text>
           </TouchableOpacity>
         </View>
         <View style={styles.innerView}>
@@ -39,33 +62,25 @@ export const HomeScreen = memo((props: any) => {
             style={styles.title}>
             What do you need help with?
           </Text>
+          <View
+            style={Styles.separator}
+            lightColor={Styles.gray}
+            darkColor={Styles.white}
+          />
           {Routes.map((route, i) => (
-            colorScheme === 'light'
-            ? (
-              <RowLink
-                key={i}
-                includeIcon
-                navigation={props.navigation}
-                route={route}
-              />
-            )
-            : (
-              <ButtonLink
-                key={i}
-                navigation={props.navigation}
-                route={route}
-              />
-            )
+            <RowLink
+              key={i}
+              includeIcon
+              isLast={i === Routes.length - 1}
+              navigation={props.navigation}
+              route={route}
+            />
           ))}
         </View>
-        <View style={styles.community}>
-          {colorScheme === 'light'
-            ? (
-              <Community style={styles.marginBottom15} />
-            )
-            : (
-              <CommunityWhite style={styles.marginBottom15} />
-            )}
+        {/* <View style={styles.community}>
+          <Community
+            style={styles.marginBottom15}
+          />
           <Text
             lightColor={Styles.blue}
             darkColor={Styles.white}
@@ -81,7 +96,7 @@ export const HomeScreen = memo((props: any) => {
           </Text>
           <View
             style={Styles.separator}
-            lightColor={Styles.blue}
+            lightColor={Styles.gray}
             darkColor={Styles.white}
           />
           {Communities.map((route, i) => (
@@ -91,23 +106,31 @@ export const HomeScreen = memo((props: any) => {
               route={route}
             />
           ))}
-        </View>
+        </View> */}
       </ScrollView>
     </View>
   );
 });
 
 const styles = StyleSheet.create({
-  dangerText: {
+  dangerTxt: {
+    fontSize: 18,
+    marginBottom: 10,
+    textAlign: 'center',
+  },
+  danger: {
+    display: 'flex',
+    padding: 20,
+    width: '100%',
+  },
+  dangerBtnTxt: {
     alignSelf: 'stretch',
-    color: Styles.white,
     flex: 1,
     fontSize: 20,
     textAlign: 'center',
   },
-  btn: {
+  dangerBtn: {
     alignItems: 'center',
-    backgroundColor: Styles.orange,
     borderRadius: 6,
     display: 'flex',
     flexDirection: 'row',
@@ -115,8 +138,7 @@ const styles = StyleSheet.create({
     padding: 15,
     width: '100%',
   },
-  phoneImg: {
-    backgroundColor: Styles.orange,
+  phoneWrap: {
     position: 'absolute',
     left: 15,
   },
@@ -128,22 +150,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   container: {
-    backgroundColor: Styles.blue,
     flex: 1,
-  },
-  danger: {
-    padding: 20,
-    width:'100%',
-  },
-  emergencyText: {
-    color: Styles.white,
-    fontSize: 20,
-    marginBottom: 10,
-  },
-  phone: {
-    height: 50,
-    marginVertical: 10,
-    width: 50,
   },
   innerView: {
     padding: 20,

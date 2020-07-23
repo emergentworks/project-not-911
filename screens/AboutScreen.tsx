@@ -20,33 +20,30 @@ export const AboutScreen = memo(() => {
         </View>
         <Text
           bold
-          lightColor={Styles.blue}
+          lightColor={Styles.black}
           darkColor={Styles.white}
           style={styles.title}>
           About Not911
         </Text>
         <Text
-          lightColor="#353535"
+          lightColor="#616161"
           darkColor={Styles.white}
           style={styles.paragraph}>
           Not 911 is a list of community-based groups that offer preventative services and strategies for issues related to mental health, homelessness, legal aid and other topics.
         </Text>
         <Text
           bold
-          lightColor={Styles.blue}
+          lightColor="#616161"
           darkColor={Styles.white}
           style={[styles.paragraph, styles.marginBottom40]}>
           These are not organizations that should be used in a life-threatening emergency. If someone is experiencing a life-threatening emergency, call 911 immediately.
         </Text>
-        <View style={styles.marginBottom15}>
-          {colorScheme === 'light' ? <HandBlue /> : <HandWhite /> }
-        </View>
         <Text
           bold
-          lightColor={Styles.blue}
+          lightColor={Styles.black}
           darkColor={Styles.white}
           style={styles.title}>
-          About Code Cooperative
+          About Us
         </Text>
         <Text
           lightColor="#353535"
@@ -60,9 +57,12 @@ export const AboutScreen = memo(() => {
           style={[styles.paragraph, styles.marginBottom40]}>
           We also build software for purpose-driven organizations and careers for our communities.
         </Text>
+        <View style={styles.marginBottom15}>
+          {colorScheme === 'light' ? <HandBlue /> : <HandWhite /> }
+        </View>
         <Text
           bold
-          lightColor={Styles.blue}
+          lightColor={Styles.black}
           darkColor={Styles.white}
           style={styles.title}>
           Interested in hiring us?
@@ -70,8 +70,21 @@ export const AboutScreen = memo(() => {
         <Text
           lightColor={Styles.blue}
           darkColor={Styles.white}
-          style={[styles.paragraph, styles.marginBottom40]}>
-          Reach us at hello@codecooperative.org
+          style={[styles.paragraph, styles.marginBottom60]}>
+          hello@codecooperative.org
+        </Text>
+        <Text
+          bold
+          lightColor="#353535"
+          darkColor={Styles.white}
+          style={styles.builtBy}>
+          Built by Code Cooperative
+        </Text>
+        <Text
+          lightColor="#353535"
+          darkColor={Styles.white}
+          style={styles.builtBy}>
+          Tomás Correa, Ross Patton, Ashley Newcomer, Lauren Wilkinson, Army Armstead, Christina Entcheva, Jaclyn Perrone
         </Text>
       </ScrollView>
     </View>
@@ -79,6 +92,10 @@ export const AboutScreen = memo(() => {
 });
 
 const styles = StyleSheet.create({
+  builtBy: {
+    fontSize: 14,
+    lineHeight: 18,
+  },
   container: {
     flex: 1,
     padding: 20,
@@ -88,7 +105,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    marginBottom: 14,
+    marginBottom: 10,
   },
   paragraph: {
     fontSize: 20,
@@ -97,5 +114,8 @@ const styles = StyleSheet.create({
   },
   marginBottom40: {
     marginBottom: 40,
+  },
+  marginBottom60: {
+    marginBottom: 60,
   },
 });

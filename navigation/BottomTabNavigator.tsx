@@ -1,14 +1,15 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
+// import { Text } from '../components';
 import { Styles } from '../constants';
 import useColorScheme from '../hooks/useColorScheme';
 import { HomeScreen } from '../screens/HomeScreen';
 import { AboutScreen } from '../screens/AboutScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
-import { About, Home, Not911 } from '../svgs';
+import { About, Home, Logo } from '../svgs';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -56,12 +57,12 @@ function TabOneNavigator() {
               display: 'flex',
               justifyContent: 'center',
             }}>
-              <Not911 />
+              <Logo />
             </View>
           ),
           headerStyle: {
-            backgroundColor: colorScheme === 'light' ? Styles.white : Styles.blue,
-            borderBottomColor: colorScheme === 'light' ? Styles.white : Styles.blue,
+            backgroundColor: colorScheme === 'light' ? Styles.white : Styles.black,
+            borderBottomColor: colorScheme === 'light' ? Styles.white : Styles.black,
             borderBottomWidth: 0,
           },
           headerTintColor: '#fff',
@@ -88,12 +89,12 @@ function TabTwoNavigator() {
               display: 'flex',
               justifyContent: 'center',
             }}>
-              <Not911 />
+              <Logo />
             </View>
           ),
           headerStyle: {
-            backgroundColor: colorScheme === 'light' ? Styles.white : Styles.blue,
-            borderBottomColor: colorScheme === 'light' ? Styles.white : Styles.blue,
+            backgroundColor: colorScheme === 'light' ? Styles.white : Styles.black,
+            borderBottomColor: colorScheme === 'light' ? Styles.white : Styles.black,
             borderBottomWidth: 0,
           },
           headerTintColor: '#fff',

@@ -2,20 +2,19 @@ import React, { memo } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
 import { Styles } from '../constants';
-import useColorScheme from '../hooks/useColorScheme';
 import { Text, View } from '../components/Themed';
 import {
-  CaretBlue,
-  CaretWhite,
+  Caret,
   Homelessness,
   MentalHealth,
-  Noise,
+  Legal,
   Poison,
   Violence,
 } from '../svgs';
 
 type Props = {
   includeIcon?: true,
+  isLast?: boolean,
   navigation: any,
   route: {
     btn: {
@@ -26,8 +25,7 @@ type Props = {
 };
 
 export const RowLink = memo((props: Props) => {
-  const { route } = props;
-  const colorScheme = useColorScheme();
+  const { isLast, route } = props;
 
   return (
     <>
@@ -38,7 +36,10 @@ export const RowLink = memo((props: Props) => {
           route.params,
         )}>
         {props.includeIcon && (
-          <View style={styles.marginRight10}>
+          <View
+            lightColor={Styles.white}
+            darkColor={Styles.blue}
+            style={styles.marginRight10}>
             {props.route.btn.display === 'Violence'
               && (
                 <Violence />
@@ -51,9 +52,9 @@ export const RowLink = memo((props: Props) => {
               && (
                 <Homelessness />
               )}
-            {props.route.btn.display === 'Noise'
+            {props.route.btn.display === 'Legal Support'
               && (
-                <Noise />
+                <Legal />
               )}
             {props.route.btn.display === 'Drugs or Poisoning'
               && (
@@ -67,13 +68,15 @@ export const RowLink = memo((props: Props) => {
           style={styles.text}>
           {route.btn.display}
         </Text>
-        {colorScheme === 'light' ? <CaretBlue /> : <CaretWhite />}
+        <Caret />
       </TouchableOpacity>
-      <View
-        style={Styles.separator}
-        lightColor={Styles.blue}
-        darkColor={Styles.white}
-      />
+      {!isLast && (
+        <View
+          style={Styles.separator}
+          lightColor={Styles.gray}
+          darkColor={Styles.white}
+        />
+      )}
     </>
   );
 });

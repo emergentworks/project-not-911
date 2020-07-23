@@ -11,5 +11,8 @@
     "postcss-import": "^12.0.1",
     "tailwindcss": "^1.4.6"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@expo-google-fonts/inter": "^0.1.0"
+  }
 }

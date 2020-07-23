@@ -2,15 +2,15 @@ const tintColorLight = '#3333ff';
 const tintColorDark = '#fff';
 
 export const Styles = {
-  black: '#333',
+  black: '#000',
   white: '#fff',
+  gray: '#b9b9b9',
   blue: '#3333ff',
   orange: '#ff4d4a',
   separator: {
     height: 1,
     width: '100%',
   },
-  // font: 'Helvetica, sans-serif',
   light: {
     text: '#000',
     background: '#fff',
