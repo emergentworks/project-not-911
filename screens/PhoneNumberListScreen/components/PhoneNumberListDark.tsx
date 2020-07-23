@@ -40,7 +40,6 @@ export const PhoneNumberListDark = (props: ComponentProps) => {
               {i !== numbers.length - 1 && !entry.crisis && (
                 <View
                   style={styles.separator}
-                  lightColor="#eee"
                   darkColor={Styles.white}
                 />
               )}
@@ -71,10 +70,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 'auto',
     paddingBottom: 10,
     paddingHorizontal: 10,
-    // width: '80%',
   },
   separator: {
     height: 1,
+    marginHorizontal: 'auto',
     marginVertical: 30,
     width: '100%',
   },
