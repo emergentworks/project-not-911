@@ -1,11 +1,12 @@
 {
   "expo": {
     "name": "Not 911",
-    "slug": "expo",
+    "slug": "not-911",
+    "scheme": "not911",
     "version": "1.0.0",
     "orientation": "portrait",
+    "privacy": "unlisted",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "packagerOpts": {
       "config": "metro.config.js",
@@ -47,7 +48,7 @@
       "supportsTablet": true
     },
     "web": {
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/favicon-32x32.png"
     }
   }
 }
