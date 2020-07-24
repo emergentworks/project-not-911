@@ -27,7 +27,7 @@ export const PhoneNumbers: Props = {
     hours: '24 Hour Access',
   }, {
     display: 'Safe Horizons Citywide General Helpline',
-    hours: 'Mon-Fri. 9 a.m.- 5 p.m.',
+    hours: 'Mon-Fri. 9AM - 5PM',
     tags: ['Accepts Voicemail', 'Multilingual', 'Lock Changes'],
     tel: '1-855-234-1042',
   }, {
@@ -76,12 +76,14 @@ export const PhoneNumbers: Props = {
     display: 'NY State Emotional Support Helpline',
     tags: ['Anxiety', 'Counseling', 'COVID-19'],
     tel: '1-844-863-9314',
-  }, {
-    display: 'NYS/Crisis Text Line Partnership',
-    hours: '24 Hour Access',
-    tags: ['Crisis', 'Counseling', 'COVID-19'],
-    text: 'Text GOT5 to 741741',
-  }, {
+  },
+  // {
+  //   display: 'NYS/Crisis Text Line Partnership',
+  //   hours: '24 Hour Access',
+  //   tags: ['Crisis', 'Counseling', 'COVID-19'],
+  //   text: 'Text GOT5 to 741741',
+  // },
+  {
     display: 'SAMHSA Disaster Distress National Helpline',
     hours: '24 Hour Access',
     tags: ['Post-Disaster', 'Crisis', 'Emotional Distress', 'Trauma', 'COVID-19', 'Unrest', 'Spanish'],
@@ -112,7 +114,7 @@ export const PhoneNumbers: Props = {
     tel: "311",
   }, {
     display: "Safe Horizons Streetwork Project Youth Homelessness Hotline",
-    hours: 'Mon., Tues., Thurs. and Fri., 10 a.m. – 5 p.m.',
+    hours: 'Mon, Tues, Thurs, Fri, 10AM–5PM',
     tel: "1-800-708-6600",
     tags: ['Overnight shelter', 'Up to age 25', ''],
     website: 'https://www.safehorizon.org/get-help/homeless-youth/',

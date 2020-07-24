@@ -1,5 +1,7 @@
 {
   "expo": {
+    "backgroundColor": "#3333ff",
+    "primaryColor": "#3333ff",
     "name": "Not 911",
     "slug": "not-911",
     "scheme": "not911",
@@ -39,7 +41,8 @@
       "package": "nyc.not911",
       "versionCode": 1,
       "adaptiveIcon": {
-        "backgroundColor": "#3333ff"
+        "backgroundColor": "#3333ff",
+        "foregroundIcon": "./assets/images/icon.png"
       }
     },
     "ios": {

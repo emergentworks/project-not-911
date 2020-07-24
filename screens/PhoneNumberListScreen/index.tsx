@@ -30,9 +30,10 @@ export const PhoneNumberListScreen = (props: Props) => {
       <ScrollView showsVerticalScrollIndicator={false}>
         {sortedNumbers.map((entry: any, i) => (
           <View
+          key={i}
             darkColor="#000"
             lightColor={Styles.white}
-            key={i}>
+            style={styles.item}>
             <Text
               bold
               darkColor={Styles.white}
@@ -65,11 +66,6 @@ export const PhoneNumberListScreen = (props: Props) => {
               }}>
               <Phone color={Styles.white} />
             </TouchableOpacity>
-            <View
-              style={styles.separator}
-              lightColor="#cfcfcf"
-              darkColor="#000"
-            />
           </View>
         ))}
       </ScrollView>
@@ -84,6 +80,10 @@ const styles = StyleSheet.create({
   centerTxt: {
     textAlign: 'center',
   },
+  item: {
+    marginBottom: 30,
+    paddingBottom: 30,
+  },
   paddingTop30: {
     paddingTop: 30,
   },
@@ -92,12 +92,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 'auto',
     paddingHorizontal: 20,
     paddingBottom: 10,
-  },
-  separator: {
-    height: 1,
-    marginHorizontal: 'auto',
-    marginVertical: 30,
-    width: '80%',
   },
   phone: {
     height: 30,
