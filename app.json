@@ -9,7 +9,7 @@
     "orientation": "portrait",
     "privacy": "unlisted",
     "icon": "./assets/images/icon.png",
-    "userInterfaceStyle": "dark",
+    "userInterfaceStyle": "automatic",
     "packagerOpts": {
       "config": "metro.config.js",
       "sourceExts": [
