@@ -4,7 +4,7 @@ import * as Linking from 'expo-linking';
 
 import { PhoneNumbers } from '../../constants';
 import { Text, View } from '../../components';
-import { Phone } from '../../svgs';
+import { Caret, Phone } from '../../svgs';
 import { Props } from './types';
 import { Styles } from '../../constants';
 
@@ -24,13 +24,26 @@ export const PhoneNumberListScreen = (props: Props) => {
 
   return (
     <View
-      darkColor="#000"
+      darkColor={Styles.black}
       lightColor={Styles.white}
       style={styles.container}>
+      <Text
+        bold
+        darkColor={Styles.white}
+        lightColor={Styles.blue}
+        style={styles.backBtn}
+        onPress={() => props.navigation.navigate('Root')}>
+        <View
+          darkColor={Styles.black}
+          lightColor={Styles.white}
+          style={styles.rotate}>
+          <Caret />
+        </View> Back
+      </Text>
       <ScrollView showsVerticalScrollIndicator={false}>
         {sortedNumbers.map((entry: any, i) => (
           <View
-          key={i}
+            key={i}
             darkColor="#000"
             lightColor={Styles.white}
             style={styles.item}>
@@ -73,6 +86,17 @@ export const PhoneNumberListScreen = (props: Props) => {
   );
 }
 const styles = StyleSheet.create({
+  backBtn: {
+    alignItems: 'center',
+    display: 'flex',
+    fontSize: 18,
+    paddingBottom: 30,
+    paddingLeft: 30,
+  },
+  rotate: {
+    marginRight: 10,
+    transform: [{ rotate: '180deg' }],
+  },
   container: {
     flex: 1,
     paddingTop: 60,
