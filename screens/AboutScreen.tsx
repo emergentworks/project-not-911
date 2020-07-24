@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
+import * as Linking from 'expo-linking';
 
 import { Text, View } from '../components';
 import { Styles } from '../constants';
@@ -73,13 +74,16 @@ export const AboutScreen = memo(() => (
         bold
         lightColor="#353535"
         darkColor={Styles.white}
-        style={styles.builtBy}>
+        style={styles.builtBy}
+        onPress={() => {
+          Linking.openURL('https://github.com/codecooperative/project-not-911');
+        }}>
         Built by Code Cooperative
       </Text>
       <Text
         lightColor="#353535"
         darkColor={Styles.white}
-        style={styles.builtBy}>
+        style={[styles.builtBy, styles.marginBottom40]}>
         Tomás Correa, Ross Patton, Ashley Newcomer, Army Armstead, Lauren Wilkinson, Christina Entcheva, Jaclyn Perrone
       </Text>
     </ScrollView>

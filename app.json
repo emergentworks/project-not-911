@@ -42,7 +42,7 @@
       "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#3333ff",
-        "foregroundIcon": "./assets/images/icon.png"
+        "foregroundImage": "./assets/images/icon.png"
       }
     },
     "ios": {
