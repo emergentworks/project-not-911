@@ -20,14 +20,21 @@ layout: not911
       <h2 class="text-base text-gray-5 mb-2 d:mb-3 d:pr-5">
         Not911 is designed to direct you to New York City-based organizations that offer counseling, mediation and intervention services.
       </h2>
-      <p class='text-blue-1 text-sm mb-3 d:hidden'>
+      <p class='text-blue-1 text-sm mb-0 d:hidden'>
         <a
           class="no-underline"
-          href="https://codecooperative.org/agency/">
+          href="https://codecooperative.org/agency">
           Produced By <b>Code Cooperative</b>
         </a>
       </p>
-      <div class='flex flex-row mb-4 d:mb-0'>
+      <p class='text-blue-1 text-sm mb-3 d:hidden'>
+        <a
+          class="no-underline"
+          href="https://github.com/codecooperative/project-not-911">
+          <b>➡️ Contribute to the project</b>
+        </a>
+      </p>
+      <!-- <div class='flex flex-row mb-4 d:mb-0'>
         <img
           class='mr-2'
           alt='Download Not911 on the App Store'
@@ -37,15 +44,24 @@ layout: not911
           alt="Download Not911 on the Google Play Store"
           src="/assets/img/play-store.svg"
         />
-      </div>
+      </div> -->
     </div>
-    <p class='text-blue-1 text-sm mb-4 d:mb-0 hidden d:block'>
-      <a
-        class="no-underline"
-        href="https://codecooperative.org/agency/">
-        Produced By <b>Code Cooperative</b>
-      </a>
-    </p>
+    <div class="flex">
+      <p class='text-blue-1 text-sm mb-4 d:mb-0 hidden d:block mr-2'>
+        <a
+          class="no-underline"
+          href="https://codecooperative.org/agency/">
+          Produced By <b>Code Cooperative</b>
+        </a>
+      </p>
+      <p class='text-blue-1 text-sm mb-4 d:mb-0 hidden d:block'>
+        <a
+          class="no-underline"
+          href="https://github.com/codecooperative/project-not-911">
+          <b>➡️ Contribute to the project</b>
+        </a>
+      </p>
+    </div>
   </div>
   <div class='d:w-6/12 flex justify-center bg-mint pt-4 pr-4 pl-4'>
     <img
