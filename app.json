@@ -1,11 +1,14 @@
 {
   "expo": {
+    "backgroundColor": "#3333ff",
+    "primaryColor": "#3333ff",
     "name": "Not 911",
-    "slug": "expo",
+    "slug": "not-911",
+    "scheme": "not911",
     "version": "1.0.0",
     "orientation": "portrait",
+    "privacy": "unlisted",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "packagerOpts": {
       "config": "metro.config.js",
@@ -36,15 +39,20 @@
     ],
     "android": {
       "package": "nyc.not911",
-      "versionCode": 1
+      "permissions" : [],
+      "versionCode": 2,
+      "adaptiveIcon": {
+        "backgroundColor": "#3333ff",
+        "foregroundImage": "./assets/images/icon.png"
+      }
     },
     "ios": {
       "bundleIdentifier": "nyc.not911",
-      "buildNumber": "1.0.0",
+      "buildNumber": "1.0.1",
       "supportsTablet": true
     },
     "web": {
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/favicon-32x32.png"
     }
   }
 }

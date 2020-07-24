@@ -1,6 +1,17 @@
-<svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<mask id="path-1-inside-1" fill="white">
-<path d="M0 6.17681C0 5.45047 0.393784 4.78123 1.02871 4.42849L7.96893 0.572816C8.60511 0.219382 9.38307 0.239419 10.0002 0.625134L16.06 4.4125C16.6448 4.77798 17 5.41892 17 6.1085V18C17 19.1046 16.1046 20 15 20H2C0.89543 20 0 19.1046 0 18V6.17681Z"/>
-</mask>
-<path d="M0 6.17681C0 5.45047 0.393784 4.78123 1.02871 4.42849L7.96893 0.572816C8.60511 0.219382 9.38307 0.239419 10.0002 0.625134L16.06 4.4125C16.6448 4.77798 17 5.41892 17 6.1085V18C17 19.1046 16.1046 20 15 20H2C0.89543 20 0 19.1046 0 18V6.17681Z" stroke="white" stroke-width="4" mask="url(#path-1-inside-1)"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="22px" viewBox="0 0 19 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>home</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,6.17681 C0,5.45047 0.393784,4.78123 1.02871,4.42849 L7.96893,0.572816 C8.60511,0.219382 9.38307,0.239419 10.0002,0.625134 L16.06,4.4125 C16.6448,4.77798 17,5.41892 17,6.1085 L17,18 C17,19.1046 16.1046,20 15,20 L2,20 C0.89543,20 0,19.1046 0,18 L0,6.17681 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="home" transform="translate(1.000000, 1.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Shape" stroke="#000000" xlink:href="#path-1"></use>
+        </g>
+    </g>
 </svg>

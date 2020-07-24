@@ -1,5 +1,7 @@
 {
   "scripts": {
+    "build": "bundle exec jekyll build",
+    "clean": "bundle exec jekyll clean",
     "start": "bundle exec jekyll serve --incremental",
     "i": "npm install; bundle install"
   },
