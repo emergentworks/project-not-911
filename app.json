@@ -26,7 +26,6 @@
         "svg"
       ]
     },
-    "permissions" : [],
     "splash": {
       "image": "./assets/images/icon.png",
       "resizeMode": "contain",
@@ -40,7 +39,8 @@
     ],
     "android": {
       "package": "nyc.not911",
-      "versionCode": 1,
+      "permissions" : [],
+      "versionCode": 2,
       "adaptiveIcon": {
         "backgroundColor": "#3333ff",
         "foregroundImage": "./assets/images/icon.png"
@@ -48,7 +48,7 @@
     },
     "ios": {
       "bundleIdentifier": "nyc.not911",
-      "buildNumber": "1.0.0",
+      "buildNumber": "1.0.1",
       "supportsTablet": true
     },
     "web": {
