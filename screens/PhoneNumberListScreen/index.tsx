@@ -27,19 +27,19 @@ export const PhoneNumberListScreen = (props: Props) => {
       darkColor={Styles.black}
       lightColor={Styles.white}
       style={styles.container}>
-      <Text
-        bold
-        darkColor={Styles.white}
-        lightColor={Styles.blue}
-        style={styles.backBtn}
-        onPress={() => props.navigation.navigate('Root')}>
-        <View
-          darkColor={Styles.black}
-          lightColor={Styles.white}
-          style={styles.rotate}>
-          <Caret />
-        </View> Back
-      </Text>
+      <View
+        darkColor={Styles.black}
+        lightColor={Styles.white}
+        style={styles.backBtn}>
+        <Caret style={styles.rotate} />
+        <Text
+          bold
+          darkColor={Styles.white}
+          lightColor={Styles.blue}
+          onPress={() => props.navigation.navigate('Root')}>
+          Back
+        </Text>
+      </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         {sortedNumbers.map((entry: any, i) => (
           <View
@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
   backBtn: {
     alignItems: 'center',
     display: 'flex',
+    flexDirection: 'row',
     fontSize: 18,
     paddingBottom: 30,
     paddingLeft: 30,
