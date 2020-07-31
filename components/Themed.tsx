@@ -4,6 +4,9 @@ import { Text as DefaultText, View as DefaultView } from 'react-native';
 import {Styles} from '../constants';
 import useColorScheme from '../hooks/useColorScheme';
 
+/**
+ * @description helper function for getting default styles below for light/dark schemes
+ */
 export function useThemeColor(
   props: { light?: string; dark?: string },
   colorName: keyof typeof Styles.light & keyof typeof Styles.dark
@@ -27,6 +30,10 @@ type ThemeProps = {
 export type TextProps = ThemeProps & DefaultText['props'];
 export type ViewProps = ThemeProps & DefaultView['props'];
 
+/**
+ * @description generic themed Text component. works just like the react native Text
+ * but defaults to our font and uses the right dark/light color based on theme
+ */
 export function Text(props: TextProps) {
   const { bold, style, lightColor, darkColor, ...otherProps } = props;
   const color = useThemeColor({
@@ -47,6 +54,10 @@ export function Text(props: TextProps) {
   );
 }
 
+/**
+ * @description generic themed View component. works just like the react native View
+ * but uses the right dark/light color based on theme
+ */
 export function View(props: ViewProps) {
   const { style, lightColor, darkColor, ...otherProps } = props;
   const backgroundColor = useThemeColor({

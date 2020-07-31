@@ -8,6 +8,9 @@ import { RowLink, Text, View } from '../components';
 import { Routes } from '../constants';
 import { Phone } from '../svgs';
 
+/**
+ * @description This component renders the landing page (the list of hotline categories)
+ */
 export const HomeScreen = memo((props: any) => {
   const colorScheme = useColorScheme();
 

@@ -5,6 +5,10 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Text, View } from '../components';
 import { RootStackParamList } from '../types';
 
+/**
+ * @description This component renders the 404 page.
+ * Should never render if used as app, but exists for web version
+ */
 const NotFoundScreen = memo(({
   navigation,
 }: StackScreenProps<RootStackParamList, 'NotFound'>) => (

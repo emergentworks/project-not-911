@@ -5,9 +5,13 @@ import * as Linking from 'expo-linking';
 import { PhoneNumbers } from '../../constants';
 import { Text, View } from '../../components';
 import { Caret, Phone } from '../../svgs';
-import { Props } from './types';
 import { Styles } from '../../constants';
+import { Props } from './types';
 
+/**
+ * @description This component renders the PhoneNumber Screen
+ * ie, any phone number list we pass into it basically
+ */
 export const PhoneNumberListScreen = (props: Props) => {
   const {route} = props;
   const numbers = PhoneNumbers[route.params.section];
@@ -85,6 +89,7 @@ export const PhoneNumberListScreen = (props: Props) => {
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   backBtn: {
     alignItems: 'center',

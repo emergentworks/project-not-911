@@ -1,6 +1,10 @@
 import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
+/**
+ * @description global types file. should just live in a declarations folder, ideally
+ */
+
 export type RootStackParamList = {
   NotFound: undefined,
   Root: undefined,

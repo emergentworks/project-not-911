@@ -1,9 +1,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 
-// import { Text } from '../components';
 import { Styles } from '../constants';
 import useColorScheme from '../hooks/useColorScheme';
 import { HomeScreen } from '../screens/HomeScreen';
@@ -13,6 +12,9 @@ import { About, Home, Logo } from '../svgs';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
+/**
+ * @description This component renders the bottom navigation for the home/about pages
+ */
 export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
 
@@ -52,11 +54,12 @@ function TabOneNavigator() {
         component={HomeScreen}
         options={{
           headerTitle: () => (
-            <View style={{
-              alignSelf: 'center',
-              display: 'flex',
-              justifyContent: 'center',
-            }}>
+            <View
+              style={{
+                alignSelf: 'center',
+                display: 'flex',
+                justifyContent: 'center',
+              }}>
               <Logo />
             </View>
           ),
@@ -84,11 +87,12 @@ function TabTwoNavigator() {
         component={AboutScreen}
         options={{
           headerTitle: () => (
-            <View style={{
-              alignSelf: 'center',
-              display: 'flex',
-              justifyContent: 'center',
-            }}>
+            <View
+              style={{
+                alignSelf: 'center',
+                display: 'flex',
+                justifyContent: 'center',
+              }}>
               <Logo />
             </View>
           ),

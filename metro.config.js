@@ -1,5 +1,9 @@
 const { getDefaultConfig } = require('metro-config');
 
+/**
+ * @description metro.config is where we can hook into expo's build system
+ * this is useful if we want to add additional babel plugins, etc
+ */
 module.exports = (async () => {
   const {
     resolver: { sourceExts, assetExts },

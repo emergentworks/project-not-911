@@ -24,6 +24,9 @@ type Props = {
   },
 };
 
+/**
+ * @description Generic category link. optional icon
+ */
 export const RowLink = memo((props: Props) => {
   const { isLast, route } = props;
 

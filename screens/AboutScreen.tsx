@@ -6,6 +6,9 @@ import { Text, View } from '../components';
 import { Styles } from '../constants';
 import { Cross, Hand } from '../svgs';
 
+/**
+ * @description This component renders the about page
+ */
 export const AboutScreen = memo(() => (
   <View
     lightColor={Styles.white}

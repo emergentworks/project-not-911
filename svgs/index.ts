@@ -1,8 +1,8 @@
 // @TODO refactor all SVG components to:
 // - either auto detect color scheme
-// - or accept custom color prop
-// and then just adjust fill/stroke as necessary
-// then delete all color specific versions
+/**
+ * @description SVG component exports. Because SVG is not supported natively, we have to jump through some hoops to get it to render correctly across all devices
+ */
 
 export { About } from './About';
 export { Caret } from './Caret';
