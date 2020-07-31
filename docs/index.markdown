@@ -34,17 +34,19 @@ layout: not911
           <b>➡️ Contribute to the project</b>
         </a>
       </p>
-      <!-- <div class='flex flex-row mb-4 d:mb-0'>
-        <img
+      <div class='flex flex-row mb-4 d:mb-0'>
+        <!-- <img
           class='mr-2'
           alt='Download Not911 on the App Store'
           src="/assets/img/app-store.svg"
-        />
-        <img
-          alt="Download Not911 on the Google Play Store"
-          src="/assets/img/play-store.svg"
-        />
-      </div> -->
+        /> -->
+        <a href="https://play.google.com/store/apps/details?id=nyc.not911&hl=en_US">
+          <img
+            alt="Download Not911 on the Google Play Store"
+            src="/assets/img/play-store.svg"
+          />
+        </a>
+      </div>
     </div>
     <div class="flex">
       <p class='text-blue-1 text-sm mb-4 d:mb-0 hidden d:block mr-2'>
