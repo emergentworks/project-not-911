@@ -1,0 +1,43 @@
+{
+  "files": {
+    "app.js": "/app/static/js/app.f55c9b25.chunk.js",
+    "app.js.map": "/app/static/js/app.f55c9b25.chunk.js.map",
+    "runtime~app.js": "/app/static/js/runtime~app.841dc5b3.js",
+    "runtime~app.js.map": "/app/static/js/runtime~app.841dc5b3.js.map",
+    "static/js/2.feead362.chunk.js": "/app/static/js/2.feead362.chunk.js",
+    "static/js/2.feead362.chunk.js.map": "/app/static/js/2.feead362.chunk.js.map",
+    "fonts/AntDesign.ttf": "/app/./fonts/AntDesign.ttf",
+    "fonts/Entypo.ttf": "/app/./fonts/Entypo.ttf",
+    "fonts/Feather.ttf": "/app/./fonts/Feather.ttf",
+    "fonts/FontAwesome.ttf": "/app/./fonts/FontAwesome.ttf",
+    "fonts/FontAwesome5_Brands.ttf": "/app/./fonts/FontAwesome5_Brands.ttf",
+    "fonts/FontAwesome5_Solid.ttf": "/app/./fonts/FontAwesome5_Solid.ttf",
+    "fonts/Fontisto.ttf": "/app/./fonts/Fontisto.ttf",
+    "fonts/Foundation.ttf": "/app/./fonts/Foundation.ttf",
+    "fonts/Inter_100Thin.ttf": "/app/./fonts/Inter_100Thin.ttf",
+    "fonts/Inter_200ExtraLight.ttf": "/app/./fonts/Inter_200ExtraLight.ttf",
+    "fonts/Inter_300Light.ttf": "/app/./fonts/Inter_300Light.ttf",
+    "fonts/Inter_400Regular.ttf": "/app/./fonts/Inter_400Regular.ttf",
+    "fonts/Inter_500Medium.ttf": "/app/./fonts/Inter_500Medium.ttf",
+    "fonts/Inter_600SemiBold.ttf": "/app/./fonts/Inter_600SemiBold.ttf",
+    "fonts/Inter_700Bold.ttf": "/app/./fonts/Inter_700Bold.ttf",
+    "fonts/Inter_800ExtraBold.ttf": "/app/./fonts/Inter_800ExtraBold.ttf",
+    "fonts/Inter_900Black.ttf": "/app/./fonts/Inter_900Black.ttf",
+    "fonts/Ionicons.ttf": "/app/./fonts/Ionicons.ttf",
+    "fonts/MaterialCommunityIcons.ttf": "/app/./fonts/MaterialCommunityIcons.ttf",
+    "fonts/MaterialIcons.ttf": "/app/./fonts/MaterialIcons.ttf",
+    "fonts/SimpleLineIcons.ttf": "/app/./fonts/SimpleLineIcons.ttf",
+    "fonts/SpaceMono-Regular.ttf": "/app/./fonts/SpaceMono-Regular.ttf",
+    "favicon-16.png": "/app/favicon-16.png",
+    "favicon-32.png": "/app/favicon-32.png",
+    "favicon.ico": "/app/favicon.ico",
+    "index.html": "/app/index.html",
+    "manifest.json": "/app/manifest.json",
+    "serve.json": "/app/serve.json"
+  },
+  "entrypoints": [
+    "static/js/runtime~app.841dc5b3.js",
+    "static/js/2.feead362.chunk.js",
+    "static/js/app.f55c9b25.chunk.js"
+  ]
+}
