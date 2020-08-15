@@ -12,17 +12,17 @@ export default {
         screens: {
           'Home': {
             screens: {
-              HomeScreen: 'home',
+              HomeScreen: 'app',
             },
           },
           'About': {
             screens: {
-              AboutScreen: 'about',
+              AboutScreen: 'app/about',
             },
           },
           PhoneNumberList: {
             screens: {
-              PhoneNumberListScreen: 'numbers/:section',
+              PhoneNumberListScreen: 'app/numbers/:section',
             },
           },
         },
