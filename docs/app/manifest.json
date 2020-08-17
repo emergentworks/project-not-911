@@ -4,7 +4,7 @@
   "lang": "en",
   "name": "Not 911",
   "short_name": "Not 911",
-  "start_url": "/?utm_source=web_app_manifest",
+  "start_url": "./app",
   "theme_color": "#3333ff",
   "orientation": "portrait",
   "related_applications": [

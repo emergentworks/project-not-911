@@ -7,6 +7,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
+    "serve": "npx serve web-build",
     "test": "jest --watchAll"
   },
   "jest": {

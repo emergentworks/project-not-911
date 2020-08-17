@@ -11,6 +11,13 @@ export const Styles = {
     height: 1,
     width: '100%',
   },
+  'no-preference': {
+    text: '#000',
+    background: '#fff',
+    tint: tintColorLight,
+    tabIconDefault: '#ccc',
+    tabIconSelected: tintColorLight,
+  },
   light: {
     text: '#000',
     background: '#fff',

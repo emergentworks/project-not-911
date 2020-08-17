@@ -7,14 +7,7 @@ import {Styles} from '../constants';
 // import useColorScheme from '../hooks/useColorScheme';
 
 // default colour scheme from OS
-const osTheme = Appearance.getColorScheme() as NonNullable<ColorSchemeName>;
-// useColorScheme() as NonNullable<ColorSchemeName>;
-
-type ThemeContext = {
-  mode: 'light' | 'dark',
-  theme: any,
-  toggle: Function,
-};
+const osTheme = Appearance.getColorScheme() || 'light';
 
 // initiate context
 export const ManageThemeContext: React.Context<any> = React.createContext({
@@ -37,10 +30,11 @@ export class ThemeManager extends React.Component<any, any> {
   async componentDidMount() {
     try {
       const savedMode = await AsyncStorage.getItem('theme');
-      if (savedMode !== this.state.mode) {
+      if (savedMode
+          && savedMode !== this.state.mode) {
         this.setState({
           mode: savedMode,
-        })
+        });
       }
     } catch(err) {}
   }

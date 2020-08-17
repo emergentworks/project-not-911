@@ -22,7 +22,10 @@ const BottomTab = createBottomTabNavigator<BottomTabParamList>();
  * @description This component renders the bottom navigation for the home/about pages
  */
 export default function BottomTabNavigator() {
-  const {mode}: {mode: 'light' | 'dark'} = useTheme();
+  const theme: {mode: 'light' | 'dark'} = useTheme();
+  const {mode} = theme;
+
+  console.log('theme => ', theme);
 
   return (
     <BottomTab.Navigator
