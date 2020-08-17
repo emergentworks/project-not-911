@@ -23,53 +23,38 @@ let deferredPrompt: BeforeInstallPromptEvent;
  */
 export class AddToHomeScreen extends React.PureComponent<any> {
   state = {
-    showInstallPrompt: true,
+    showInstallPrompt: false,
   };
 
   constructor(props: any) {
     super(props);
 
+    // unfortunately, we have no control over this event.
+    // it will fire only if certain conditions are met, which vary
+    // one of which is time spent on site - which means it likely won't show
+    // but it's the easiest way to trigger the PWA install flow
     window.addEventListener('beforeinstallprompt', ev => {
-      console.log('beforeinstallprompt in component called');
-      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      // needed to prevent old browsers from auto showing the install prompt
       ev.preventDefault();
 
-      // Stash the event so it can be triggered later.
+      // stash the event so it can be triggered later on click
       deferredPrompt = ev as BeforeInstallPromptEvent;
 
       this.setState({
         showInstallPrompt: true,
       });
-
-      // this.btnRef.addEventListener('click', (e) => {
-      //   // hide our user interface that shows our A2HS button
-      //   addBtn.style.display = 'none';
-      //   // Show the prompt
-      //   deferredPrompt.prompt();
-      //   // Wait for the user to respond to the prompt
-      //   deferredPrompt.userChoice.then((choiceResult) => {
-      //       if (choiceResult.outcome === 'accepted') {
-      //         console.log('User accepted the A2HS prompt');
-      //       } else {
-      //         console.log('User dismissed the A2HS prompt');
-      //       }
-      //       deferredPrompt = null;
-      //     });
-      // });
     });
   }
 
 
   render() {
-    // if (!this.state.showInstallPrompt) return null;
+    if (!this.state.showInstallPrompt) return null;
     if (!Constants?.platform?.web) return null;
 
     return (
       <TouchableOpacity
         style={styles.touchable}
         onPress={() => {
-          console.log('add to home screen clicked');
-          // @ts-ignore
           deferredPrompt.prompt();
         }}>
         <View
@@ -96,14 +81,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: '100%',
     zIndex: 99,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 12,
-    },
-    shadowOpacity: 0.58,
-    shadowRadius: 16.00,
-    elevation: 24,
   },
   btn: {
     alignItems: 'center',

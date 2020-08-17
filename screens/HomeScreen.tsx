@@ -156,8 +156,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   innerView: {
-    padding: 20,
+    paddingHorizontal: 20,
     paddingTop: 40,
+    paddingBottom: 50,
   },
   marginBottom15: {
     marginBottom: 15,

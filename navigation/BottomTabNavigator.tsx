@@ -25,8 +25,6 @@ export default function BottomTabNavigator() {
   const theme: {mode: 'light' | 'dark'} = useTheme();
   const {mode} = theme;
 
-  console.log('theme => ', theme);
-
   return (
     <BottomTab.Navigator
       initialRouteName="Home"

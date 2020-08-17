@@ -9,10 +9,6 @@ import useCachedResources from './hooks/useCachedResources';
 import { useTheme } from './context';
 import Navigation from './navigation';
 
-window.addEventListener('beforeinstallprompt', ev => {
-  console.log('beforeinstallprompt called');
-});
-
 /**
  * @description Starting point for the entire app.
  * mimics native functionality, doesn't render anything until app is fully loaded
