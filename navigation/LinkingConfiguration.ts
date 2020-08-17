@@ -10,14 +10,19 @@ export default {
     screens: {
       Root: {
         screens: {
-          'Home': {
+          Home: {
             screens: {
               HomeScreen: 'app',
             },
           },
-          'About': {
+          About: {
             screens: {
               AboutScreen: 'app/about',
+            },
+          },
+          Settings: {
+            screens: {
+              SettingsScreen: 'app/settings',
             },
           },
           PhoneNumberList: {

@@ -52,7 +52,8 @@
       "supportsTablet": true
     },
     "web": {
-      "favicon": "./assets/images/favicon-32x32.png"
+      "favicon": "./assets/images/favicon-32x32.png",
+      "startUrl": "./app"
     }
   }
 }

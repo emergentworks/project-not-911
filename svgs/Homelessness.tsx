@@ -1,11 +1,11 @@
 import React, { memo } from "react";
 import Svg, { Mask, Path } from "react-native-svg";
 
-import useColorScheme from '../hooks/useColorScheme';
+import {useTheme} from '../context';
 
-export const Homelessness = memo((props: React.SVGProps<SVGSVGElement>) => {
-  const colorScheme = useColorScheme();
-  const fill = colorScheme === 'light' ? '#3333FF' : '#fff';
+export const Homelessness = memo(() => {
+  const {mode}: {mode: 'light' | 'dark'} = useTheme();
+  const fill = mode === 'light' ? '#3333FF' : '#fff';
 
   return (
     // @ts-ignore

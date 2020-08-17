@@ -1,11 +1,11 @@
 import React, { memo } from "react";
 import Svg, { Path } from "react-native-svg";
 
-import useColorScheme from '../hooks/useColorScheme';
+import {useTheme} from '../context';
 
 export const Poison = memo((props: React.SVGProps<SVGSVGElement>) => {
-  const colorScheme = useColorScheme();
-  const fill = colorScheme === 'light' ? '#33F' : '#fff';
+  const {mode}: {mode: 'light' | 'dark'} = useTheme();
+  const fill = mode === 'light' ? '#33F' : '#fff';
 
   return (
     // @ts-ignore

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text as DefaultText, View as DefaultView } from 'react-native';
 
 import {Styles} from '../constants';
-import useColorScheme from '../hooks/useColorScheme';
+import { useTheme } from '../context';
 
 /**
  * @description helper function for getting default styles below for light/dark schemes
@@ -11,13 +11,13 @@ export function useThemeColor(
   props: { light?: string; dark?: string },
   colorName: keyof typeof Styles.light & keyof typeof Styles.dark
 ) {
-  const theme = useColorScheme();
-  const colorFromProps = props[theme];
+  const {mode}: {mode: 'light' | 'dark'} = useTheme();
+  const colorFromProps = props[mode];
 
   if (colorFromProps) {
     return colorFromProps;
   } else {
-    return Styles[theme][colorName];
+    return Styles[mode][colorName];
   }
 }
 

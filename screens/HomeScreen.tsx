@@ -3,8 +3,8 @@ import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import * as Linking from 'expo-linking';
 
 import { Styles } from '../constants';
-import useColorScheme from '../hooks/useColorScheme';
 import { RowLink, Text, View } from '../components';
+import { useTheme } from '../context';
 import { Routes } from '../constants';
 import { Phone } from '../svgs';
 
@@ -12,7 +12,7 @@ import { Phone } from '../svgs';
  * @description This component renders the landing page (the list of hotline categories)
  */
 export const HomeScreen = memo((props: any) => {
-  const colorScheme = useColorScheme();
+  const {mode} = useTheme();
 
   return (
     <View
@@ -44,7 +44,7 @@ export const HomeScreen = memo((props: any) => {
                 darkColor={Styles.white}
                 style={styles.phoneWrap}>
                 <Phone
-                  color={colorScheme === 'light' ? Styles.white : Styles.orange}
+                  color={mode === 'light' ? Styles.white : Styles.orange}
                 />
               </View>
               <Text

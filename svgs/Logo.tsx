@@ -1,12 +1,12 @@
 import React, { memo } from "react";
 import Svg, { Path } from "react-native-svg";
 
-import useColorScheme from '../hooks/useColorScheme';
+import {useTheme} from '../context';
 
 export const Logo = memo((props: React.SVGProps<SVGSVGElement>) => {
-  const colorScheme = useColorScheme();
+  const {mode}: {mode: 'light' | 'dark'} = useTheme();
 
-  if (colorScheme === 'dark') {
+  if (mode === 'dark') {
     return (
       // @ts-ignore
       <Svg width={45} height={22} viewBox="0 0 45 22" fill="none" {...props}>

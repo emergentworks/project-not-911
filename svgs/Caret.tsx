@@ -1,10 +1,10 @@
 import React, { memo } from "react";
 import Svg, { Path } from "react-native-svg";
 
-import useColorScheme from '../hooks/useColorScheme';
+import {useTheme} from '../context';
 
 export const Caret = memo((props: React.SVGProps<SVGSVGElement> & {style?: any}) => {
-  const colorScheme = useColorScheme();
+  const {mode}: {mode: 'light' | 'dark'} = useTheme();
 
   return (
     // @ts-ignore
@@ -16,7 +16,7 @@ export const Caret = memo((props: React.SVGProps<SVGSVGElement> & {style?: any})
       {...props}>
       <Path
         d="M1 1l7 7-7 7"
-        stroke={colorScheme === 'light' ? '#B9B9B9' : '#fff'}
+        stroke={mode === 'light' ? '#B9B9B9' : '#fff'}
         strokeWidth={1.5}
         strokeLinecap="round"
         strokeLinejoin="round"

@@ -18,4 +18,5 @@ export { Noise } from './Noise';
 export { Not911 } from './Not911';
 export { Phone } from './Phone';
 export { Poison } from './Poison';
+export { Settings } from './Settings';
 export { Violence } from './Violence';

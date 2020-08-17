@@ -4,11 +4,17 @@ import * as React from 'react';
 import { View } from 'react-native';
 
 import { Styles } from '../constants';
-import useColorScheme from '../hooks/useColorScheme';
+import { useTheme } from '../context';
 import { HomeScreen } from '../screens/HomeScreen';
 import { AboutScreen } from '../screens/AboutScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
-import { About, Home, Logo } from '../svgs';
+import { SettingsScreen } from '../screens/SettingsScreen';
+import { About, Home, Logo, Settings } from '../svgs';
+import {
+  BottomTabParamList,
+  TabOneParamList,
+  TabTwoParamList,
+  TabThreeParamList,
+} from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -16,12 +22,12 @@ const BottomTab = createBottomTabNavigator<BottomTabParamList>();
  * @description This component renders the bottom navigation for the home/about pages
  */
 export default function BottomTabNavigator() {
-  const colorScheme = useColorScheme();
+  const {mode}: {mode: 'light' | 'dark'} = useTheme();
 
   return (
     <BottomTab.Navigator
       initialRouteName="Home"
-      tabBarOptions={{ activeTintColor: Styles[colorScheme].tint }}>
+      tabBarOptions={{ activeTintColor: Styles[mode].tint }}>
       <BottomTab.Screen
         name="Home"
         component={TabOneNavigator}
@@ -36,6 +42,13 @@ export default function BottomTabNavigator() {
           tabBarIcon: ({color}) => <About color={color} />,
         }}
       />
+      <BottomTab.Screen
+        name="Settings"
+        component={TabThreeNavigator}
+        options={{
+          tabBarIcon: ({color}) => <Settings color={color} />,
+        }}
+      />
     </BottomTab.Navigator>
   );
 }
@@ -45,7 +58,7 @@ export default function BottomTabNavigator() {
 const TabOneStack = createStackNavigator<TabOneParamList>();
 
 function TabOneNavigator() {
-  const colorScheme = useColorScheme();
+  const {mode}: {mode: 'light' | 'dark'} = useTheme();
 
   return (
     <TabOneStack.Navigator>
@@ -64,8 +77,8 @@ function TabOneNavigator() {
             </View>
           ),
           headerStyle: {
-            backgroundColor: colorScheme === 'light' ? Styles.white : Styles.black,
-            borderBottomColor: colorScheme === 'light' ? Styles.white : Styles.black,
+            backgroundColor: mode === 'light' ? Styles.white : Styles.black,
+            borderBottomColor: mode === 'light' ? Styles.white : Styles.black,
             borderBottomWidth: 0,
           },
           headerTintColor: '#fff',
@@ -78,7 +91,7 @@ function TabOneNavigator() {
 const TabTwoStack = createStackNavigator<TabTwoParamList>();
 
 function TabTwoNavigator() {
-  const colorScheme = useColorScheme();
+  const {mode}: {mode: 'light' | 'dark'} = useTheme();
 
   return (
     <TabTwoStack.Navigator>
@@ -97,13 +110,46 @@ function TabTwoNavigator() {
             </View>
           ),
           headerStyle: {
-            backgroundColor: colorScheme === 'light' ? Styles.white : Styles.black,
-            borderBottomColor: colorScheme === 'light' ? Styles.white : Styles.black,
+            backgroundColor: mode === 'light' ? Styles.white : Styles.black,
+            borderBottomColor: mode === 'light' ? Styles.white : Styles.black,
             borderBottomWidth: 0,
           },
           headerTintColor: '#fff',
         }}
       />
     </TabTwoStack.Navigator>
+  );
+}
+
+const TabThreeStack = createStackNavigator<TabThreeParamList>();
+
+function TabThreeNavigator() {
+  const {mode}: {mode: 'light' | 'dark'} = useTheme();
+
+  return (
+    <TabThreeStack.Navigator>
+      <TabThreeStack.Screen
+        name="SettingsScreen"
+        component={SettingsScreen}
+        options={{
+          headerTitle: () => (
+            <View
+              style={{
+                alignSelf: 'center',
+                display: 'flex',
+                justifyContent: 'center',
+              }}>
+              <Logo />
+            </View>
+          ),
+          headerStyle: {
+            backgroundColor: mode === 'light' ? Styles.white : Styles.black,
+            borderBottomColor: mode === 'light' ? Styles.white : Styles.black,
+            borderBottomWidth: 0,
+          },
+          headerTintColor: '#fff',
+        }}
+      />
+    </TabThreeStack.Navigator>
   );
 }
