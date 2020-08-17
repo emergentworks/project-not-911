@@ -48,7 +48,13 @@ export const SettingsScreen = memo(() => {
           />
           <View style={styles.row}>
             <Text style={{fontWeight: 'bold', marginRight: 10}}>
-              Add to Home Screen Instructions
+              Add to Home Screen
+            </Text>
+            <Text style={{fontWeight: 'bold', marginRight: 10}}>
+              A2HS is a web app feature that allows you to install this site on your phone as a mobile app. This will allow you to launch Not911 from your home screen and enables it to work offline.
+            </Text>
+            <Text style={{fontWeight: 'bold', marginRight: 10}}>
+              Below are instructions on how to install this app manually if the install banner doesn&apos;t appear for you.
             </Text>
           </View>
         </>

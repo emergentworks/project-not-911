@@ -9,6 +9,10 @@ import useCachedResources from './hooks/useCachedResources';
 import { useTheme } from './context';
 import Navigation from './navigation';
 
+window.addEventListener('beforeinstallprompt', ev => {
+  console.log('beforeinstallprompt called');
+});
+
 /**
  * @description Starting point for the entire app.
  * mimics native functionality, doesn't render anything until app is fully loaded
@@ -26,7 +30,7 @@ const AppComponent = () => {
   } else {
     return (
       <SafeAreaProvider>
-        {/* <AddToHomeScreen /> */}
+        <AddToHomeScreen />
         <Navigation colorScheme={mode} />
         <StatusBar />
       </SafeAreaProvider>
@@ -39,8 +43,6 @@ const AppComponent = () => {
  * mimics native functionality, doesn't render anything until app is fully loaded
  */
 export default function App() {
-  const {mode}: {mode: 'light' | 'dark'} = useTheme();
-
   return (
     <ThemeManager>
       <AppComponent />

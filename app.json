@@ -53,7 +53,7 @@
     },
     "web": {
       "favicon": "./assets/images/favicon-32x32.png",
-      "startUrl": "./app"
+      "startUrl": "./app/"
     }
   }
 }
