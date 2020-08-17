@@ -65,7 +65,7 @@ export class AddToHomeScreen extends React.PureComponent<any> {
             lightColor={Styles.white}
             darkColor={Styles.white}
             style={styles.text}>
-            Add to Home screen
+            Add to Home Screen
           </Text>
         </View>
       </TouchableOpacity>

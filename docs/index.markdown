@@ -42,8 +42,15 @@ layout: not911
         /> -->
         <a href="https://play.google.com/store/apps/details?id=nyc.not911&hl=en_US">
           <img
+            class="mr-2"
             alt="Download Not911 on the Google Play Store"
             src="/assets/img/play-store.svg"
+          />
+        </a>
+        <a href="https://not911.nyc/app">
+          <img
+            alt="Or view as an installable web app"
+            src="/assets/img/pwa.svg"
           />
         </a>
       </div>
