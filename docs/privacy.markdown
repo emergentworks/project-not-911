@@ -10,8 +10,8 @@ layout: not911
   Privacy Policy
 </h1>
 <p>
-Code Cooperative built the Not 911 app as a Free app. This SERVICE is provided by
-Code Cooperative at no cost and is intended for use as is.
+Emergent Works built the Not 911 app as a Free app. This SERVICE is provided by
+Emergent Works at no cost and is intended for use as is.
 </p>
 <p>
 This page is used to inform visitors regarding our
@@ -67,7 +67,7 @@ this page.
 <p>This policy is effective as of 2020-07-28</p>
 <p><strong>Contact Us</strong></p> <p>
 If you have any questions or suggestions about our
-Privacy Policy, do not hesitate to contact us at hello@codecooperative.org.
+Privacy Policy, do not hesitate to contact us at hello@emergentworks.org.
 </p>
 <p>
 This privacy policy page was created at

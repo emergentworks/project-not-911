@@ -50,13 +50,13 @@ export const AboutScreen = memo(() => (
           lightColor="#353535"
           darkColor={Styles.white}
           style={styles.paragraph}>
-          The Code Cooperative is a community of people who learn, use, and build technology to create life changing possibilities for individuals and communities impacted by incarceration.
+          Emergent Works interrupts the prison cycle by creating pathways into high-paying jobs in technology for formerly incarcerated people.
         </Text>
         <Text
           lightColor="#353535"
           darkColor={Styles.white}
           style={[styles.paragraph, styles.marginBottom40]}>
-          We also build software for purpose-driven organizations and careers for our communities.
+          We build software for purpose-driven organizations while creating employment opportunities for formerly incarcerated people.
         </Text>
         <View style={styles.marginBottom15}>
           <Hand />
@@ -72,7 +72,7 @@ export const AboutScreen = memo(() => (
           lightColor={Styles.blue}
           darkColor={Styles.white}
           style={[styles.paragraph, styles.marginBottom60]}>
-          hello@codecooperative.org
+          hello@emergentworks.org
         </Text>
         <Text
           bold
@@ -80,9 +80,9 @@ export const AboutScreen = memo(() => (
           darkColor={Styles.white}
           style={styles.builtBy}
           onPress={() => {
-            Linking.openURL('https://github.com/codecooperative/project-not-911');
+            Linking.openURL('https://github.com/emergentworks/project-not-911');
           }}>
-          Built by Code Cooperative
+          Built by Emergent Works
         </Text>
         <Text
           lightColor="#353535"
