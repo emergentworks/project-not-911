@@ -23,14 +23,14 @@ layout: not911
       <p class='text-blue-1 text-sm mb-0 d:hidden'>
         <a
           class="no-underline"
-          href="https://codecooperative.org/agency">
-          Produced By <b>Code Cooperative</b>
+          href="https://emergentworks.org">
+          Produced By <b>Emergent Works</b>
         </a>
       </p>
       <p class='text-blue-1 text-sm mb-3 d:hidden'>
         <a
           class="no-underline"
-          href="https://github.com/codecooperative/project-not-911">
+          href="https://github.com/emergentworks/project-not-911">
           <b>➡️ Contribute to the project</b>
         </a>
       </p>
@@ -59,14 +59,14 @@ layout: not911
       <p class='text-blue-1 text-sm mb-4 d:mb-0 hidden d:block mr-2'>
         <a
           class="no-underline"
-          href="https://codecooperative.org/agency/">
-          Produced By <b>Code Cooperative</b>
+          href="https://emergentworks.org">
+          Produced By <b>Emergent Works</b>
         </a>
       </p>
       <p class='text-blue-1 text-sm mb-4 d:mb-0 hidden d:block'>
         <a
           class="no-underline"
-          href="https://github.com/codecooperative/project-not-911">
+          href="https://github.com/emergentworks/project-not-911">
           <b>➡️ Contribute to the project</b>
         </a>
       </p>
