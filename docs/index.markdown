@@ -76,7 +76,7 @@ layout: not911
     <img
       class="d:absolute b"
       alt="A preview of the Not 911 app"
-      src="/assets/img/phone.svg"
+      src="/assets/img/Phone.svg"
     />
   </div>
 </div>
