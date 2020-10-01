@@ -49,7 +49,7 @@ export const SettingsScreen = memo(() => {
                   How to install this web app on your phone or browser
                 </Text>
                 <Text style={styles.text}>
-                  A2HS is a web app feature that allows you to install this site on your phone as a mobile app.
+                  Add to Home Screen (A2HS) is a web app feature that allows you to install this site on your phone as a mobile app.
                 </Text>
                 <Text style={styles.text}>
                   This will allow you to launch Not911 from your home screen and enables it to work offline.
