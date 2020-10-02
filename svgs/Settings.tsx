@@ -4,7 +4,8 @@ import Svg, { Path } from "react-native-svg"
 export const Settings = memo((props: React.SVGProps<SVGSVGElement>) => (
   // @ts-ignore
   <Svg
-    width="30px"
+    height={28}
+    width={28}
     viewBox="0 0 64 64"
     {...props}
   >

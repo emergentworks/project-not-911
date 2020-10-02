@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { Platform, StyleSheet, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
 
 import { Styles } from '../constants';
@@ -21,13 +21,15 @@ let deferredPrompt: BeforeInstallPromptEvent;
 /**
  * @description Allows user to add web app to their phone home screen, regardless of OS
  */
-export class AddToHomeScreen extends React.PureComponent<any> {
+export class AddToHomeScreen extends PureComponent<any> {
   state = {
     showInstallPrompt: false,
   };
 
   constructor(props: any) {
     super(props);
+    if (typeof window === 'undefined') return;
+    if (typeof window?.addEventListener === 'undefined') return;
 
     // unfortunately, we have no control over this event.
     // it will fire only if certain conditions are met, which vary
