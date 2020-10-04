@@ -29,8 +29,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 theme: null
-# plugins:
-#   - jekyll-postcss
+plugins:
+  - jekyll-postcss
 
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -1,13 +1,12 @@
 {
   "scripts": {
-    "build": "bundle exec jekyll build",
+    "build": "JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build",
     "clean": "bundle exec jekyll clean",
-    "start": "bundle exec jekyll serve --incremental",
+    "start": "JEKYLL_ENV=development NODE_ENV=development bundle exec jekyll serve --incremental",
     "i": "npm install; bundle install"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
-    "autoprefixer": "^10.0.1",
     "cssnano": "^4.1.10",
     "postcss": "^8.1.1",
     "postcss-import": "^12.0.1",
