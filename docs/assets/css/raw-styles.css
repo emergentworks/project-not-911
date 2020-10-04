@@ -1,0 +1,136 @@
+---
+---
+
+/*
+  SO Github pages does not support jekyll plugins, at all
+  this means automated CSS generated does not work
+  we could probably fix this by moving to netlify instead, but in the meantime
+
+  FOR DEVELOPMENT
+  1. use this file, but copy/paste any changes into styles.css so it gets picked up by the automated css build
+
+  FOR PRODUCTION/DEPLOYMENT
+  1. when ready to deploy, copy/paste the outputted optimized css in _site/assets/css into the styles.css file in this same folder and push that up to master
+  2. github will just use the raw css with no processing, which is fine, because we've already built it
+*/
+
+/*
+  1. dont remove front-matter above
+  2. most styles are auto-generated on build by tailwind/jekyll
+  3. un-used styles are purged / removed when building for production
+  4. any custom styles should go below.
+  5. if making classes, use tailwind style atomic classes that do one thing only
+*/
+
+@tailwind base;
+@tailwind utilities;
+
+:root {
+  --color-scheme-background: #fff;
+  --color-scheme-text-color: #374152;
+}
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeSpeed;
+  text-size-adjust: 100%;
+}
+body {
+  @apply font-sans;
+  background: var(--color-scheme-background);
+  color: var(--color-scheme-text-color);
+  letter-spacing: .03rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-sans;
+  @apply font-semibold;
+  color: var(--color-scheme-text-color);
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+h1 {
+  @apply text-1;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-base;
+}
+.t {
+  top: 0;
+}
+.r {
+  right: 0;
+}
+.b {
+  bottom: 0;
+}
+.l {
+  left: 0;
+}
+a {
+  @apply text-blue;
+}
+p {
+  @apply mb-2;
+  line-height: 1.6;
+}
+img {
+  border: 0;
+}
+.logo {
+  background-image: url("/assets/img/logo-light.svg");
+  min-height: 22px;
+  width: 45px;
+}
+.phone {
+  background-image: url("/assets/img/phone-light.svg");
+  height: 642px;
+  width: 375px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-scheme-background: #fff;
+    --color-scheme-text-color: #374152;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+      --color-scheme-background: #000;
+      --color-scheme-text-color: #fff;
+  }
+
+  .logo {
+    background-image: url("/assets/img/logo-dark.svg");
+  }
+  .phone {
+    background-image: url("/assets/img/phone-dark.svg");
+  }
+
+  /*
+    @TODO tailwind supports theming
+    should implement a real theme, instead of the jank overrides below
+    but the site is very simple, and for now these will get it done
+  */
+  .bg-mint {
+    @apply bg-gray2;
+    background-color: #292929;
+  }
+  a,
+  [class^='text-'],
+  [class*='text-'] {
+    @apply text-white;
+  }
+}
