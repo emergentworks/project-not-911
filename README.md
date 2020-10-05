@@ -21,3 +21,6 @@ It is missing many potentially useful features, hotlines, etc, and is currently 
 But we want to make it better - that is why we've made it open source. The more the community contributes, the better it will be.
 
 
+## About Emergent Works
+[Emergent Works](https://www.emergentworks.org/) is a nonprofit software company that trains and employs formerly incarcerated people. We built this app.
+
