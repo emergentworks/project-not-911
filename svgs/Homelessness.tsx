@@ -1,5 +1,5 @@
-import React, { memo } from "react";
-import Svg, { Path, Rect } from "react-native-svg";
+import React, { memo } from 'react';
+import Svg, { Path, Rect } from 'react-native-svg';
 
 import {useTheme} from '../context';
 

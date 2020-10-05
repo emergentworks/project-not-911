@@ -1,6 +1,6 @@
+import * as Linking from 'expo-linking';
 import React, { memo } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
-import * as Linking from 'expo-linking';
 
 import { Text, View } from '../components';
 import { Styles } from '../constants';

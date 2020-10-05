@@ -56,7 +56,7 @@ export const PhoneNumbers: Props = {
 
   mentalhealth: [{
     crisis: true,
-    display: "NYC Well",
+    display: 'NYC Well',
     hours: '24 Hour Access',
     tags: [
       'Mobile Mental Health Crisis Team can respond within 48 hours',
@@ -70,7 +70,7 @@ export const PhoneNumbers: Props = {
       'Addiction',
       'Outpatient Detox',
     ],
-    tel: "1-888-692-9355",
+    tel: '1-888-692-9355',
     text: 'or text WELL to 65173',
   }, {
     display: 'NY State Emotional Support Helpline',
@@ -93,39 +93,39 @@ export const PhoneNumbers: Props = {
   }],
 
   immigration: [{
-    display: "ActionNYC Free Immigration Issues Hotline",
-    tel: "1-800-354-0365",
+    display: 'ActionNYC Free Immigration Issues Hotline',
+    tel: '1-800-354-0365',
   }],
 
   homelessness: [{
-    display: "Homelessness Prevention Administration Hotline",
+    display: 'Homelessness Prevention Administration Hotline',
     tags: ['Eviction prevention', 'Legal Assistance', 'Cash Assistance'],
-    tel: "718-557-1399",
+    tel: '718-557-1399',
     website: 'https://www1.nyc.gov/site/hra/help/homelessness-prevention.page',
   }, {
     display: "NYC Human Resources Administration's (HRA) Office of Civil Justice",
     tags: ['Eviction prevention', 'Legal Assistance'],
-    tel: "718-557-1379",
+    tel: '718-557-1379',
     website: 'https://www1.nyc.gov/site/hra/help/legal-services-for-tenants.page',
   }, {
     hours: '24 Hour Access',
-    display: "311 (Ask for Tenant Helpline)",
+    display: '311 (Ask for Tenant Helpline)',
     tags: ['Eviction prevention', 'Legal Assistance'],
-    tel: "311",
+    tel: '311',
   }, {
-    display: "Safe Horizons Streetwork Project Youth Homelessness Hotline",
+    display: 'Safe Horizons Streetwork Project Youth Homelessness Hotline',
     hours: 'Mon, Tues, Thurs, Fri, 10AM–5PM',
-    tel: "1-800-708-6600",
+    tel: '1-800-708-6600',
     tags: ['Overnight shelter', 'Up to age 25', ''],
     website: 'https://www.safehorizon.org/get-help/homeless-youth/',
   }, {
-    display: "311 (Ask for homeless street outreach team)",
+    display: '311 (Ask for homeless street outreach team)',
     hours: '24 Hour Access',
     tags: [
       'Request street outreach team',
       'Homeless Outreach team can respond within 1 hour',
     ],
-    tel: "311",
+    tel: '311',
     website: 'https://www1.nyc.gov/site/dhs/outreach/street-outreach.page',
   }, {
     display: 'The Door Runaway and Homeless Youth Services',
@@ -163,26 +163,26 @@ export const PhoneNumbers: Props = {
 
   poison: [{
     hours: '24 Hour Access',
-    display: "NYC Poison Control Center",
+    display: 'NYC Poison Control Center',
     tags: [
-      "Treatment Advice",
-      "General Information",
-      "Supports 150 languages",
-      "Registered Nurses & Pharmacists"
+      'Treatment Advice',
+      'General Information',
+      'Supports 150 languages',
+      'Registered Nurses & Pharmacists',
     ],
-    tel: "212-764-7667",
+    tel: '212-764-7667',
   }, {
     hours: '24 Hour Access',
-    display: "SAMHSA (Substance Abuse and Mental Health Services Administration) National Helpline",
+    display: 'SAMHSA (Substance Abuse and Mental Health Services Administration) National Helpline',
     tags: [
-      "Local Referrals",
-      "Spanish Available",
-      "General Information",
+      'Local Referrals',
+      'Spanish Available',
+      'General Information',
     ],
-    tel: "1-800-662-4357",
+    tel: '1-800-662-4357',
   }, {
     crisis: true,
-    display: "NYC Well",
+    display: 'NYC Well',
     hours: '24 Hour Access',
     tags: [
       'Mobile Mental Health Crisis Team can respond within 48 hours',
@@ -194,9 +194,9 @@ export const PhoneNumbers: Props = {
       'Mental Health Crisis',
       'Suicide Prevention',
       'Addiction',
-      'Outpatient Detox'
+      'Outpatient Detox',
     ],
-    tel: "1-888-692-9355",
+    tel: '1-888-692-9355',
     text: 'or text WELL to 65173',
   }, {
     display: 'New York State Office of Addiction Services and Supports HOPEline',
@@ -208,7 +208,7 @@ export const PhoneNumbers: Props = {
       'Referrals',
       'Multilingual support',
     ],
-    tel: "1-877-846-7369",
+    tel: '1-877-846-7369',
     text: 'or text HOPENY',
   }],
 };

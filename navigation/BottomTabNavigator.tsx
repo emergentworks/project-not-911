@@ -5,15 +5,15 @@ import { View } from 'react-native';
 
 import { Styles } from '../constants';
 import { useTheme } from '../context';
-import { HomeScreen } from '../screens/HomeScreen';
 import { AboutScreen } from '../screens/AboutScreen';
+import { HomeScreen } from '../screens/HomeScreen';
 import { SettingsScreen } from '../screens/SettingsScreen';
 import { About, Home, Logo, Settings } from '../svgs';
 import {
   BottomTabParamList,
   TabOneParamList,
-  TabTwoParamList,
   TabThreeParamList,
+  TabTwoParamList,
 } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();

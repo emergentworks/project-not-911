@@ -1,7 +1,7 @@
 import React from 'react';
 import { ColorSchemeName } from 'react-native';
-import {Appearance} from 'react-native-appearance';
 import { AsyncStorage } from 'react-native';
+import {Appearance} from 'react-native-appearance';
 
 import {Styles} from '../constants';
 // import useColorScheme from '../hooks/useColorScheme';
@@ -13,7 +13,7 @@ const osTheme = Appearance.getColorScheme() || 'light';
 export const ManageThemeContext: React.Context<any> = React.createContext({
   mode: osTheme,
   theme: Styles[osTheme],
-  toggle: () => {}
+  toggle: () => {},
 });
 
 // define useTheme hook for functional components
@@ -36,7 +36,7 @@ export class ThemeManager extends React.Component<any, any> {
           mode: savedMode,
         });
       }
-    } catch(err) {}
+    } catch (err) {}
   }
 
   toggleTheme = async () => {
@@ -52,7 +52,7 @@ export class ThemeManager extends React.Component<any, any> {
       this.setState({
         mode: newMode,
       });
-    } catch (error) {}
+    } catch (err) {}
   }
 
   render () {
@@ -61,7 +61,7 @@ export class ThemeManager extends React.Component<any, any> {
         value={{
           mode: this.state.mode,
           theme: Styles[this.state.mode],
-          toggle: this.toggleTheme
+          toggle: this.toggleTheme,
         }}>
         {this.props.children}
       </ManageThemeContext.Provider>

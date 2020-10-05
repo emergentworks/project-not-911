@@ -1,5 +1,5 @@
-import React, {memo} from "react";
-import Svg, { Path, Mask } from "react-native-svg";
+import React, {memo} from 'react';
+import Svg, { Mask, Path } from 'react-native-svg';
 
 export const Noise = memo((props: React.SVGProps<SVGSVGElement>) => (
   // @ts-ignore

@@ -1,13 +1,13 @@
 import React, { memo } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
-import { Styles } from '../constants';
 import { Text, View } from '../components/Themed';
+import { Styles } from '../constants';
 import {
   Caret,
   Homelessness,
-  MentalHealth,
   Legal,
+  MentalHealth,
   Poison,
   Violence,
 } from '../svgs';

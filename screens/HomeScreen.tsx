@@ -1,11 +1,11 @@
-import React, { memo } from 'react';
-import { StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import * as Linking from 'expo-linking';
+import React, { memo } from 'react';
+import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
-import { Styles } from '../constants';
 import { RowLink, Text, View } from '../components';
-import { useTheme } from '../context';
+import { Styles } from '../constants';
 import { Routes } from '../constants';
+import { useTheme } from '../context';
 import { Phone } from '../svgs';
 
 /**
@@ -33,7 +33,7 @@ export const HomeScreen = memo((props: any) => {
           </Text>
           <TouchableOpacity
             onPress={() => {
-              Linking.openURL(`tel://911`);
+              Linking.openURL('tel://911');
             }}>
             <View
               style={styles.dangerBtn}

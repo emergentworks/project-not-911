@@ -1,11 +1,11 @@
+import * as Linking from 'expo-linking';
 import * as React from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
-import * as Linking from 'expo-linking';
 
-import { PhoneNumbers } from '../../constants';
 import { Text, View } from '../../components';
-import { Caret, Phone } from '../../svgs';
+import { PhoneNumbers } from '../../constants';
 import { Styles } from '../../constants';
+import { Caret, Phone } from '../../svgs';
 import { Props } from './types';
 
 /**
@@ -76,7 +76,7 @@ export const PhoneNumberListScreen = (props: Props) => {
             <TouchableOpacity
               style={[
                 styles.phoneWrap,
-                entry.crisis && {backgroundColor: Styles.orange}
+                entry.crisis && {backgroundColor: Styles.orange},
               ]}
               onPress={() => {
                 Linking.openURL(`tel://${entry.tel}`);
@@ -88,7 +88,7 @@ export const PhoneNumberListScreen = (props: Props) => {
       </ScrollView>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   backBtn: {

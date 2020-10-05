@@ -1,10 +1,10 @@
+import Constants from 'expo-constants';
 import React, { memo, useState } from 'react';
 import { Dimensions, ScrollView, StyleSheet, Switch } from 'react-native';
-import Constants from 'expo-constants';
 
-import { useTheme } from '../context';
 import { Text, View } from '../components';
 import { Styles } from '../constants';
+import { useTheme } from '../context';
 
 /**
  * @description This component is for adjusting user settings, such as theme
@@ -30,8 +30,8 @@ export const SettingsScreen = memo(() => {
               Toggle Dark Mode
             </Text>
             <Switch
-              trackColor={{ false: "#767577", true: "#81b0ff" }}
-              thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+              trackColor={{ false: '#767577', true: '#81b0ff' }}
+              thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
               ios_backgroundColor="#3e3e3e"
               onValueChange={toggleSwitch}
               value={isEnabled}
@@ -60,7 +60,7 @@ export const SettingsScreen = memo(() => {
                   iOS Safari
                 </Text>
                 <Text style={styles.text}>
-                  Click the share button on the bottom middle of your screen. Then click 'Add to Home Screen'. You might have to scroll a little. You should now be able to launch Not911 from your home screen.
+                  Click the share button on the bottom middle of your screen. Then click &apos;Add to Home Screen&apos;. You might have to scroll a little. You should now be able to launch Not911 from your home screen.
                 </Text>
               </View>
               <View style={styles.section}>
@@ -71,7 +71,7 @@ export const SettingsScreen = memo(() => {
                   If Firefox: Click the home icon (the one with a + in it) that should be next to the url.
                 </Text>
                 <Text style={styles.text}>
-                  If Chrome: Click the 3 dots menu button in the top right of your screen, then click 'Add to Home screen'. You should now be able to launch Not911 from your home screen.
+                  If Chrome: Click the 3 dots menu button in the top right of your screen, then click &apos;Add to Home screen&apos;. You should now be able to launch Not911 from your home screen.
                 </Text>
               </View>
               <View style={styles.section}>
@@ -79,7 +79,7 @@ export const SettingsScreen = memo(() => {
                   Chrome
                 </Text>
                 <Text style={styles.text}>
-                  Click the 3 dots menu button in the top right of your screen, then click 'Install Not911'. You should now be able to launch Not911 from your Chrome apps menu.
+                  Click the 3 dots menu button in the top right of your screen, then click &apos;Install Not911&apos;. You should now be able to launch Not911 from your Chrome apps menu.
                 </Text>
               </View>
             </>

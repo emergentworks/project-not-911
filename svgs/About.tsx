@@ -1,5 +1,5 @@
-import React, { memo } from "react";
-import Svg, { Circle, Rect } from "react-native-svg";
+import React, { memo } from 'react';
+import Svg, { Circle, Rect } from 'react-native-svg';
 
 export const About = memo((props: React.SVGProps<SVGSVGElement>) => (
   // @ts-ignore

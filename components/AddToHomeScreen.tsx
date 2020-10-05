@@ -1,9 +1,9 @@
+import Constants from 'expo-constants';
 import React, { PureComponent } from 'react';
 import { Platform, StyleSheet, TouchableOpacity } from 'react-native';
-import Constants from 'expo-constants';
 
+import { Text, View } from '../components/Themed';
 import { Styles } from '../constants';
-import { View, Text } from '../components/Themed';
 
 interface BeforeInstallPromptEvent extends Event {
   readonly platforms: Array<string>;

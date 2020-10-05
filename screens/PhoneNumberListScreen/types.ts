@@ -1,5 +1,5 @@
-import { PhoneScreenNavigationProp } from '../../types';
 import { PhoneNumbers } from '../../constants';
+import { PhoneScreenNavigationProp } from '../../types';
 
 type SectionsUnion = keyof typeof PhoneNumbers;
 export type Props = {

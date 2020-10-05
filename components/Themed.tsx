@@ -9,16 +9,16 @@ import { useTheme } from '../context';
  */
 export function useThemeColor(
   props: { light?: string; dark?: string },
-  colorName: keyof typeof Styles.light & keyof typeof Styles.dark
+  colorName: keyof typeof Styles.light & keyof typeof Styles.dark,
 ) {
   const {mode}: {mode: 'light' | 'dark'} = useTheme();
   const colorFromProps = props[mode];
 
   if (colorFromProps) {
     return colorFromProps;
-  } else {
-    return Styles[mode][colorName];
   }
+  return Styles[mode][colorName];
+
 }
 
 type ThemeProps = {
@@ -38,7 +38,7 @@ export function Text(props: TextProps) {
   const { bold, style, lightColor, darkColor, ...otherProps } = props;
   const color = useThemeColor({
     light: lightColor,
-    dark: darkColor
+    dark: darkColor,
   }, 'text');
 
   let fontFamily = 'Inter_400Regular';
@@ -48,7 +48,7 @@ export function Text(props: TextProps) {
 
   return (
     <DefaultText
-      style={[{ color, fontFamily, }, style]}
+      style={[{ color, fontFamily }, style]}
       {...otherProps}
     />
   );
