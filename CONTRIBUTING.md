@@ -11,7 +11,7 @@ We love your input! We want to make contributing to this project as easy and tra
 You'll notice that this repo is a mono-repo. Meaning that everything related to the Not911 project lives here. That means both the android app, the marketing site, and the web app live here.
 
 ## We Use [Github Flow](https://guides.github.com/introduction/flow/index.html), So All Code Changes Happen Through Pull Requests
-Pull requests are the best way to propose changes to the codebase (we use [Github Flow](https://guides.github.com/introduction/flow/index.html)). We actively welcome your pull requests:
+Pull requests are the best way to propose changes to the codebase. We actively welcome your pull requests:
 
 1. Fork the repo and create your branch from `master`.
 2. If you've added code that should be tested, add tests.
