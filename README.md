@@ -10,11 +10,13 @@ Assuming you have node installed on your machine:
 - Boot up the app: `npm start (or expo start)`
 
 ## About Not911
-As it says on the website:
+Not911 is designed to direct you to New York City-based organizations that offer counseling, mediation and intervention services.
 
-> Not911 is designed to direct you to New York City-based organizations that offer counseling, mediation and intervention services.
+Currently, that means a list of community-based groups that offer preventative services and strategies for issues related to mental health, homelessness, legal aid and other topics.
 
-Not911 is not perfect. It is an MVP, an idea that we hope will gain traction.
+These are not organizations that should be used in a life-threatening emergency. If someone is experiencing a life-threatening emergency, call 911 immediately.
+
+Not911 is not perfect. It is an MVP, an idea that we hope will gain traction. A potential alternative to the current system.
 
 It is missing many potentially useful features, hotlines, etc, and is currently only available in NYC.
 
@@ -22,5 +24,8 @@ But we want to make it better - that is why we've made it open source. The more 
 
 
 ## About Emergent Works
-[Emergent Works](https://www.emergentworks.org/) is a nonprofit software company that trains and employs formerly incarcerated people. We built this app.
+[Emergent Works](https://www.emergentworks.org/) is a nonprofit software company that trains and employs formerly incarcerated people.
 
+We build software for purpose-driven organizations while creating employment opportunities for formerly incarcerated people.
+
+Interested in hiring us? Email hello@emergentworks.org
