@@ -71,7 +71,7 @@ export const PhoneNumberListScreen = (props: Props) => {
             <Text
               darkColor={Styles.white}
               style={[styles.centerTxt, styles.tel]}>
-              {entry.tel}
+              {entry.tel} {entry.text}
             </Text>
             <TouchableOpacity
               style={[
