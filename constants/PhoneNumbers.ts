@@ -6,7 +6,7 @@ type Props = {
     is24Hr?: true,
     tags?: string[],
     tel?: string,
-    text?: string,
+    text?: { content?: string; number: string; },
     website?: string,
     voicemail?: true,
   }[];
@@ -50,7 +50,7 @@ export const PhoneNumbers: Props = {
     crisis: true,
     display: 'National Domestic Violence Hotline',
     tel: '1-800-799-7233',
-    text: 'or text LOVEIS to 1-866-331-9474',
+    text: { content: 'LOVEIS', number: '1-866-331-9474' },
     hours: '24 Hour Access',
   }],
 
@@ -71,7 +71,7 @@ export const PhoneNumbers: Props = {
       'Outpatient Detox',
     ],
     tel: '1-888-692-9355',
-    text: 'or text WELL to 65173',
+    text: { content: 'WELL', number: '65173' },
   }, {
     display: 'NY State Emotional Support Helpline',
     tags: ['Anxiety', 'Counseling', 'COVID-19'],
@@ -81,14 +81,14 @@ export const PhoneNumbers: Props = {
   //   display: 'NYS/Crisis Text Line Partnership',
   //   hours: '24 Hour Access',
   //   tags: ['Crisis', 'Counseling', 'COVID-19'],
-  //   text: 'Text GOT5 to 741741',
+  //   text: { content: 'GOT5', number: '741741' },
   // },
   {
     display: 'SAMHSA Disaster Distress National Helpline',
     hours: '24 Hour Access',
     tags: ['Post-Disaster', 'Crisis', 'Emotional Distress', 'Trauma', 'COVID-19', 'Unrest', 'Spanish'],
     tel: '1-800-985-5990',
-    text: 'or text TalkWithUs or Hablanos to 66746',
+    text: {content: 'TalkWithUs or Hablanos', number: '66746'},
     website: 'https://www.samhsa.gov/find-help/disaster-distress-helpline',
   }],
 
@@ -197,7 +197,7 @@ export const PhoneNumbers: Props = {
       'Outpatient Detox',
     ],
     tel: '1-888-692-9355',
-    text: 'or text WELL to 65173',
+    text: {content: 'WELL', number: '65173'},
   }, {
     display: 'New York State Office of Addiction Services and Supports HOPEline',
     hours: '24 Hour Access',
@@ -209,6 +209,6 @@ export const PhoneNumbers: Props = {
       'Multilingual support',
     ],
     tel: '1-877-846-7369',
-    text: 'or text HOPENY',
+    text: {number: 'HOPENY'}, // TODO (JC): Make sure that this letter phone number format works properly
   }],
 };

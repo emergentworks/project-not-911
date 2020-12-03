@@ -26,6 +26,22 @@ export const PhoneNumberListScreen = (props: Props) => {
     return 1;
   });
 
+  const formatTextInfo = (textInfo: { content?: string; number: string }) => {
+    if (textInfo === undefined) {
+      return '';
+    }
+
+    let displayInfo: string = 'or text';
+
+    if (textInfo.content) {
+      displayInfo += ` ${textInfo.content} to`;
+    }
+
+    displayInfo += ` ${textInfo.number}`;
+
+    return displayInfo;
+  }
+
   return (
     <View
       darkColor={Styles.black}
@@ -71,7 +87,7 @@ export const PhoneNumberListScreen = (props: Props) => {
             <Text
               darkColor={Styles.white}
               style={[styles.centerTxt, styles.tel]}>
-              {entry.tel} {entry.text}
+              {entry.tel} {formatTextInfo(entry.text)}
             </Text>
             <TouchableOpacity
               style={[
