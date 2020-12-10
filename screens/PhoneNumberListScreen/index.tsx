@@ -1,13 +1,11 @@
-import * as Linking from 'expo-linking';
 import * as React from 'react';
-import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 
-import { Text, View } from '../../components';
+import { Text, View, IconGroup } from '../../components';
 import { PhoneNumbers } from '../../constants';
 import { Styles } from '../../constants';
-import { Caret, Phone } from '../../svgs';
+import { Caret } from '../../svgs';
 import { Props } from './types';
-
 /**
  * @description This component renders the PhoneNumber Screen
  * ie, any phone number list we pass into it basically
@@ -89,16 +87,11 @@ export const PhoneNumberListScreen = (props: Props) => {
               style={[styles.centerTxt, styles.tel]}>
               {entry.tel} {formatTextInfo(entry.text)}
             </Text>
-            <TouchableOpacity
-              style={[
-                styles.phoneWrap,
-                entry.crisis && {backgroundColor: Styles.orange},
-              ]}
-              onPress={() => {
-                Linking.openURL(`tel://${entry.tel}`);
-              }}>
-              <Phone color={Styles.white} />
-            </TouchableOpacity>
+            <IconGroup
+              crisis={entry.crisis}
+              tel={entry.tel}
+              text={entry.text} 
+              website={entry.website} />
           </View>
         ))}
       </ScrollView>
@@ -149,17 +142,6 @@ const styles = StyleSheet.create({
   hours: {
     fontSize: 18,
     paddingBottom: 5,
-  },
-  phoneWrap: {
-    alignItems: 'center',
-    alignSelf: 'center',
-    backgroundColor: Styles.blue,
-    borderRadius: 1000,
-    flex: 1,
-    height: 70,
-    justifyContent: 'center',
-    padding: 20,
-    width: 70,
   },
   tel: {
     marginBottom: 15,
