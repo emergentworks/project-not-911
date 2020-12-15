@@ -23,7 +23,7 @@ export const PhoneNumbers: Props = {
       'Counseling',
       'Multilingual',
     ],
-    tel: '1-800-621–4673',
+    tel: '1-800-621-4673',
     hours: '24 Hour Access',
   }, {
     display: 'Safe Horizons Citywide General Helpline',
