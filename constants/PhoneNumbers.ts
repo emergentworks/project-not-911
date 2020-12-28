@@ -209,6 +209,6 @@ export const PhoneNumbers: Props = {
       'Multilingual support',
     ],
     tel: '1-877-846-7369',
-    text: {number: 'HOPENY'}, // TODO (JC): Make sure that this letter phone number format works properly
+    text: {number: 'HOPENY'},
   }],
 };

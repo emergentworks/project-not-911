@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 
-import { Text, View, IconGroup } from '../../components';
+import { IconGroup, Text, View } from '../../components';
 import { PhoneNumbers } from '../../constants';
 import { Styles } from '../../constants';
 import { Caret } from '../../svgs';
 import { Props } from './types';
+
 /**
  * @description This component renders the PhoneNumber Screen
  * ie, any phone number list we pass into it basically
@@ -38,7 +39,7 @@ export const PhoneNumberListScreen = (props: Props) => {
     displayInfo += ` ${textInfo.number}`;
 
     return displayInfo;
-  }
+  };
 
   return (
     <View
@@ -90,7 +91,7 @@ export const PhoneNumberListScreen = (props: Props) => {
             <IconGroup
               crisis={entry.crisis}
               tel={entry.tel}
-              text={entry.text} 
+              text={entry.text}
               website={entry.website} />
           </View>
         ))}
