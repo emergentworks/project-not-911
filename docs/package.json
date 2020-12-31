@@ -2,6 +2,7 @@
   "scripts": {
     "build": "JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build",
     "clean": "bundle exec jekyll clean",
+    "prod": "JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll serve --incremental",
     "start": "JEKYLL_ENV=development NODE_ENV=development bundle exec jekyll serve --incremental",
     "i": "npm install; bundle install"
   },

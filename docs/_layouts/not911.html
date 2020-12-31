@@ -15,6 +15,9 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    {% if site.google_analytics and jekyll.environment == 'production' %}
+      {% include analytics.html %}
+    {% endif %}
   </head>
   <body>
     {{ content }}

@@ -40,7 +40,7 @@
     "android": {
       "package": "nyc.not911",
       "permissions" : [],
-      "versionCode": 8,
+      "versionCode": 9,
       "adaptiveIcon": {
         "backgroundColor": "#3333ff",
         "foregroundImage": "./assets/images/icon.png"
