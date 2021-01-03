@@ -15,9 +15,10 @@ gem "github-pages", "~> 206", group: :jekyll_plugins
 
 # If you have any plugins, put them here!
 # does not work when building to prod - only enable if changing css in development
-# group :jekyll_plugins do
+group :jekyll_plugins do
+  gem 'jekyll-sitemap'
 #   gem "jekyll-postcss"
-# end
+end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.

@@ -11,13 +11,6 @@ layout: not911
       aria-label="Not 911"
       class='logo d:mr-5 mb-3 d:mb-0'>
     </div>
-    <!-- <img
-      class='d:mr-5 mb-3 d:mb-0'
-      width='45'
-      height='22'
-      alt='Not 911'
-      src="/assets/img/logo-dark.svg"
-    /> -->
     <div class="d:h-screen flex flex-col d:justify-center">
       <h1 class="leading-tight text-blue mb-1 font-bold d:pr-5">
         Community Based Alternatives to the Police
@@ -40,11 +33,6 @@ layout: not911
         </a>
       </p>
       <div class='flex flex-row mb-4 d:mb-0'>
-        <!-- <img
-          class='mr-2'
-          alt='Download Not911 on the App Store'
-          src="/assets/img/app-store.svg"
-        /> -->
         <a href="https://play.google.com/store/apps/details?id=nyc.not911&hl=en_US">
           <img
             class="mr-2"
@@ -85,25 +73,3 @@ layout: not911
   </div>
 </div>
 
-<!-- <ul class='hidden text-gray-4 d:mr-5'>
-  <li class="font-bold">
-    Safety Guides
-  </li>
-  <li><a>Responding to Emergency</a></li>
-  <li><a>Mental Health</a></li>
-  <li><a>Violence</a></li>
-  <li><a>Homeless Assistance</a></li>
-  <li><a>Drugs / Poisoning</a></li>
-  <li><a>Noise & Nuisances</a></li>
-</ul>
-<ul class='hidden text-gray-4'>
-  <li class="font-bold">
-    Community Resources
-  </li>
-  <li><a>BIPOC</a></li>
-  <li><a>LGBTQIA+</a></li>
-  <li><a>Immigrant</a></li>
-  <li><a>Substance Abuse</a></li>
-  <li><a>Homeless</a></li>
-  <li><a>Elderly</a></li>
-</ul> -->

@@ -29,10 +29,23 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 theme: null
+
+# TODO this should not be hardcoded, but this is just a static marketing site so...
+nonce: not911
+
+url: "https://not911.nyc"
 plugins:
-  - jekyll-postcss
+  - jekyll-sitemap
+  # - jekyll-postcss
 
 google_analytics: G-QE7CKCFRQQ
+
+defaults:
+  -
+    scope:
+      path: "app/"
+    values:
+      sitemap: false
 
 # Exclude from processing.
 # The following items will not be processed, by default.
