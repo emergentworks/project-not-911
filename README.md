@@ -4,7 +4,7 @@ Alternatives to calling 911 in NYC
 ## Steps to run this project
 Assuming you have node installed on your machine:
 
-- Clone the repository on your machine: `git clone git@github.com:emergentworks/project-not-911.git`
+- Clone the repository on your machine: `git clone https://github.com/emergentworks/project-not-911.git`
 - Navigate to your newly created project folder: `cd project-not-911`
 - Install dependencies: `expo install`
 - Boot up the app: `npm start (or expo start)`
