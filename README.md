@@ -2,9 +2,14 @@
 Alternatives to calling 911 in NYC
 
 ## Steps to run this project
-Assuming you have node installed on your machine:
+Assuming you have [node](https://nodejs.org/en/) installed on your machine:
 
-- Clone the repository on your machine: `git clone git@github.com:emergentworks/project-not-911.git`
+- Install [Expo](https://expo.io/) framework
+  ```
+  npm install --global expo-cli
+  ```
+  Expo is a framework and a platform for universal React applications. It is a set of tools and services built around React Native and native platforms that help       you develop, build, deploy, and quickly iterate on iOS, Android, and web apps from the same JavaScript/TypeScript codebase.
+- Clone the repository on your machine: `git clone https://github.com/emergentworks/project-not-911.git`
 - Navigate to your newly created project folder: `cd project-not-911`
 - Install dependencies: `expo install`
 - Boot up the app: `npm start (or expo start)`
