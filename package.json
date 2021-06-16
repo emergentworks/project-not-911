@@ -26,6 +26,7 @@
     "@svgr/webpack": "^5.4.0",
     "expo": "~38.0.8",
     "expo-asset": "~8.1.7",
+    "expo-cli": "^4.5.2",
     "expo-constants": "~9.1.1",
     "expo-font": "~8.2.1",
     "expo-linking": "^1.0.1",
