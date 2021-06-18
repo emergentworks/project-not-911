@@ -140,6 +140,7 @@ export const PhoneNumbers: Props = {
     display: 'Integrated Counseling Center Sliding Scale / Low Fee Counseling',
     tel: '415-648-2644',
     hours: 'Mon-Fri 9am-8pm',
+    website: 'https://www.ciis.edu/counseling-and-acupuncture-clinics/church-street-integral-counseling-center',
     // location: 'San Francisco',
   }
 
