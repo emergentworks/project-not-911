@@ -13,7 +13,7 @@ import { Props } from './types';
  */
 export const PhoneNumberListScreen = (props: Props) => {
   const {route} = props;
-  console.log(props);
+  console.log('PhoneNumberListScreen', props);
   const numbers = PhoneNumbers[route.params.section];
 
   if (!(numbers instanceof Array)) return null;
@@ -21,7 +21,10 @@ export const PhoneNumberListScreen = (props: Props) => {
   // lets always have 'crisis' hotlines at the top
   // crisis meaning, mental health breakdowns, etc, but not an 'emergency'
   // wherein someone is currently in physical danger
-  const sortedNumbers = numbers.sort(entry => {
+  
+  const sortedNumbers = numbers.filter(entry => {
+    return entry.location.includes(route?.params?.city)
+  }).sort(entry => {
     if (entry.crisis) return -1;
     return 1;
   });

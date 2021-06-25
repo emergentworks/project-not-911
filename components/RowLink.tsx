@@ -19,6 +19,7 @@ type Props = {
   includeIcon?: true,
   isLast?: boolean,
   navigation: any,
+  city?: string,
   to: "HomeScreen" | "PhoneNumberListScreen",
   route: {
     btn: {
@@ -41,7 +42,7 @@ export const RowLink = memo((props: Props) => {
         style={styles.row}
         onPress={() => props.navigation.navigate(
           props.to,
-          route.params,
+          {...route.params, city:props.city},
         )}>
         {props.includeIcon && (
           <View

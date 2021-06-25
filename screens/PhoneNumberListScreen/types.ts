@@ -8,6 +8,7 @@ export type Props = {
     params: {
       section: SectionsUnion,
       title: string,
+      city: string,
     },
   },
 };

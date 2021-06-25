@@ -91,6 +91,7 @@ export const HomeScreen = memo((props: any) => {
               isLast={i === Routes.length - 1}
               navigation={props.navigation}
               route={route}
+              city={city}
             />
           ))}
         </View>
