@@ -5,7 +5,7 @@ import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { RowLink, Text, View } from '../components';
 import { Styles, Cities } from '../constants';
 import { useTheme } from '../context';
-import { Phone } from '../svgs';
+import { Phone, NewYorkCity, SanFrancisco } from '../svgs';
 
 /**
  * @description This component renders the city selection page (the list of cities to choose from)
@@ -72,7 +72,8 @@ export const CitySelectScreen = memo((props: any) => {
           {Cities.map((city, i) => (
             <RowLink
               key={i}
-            //   includeIcon
+              includeIcon
+              to='HomeScreen'
               isLast={i === Cities.length - 1}
               navigation={props.navigation}
               route={city}

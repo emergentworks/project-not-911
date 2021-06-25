@@ -3,16 +3,20 @@ import React, { memo } from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { RowLink, Text, View } from '../components';
-import { Styles } from '../constants';
-import { Routes } from '../constants';
+import { Styles, Cities, Routes } from '../constants';
 import { useTheme } from '../context';
 import { Phone } from '../svgs';
+// import { Props } from './PhoneNumberListScreen/types';
 
 /**
  * @description This component renders the landing page (the list of hotline categories)
  */
 export const HomeScreen = memo((props: any) => {
   const {mode} = useTheme();
+  const {route} = props;
+  console.log(props);
+  const city = route?.params?.location;
+  console.log('CityConsoleLog', city);
 
   return (
     <View
@@ -63,6 +67,15 @@ export const HomeScreen = memo((props: any) => {
             lightColor={Styles.black}
             darkColor={Styles.white}
             style={styles.title}>
+              {city}
+          </Text>
+        </View>
+        <View style={styles.innerView}>
+          <Text
+            bold
+            lightColor={Styles.black}
+            darkColor={Styles.white}
+            style={styles.title}>
             What do you need help with?
           </Text>
           <View
@@ -74,6 +87,7 @@ export const HomeScreen = memo((props: any) => {
             <RowLink
               key={i}
               includeIcon
+              to="PhoneNumberListScreen"
               isLast={i === Routes.length - 1}
               navigation={props.navigation}
               route={route}
@@ -124,6 +138,7 @@ const styles = StyleSheet.create({
   danger: {
     display: 'flex',
     padding: 20,
+    marginBottom: 50,
     width: '100%',
   },
   dangerBtnTxt: {
@@ -157,8 +172,8 @@ const styles = StyleSheet.create({
   },
   innerView: {
     paddingHorizontal: 20,
-    paddingTop: 40,
-    paddingBottom: 50,
+    // paddingTop: 40,
+    paddingBottom: 20,
   },
   marginBottom15: {
     marginBottom: 15,

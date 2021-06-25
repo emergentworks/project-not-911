@@ -22,3 +22,5 @@ export { Poison } from './Poison';
 export { Settings } from './Settings';
 export { TextMessage } from './TextMessage';
 export { Violence } from './Violence';
+export { NewYorkCity } from './NewYorkCity';
+export { SanFrancisco } from './SanFrancisco';

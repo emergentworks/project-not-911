@@ -13,6 +13,7 @@ import { Props } from './types';
  */
 export const PhoneNumberListScreen = (props: Props) => {
   const {route} = props;
+  console.log(props);
   const numbers = PhoneNumbers[route.params.section];
 
   if (!(numbers instanceof Array)) return null;

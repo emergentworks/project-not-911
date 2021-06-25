@@ -29,6 +29,11 @@ export default {
             screens: {
               PhoneNumberListScreen: 'app/numbers/:section',
             },
+          CitySelect: {
+              screens: {
+                CitySelectScreen: 'app/cityselect',
+              },
+          },
           },
         },
       },

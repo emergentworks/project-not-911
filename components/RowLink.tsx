@@ -3,6 +3,7 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 
 import { Text, View } from '../components/Themed';
 import { Styles } from '../constants';
+// import { CitySelectScreen }  from '../screens/CitySelectScreen';
 import {
   Caret,
   Homelessness,
@@ -10,12 +11,15 @@ import {
   MentalHealth,
   Poison,
   Violence,
+  NewYorkCity,
+  SanFrancisco,
 } from '../svgs';
 
 type Props = {
   includeIcon?: true,
   isLast?: boolean,
   navigation: any,
+  to: "HomeScreen" | "PhoneNumberListScreen",
   route: {
     btn: {
       display: string,
@@ -29,13 +33,14 @@ type Props = {
  */
 export const RowLink = memo((props: Props) => {
   const { isLast, route } = props;
+  console.log('RowLinkProps', props);
 
   return (
     <>
       <TouchableOpacity
         style={styles.row}
         onPress={() => props.navigation.navigate(
-          'PhoneNumberListScreen',
+          props.to,
           route.params,
         )}>
         {props.includeIcon && (
@@ -43,6 +48,14 @@ export const RowLink = memo((props: Props) => {
             lightColor={Styles.white}
             darkColor={Styles.blue}
             style={styles.marginRight10}>
+              {props.route.btn.display === 'New York City'
+              && (
+                <NewYorkCity />
+              )}
+              {props.route.btn.display === 'San Francisco Bay Area'
+              && (
+                <SanFrancisco />
+              )}
             {props.route.btn.display === 'Violence'
               && (
                 <Violence />
