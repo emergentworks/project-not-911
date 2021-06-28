@@ -12,7 +12,8 @@ type Props = {
     description?: string,
     borough?: string,
     note?: string,
-    location: string[],
+    location?: string[],
+    nationwide?: boolean,
   }[];
 };
 
@@ -33,6 +34,7 @@ export const PhoneNumbers: Props = {
       'New York City', 
       'San Francisco'
     ],
+    nationwide: true,
   }, {
     display: 'Safe Horizons Citywide General Helpline',
     hours: 'Mon-Fri. 9AM - 5PM',
@@ -50,14 +52,17 @@ export const PhoneNumbers: Props = {
     location: [
       'New York City', 
       'San Francisco'
-    ],  }, {
+    ],
+    nationwide: true,
+  }, {
     crisis: true,
     display: 'NYC Gay and Lesbian Anti-Violence Project',
     tel: '212-714-1141',
     hours: '24 Hour Access',
     location: [
       'New York City',
-    ],  }, {
+    ],
+  }, {
     crisis: true,
     display: 'Violence Intervention Program',
     tel: '1-800-664-5880',
@@ -65,14 +70,16 @@ export const PhoneNumbers: Props = {
     location: [
       'New York City', 
       'San Francisco'
-    ],  }, {
+    ],
+    nationwide: true,
+  }, {
       display: "Barrier Free Living",
       description: "Outside of these hours call the National Domestic Violence Hotline", 
       tel: "1 (800) 799-7233",
       website: "https://www.bflnyc.org/",
       location: [
         'New York City', 
-      ],    
+      ], 
     },
     {
     crisis: true,
@@ -83,14 +90,17 @@ export const PhoneNumbers: Props = {
     location: [
       'New York City', 
       'San Francisco'
-    ],    },
+    ],
+    nationwide: true,
+  },
     {
       display: 'Peer Advocate Community United Against Violence (LGBTQ+)',
       tel: '415-333-HELP (4357)',
       hours: 'Mon-Fri 10am-1pm, 2pm-6pm',
       location: [
         'San Francisco'
-      ],    },
+      ],
+    },
     
   ],
 
@@ -140,7 +150,8 @@ export const PhoneNumbers: Props = {
     location: [
       'New York City', 
       'San Francisco'
-    ],    
+    ],   
+    nationwide: true,
   },
   {
     display: "The Samaritans",
@@ -150,7 +161,8 @@ export const PhoneNumbers: Props = {
     website: "https://samaritansnyc.org/24-hour-crisis-hotline/",
     location: [
       'New York City', 
-    ],  },
+    ],
+  },
   {
     display: 'California State Emotional Support Helpline',
     tel: '1-855-845-7415',
@@ -158,7 +170,8 @@ export const PhoneNumbers: Props = {
     website: 'https://www.mentalhealthsf.org/peer-run-warmline/',
     location: [
       'San Francisco'
-    ],  },
+    ],
+    },
   {
     display: 'Integrated Counseling Center Sliding Scale / Low Fee Counseling',
     tel: '415-648-2644',
@@ -166,7 +179,8 @@ export const PhoneNumbers: Props = {
     website: 'https://www.ciis.edu/counseling-and-acupuncture-clinics/church-street-integral-counseling-center',
     location: [
       'San Francisco'
-    ],  }
+    ],
+    }
 
 ],
 
@@ -175,7 +189,8 @@ export const PhoneNumbers: Props = {
     tel: '1-800-354-0365',
     location: [
       'New York City', 
-    ],  }],
+    ],
+    }],
 
   homelessness: [{
     display: 'Homelessness Prevention Administration Hotline',
@@ -184,7 +199,9 @@ export const PhoneNumbers: Props = {
     website: 'https://www1.nyc.gov/site/hra/help/homelessness-prevention.page',
     location: [
       'New York City', 
-    ],  }, {
+    ],
+    }, 
+    {
     display: "NYC Human Resources Administration's (HRA) Office of Civil Justice",
     tags: ['Eviction prevention', 'Legal Assistance'],
     tel: '718-557-1379',
@@ -200,7 +217,8 @@ export const PhoneNumbers: Props = {
     tel: '311',
     location: [
       'New York City', 
-    ],  }, {
+    ],
+  }, {
     display: 'Safe Horizons Streetwork Project Youth Homelessness Hotline',
     hours: 'Mon, Tues, Thurs, Fri, 10AM–5PM',
     tel: '1-800-708-6600',
@@ -208,7 +226,9 @@ export const PhoneNumbers: Props = {
     website: 'https://www.safehorizon.org/get-help/homeless-youth/',
     location: [
       'New York City', 
-    ],  }, {
+    ],
+  }, 
+    {
     display: '311 (Ask for homeless street outreach team)',
     hours: '24 Hour Access',
     tags: [
@@ -219,7 +239,8 @@ export const PhoneNumbers: Props = {
     website: 'https://www1.nyc.gov/site/dhs/outreach/street-outreach.page',
     location: [
       'New York City', 
-    ],  }, {
+    ],
+  }, {
     display: 'The Door Runaway and Homeless Youth Services',
     tags: [
       'Use extension 3377 for homeless youth services',
@@ -231,7 +252,8 @@ export const PhoneNumbers: Props = {
     website: 'https://door.org/programs-services/runaway-homeless-youth/',
     location: [
       'New York City', 
-    ],  }, {
+    ],
+  }, {
     display: "Ali Forney Center",
     is24Hr: true,
     description: "The Ali Forney Center is the largest and most comprehensive organization in the nation dedicated to housing LGBT youth. AFC serves youth aged 16-24, and provides emergency and transitional housing, street outreach, a drop-in center, medical and mental health treatment, a vocational/educational program, and a counseling project for the families of LGBT youth. ",
@@ -240,14 +262,16 @@ export const PhoneNumbers: Props = {
     website: "https://www.aliforneycenter.org/",
     location: [
       'New York City', 
-    ],  },
+    ],
+  },
   {
     display: "Bowery Residents Committee Homeless Services Hotline",
     tel: "(212) 533-5151",
     website: "www.brc.org",
     location: [
       'New York City', 
-    ],  },
+    ],
+  },
   {
     display: "Coalition for the Homeless Crisis Intervention Program",
     tel: "(212) 776-2177",
@@ -255,21 +279,24 @@ export const PhoneNumbers: Props = {
     note: "*Please note response may be limited due to COVID-19",
     location: [
       'New York City', 
-    ],  },
+    ],
+  },
   {
     display: "Sylvia’s Place",
     description: "Sylvia’s Place is an emergency night shelter for self identified Gay, Lesbian, Bi-sexual, trans-gendered, trans-sexual and questioning youth from 16 to 23 years of age.",
     tel: "(212) 629-7440",
     location: [
       'New York City', 
-    ],  },
+    ],
+  },
   {
     display: 'San Francsico Rental Assistance Program',
     tel: '415-557-6484',
     hours: '24 Hour Access',
     location: [
       'San Francisco'
-    ],  },
+    ],
+  },
   {
     display: 'GLIDE',
     tel: '415-674-6000',
@@ -283,21 +310,24 @@ export const PhoneNumbers: Props = {
     hours: '24 Hour Access',
     location: [
       'San Francisco'
-    ],  },
+    ],
+  },
   {
     display: 'St. Anthony Foundation',
     tel: '415-241-2600',
     hours: 'Mon-Fri 8:30am-4:30pm',
     location: [
       'San Francisco'
-    ],  },
+    ],
+  },
   {
     display: 'Homeless Advocacy Project',
     tel: '1-800-405-4HAP (4427)',
     hours: 'Tue 9am-Noon, Wed 1pm-4pm, Thurs-Fri 9am-Noon & 1pm-4pm',
     location: [
       'San Francisco'
-    ],  }
+    ],
+  }
 
 ],
 
@@ -313,7 +343,9 @@ export const PhoneNumbers: Props = {
     location: [
       'New York City', 
       'San Francisco'
-    ],  },
+    ],
+    nationwide: true,
+  },
   // {
   //   display: 'National Lawyer Guild Case Support Hotline',
   //   tags: ['False arrest', 'Assault by NYPD'],
@@ -327,7 +359,9 @@ export const PhoneNumbers: Props = {
     location: [
       'New York City', 
       'San Francisco'
-    ],  }
+    ],
+    nationwide: true,
+  }
 ],
 
   poison: [{
@@ -342,14 +376,16 @@ export const PhoneNumbers: Props = {
     tel: '212-764-7667',
     location: [
       'New York City', 
-    ],  },
+    ],
+  },
     {
     display: "Crisis Services for People Struggling with Addiction",
     tel: "(212) 763-0596",
     website: "https://www.projectrenewal.org/need-help",
     location: [
       'New York City', 
-    ],  }, 
+    ],
+  }, 
   {
     hours: '24 Hour Access',
     display: 'SAMHSA (Substance Abuse and Mental Health Services Administration) National Helpline',
@@ -362,7 +398,9 @@ export const PhoneNumbers: Props = {
     location: [
       'New York City', 
       'San Francisco'
-    ],  },
+    ],
+    nationwide: true,
+  },
     {
       display: "Bowery Residents Committee Chemical Dependency Crisis Center (Intake Line)",
       description: "BRC’s Chemical Dependency Crisis Center (CDCC) provides 32 beds of supportive inpatient and residential substance abuse services for homeless men and women",
@@ -370,7 +408,8 @@ export const PhoneNumbers: Props = {
       website: "https://www.brc.org/chemical-dependency-crisis-center",
       location: [
         'New York City', 
-      ],    },
+      ],
+    },
   
   {
     crisis: true,
@@ -392,7 +431,8 @@ export const PhoneNumbers: Props = {
     text: {content: 'WELL', number: '65173'},
     location: [
       'New York City', 
-    ],  }, {
+    ],
+  }, {
     display: 'New York State Office of Addiction Services and Supports HOPEline',
     hours: '24 Hour Access',
     tags: [
@@ -406,7 +446,8 @@ export const PhoneNumbers: Props = {
     text: {number: 'HOPENY'},
     location: [
       'New York City', 
-    ],  },
+    ],
+  },
   {
     display: 'San Francisco Poison Control Center',
     tel: '1-800-222-1222',

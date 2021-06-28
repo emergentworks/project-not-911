@@ -23,7 +23,10 @@ export const PhoneNumberListScreen = (props: Props) => {
   // wherein someone is currently in physical danger
   
   const sortedNumbers = numbers.filter(entry => {
-    return entry.location.includes(route?.params?.city)
+    if (entry.nationwide) {
+      return true;
+    }
+    return entry.location?.includes(route?.params?.city)
   }).sort(entry => {
     if (entry.crisis) return -1;
     return 1;
