@@ -40,8 +40,10 @@ const AppComponent = () => {
  */
 export default function App() {
   return (
-    <ThemeManager>
-      <AppComponent />
-    </ThemeManager>
+    // <LocationManager>
+      <ThemeManager>
+        <AppComponent />
+      </ThemeManager>
+    {/* </LocationManager> */}
   );
 }
