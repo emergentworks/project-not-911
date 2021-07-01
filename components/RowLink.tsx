@@ -20,6 +20,7 @@ type Props = {
   isLast?: boolean,
   navigation: any,
   city?: string,
+  saveLocation?: Function,
   to: "HomeScreen" | "PhoneNumberListScreen",
   route: {
     btn: {
@@ -34,46 +35,50 @@ type Props = {
  */
 export const RowLink = memo((props: Props) => {
   const { isLast, route } = props;
-  console.log('RowLinkProps', props);
 
   return (
     <>
       <TouchableOpacity
         style={styles.row}
-        onPress={() => props.navigation.navigate(
-          props.to,
-          {...route.params, city:props.city},
-        )}>
+        onPress={() => {
+          if (props.saveLocation) {
+            props.saveLocation(route.btn.display)
+          }
+          props.navigation.navigate(
+            props.to,
+            route.params,
+          );
+        }}>
         {props.includeIcon && (
           <View
             lightColor={Styles.white}
             darkColor={Styles.blue}
             style={styles.marginRight10}>
-              {props.route.btn.display === 'New York City'
+              {route.btn.display === 'New York City'
               && (
                 <NewYorkCity />
               )}
-              {props.route.btn.display === 'San Francisco Bay Area'
+              {route.btn.display === 'San Francisco Bay Area'
               && (
                 <SanFrancisco />
               )}
-            {props.route.btn.display === 'Violence'
+            {route.btn.display === 'Violence'
               && (
                 <Violence />
               )}
-            {props.route.btn.display === 'Mental Health'
+            {route.btn.display === 'Mental Health'
               && (
                 <MentalHealth />
               )}
-            {props.route.btn.display === 'Homelessness'
+            {route.btn.display === 'Homelessness'
               && (
                 <Homelessness />
               )}
-            {props.route.btn.display === 'Legal Support'
+            {route.btn.display === 'Legal Support'
               && (
                 <Legal />
               )}
-            {props.route.btn.display === 'Drugs or Poisoning'
+            {route.btn.display === 'Drugs or Poisoning'
               && (
                 <Poison />
               )}

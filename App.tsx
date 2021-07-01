@@ -4,7 +4,7 @@ import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { AddToHomeScreen } from './components';
-import { ThemeManager } from './context';
+import { ThemeManager, LocationManager } from './context';
 import { useTheme } from './context';
 import useCachedResources from './hooks/useCachedResources';
 import Navigation from './navigation';
@@ -40,10 +40,10 @@ const AppComponent = () => {
  */
 export default function App() {
   return (
-    // <LocationManager>
+    <LocationManager>
       <ThemeManager>
         <AppComponent />
       </ThemeManager>
-    {/* </LocationManager> */}
+    </LocationManager>
   );
 }

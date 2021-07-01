@@ -4,7 +4,7 @@ import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { RowLink, Text, View } from '../components';
 import { Styles, Cities } from '../constants';
-import { useTheme } from '../context';
+import { useTheme, useLocation } from '../context';
 import { Phone, NewYorkCity, SanFrancisco } from '../svgs';
 
 /**
@@ -12,7 +12,7 @@ import { Phone, NewYorkCity, SanFrancisco } from '../svgs';
  */
 export const CitySelectScreen = memo((props: any) => {
   const {mode} = useTheme();
-
+  const {saveLocation}: {saveLocation: Function} = useLocation();
   return (
     <View
       lightColor={Styles.white}
@@ -77,6 +77,7 @@ export const CitySelectScreen = memo((props: any) => {
               isLast={i === Cities.length - 1}
               navigation={props.navigation}
               route={city}
+              saveLocation={saveLocation}
             />
           ))}
         </View>

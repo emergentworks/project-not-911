@@ -3,8 +3,8 @@ import React, { memo } from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { RowLink, Text, View } from '../components';
-import { Styles, Cities, Routes } from '../constants';
-import { useTheme } from '../context';
+import { Styles, Routes } from '../constants';
+import { useTheme, useLocation } from '../context';
 import { Phone } from '../svgs';
 // import { Props } from './PhoneNumberListScreen/types';
 
@@ -13,10 +13,7 @@ import { Phone } from '../svgs';
  */
 export const HomeScreen = memo((props: any) => {
   const {mode} = useTheme();
-  const {route} = props;
-  console.log(props);
-  const city = route?.params?.location;
-  console.log('CityConsoleLog', city);
+  const {location}: {location: string} = useLocation();
 
   return (
     <View
@@ -67,7 +64,7 @@ export const HomeScreen = memo((props: any) => {
             lightColor={Styles.black}
             darkColor={Styles.white}
             style={styles.title}>
-              {city}
+              {location}
           </Text>
         </View>
         <View style={styles.innerView}>
@@ -91,7 +88,6 @@ export const HomeScreen = memo((props: any) => {
               isLast={i === Routes.length - 1}
               navigation={props.navigation}
               route={route}
-              city={city}
             />
           ))}
         </View>

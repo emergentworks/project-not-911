@@ -6,6 +6,7 @@ import { PhoneNumbers } from '../../constants';
 import { Styles } from '../../constants';
 import { Caret } from '../../svgs';
 import { Props } from './types';
+import { useLocation } from '../../context';
 
 /**
  * @description This component renders the PhoneNumber Screen
@@ -13,8 +14,8 @@ import { Props } from './types';
  */
 export const PhoneNumberListScreen = (props: Props) => {
   const {route} = props;
-  console.log('PhoneNumberListScreen', props);
   const numbers = PhoneNumbers[route.params.section];
+  const {location}: {location: string} = useLocation();
 
   if (!(numbers instanceof Array)) return null;
 
@@ -26,7 +27,7 @@ export const PhoneNumberListScreen = (props: Props) => {
     if (entry.nationwide) {
       return true;
     }
-    return entry.location?.includes(route?.params?.city)
+    return entry.location?.includes(location)
   }).sort(entry => {
     if (entry.crisis) return -1;
     return 1;
