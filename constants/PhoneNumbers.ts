@@ -32,7 +32,7 @@ export const PhoneNumbers: Props = {
     hours: '24 Hour Access',
     location: [
       'New York City', 
-      'San Francisco'
+      'San Francisco Bay Area'
     ],
     nationwide: true,
   }, {
@@ -51,7 +51,7 @@ export const PhoneNumbers: Props = {
     website: 'https://www.safehorizon.org/get-help/rape-and-sexual-assault',
     location: [
       'New York City', 
-      'San Francisco'
+      'San Francisco Bay Area'
     ],
     nationwide: true,
   }, {
@@ -69,7 +69,7 @@ export const PhoneNumbers: Props = {
     hours: '24 Hour Access',
     location: [
       'New York City', 
-      'San Francisco'
+      'San Francisco Bay Area'
     ],
     nationwide: true,
   }, {
@@ -89,7 +89,7 @@ export const PhoneNumbers: Props = {
     hours: '24 Hour Access',
     location: [
       'New York City', 
-      'San Francisco'
+      'San Francisco Bay Area'
     ],
     nationwide: true,
   },
@@ -98,7 +98,7 @@ export const PhoneNumbers: Props = {
       tel: '415-333-HELP (4357)',
       hours: 'Mon-Fri 10am-1pm, 2pm-6pm',
       location: [
-        'San Francisco'
+        'San Francisco Bay Area'
       ],
     },
     
@@ -149,7 +149,7 @@ export const PhoneNumbers: Props = {
     website: 'https://www.samhsa.gov/find-help/disaster-distress-helpline',
     location: [
       'New York City', 
-      'San Francisco'
+      'San Francisco Bay Area'
     ],   
     nationwide: true,
   },
@@ -169,7 +169,7 @@ export const PhoneNumbers: Props = {
     hours: '24 Hour Access',
     website: 'https://www.mentalhealthsf.org/peer-run-warmline/',
     location: [
-      'San Francisco'
+      'San Francisco Bay Area'
     ],
     },
   {
@@ -178,7 +178,7 @@ export const PhoneNumbers: Props = {
     hours: 'Mon-Fri 9am-8pm',
     website: 'https://www.ciis.edu/counseling-and-acupuncture-clinics/church-street-integral-counseling-center',
     location: [
-      'San Francisco'
+      'San Francisco Bay Area'
     ],
     }
 
@@ -294,7 +294,7 @@ export const PhoneNumbers: Props = {
     tel: '415-557-6484',
     hours: '24 Hour Access',
     location: [
-      'San Francisco'
+      'San Francisco Bay Area'
     ],
   },
   {
@@ -302,14 +302,14 @@ export const PhoneNumbers: Props = {
     tel: '415-674-6000',
     hours: 'Daily Meals 8-9am, 12-1:30pm, Dinner Served M-F 4-5:30pm',
     location: [
-      'San Francisco'
+      'San Francisco Bay Area'
     ],  },
   {
     display: 'Project Homeless Connect',
     tel: '1-855-588-7968',
     hours: '24 Hour Access',
     location: [
-      'San Francisco'
+      'San Francisco Bay Area'
     ],
   },
   {
@@ -317,7 +317,7 @@ export const PhoneNumbers: Props = {
     tel: '415-241-2600',
     hours: 'Mon-Fri 8:30am-4:30pm',
     location: [
-      'San Francisco'
+      'San Francisco Bay Area'
     ],
   },
   {
@@ -325,7 +325,7 @@ export const PhoneNumbers: Props = {
     tel: '1-800-405-4HAP (4427)',
     hours: 'Tue 9am-Noon, Wed 1pm-4pm, Thurs-Fri 9am-Noon & 1pm-4pm',
     location: [
-      'San Francisco'
+      'San Francisco Bay Area'
     ],
   }
 
@@ -342,7 +342,7 @@ export const PhoneNumbers: Props = {
     website: 'https://nlgnyc.org/',
     location: [
       'New York City', 
-      'San Francisco'
+      'San Francisco Bay Area'
     ],
     nationwide: true,
   },
@@ -358,7 +358,7 @@ export const PhoneNumbers: Props = {
     tel: '1-866-689-4357',
     location: [
       'New York City', 
-      'San Francisco'
+      'San Francisco Bay Area'
     ],
     nationwide: true,
   }
@@ -397,7 +397,7 @@ export const PhoneNumbers: Props = {
     tel: '1-800-662-4357',
     location: [
       'New York City', 
-      'San Francisco'
+      'San Francisco Bay Area'
     ],
     nationwide: true,
   },
@@ -449,11 +449,11 @@ export const PhoneNumbers: Props = {
     ],
   },
   {
-    display: 'San Francisco Poison Control Center',
+    display: 'San Francisco Bay Area Poison Control Center',
     tel: '1-800-222-1222',
     hours: '24 Hour Access',
     location: [
-      'San Francisco'
+      'San Francisco Bay Area'
     ],  }
 ],
 }
