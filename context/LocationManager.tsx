@@ -44,6 +44,7 @@ export class LocationManager extends React.Component<any, any> {
   }
 
   render () {
+    console.log('Location: ', this.state.location);
     return (
       <ManageLocationContext.Provider
         value={{

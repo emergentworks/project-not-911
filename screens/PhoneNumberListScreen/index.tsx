@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 
-import { IconGroup, Text, View } from '../../components';
+import { IconGroup, Text, View, BackButton } from '../../components';
 import { PhoneNumbers } from '../../constants';
 import { Styles } from '../../constants';
-import { Caret } from '../../svgs';
 import { Props } from './types';
 import { useLocation } from '../../context';
 
@@ -54,19 +53,7 @@ export const PhoneNumberListScreen = (props: Props) => {
       darkColor={Styles.black}
       lightColor={Styles.white}
       style={styles.container}>
-      <View
-        darkColor={Styles.black}
-        lightColor={Styles.white}
-        style={styles.backBtn}>
-        <Caret style={styles.rotate} />
-        <Text
-          bold
-          darkColor={Styles.white}
-          lightColor={Styles.blue}
-          onPress={() => props.navigation.navigate('Root')}>
-          Back
-        </Text>
-      </View>
+        <BackButton darkColor='black'/>
       <ScrollView showsVerticalScrollIndicator={false}>
         {sortedNumbers.map((entry: any, i) => (
           <View

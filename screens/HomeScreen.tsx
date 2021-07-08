@@ -2,7 +2,7 @@ import * as Linking from 'expo-linking';
 import React, { memo } from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
-import { RowLink, Text, View } from '../components';
+import { RowLink, Text, View, BackButton } from '../components';
 import { Styles, Routes } from '../constants';
 import { useTheme, useLocation } from '../context';
 import { Phone } from '../svgs';
@@ -58,6 +58,7 @@ export const HomeScreen = memo((props: any) => {
             </View>
           </TouchableOpacity>
         </View>
+        <BackButton />
         <View style={styles.innerView}>
           <Text
             bold

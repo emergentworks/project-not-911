@@ -7,6 +7,7 @@ import { Styles } from '../constants';
 import { useTheme } from '../context';
 import { AboutScreen } from '../screens/AboutScreen';
 import { HomeScreen } from '../screens/HomeScreen';
+import { CitySelectScreen } from '../screens/CitySelectScreen';
 import { SettingsScreen } from '../screens/SettingsScreen';
 import { About, Home, Logo, Settings } from '../svgs';
 import {
@@ -27,10 +28,10 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="Home"
+      initialRouteName="CitySelect"
       tabBarOptions={{ activeTintColor: Styles[mode].tint }}>
       <BottomTab.Screen
-        name="Home"
+        name="CitySelect"
         component={TabOneNavigator}
         options={{
           tabBarIcon: ({color}) => <Home color={color} />,
@@ -64,8 +65,8 @@ function TabOneNavigator() {
   return (
     <TabOneStack.Navigator>
       <TabOneStack.Screen
-        name="HomeScreen"
-        component={HomeScreen}
+        name="CitySelectScreen"
+        component={CitySelectScreen}
         options={{
           headerTitle: () => (
             <View

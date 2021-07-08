@@ -31,7 +31,7 @@ const Stack = createStackNavigator<any>();
 function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Root" component={CitySelectScreen} />
+      <Stack.Screen name="Root" component={BottomTabNavigator} />
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="PhoneNumberListScreen" component={PhoneNumberListScreen}/>
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
