@@ -119,3 +119,4 @@ web-build/
 .idea/*
 
 .env
+.vscode/

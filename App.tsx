@@ -9,7 +9,8 @@ import { useTheme } from './context';
 import useCachedResources from './hooks/useCachedResources';
 import Navigation from './navigation';
 
-import { AIRTABLE_KEY } from '.';
+// @ts-ignore TODO fix it so typescript knows what @env means
+import { AIRTABLE_KEY } from '@env';
 
 /**
  * @description Starting point for the entire app.
@@ -22,9 +23,6 @@ const AppComponent = () => {
     Inter_400Regular,
     Inter_700Bold,
   });
-
-  console.log('AIRTABLE_KEY:', AIRTABLE_KEY);
-  console.log('Airtable Key:', process.env.AIRTABLE_KEY);
 
   useEffect(() => {
     fetch('https://api.airtable.com/v0/appNBdtRINjSfT9Yw/organizations?view=Grid%20view', {

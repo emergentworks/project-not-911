@@ -6,7 +6,6 @@ import { RowLink, Text, View, BackButton } from '../components';
 import { Styles, Routes } from '../constants';
 import { useTheme, useLocation } from '../context';
 import { Phone } from '../svgs';
-// import { Props } from './PhoneNumberListScreen/types';
 
 /**
  * @description This component renders the landing page (the list of hotline categories)
