@@ -6,12 +6,12 @@ import { StyleSheet } from 'react-native';
 import { Caret } from '../svgs';
 import { useNavigation } from '@react-navigation/native';
 
-/** 
+/**
  * @description This component renders the Back Button on all screens
- * 
+ *
 */
 
-export const BackButton = (props: {darkColor?: 'blue' | 'black'}) => {
+export const BackButton = (props: { darkColor?: 'blue' | 'black' }) => {
   const { darkColor = 'blue' } = props;
   const navigation = useNavigation();
 

@@ -54,11 +54,11 @@ export const RowLink = memo((props: Props) => {
             lightColor={Styles.white}
             darkColor={Styles.blue}
             style={styles.marginRight10}>
-              {route.btn.display === 'New York City'
+            {route.btn.display === 'New York City'
               && (
                 <NewYorkCity />
               )}
-              {route.btn.display === 'San Francisco Bay Area'
+            {route.btn.display === 'San Francisco Bay Area'
               && (
                 <SanFrancisco />
               )}

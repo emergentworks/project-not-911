@@ -18,7 +18,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
-      theme={ colorScheme === 'light' ? DefaultTheme : DarkTheme }>
+      theme={colorScheme === 'light' ? DefaultTheme : DarkTheme}>
       <RootNavigator />
     </NavigationContainer>
   );
@@ -33,7 +33,7 @@ function RootNavigator() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Root" component={BottomTabNavigator} />
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="PhoneNumberListScreen" component={PhoneNumberListScreen}/>
+      <Stack.Screen name="PhoneNumberListScreen" component={PhoneNumberListScreen} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     </Stack.Navigator>
   );

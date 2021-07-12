@@ -11,8 +11,8 @@ import { Phone, NewYorkCity, SanFrancisco } from '../svgs';
  * @description This component renders the city selection page (the list of cities to choose from)
  */
 export const CitySelectScreen = memo((props: any) => {
-  const {mode} = useTheme();
-  const {saveLocation}: {saveLocation: Function} = useLocation();
+  const { mode } = useTheme();
+  const { saveLocation }: { saveLocation: Function } = useLocation();
   return (
     <View
       lightColor={Styles.white}

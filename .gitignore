@@ -117,3 +117,5 @@ web-build/
 
 
 .idea/*
+
+.env

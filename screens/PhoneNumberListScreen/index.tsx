@@ -12,16 +12,16 @@ import { useLocation } from '../../context';
  * ie, any phone number list we pass into it basically
  */
 export const PhoneNumberListScreen = (props: Props) => {
-  const {route} = props;
+  const { route } = props;
   const numbers = PhoneNumbers[route.params.section];
-  const {location}: {location: string} = useLocation();
+  const { location }: { location: string } = useLocation();
 
   if (!(numbers instanceof Array)) return null;
 
   // lets always have 'crisis' hotlines at the top
   // crisis meaning, mental health breakdowns, etc, but not an 'emergency'
   // wherein someone is currently in physical danger
-  
+
   const sortedNumbers = numbers.filter(entry => {
     if (entry.nationwide) {
       return true;
@@ -53,7 +53,7 @@ export const PhoneNumberListScreen = (props: Props) => {
       darkColor={Styles.black}
       lightColor={Styles.white}
       style={styles.container}>
-        <BackButton darkColor='black'/>
+      <BackButton darkColor='black' />
       <ScrollView showsVerticalScrollIndicator={false}>
         {sortedNumbers.map((entry: any, i) => (
           <View
@@ -68,7 +68,7 @@ export const PhoneNumberListScreen = (props: Props) => {
               style={[
                 styles.hours,
                 styles.centerTxt,
-                entry.crisis && {color: Styles.orange},
+                entry.crisis && { color: Styles.orange },
               ]}>
               {entry.hours}
             </Text>

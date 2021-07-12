@@ -1,18 +1,19 @@
 import React from 'react';
 import { AsyncStorage } from 'react-native';
 
+/**
+ * @description this component sets and saves a city location using React Context
+ */
+
 // initiate context
 export const ManageLocationContext: React.Context<any> = React.createContext({
   location: null,
-  saveLocation: () => {},
+  saveLocation: () => { },
 });
 
 // define useLocation hook for functional components
 export const useLocation = () => React.useContext(ManageLocationContext);
 
-/**
- * @description initializes theme based on OS theme - but allow for toggling
- */
 export class LocationManager extends React.Component<any, any> {
   state = {
     location: null,
@@ -22,13 +23,13 @@ export class LocationManager extends React.Component<any, any> {
     try {
       const savedLocation = await AsyncStorage.getItem('location');
       if (savedLocation
-          && savedLocation !== this.state.location) {
+        && savedLocation !== this.state.location) {
         this.setState({
           location: savedLocation,
         });
       }
     } catch (err) {
-        console.error(err);
+      console.error(err);
     }
   }
 
@@ -39,12 +40,11 @@ export class LocationManager extends React.Component<any, any> {
         location: newLocation,
       });
     } catch (err) {
-        console.error(err);
+      console.error(err);
     }
   }
 
-  render () {
-    console.log('Location: ', this.state.location);
+  render() {
     return (
       <ManageLocationContext.Provider
         value={{

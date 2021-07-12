@@ -1,4 +1,6 @@
-{
+import 'dotenv/config';
+
+export default {
   "expo": {
     "backgroundColor": "#3333ff",
     "primaryColor": "#3333ff",
@@ -39,7 +41,7 @@
     ],
     "android": {
       "package": "nyc.not911",
-      "permissions" : [],
+      "permissions": [],
       "versionCode": 10,
       "adaptiveIcon": {
         "backgroundColor": "#3333ff",

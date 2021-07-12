@@ -12,8 +12,8 @@ import { Phone } from '../svgs';
  * @description This component renders the landing page (the list of hotline categories)
  */
 export const HomeScreen = memo((props: any) => {
-  const {mode} = useTheme();
-  const {location}: {location: string} = useLocation();
+  const { mode } = useTheme();
+  const { location }: { location: string } = useLocation();
 
   return (
     <View
@@ -65,7 +65,7 @@ export const HomeScreen = memo((props: any) => {
             lightColor={Styles.black}
             darkColor={Styles.white}
             style={styles.title}>
-              {location}
+            {location}
           </Text>
         </View>
         <View style={styles.innerView}>

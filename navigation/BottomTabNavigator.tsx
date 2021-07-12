@@ -23,8 +23,8 @@ const BottomTab = createBottomTabNavigator<BottomTabParamList>();
  * @description This component renders the bottom navigation for the home/about pages
  */
 export default function BottomTabNavigator() {
-  const theme: {mode: 'light' | 'dark'} = useTheme();
-  const {mode} = theme;
+  const theme: { mode: 'light' | 'dark' } = useTheme();
+  const { mode } = theme;
 
   return (
     <BottomTab.Navigator
@@ -34,21 +34,21 @@ export default function BottomTabNavigator() {
         name="CitySelect"
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({color}) => <Home color={color} />,
+          tabBarIcon: ({ color }) => <Home color={color} />,
         }}
       />
       <BottomTab.Screen
         name="About"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({color}) => <About color={color} />,
+          tabBarIcon: ({ color }) => <About color={color} />,
         }}
       />
       <BottomTab.Screen
         name="Settings"
         component={TabThreeNavigator}
         options={{
-          tabBarIcon: ({color}) => <Settings color={color} />,
+          tabBarIcon: ({ color }) => <Settings color={color} />,
         }}
       />
     </BottomTab.Navigator>
@@ -60,7 +60,7 @@ export default function BottomTabNavigator() {
 const TabOneStack = createStackNavigator<TabOneParamList>();
 
 function TabOneNavigator() {
-  const {mode}: {mode: 'light' | 'dark'} = useTheme();
+  const { mode }: { mode: 'light' | 'dark' } = useTheme();
 
   return (
     <TabOneStack.Navigator>
@@ -93,7 +93,7 @@ function TabOneNavigator() {
 const TabTwoStack = createStackNavigator<TabTwoParamList>();
 
 function TabTwoNavigator() {
-  const {mode}: {mode: 'light' | 'dark'} = useTheme();
+  const { mode }: { mode: 'light' | 'dark' } = useTheme();
 
   return (
     <TabTwoStack.Navigator>
@@ -126,7 +126,7 @@ function TabTwoNavigator() {
 const TabThreeStack = createStackNavigator<TabThreeParamList>();
 
 function TabThreeNavigator() {
-  const {mode}: {mode: 'light' | 'dark'} = useTheme();
+  const { mode }: { mode: 'light' | 'dark' } = useTheme();
 
   return (
     <TabThreeStack.Navigator>

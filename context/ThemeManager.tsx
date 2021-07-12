@@ -1,9 +1,9 @@
 import React from 'react';
 import { ColorSchemeName } from 'react-native';
 import { AsyncStorage } from 'react-native';
-import {Appearance} from 'react-native-appearance';
+import { Appearance } from 'react-native-appearance';
 
-import {Styles} from '../constants';
+import { Styles } from '../constants';
 // import useColorScheme from '../hooks/useColorScheme';
 
 // default colour scheme from OS
@@ -13,7 +13,7 @@ const osTheme = Appearance.getColorScheme() || 'light';
 export const ManageThemeContext: React.Context<any> = React.createContext({
   mode: osTheme,
   theme: Styles[osTheme],
-  toggle: () => {},
+  toggle: () => { },
 });
 
 // define useTheme hook for functional components
@@ -31,16 +31,16 @@ export class ThemeManager extends React.Component<any, any> {
     try {
       const savedMode = await AsyncStorage.getItem('theme');
       if (savedMode
-          && savedMode !== this.state.mode) {
+        && savedMode !== this.state.mode) {
         this.setState({
           mode: savedMode,
         });
       }
-    } catch (err) {}
+    } catch (err) { }
   }
 
   toggleTheme = async () => {
-    const {mode} = this.state;
+    const { mode } = this.state;
     let newMode = 'light';
 
     if (mode === 'light') {
@@ -52,10 +52,10 @@ export class ThemeManager extends React.Component<any, any> {
       this.setState({
         mode: newMode,
       });
-    } catch (err) {}
+    } catch (err) { }
   }
 
-  render () {
+  render() {
     return (
       <ManageThemeContext.Provider
         value={{

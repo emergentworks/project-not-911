@@ -31,7 +31,7 @@ export const PhoneNumbers: Props = {
     tel: '1-800-621-4673',
     hours: '24 Hour Access',
     location: [
-      'New York City', 
+      'New York City',
       'San Francisco Bay Area'
     ],
     nationwide: true,
@@ -50,7 +50,7 @@ export const PhoneNumbers: Props = {
     tel: '1-855-234-1042',
     website: 'https://www.safehorizon.org/get-help/rape-and-sexual-assault',
     location: [
-      'New York City', 
+      'New York City',
       'San Francisco Bay Area'
     ],
     nationwide: true,
@@ -68,40 +68,40 @@ export const PhoneNumbers: Props = {
     tel: '1-800-664-5880',
     hours: '24 Hour Access',
     location: [
-      'New York City', 
+      'New York City',
       'San Francisco Bay Area'
     ],
     nationwide: true,
   }, {
-      display: "Barrier Free Living",
-      description: "Outside of these hours call the National Domestic Violence Hotline", 
-      tel: "1 (800) 799-7233",
-      website: "https://www.bflnyc.org/",
-      location: [
-        'New York City', 
-      ], 
-    },
-    {
+    display: "Barrier Free Living",
+    description: "Outside of these hours call the National Domestic Violence Hotline",
+    tel: "1 (800) 799-7233",
+    website: "https://www.bflnyc.org/",
+    location: [
+      'New York City',
+    ],
+  },
+  {
     crisis: true,
     display: 'National Domestic Violence Hotline',
     tel: '1-800-799-7233',
     text: { content: 'LOVEIS', number: '1-866-331-9474' },
     hours: '24 Hour Access',
     location: [
-      'New York City', 
+      'New York City',
       'San Francisco Bay Area'
     ],
     nationwide: true,
   },
-    {
-      display: 'Peer Advocate Community United Against Violence (LGBTQ+)',
-      tel: '415-333-HELP (4357)',
-      hours: 'Mon-Fri 10am-1pm, 2pm-6pm',
-      location: [
-        'San Francisco Bay Area'
-      ],
-    },
-    
+  {
+    display: 'Peer Advocate Community United Against Violence (LGBTQ+)',
+    tel: '415-333-HELP (4357)',
+    hours: 'Mon-Fri 10am-1pm, 2pm-6pm',
+    location: [
+      'San Francisco Bay Area'
+    ],
+  },
+
   ],
 
 
@@ -131,7 +131,7 @@ export const PhoneNumbers: Props = {
     tags: ['Anxiety', 'Counseling', 'COVID-19'],
     tel: '1-844-863-9314',
     location: [
-      'New York City', 
+      'New York City',
     ],
   },
   // {
@@ -145,12 +145,12 @@ export const PhoneNumbers: Props = {
     hours: '24 Hour Access',
     tags: ['Post-Disaster', 'Crisis', 'Emotional Distress', 'Trauma', 'COVID-19', 'Unrest', 'Spanish'],
     tel: '1-800-985-5990',
-    text: {content: 'TalkWithUs or Hablanos', number: '66746'},
+    text: { content: 'TalkWithUs or Hablanos', number: '66746' },
     website: 'https://www.samhsa.gov/find-help/disaster-distress-helpline',
     location: [
-      'New York City', 
+      'New York City',
       'San Francisco Bay Area'
-    ],   
+    ],
     nationwide: true,
   },
   {
@@ -160,7 +160,7 @@ export const PhoneNumbers: Props = {
     hours: '24 Hour Access',
     website: "https://samaritansnyc.org/24-hour-crisis-hotline/",
     location: [
-      'New York City', 
+      'New York City',
     ],
   },
   {
@@ -171,7 +171,7 @@ export const PhoneNumbers: Props = {
     location: [
       'San Francisco Bay Area'
     ],
-    },
+  },
   {
     display: 'Integrated Counseling Center Sliding Scale / Low Fee Counseling',
     tel: '415-648-2644',
@@ -180,17 +180,17 @@ export const PhoneNumbers: Props = {
     location: [
       'San Francisco Bay Area'
     ],
-    }
+  }
 
-],
+  ],
 
   immigration: [{
     display: 'ActionNYC Free Immigration Issues Hotline',
     tel: '1-800-354-0365',
     location: [
-      'New York City', 
+      'New York City',
     ],
-    }],
+  }],
 
   homelessness: [{
     display: 'Homelessness Prevention Administration Hotline',
@@ -198,25 +198,25 @@ export const PhoneNumbers: Props = {
     tel: '718-557-1399',
     website: 'https://www1.nyc.gov/site/hra/help/homelessness-prevention.page',
     location: [
-      'New York City', 
+      'New York City',
     ],
-    }, 
-    {
+  },
+  {
     display: "NYC Human Resources Administration's (HRA) Office of Civil Justice",
     tags: ['Eviction prevention', 'Legal Assistance'],
     tel: '718-557-1379',
     website: 'https://www1.nyc.gov/site/hra/help/legal-services-for-tenants.page',
     location: [
-      'New York City', 
-    ],  
-  }, 
+      'New York City',
+    ],
+  },
   {
     hours: '24 Hour Access',
     display: '311 (Ask for Tenant Helpline)',
     tags: ['Eviction prevention', 'Legal Assistance'],
     tel: '311',
     location: [
-      'New York City', 
+      'New York City',
     ],
   }, {
     display: 'Safe Horizons Streetwork Project Youth Homelessness Hotline',
@@ -225,10 +225,10 @@ export const PhoneNumbers: Props = {
     tags: ['Overnight shelter', 'Up to age 25', ''],
     website: 'https://www.safehorizon.org/get-help/homeless-youth/',
     location: [
-      'New York City', 
+      'New York City',
     ],
-  }, 
-    {
+  },
+  {
     display: '311 (Ask for homeless street outreach team)',
     hours: '24 Hour Access',
     tags: [
@@ -238,7 +238,7 @@ export const PhoneNumbers: Props = {
     tel: '311',
     website: 'https://www1.nyc.gov/site/dhs/outreach/street-outreach.page',
     location: [
-      'New York City', 
+      'New York City',
     ],
   }, {
     display: 'The Door Runaway and Homeless Youth Services',
@@ -251,7 +251,7 @@ export const PhoneNumbers: Props = {
     tel: '212-941-9090',
     website: 'https://door.org/programs-services/runaway-homeless-youth/',
     location: [
-      'New York City', 
+      'New York City',
     ],
   }, {
     display: "Ali Forney Center",
@@ -261,7 +261,7 @@ export const PhoneNumbers: Props = {
     tel: "(212) 206-0574",
     website: "https://www.aliforneycenter.org/",
     location: [
-      'New York City', 
+      'New York City',
     ],
   },
   {
@@ -269,7 +269,7 @@ export const PhoneNumbers: Props = {
     tel: "(212) 533-5151",
     website: "www.brc.org",
     location: [
-      'New York City', 
+      'New York City',
     ],
   },
   {
@@ -278,7 +278,7 @@ export const PhoneNumbers: Props = {
     website: "https://www.coalitionforthehomeless.org/our-programs/crisis-services/crisis-intervention/",
     note: "*Please note response may be limited due to COVID-19",
     location: [
-      'New York City', 
+      'New York City',
     ],
   },
   {
@@ -286,7 +286,7 @@ export const PhoneNumbers: Props = {
     description: "Sylvia’s Place is an emergency night shelter for self identified Gay, Lesbian, Bi-sexual, trans-gendered, trans-sexual and questioning youth from 16 to 23 years of age.",
     tel: "(212) 629-7440",
     location: [
-      'New York City', 
+      'New York City',
     ],
   },
   {
@@ -303,7 +303,8 @@ export const PhoneNumbers: Props = {
     hours: 'Daily Meals 8-9am, 12-1:30pm, Dinner Served M-F 4-5:30pm',
     location: [
       'San Francisco Bay Area'
-    ],  },
+    ],
+  },
   {
     display: 'Project Homeless Connect',
     tel: '1-855-588-7968',
@@ -329,7 +330,7 @@ export const PhoneNumbers: Props = {
     ],
   }
 
-],
+  ],
 
   legal: [{
     display: 'National Lawyer Guild Arrest Support Hotline',
@@ -341,7 +342,7 @@ export const PhoneNumbers: Props = {
     tel: '212-679-6018',
     website: 'https://nlgnyc.org/',
     location: [
-      'New York City', 
+      'New York City',
       'San Francisco Bay Area'
     ],
     nationwide: true,
@@ -357,12 +358,12 @@ export const PhoneNumbers: Props = {
     tags: ['Counseling', 'Assault by NYPD'],
     tel: '1-866-689-4357',
     location: [
-      'New York City', 
+      'New York City',
       'San Francisco Bay Area'
     ],
     nationwide: true,
   }
-],
+  ],
 
   poison: [{
     hours: '24 Hour Access',
@@ -375,17 +376,17 @@ export const PhoneNumbers: Props = {
     ],
     tel: '212-764-7667',
     location: [
-      'New York City', 
+      'New York City',
     ],
   },
-    {
+  {
     display: "Crisis Services for People Struggling with Addiction",
     tel: "(212) 763-0596",
     website: "https://www.projectrenewal.org/need-help",
     location: [
-      'New York City', 
+      'New York City',
     ],
-  }, 
+  },
   {
     hours: '24 Hour Access',
     display: 'SAMHSA (Substance Abuse and Mental Health Services Administration) National Helpline',
@@ -396,21 +397,21 @@ export const PhoneNumbers: Props = {
     ],
     tel: '1-800-662-4357',
     location: [
-      'New York City', 
+      'New York City',
       'San Francisco Bay Area'
     ],
     nationwide: true,
   },
-    {
-      display: "Bowery Residents Committee Chemical Dependency Crisis Center (Intake Line)",
-      description: "BRC’s Chemical Dependency Crisis Center (CDCC) provides 32 beds of supportive inpatient and residential substance abuse services for homeless men and women",
-      tel: "(212) 533-3281",
-      website: "https://www.brc.org/chemical-dependency-crisis-center",
-      location: [
-        'New York City', 
-      ],
-    },
-  
+  {
+    display: "Bowery Residents Committee Chemical Dependency Crisis Center (Intake Line)",
+    description: "BRC’s Chemical Dependency Crisis Center (CDCC) provides 32 beds of supportive inpatient and residential substance abuse services for homeless men and women",
+    tel: "(212) 533-3281",
+    website: "https://www.brc.org/chemical-dependency-crisis-center",
+    location: [
+      'New York City',
+    ],
+  },
+
   {
     crisis: true,
     display: 'NYC Well',
@@ -428,9 +429,9 @@ export const PhoneNumbers: Props = {
       'Outpatient Detox',
     ],
     tel: '1-888-692-9355',
-    text: {content: 'WELL', number: '65173'},
+    text: { content: 'WELL', number: '65173' },
     location: [
-      'New York City', 
+      'New York City',
     ],
   }, {
     display: 'New York State Office of Addiction Services and Supports HOPEline',
@@ -443,9 +444,9 @@ export const PhoneNumbers: Props = {
       'Multilingual support',
     ],
     tel: '1-877-846-7369',
-    text: {number: 'HOPENY'},
+    text: { number: 'HOPENY' },
     location: [
-      'New York City', 
+      'New York City',
     ],
   },
   {
@@ -454,6 +455,7 @@ export const PhoneNumbers: Props = {
     hours: '24 Hour Access',
     location: [
       'San Francisco Bay Area'
-    ],  }
-],
+    ],
+  }
+  ],
 }
