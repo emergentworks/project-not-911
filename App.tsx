@@ -10,7 +10,6 @@ import useCachedResources from './hooks/useCachedResources';
 import Navigation from './navigation';
 
 // @ts-ignore TODO fix it so typescript knows what @env means
-import { AIRTABLE_KEY } from '@env';
 
 /**
  * @description Starting point for the entire app.
@@ -24,16 +23,6 @@ const AppComponent = () => {
     Inter_700Bold,
   });
 
-  useEffect(() => {
-    fetch('https://api.airtable.com/v0/appNBdtRINjSfT9Yw/organizations?view=Grid%20view', {
-      headers: {
-        Authorization: `Bearer ${AIRTABLE_KEY}`
-      }
-    })
-      .then((response) => response.json())
-      .then((json) => console.log('Fetch json Results:', json.results))
-      .catch((error) => console.error(error))
-  }, []);
 
   if (!isLoadingComplete || !fontsLoaded) {
     return null;

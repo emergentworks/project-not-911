@@ -1,38 +1,59 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 
 import { IconGroup, Text, View, BackButton } from '../../components';
-import { PhoneNumbers } from '../../constants';
 import { Styles } from '../../constants';
-import { Props } from './types';
 import { useLocation } from '../../context';
 
-/**
- * @description This component renders the PhoneNumber Screen
- * ie, any phone number list we pass into it basically
- */
-export const PhoneNumberListScreen = (props: Props) => {
-  const { route } = props;
-  const numbers = PhoneNumbers[route.params.section];
-  const { location }: { location: string } = useLocation();
+// @ts-ignore
+import { AIRTABLE_KEY } from '@env';
+console.log('airtable Key:', AIRTABLE_KEY);
 
-  if (!(numbers instanceof Array)) return null;
+let baseUrl = 'https://api.airtable.com/v0/appNBdtRINjSfT9Yw/';
+
+/**
+ * @description This component renders the PhoneRecord Screen
+ * ie, any phone record list we pass into it basically
+ */
+export const PhoneNumberListScreen = () => {
+  const { location }: { location: string } = useLocation();
+  console.log('Location: ', location);
+  const [records, setRecords] = useState([] as any[]);
+  const url = baseUrl + location;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const resp = await fetch(url, {
+          headers: {
+            Authorization: `Bearer ${AIRTABLE_KEY}`
+          }
+        });
+        const { records } = await resp.json();
+        setRecords(records);
+      } catch (err) {
+        console.error(err);
+      }
+      // .then((response) => response.json())
+      // .catch((error) => console.error(error))
+    }
+    fetchData();
+  }, []);
+
+  if (records.length === 0) return null;
 
   // lets always have 'crisis' hotlines at the top
   // crisis meaning, mental health breakdowns, etc, but not an 'emergency'
   // wherein someone is currently in physical danger
 
-  const sortedNumbers = numbers.filter(entry => {
-    if (entry.nationwide) {
-      return true;
-    }
-    return entry.location?.includes(location)
-  }).sort(entry => {
-    if (entry.crisis) return -1;
+  const sortedRecords = records.sort(record => {
+    if (record.fields.isCrisis) return -1;
     return 1;
   });
 
-  const formatTextInfo = (textInfo: { content?: string; number: string }) => {
+  console.log('Sorted Records: ', sortedRecords);
+
+  const formatTextInfo = (textInfo: { content?: string; record: string }) => {
     if (textInfo === undefined) {
       return '';
     }
@@ -43,7 +64,7 @@ export const PhoneNumberListScreen = (props: Props) => {
       displayInfo += ` ${textInfo.content} to`;
     }
 
-    displayInfo += ` ${textInfo.number}`;
+    displayInfo += ` ${textInfo.record}`;
 
     return displayInfo;
   };
@@ -55,12 +76,13 @@ export const PhoneNumberListScreen = (props: Props) => {
       style={styles.container}>
       <BackButton darkColor='black' />
       <ScrollView showsVerticalScrollIndicator={false}>
-        {sortedNumbers.map((entry: any, i) => (
+        {sortedRecords.map((record: any, i) => (
           <View
             key={i}
             darkColor="#000"
             lightColor={Styles.white}
             style={styles.item}>
+            {console.log('Record: ', record)}
             <Text
               bold
               darkColor={Styles.white}
@@ -68,26 +90,26 @@ export const PhoneNumberListScreen = (props: Props) => {
               style={[
                 styles.hours,
                 styles.centerTxt,
-                entry.crisis && { color: Styles.orange },
+                record.fields.isCrisis && { color: Styles.orange },
               ]}>
-              {entry.hours}
+              {record.fields.hours}
             </Text>
             <Text
               bold
               darkColor={Styles.white}
               style={[styles.centerTxt, styles.title]}>
-              {entry.display}
+              {record.fields.name}
             </Text>
             <Text
               darkColor={Styles.white}
               style={[styles.centerTxt, styles.tel]}>
-              {entry.tel} {formatTextInfo(entry.text)}
+              {record.fields.phoneNumber} {formatTextInfo(record.text)}
             </Text>
             <IconGroup
-              crisis={entry.crisis}
-              tel={entry.tel}
-              text={entry.text}
-              website={entry.website} />
+              crisis={record.fields.isCrisis}
+              tel={record.fields.phoneNumber}
+              text={record.fields.text}
+              website={record.fields.website} />
           </View>
         ))}
       </ScrollView>
