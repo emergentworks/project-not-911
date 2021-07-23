@@ -7,7 +7,6 @@ import { useLocation } from '../../context';
 
 // @ts-ignore
 import { AIRTABLE_KEY } from '@env';
-console.log('airtable Key:', AIRTABLE_KEY);
 
 let baseUrl = 'https://api.airtable.com/v0/appNBdtRINjSfT9Yw/';
 
@@ -15,9 +14,8 @@ let baseUrl = 'https://api.airtable.com/v0/appNBdtRINjSfT9Yw/';
  * @description This component renders the PhoneRecord Screen
  * ie, any phone record list we pass into it basically
  */
-export const PhoneNumberListScreen = () => {
+export const PhoneNumberListScreen = (props: any) => {
   const { location }: { location: string } = useLocation();
-  console.log('Location: ', location);
   const [records, setRecords] = useState([] as any[]);
   const url = baseUrl + location;
 
@@ -45,13 +43,20 @@ export const PhoneNumberListScreen = () => {
   // lets always have 'crisis' hotlines at the top
   // crisis meaning, mental health breakdowns, etc, but not an 'emergency'
   // wherein someone is currently in physical danger
-
-  const sortedRecords = records.sort(record => {
+  const { route } = props;
+  const sortedAndFilteredRecords = records.filter(record => {
+    const { fields } = record;
+    const normalizedCats = fields.category.map((category: string) => {
+      return category.toLowerCase().replaceAll(' ', '');
+    })
+    if (!normalizedCats.includes(route.params.section)) {
+      return false;
+    }
+    return true;
+  }).sort(record => {
     if (record.fields.isCrisis) return -1;
     return 1;
   });
-
-  console.log('Sorted Records: ', sortedRecords);
 
   const formatTextInfo = (textInfo: { content?: string; record: string }) => {
     if (textInfo === undefined) {
@@ -76,7 +81,7 @@ export const PhoneNumberListScreen = () => {
       style={styles.container}>
       <BackButton darkColor='black' />
       <ScrollView showsVerticalScrollIndicator={false}>
-        {sortedRecords.map((record: any, i) => (
+        {sortedAndFilteredRecords.map((record: any, i) => (
           <View
             key={i}
             darkColor="#000"
