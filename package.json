@@ -24,6 +24,7 @@
     "@react-navigation/native": "^5.6.1",
     "@react-navigation/stack": "^5.6.2",
     "@svgr/webpack": "^5.4.0",
+    "axios": "^0.21.1",
     "dotenv": "^10.0.0",
     "expo": "~38.0.8",
     "expo-asset": "~8.1.7",
@@ -47,7 +48,8 @@
     "react-native-svg": "12.1.0",
     "react-native-svg-transformer": "^0.14.3",
     "react-native-unordered-list": "^1.0.4",
-    "react-native-web": "~0.11.7"
+    "react-native-web": "~0.11.7",
+    "react-query": "^3.19.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",

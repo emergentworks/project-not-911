@@ -7,9 +7,9 @@ import { Styles } from '../constants';
 import {
   Caret,
   Homelessness,
-  Legal,
+  LegalSupport,
   MentalHealth,
-  Poison,
+  DrugsOrPoisoning,
   Violence,
   NewYorkCity,
   SanFrancisco,
@@ -76,11 +76,11 @@ export const RowLink = memo((props: Props) => {
               )}
             {route.btn.display === 'Legal Support'
               && (
-                <Legal />
+                <LegalSupport />
               )}
             {route.btn.display === 'Drugs or Poisoning'
               && (
-                <Poison />
+                <DrugsOrPoisoning />
               )}
           </View>
         )}

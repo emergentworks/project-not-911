@@ -46,8 +46,8 @@ export const PhoneNumberListScreen = (props: any) => {
   const { route } = props;
   const sortedAndFilteredRecords = records.filter(record => {
     const { fields } = record;
-    const normalizedCats = fields.category.map((category: string) => {
-      return category.toLowerCase().replaceAll(' ', '');
+    const normalizedCats = fields.categories.map((categories: string) => {
+      return categories.toLowerCase().replaceAll(' ', '');
     })
     if (!normalizedCats.includes(route.params.section)) {
       return false;

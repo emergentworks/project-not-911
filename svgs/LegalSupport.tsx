@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
 import Svg, { Path } from 'react-native-svg';
 
-import {useTheme} from '../context';
+import { useTheme } from '../context';
 
-export const Legal = memo((props: React.SVGProps<SVGSVGElement>) => {
-  const {mode}: {mode: 'light' | 'dark'} = useTheme();
+export const LegalSupport = memo((props: React.SVGProps<SVGSVGElement>) => {
+  const { mode }: { mode: 'light' | 'dark' } = useTheme();
   const fill = mode === 'light' ? '#33F' : '#fff';
 
   return (
