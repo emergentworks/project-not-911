@@ -1,7 +1,8 @@
 import { Inter_400Regular, Inter_700Bold, useFonts } from '@expo-google-fonts/inter';
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import { AddToHomeScreen } from './components';
 import { ThemeManager, LocationManager } from './context';
@@ -9,7 +10,7 @@ import { useTheme } from './context';
 import useCachedResources from './hooks/useCachedResources';
 import Navigation from './navigation';
 
-// @ts-ignore TODO fix it so typescript knows what @env means
+const queryClient = new QueryClient();
 
 /**
  * @description Starting point for the entire app.
@@ -28,13 +29,14 @@ const AppComponent = () => {
     return null;
   }
   return (
-    <SafeAreaProvider>
-      <AddToHomeScreen />
-      <Navigation colorScheme={mode} />
-      <StatusBar />
-    </SafeAreaProvider>
+    <QueryClientProvider client={queryClient}>
+      <SafeAreaProvider>
+        <AddToHomeScreen />
+        <Navigation colorScheme={mode} />
+        <StatusBar />
+      </SafeAreaProvider>
+    </QueryClientProvider>
   );
-
 };
 
 /**

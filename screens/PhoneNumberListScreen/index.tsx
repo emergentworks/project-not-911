@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
+import { useQuery } from 'react-query';
+// import { Record, FieldSet } from 'airtable'
 
 import { IconGroup, Text, View, BackButton } from '../../components';
 import { Styles } from '../../constants';
 import { useLocation } from '../../context';
-import { airtable } from '../../utils/airtable';
+import { getRecordsFromLocation } from '../../queries';
 
 /**
  * @description This component renders the PhoneRecord Screen
@@ -12,26 +14,15 @@ import { airtable } from '../../utils/airtable';
  */
 export const PhoneNumberListScreen = (props: any) => {
   const { location }: { location: string } = useLocation();
-  const [records, setRecords] = useState([] as any[]);
+  const { data: records, isLoading } = useQuery("getRecords", () => getRecordsFromLocation(location));
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const { records } = await airtable({
-        method: 'get',
-        url: location,
-      });
-      setRecords(records);
-    }
-    fetchData();
-  }, []);
-
-  if (records.length === 0) return null;
+  if (isLoading) return null;
 
   // lets always have 'crisis' hotlines at the top
   // crisis meaning, mental health breakdowns, etc, but not an 'emergency'
   // wherein someone is currently in physical danger
   const { route } = props;
-  const sortedAndFilteredRecords = records.filter(record => {
+  const sortedAndFilteredRecords = records.filter((record: any) => {
     const { fields } = record;
     const normalizedCats = fields.categories.map((categories: string) => {
       return categories.toLowerCase().replaceAll(' ', '');
@@ -40,7 +31,7 @@ export const PhoneNumberListScreen = (props: any) => {
       return false;
     }
     return true;
-  }).sort(record => {
+  }).sort((record: any) => {
     if (record.fields.isCrisis) return -1;
     return 1;
   });
@@ -68,13 +59,12 @@ export const PhoneNumberListScreen = (props: any) => {
       style={styles.container}>
       <BackButton darkColor='black' />
       <ScrollView showsVerticalScrollIndicator={false}>
-        {sortedAndFilteredRecords.map((record: any, i) => (
+        {sortedAndFilteredRecords.map((record: any) => (
           <View
-            key={i}
+            key={record.id}
             darkColor="#000"
             lightColor={Styles.white}
             style={styles.item}>
-            {console.log('Record: ', record)}
             <Text
               bold
               darkColor={Styles.white}
