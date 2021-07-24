@@ -4,11 +4,7 @@ import { ScrollView, StyleSheet } from 'react-native';
 import { IconGroup, Text, View, BackButton } from '../../components';
 import { Styles } from '../../constants';
 import { useLocation } from '../../context';
-
-// @ts-ignore
-import { AIRTABLE_KEY } from '@env';
-
-let baseUrl = 'https://api.airtable.com/v0/appNBdtRINjSfT9Yw/';
+import { airtable } from '../../utils/airtable';
 
 /**
  * @description This component renders the PhoneRecord Screen
@@ -17,23 +13,14 @@ let baseUrl = 'https://api.airtable.com/v0/appNBdtRINjSfT9Yw/';
 export const PhoneNumberListScreen = (props: any) => {
   const { location }: { location: string } = useLocation();
   const [records, setRecords] = useState([] as any[]);
-  const url = baseUrl + location;
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const resp = await fetch(url, {
-          headers: {
-            Authorization: `Bearer ${AIRTABLE_KEY}`
-          }
-        });
-        const { records } = await resp.json();
-        setRecords(records);
-      } catch (err) {
-        console.error(err);
-      }
-      // .then((response) => response.json())
-      // .catch((error) => console.error(error))
+      const { records } = await airtable({
+        method: 'get',
+        url: location,
+      });
+      setRecords(records);
     }
     fetchData();
   }, []);

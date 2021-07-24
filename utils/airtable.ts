@@ -1,21 +1,15 @@
 import axios, { AxiosRequestConfig } from "axios";
-
-const instance = axios.create({
-  baseURL: `${process.env.API_SERVER}/api/v1`,
-  headers: {
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-  },
-  withCredentials: true,
-});
-
-
 // @ts-ignore
 import { AIRTABLE_KEY } from '@env';
 
-const baseUrl = 'https://api.airtable.com/v0/appNBdtRINjSfT9Yw/';
-
-// const url = baseUrl + location;
+const instance = axios.create({
+  baseURL: 'https://api.airtable.com/v0/appNBdtRINjSfT9Yw/',
+  headers: {
+    Authorization: `Bearer ${AIRTABLE_KEY}`,
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+  },
+});
 
 /**
  * @description An async function that when called will fetch all records from airtable
@@ -26,18 +20,12 @@ const baseUrl = 'https://api.airtable.com/v0/appNBdtRINjSfT9Yw/';
  * @returns json if successful request, else error message
  */
 export const airtable = async (opts: AxiosRequestConfig): Promise<any> => {
-  // return await helps with promise based errors
-  return await instance.request(opts)
   try {
-    const resp = await fetch(baseUrl, {
-      headers: {
-        Authorization: `Bearer ${AIRTABLE_KEY}`
-      }
-    });
-    const { records } = await resp.json();
-    return records;
+    const { data } = await instance.request(opts);
+    return data;
   } catch (err) {
     console.error(err);
   }
+
 }
 
