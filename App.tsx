@@ -5,8 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { QueryClient, QueryClientProvider } from "react-query";
 
 import { AddToHomeScreen } from './components';
-import { ThemeManager, LocationManager } from './context';
-import { useTheme } from './context';
+import { ThemeManager, LocationManager, useTheme, CacheManager, useCache } from './context';
 import useCachedResources from './hooks/useCachedResources';
 import Navigation from './navigation';
 
@@ -17,6 +16,8 @@ const queryClient = new QueryClient();
  * mimics native functionality, doesn't render anything until app is fully loaded
  */
 const AppComponent = () => {
+  const { cache, setCache } = useCache();
+  setCache();
   const isLoadingComplete = useCachedResources();
   const { mode }: { mode: 'light' | 'dark' } = useTheme();
   const [fontsLoaded] = useFonts({
@@ -45,10 +46,12 @@ const AppComponent = () => {
  */
 export default function App() {
   return (
-    <LocationManager>
-      <ThemeManager>
-        <AppComponent />
-      </ThemeManager>
-    </LocationManager>
+    <CacheManager>
+      <LocationManager>
+        <ThemeManager>
+          <AppComponent />
+        </ThemeManager>
+      </LocationManager>
+    </CacheManager>
   );
 }

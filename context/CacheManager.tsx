@@ -2,8 +2,8 @@ import React from 'react';
 import { AsyncStorage } from 'react-native';
 import _ from 'lodash';
 
-import { Styles } from '../constants';
-
+import { airtable } from '../utils';
+import { getRecordsFromLocation } from '../queries';
 
 // initiate context
 export const ManageCacheContext: React.Context<any> = React.createContext({
@@ -27,6 +27,7 @@ export class CacheManager extends React.Component<any, any> {
       const savedCache = await AsyncStorage.getItem('cache');
       if (typeof savedCache === 'string') {
         const parsedCache = JSON.parse(savedCache);
+        console.log('Parsed Cache: ', parsedCache);
         if (!_.isEqual(this.state.cache, parsedCache)) {
           this.setState({
             cache: parsedCache,
@@ -37,12 +38,27 @@ export class CacheManager extends React.Component<any, any> {
   }
 
   setCache = async () => {
-    const newCache = JSON.stringify({});
+    const meta = await airtable({
+      method: 'get',
+      url: 'meta',
+    });
+    const cities = meta.records.map((rec: any) => {
+      return rec.fields.name;
+    });
+    const phoneNumbersByCity = {};
+    await Promise.all(cities.map(async (city: string) => {
+      const numbers = await getRecordsFromLocation(city);
+      // @ts-ignore
+      phoneNumbersByCity[city] = numbers
+      return null;
+    }));
+    const newCache = JSON.stringify(phoneNumbersByCity);
+
     try {
       await AsyncStorage.setItem('cache', newCache);
-      this.setState({
-        cache: newCache,
-      });
+      // this.setState({
+      //   cache: newCache,
+      // });
     } catch (err) { }
   }
 
