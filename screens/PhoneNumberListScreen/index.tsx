@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
-import { useQuery } from 'react-query';
+// import { useQuery } from 'react-query';
 // import { Record, FieldSet } from 'airtable'
 
 import { IconGroup, Text, View, BackButton } from '../../components';
 import { Styles } from '../../constants';
-import { useLocation } from '../../context';
+import { useLocation, useCache } from '../../context';
 import { getRecordsFromLocation } from '../../queries';
 
 /**
@@ -13,10 +13,24 @@ import { getRecordsFromLocation } from '../../queries';
  * ie, any phone record list we pass into it basically
  */
 export const PhoneNumberListScreen = (props: any) => {
+  const { cache, setCache } = useCache();
+  const [records, setRecords] = useState([]);
   const { location }: { location: string } = useLocation();
-  const { data: records, isLoading } = useQuery("getRecords", () => getRecordsFromLocation(location));
 
-  if (isLoading) return null;
+  useEffect(() => {
+    const fetchData = async () => {
+      if (cache[location]) {
+        setRecords(cache[location]);
+        setCache();
+      } else {
+        setRecords(await getRecordsFromLocation(location));
+      }
+    }
+    fetchData();
+  });
+  console.log('Cache Context Location: ', cache[location]);
+
+  if (records.length === 0) return null;
 
   // lets always have 'crisis' hotlines at the top
   // crisis meaning, mental health breakdowns, etc, but not an 'emergency'

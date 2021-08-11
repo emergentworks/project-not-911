@@ -22,21 +22,30 @@ export class CacheManager extends React.Component<any, any> {
     cache: {},
   };
 
+  /**
+   * @description Retrieve cache from storage and save it.
+   */
   async componentDidMount() {
     try {
       const savedCache = await AsyncStorage.getItem('cache');
       if (typeof savedCache === 'string') {
         const parsedCache = JSON.parse(savedCache);
-        console.log('Parsed Cache: ', parsedCache);
+
+        // We do this to prevent infinite loops.
         if (!_.isEqual(this.state.cache, parsedCache)) {
           this.setState({
             cache: parsedCache,
           });
         }
+      } else {
+        this.setCache();
       }
     } catch (err) { }
   }
 
+  /**
+   * @description Fetch all city names from Airtable and use to query for all phone numbers. If any change save to cache, else do nothing.
+   */
   setCache = async () => {
     const meta = await airtable({
       method: 'get',
@@ -52,13 +61,18 @@ export class CacheManager extends React.Component<any, any> {
       phoneNumbersByCity[city] = numbers
       return null;
     }));
-    const newCache = JSON.stringify(phoneNumbersByCity);
 
+    if (_.isEqual(this.state.cache, phoneNumbersByCity)) {
+      return null;
+    }
+
+    const newCache = JSON.stringify(phoneNumbersByCity);
     try {
       await AsyncStorage.setItem('cache', newCache);
-      // this.setState({
-      //   cache: newCache,
-      // });
+      this.setState({
+        cache: phoneNumbersByCity,
+      });
+      console.log('New Cache: ', newCache);
     } catch (err) { }
   }
 

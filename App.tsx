@@ -16,15 +16,12 @@ const queryClient = new QueryClient();
  * mimics native functionality, doesn't render anything until app is fully loaded
  */
 const AppComponent = () => {
-  const { cache, setCache } = useCache();
-  setCache();
   const isLoadingComplete = useCachedResources();
   const { mode }: { mode: 'light' | 'dark' } = useTheme();
   const [fontsLoaded] = useFonts({
     Inter_400Regular,
     Inter_700Bold,
   });
-
 
   if (!isLoadingComplete || !fontsLoaded) {
     return null;
