@@ -23,4 +23,12 @@ export const Cities = [
       location: 'Chicago',
     },
   },
+  {
+    btn: {
+      display: 'Boise',
+    },
+    params: {
+      location: 'Boise',
+    },
+  },
 ]

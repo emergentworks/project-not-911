@@ -25,3 +25,4 @@ export { Violence } from './Violence';
 export { NewYorkCity } from './NewYorkCity';
 export { SanFrancisco } from './SanFrancisco';
 export { Chicago } from './Chicago';
+export { Boise } from './Boise';

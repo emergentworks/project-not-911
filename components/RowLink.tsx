@@ -13,6 +13,7 @@ import {
   NewYorkCity,
   SanFrancisco,
   Chicago,
+  Boise,
 } from '../svgs';
 
 type Props = {
@@ -66,6 +67,11 @@ export const RowLink = memo((props: Props) => {
               && (
                 <Chicago />
               )}
+            {route.btn.display === 'Boise'
+              && (
+                <Boise />
+              )}
+
             {route.btn.display === 'Violence'
               && (
                 <Violence />
