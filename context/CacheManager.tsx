@@ -5,6 +5,14 @@ import _ from 'lodash';
 import { airtable } from '../utils';
 import { getRecordsFromLocation } from '../queries';
 
+/**
+ * @description this component sets and saves cache using React Context.
+ * Async Storage only stores string data. In order to store object data
+ * we serialize it first using JSON. stringify() when saving the data
+ * and JSON. parse() when loading the data.
+ * @returns JSON
+ */
+
 // initiate context
 export const ManageCacheContext: React.Context<any> = React.createContext({
   cache: {},
@@ -14,17 +22,13 @@ export const ManageCacheContext: React.Context<any> = React.createContext({
 // define useCache hook for functional components
 export const useCache = () => React.useContext(ManageCacheContext);
 
-/**
- * @description initializes cache
- */
+// Initializes cache
 export class CacheManager extends React.Component<any, any> {
   state = {
     cache: {},
   };
 
-  /**
-   * @description Retrieve cache from storage and save it.
-   */
+  // Retrieve cache from storage and save it.
   async componentDidMount() {
     try {
       const savedCache = await AsyncStorage.getItem('cache');
@@ -44,7 +48,8 @@ export class CacheManager extends React.Component<any, any> {
   }
 
   /**
-   * @description Fetch all city names from Airtable and use to query for all phone numbers. If any change save to cache, else do nothing.
+   * @description Fetch all city names from Airtable and use to query for all
+   * phone numbers. If any change save to cache, else do nothing.
    */
   setCache = async () => {
     const meta = await airtable({
@@ -72,7 +77,6 @@ export class CacheManager extends React.Component<any, any> {
       this.setState({
         cache: phoneNumbersByCity,
       });
-      console.log('New Cache: ', newCache);
     } catch (err) { }
   }
 

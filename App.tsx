@@ -5,7 +5,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { QueryClient, QueryClientProvider } from "react-query";
 
 import { AddToHomeScreen } from './components';
-import { ThemeManager, LocationManager, useTheme, CacheManager, useCache } from './context';
+import { ThemeManager, LocationManager, useTheme, CacheManager } from './context';
 import useCachedResources from './hooks/useCachedResources';
 import Navigation from './navigation';
 
@@ -37,10 +37,6 @@ const AppComponent = () => {
   );
 };
 
-/**
- * @description Starting point for the entire app.
- * mimics native functionality, doesn't render anything until app is fully loaded
- */
 export default function App() {
   return (
     <CacheManager>

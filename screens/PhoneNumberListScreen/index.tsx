@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
-// import { useQuery } from 'react-query';
-// import { Record, FieldSet } from 'airtable'
 
 import { IconGroup, Text, View, BackButton } from '../../components';
 import { Styles } from '../../constants';
@@ -28,7 +26,6 @@ export const PhoneNumberListScreen = (props: any) => {
     }
     fetchData();
   });
-  console.log('Cache Context Location: ', cache[location]);
 
   if (records.length === 0) return null;
 

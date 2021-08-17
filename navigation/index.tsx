@@ -5,7 +5,6 @@ import { ColorSchemeName } from 'react-native';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 import { PhoneNumberListScreen } from '../screens/PhoneNumberListScreen';
-import { CitySelectScreen } from '../screens/CitySelectScreen';
 import { HomeScreen } from '../screens/HomeScreen';
 import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';

@@ -3,7 +3,6 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 
 import { Text, View } from '../components/Themed';
 import { Styles } from '../constants';
-// import { CitySelectScreen }  from '../screens/CitySelectScreen';
 import {
   Caret,
   Homelessness,
@@ -13,6 +12,7 @@ import {
   Violence,
   NewYorkCity,
   SanFrancisco,
+  Chicago,
 } from '../svgs';
 
 type Props = {
@@ -61,6 +61,10 @@ export const RowLink = memo((props: Props) => {
             {route.btn.display === 'San Francisco Bay Area'
               && (
                 <SanFrancisco />
+              )}
+            {route.btn.display === 'Chicago'
+              && (
+                <Chicago />
               )}
             {route.btn.display === 'Violence'
               && (

@@ -1,5 +1,4 @@
 import React from 'react';
-import { ColorSchemeName } from 'react-native';
 import { AsyncStorage } from 'react-native';
 import { Appearance } from 'react-native-appearance';
 

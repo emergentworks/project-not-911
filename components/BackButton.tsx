@@ -1,10 +1,10 @@
 import * as React from 'react';
+import { StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { Text, View } from '.';
 import { Styles } from '../constants';
-import { StyleSheet } from 'react-native';
 import { Caret } from '../svgs';
-import { useNavigation } from '@react-navigation/native';
 
 /**
  * @description This component renders the Back Button on all screens

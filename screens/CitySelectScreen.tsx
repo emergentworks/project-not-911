@@ -5,7 +5,7 @@ import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { RowLink, Text, View } from '../components';
 import { Styles, Cities } from '../constants';
 import { useTheme, useLocation } from '../context';
-import { Phone, NewYorkCity, SanFrancisco } from '../svgs';
+import { Phone } from '../svgs';
 
 /**
  * @description This component renders the city selection page (the list of cities to choose from)

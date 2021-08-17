@@ -12,11 +12,8 @@ const instance = axios.create({
 });
 
 /**
- * @description An async function that when called will fetch all records from airtable
- *
- */
-/**
- * @description helper that wraps our fetch calls, returns normalized json, handles errs
+ * @description An async function that when called will fetch all records from airtable.
+ * A helper that wraps our fetch calls, returns normalized json, handles errs
  * @returns json if successful request, else error message
  */
 export const airtable = async (opts: AxiosRequestConfig): Promise<any> => {

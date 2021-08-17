@@ -6,7 +6,6 @@ import { View } from 'react-native';
 import { Styles } from '../constants';
 import { useTheme } from '../context';
 import { AboutScreen } from '../screens/AboutScreen';
-import { HomeScreen } from '../screens/HomeScreen';
 import { CitySelectScreen } from '../screens/CitySelectScreen';
 import { SettingsScreen } from '../screens/SettingsScreen';
 import { About, Home, Logo, Settings } from '../svgs';
