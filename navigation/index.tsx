@@ -4,8 +4,8 @@ import * as React from 'react';
 import { ColorSchemeName } from 'react-native';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
-import { PhoneNumberListScreen } from '../screens/PhoneNumberListScreen';
-import { HomeScreen } from '../screens/HomeScreen';
+import { PhoneNumberListScreen } from '../screens/PhoneNumberListScreen/PhoneNumberListScreen';
+import { CategoryScreen } from '../screens/CategoryScreen';
 import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -31,7 +31,7 @@ function RootNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Root" component={BottomTabNavigator} />
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen name="CategoryScreen" component={CategoryScreen} />
       <Stack.Screen name="PhoneNumberListScreen" component={PhoneNumberListScreen} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     </Stack.Navigator>

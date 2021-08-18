@@ -1,6 +1,6 @@
 export { AddToHomeScreen } from './AddToHomeScreen';
 export { BackButton } from './BackButton';
-export { Cities } from '../constants/Cities';
+export { CategoryLink } from "./CategoryLink";
+export { CityLink } from './CityLink';
 export { IconGroup } from './IconGroup';
-export { RowLink } from './RowLink';
 export { Text, View } from './Themed';

@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
-import { Text, View } from '../components/Themed';
+import { Text, View } from './Themed';
 import { Styles } from '../constants';
 import {
   Caret,
@@ -10,10 +10,6 @@ import {
   MentalHealth,
   DrugsOrPoisoning,
   Violence,
-  NewYorkCity,
-  SanFrancisco,
-  Chicago,
-  Boise,
 } from '../svgs';
 
 type Props = {
@@ -22,19 +18,22 @@ type Props = {
   navigation: any,
   city?: string,
   saveLocation?: Function,
-  to: "HomeScreen" | "PhoneNumberListScreen",
+  to: "CategoryScreen" | "PhoneNumberListScreen",
   route: {
     btn: {
       display: string,
     },
-    params: object,
+    params: {
+      section: string,
+      title: string,
+    }
   },
 };
 
 /**
  * @description Generic category link. optional icon
  */
-export const RowLink = memo((props: Props) => {
+export const CategoryLink = memo((props: Props) => {
   const { isLast, route } = props;
 
   return (
@@ -43,11 +42,11 @@ export const RowLink = memo((props: Props) => {
         style={styles.row}
         onPress={() => {
           if (props.saveLocation) {
-            props.saveLocation(route.btn.display)
+            props.saveLocation(route)
           }
           props.navigation.navigate(
             props.to,
-            route.params,
+            route.params
           );
         }}>
         {props.includeIcon && (
@@ -55,23 +54,6 @@ export const RowLink = memo((props: Props) => {
             lightColor={Styles.white}
             darkColor={Styles.blue}
             style={styles.marginRight10}>
-            {route.btn.display === 'New York City'
-              && (
-                <NewYorkCity />
-              )}
-            {route.btn.display === 'San Francisco Bay Area'
-              && (
-                <SanFrancisco />
-              )}
-            {route.btn.display === 'Chicago'
-              && (
-                <Chicago />
-              )}
-            {route.btn.display === 'Boise'
-              && (
-                <Boise />
-              )}
-
             {route.btn.display === 'Violence'
               && (
                 <Violence />

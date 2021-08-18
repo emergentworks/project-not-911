@@ -2,6 +2,8 @@ import axios, { AxiosRequestConfig } from "axios";
 // @ts-ignore
 import { AIRTABLE_KEY } from '@env';
 
+// Axios is a utility library that simplifies api calls.
+// https://axios-http.com/docs/instance
 const instance = axios.create({
   baseURL: 'https://api.airtable.com/v0/appNBdtRINjSfT9Yw/',
   headers: {
@@ -12,9 +14,7 @@ const instance = axios.create({
 });
 
 /**
- * @description An async function that when called will fetch all records from airtable.
- * A helper that wraps our fetch calls, returns normalized json, handles errs
- * @returns json if successful request, else error message
+ * @description An async function that when called will fetch all records from airtable via our Axios instance.
  */
 export const airtable = async (opts: AxiosRequestConfig): Promise<any> => {
   try {
@@ -23,6 +23,5 @@ export const airtable = async (opts: AxiosRequestConfig): Promise<any> => {
   } catch (err) {
     console.error(err);
   }
-
 }
 

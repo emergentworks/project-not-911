@@ -2,17 +2,23 @@ import * as Linking from 'expo-linking';
 import React, { memo } from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
-import { RowLink, Text, View } from '../components';
-import { Styles, Cities } from '../constants';
-import { useTheme, useLocation } from '../context';
+import { CityLink, Text, View } from '../components';
+import { Styles } from '../constants';
+import { useTheme, useLocation, useCache } from '../context';
 import { Phone } from '../svgs';
 
 /**
- * @description This component renders the city selection page (the list of cities to choose from)
+ * @description This component renders the city selection page. It gets the cities from the Airtable 'meta' table. This is the first page the user sees.
  */
 export const CitySelectScreen = memo((props: any) => {
   const { mode } = useTheme();
+  const { cache } = useCache();
   const { saveLocation }: { saveLocation: Function } = useLocation();
+
+  // Sorts cities alphabetically by name.
+  const cities = Object.keys(cache)
+    .sort((cityA: string, cityB: string) => cityA.localeCompare(cityB));
+
   return (
     <View
       lightColor={Styles.white}
@@ -69,48 +75,17 @@ export const CitySelectScreen = memo((props: any) => {
             lightColor={Styles.gray}
             darkColor={Styles.white}
           />
-          {Cities.map((city, i) => (
-            <RowLink
-              key={i}
-              includeIcon
-              to='HomeScreen'
-              isLast={i === Cities.length - 1}
+          {cities.map((city, i) => (
+            <CityLink
+              key={city}
+              to='CategoryScreen'
+              isLast={i === cities.length - 1}
               navigation={props.navigation}
               route={city}
               saveLocation={saveLocation}
             />
           ))}
         </View>
-        {/* <View style={styles.community}>
-          <Community
-            style={styles.marginBottom15}
-          />
-          <Text
-            lightColor={Styles.blue}
-            darkColor={Styles.white}
-            style={[styles.title, styles.marginBottom40]}>
-            Community Care Resources
-          </Text>
-          <Text
-            bold
-            lightColor={Styles.blue}
-            darkColor={Styles.white}
-            style={styles.trusted}>
-            Trusted sources, vetted through community experience
-          </Text>
-          <View
-            style={Styles.separator}
-            lightColor={Styles.gray}
-            darkColor={Styles.white}
-          />
-          {Communities.map((route, i) => (
-            <RowLink
-              key={i}
-              navigation={props.navigation}
-              route={route}
-            />
-          ))}
-        </View> */}
       </ScrollView>
     </View>
   );

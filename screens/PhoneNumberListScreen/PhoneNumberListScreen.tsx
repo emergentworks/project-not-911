@@ -7,8 +7,7 @@ import { useLocation, useCache } from '../../context';
 import { getRecordsFromLocation } from '../../queries';
 
 /**
- * @description This component renders the PhoneRecord Screen
- * ie, any phone record list we pass into it basically
+ * @description This component renders phone numbers from cache or airtable whichever is available
  */
 export const PhoneNumberListScreen = (props: any) => {
   const { cache, setCache } = useCache();
@@ -29,24 +28,31 @@ export const PhoneNumberListScreen = (props: any) => {
 
   if (records.length === 0) return null;
 
-  // lets always have 'crisis' hotlines at the top
-  // crisis meaning, mental health breakdowns, etc, but not an 'emergency'
-  // wherein someone is currently in physical danger
+  // @TODO remove filter once we refactor categories to come from Airtable.
+  // We are only showing phone numbers that match the current category selected by the user.
   const { route } = props;
-  const sortedAndFilteredRecords = records.filter((record: any) => {
-    const { fields } = record;
-    const normalizedCats = fields.categories.map((categories: string) => {
-      return categories.toLowerCase().replaceAll(' ', '');
-    })
-    if (!normalizedCats.includes(route.params.section)) {
-      return false;
-    }
-    return true;
-  }).sort((record: any) => {
-    if (record.fields.isCrisis) return -1;
-    return 1;
-  });
+  const sortedAndFilteredRecords = records
+    .filter((record: any) => {
+      const { fields } = record;
 
+      // In case of data error normalizes categories
+      const normalizedCats = fields.categories.map((categories: string) => {
+        return categories.toLowerCase().replaceAll(' ', '');
+      });
+
+      if (!normalizedCats.includes(route.params.section)) return false;
+      return true;
+    })
+    .sort((record: any) => {
+      // and lets always have 'crisis' hotlines at the top
+      // crisis meaning, mental health breakdowns, etc, but not an 'emergency'
+      // wherein someone is currently in physical danger
+      if (record.fields.isCrisis) return -1;
+      return 1;
+    });
+
+  // @TODO move into utils folder.
+  // renders text differently when a resource has option to call only or call & text
   const formatTextInfo = (textInfo: { content?: string; record: string }) => {
     if (textInfo === undefined) {
       return '';

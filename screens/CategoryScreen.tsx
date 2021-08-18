@@ -2,15 +2,15 @@ import * as Linking from 'expo-linking';
 import React, { memo } from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
-import { RowLink, Text, View, BackButton } from '../components';
+import { CategoryLink, Text, View, BackButton } from '../components';
 import { Styles, Routes } from '../constants';
 import { useTheme, useLocation } from '../context';
 import { Phone } from '../svgs';
 
 /**
- * @description This component renders the landing page (the list of hotline categories)
+ * @description This component renders the available categories for the selected location.
  */
-export const HomeScreen = memo((props: any) => {
+export const CategoryScreen = memo((props: any) => {
   const { mode } = useTheme();
   const { location }: { location: string } = useLocation();
 
@@ -81,7 +81,7 @@ export const HomeScreen = memo((props: any) => {
             darkColor={Styles.white}
           />
           {Routes.map((route, i) => (
-            <RowLink
+            <CategoryLink
               key={i}
               includeIcon
               to="PhoneNumberListScreen"
@@ -91,36 +91,6 @@ export const HomeScreen = memo((props: any) => {
             />
           ))}
         </View>
-        {/* <View style={styles.community}>
-          <Community
-            style={styles.marginBottom15}
-          />
-          <Text
-            lightColor={Styles.blue}
-            darkColor={Styles.white}
-            style={[styles.title, styles.marginBottom40]}>
-            Community Care Resources
-          </Text>
-          <Text
-            bold
-            lightColor={Styles.blue}
-            darkColor={Styles.white}
-            style={styles.trusted}>
-            Trusted sources, vetted through community experience
-          </Text>
-          <View
-            style={Styles.separator}
-            lightColor={Styles.gray}
-            darkColor={Styles.white}
-          />
-          {Communities.map((route, i) => (
-            <RowLink
-              key={i}
-              navigation={props.navigation}
-              route={route}
-            />
-          ))}
-        </View> */}
       </ScrollView>
     </View>
   );
