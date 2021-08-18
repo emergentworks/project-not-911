@@ -88,7 +88,7 @@ export const AboutScreen = memo(() => (
           lightColor="#353535"
           darkColor={Styles.white}
           style={[styles.builtBy, styles.marginBottom40]}>
-          Tomás Correa, Ross Patton, Ashley Newcomer, Army Armstead, Lauren Wilkinson, Christina Entcheva, Jaclyn Perrone, Johann Diedrick
+          Tomás Correa, Ross Patton, Ashley Newcomer, Army Armstead, Lauren Wilkinson, Christina Entcheva, Jaclyn Perrone, Johann Diedrick, Scizors
         </Text>
       </View>
     </ScrollView>

@@ -10,7 +10,7 @@ import { useTheme } from '../context';
  * @description This component is for adjusting user settings, such as theme
  */
 export const SettingsScreen = memo(() => {
-  const {mode, toggle} = useTheme();
+  const { mode, toggle } = useTheme();
   const [isEnabled, setIsEnabled] = useState(mode === 'dark');
 
   const toggleSwitch = () => {
@@ -26,7 +26,7 @@ export const SettingsScreen = memo(() => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.innerView}>
           <View style={[styles.row, styles.section]}>
-            <Text style={[styles.bold, {marginRight: 10}]}>
+            <Text style={[styles.bold, { marginRight: 10 }]}>
               Toggle Dark Mode
             </Text>
             <Switch

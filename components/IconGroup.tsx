@@ -13,7 +13,7 @@ interface IconGroupProps {
   website?: string;
 }
 
-export const IconGroup:React.FC<IconGroupProps> = ({crisis, tel, text, website}) => {
+export const IconGroup: React.FC<IconGroupProps> = ({ crisis, tel, text, website }) => {
 
   const LETTER_TO_TELEPHONE_NUMBER: { [key: string]: string } = {
     'ABC': '2',
@@ -57,25 +57,25 @@ export const IconGroup:React.FC<IconGroupProps> = ({crisis, tel, text, website})
       {tel && <TouchableOpacity
         style={[
           styles.phoneWrap,
-          crisis && {backgroundColor: Styles.orange},
+          crisis && { backgroundColor: Styles.orange },
         ]}
-        onPress={() => Linking.openURL(`tel://${tel}`) }>
+        onPress={() => Linking.openURL(`tel://${tel}`)}>
         <Phone color={Styles.white} />
       </TouchableOpacity>}
       {text && <TouchableOpacity
         style={[
           styles.phoneWrap,
-          crisis && {backgroundColor: Styles.orange},
+          crisis && { backgroundColor: Styles.orange },
         ]}
-        onPress={() => Linking.openURL(`sms:${formatTextNumber(text.number)}?&body=${encodeURI(text.content || '')}`) }>
+        onPress={() => Linking.openURL(`sms:${formatTextNumber(text.number)}?&body=${encodeURI(text.content || '')}`)}>
         <TextMessage color={Styles.white} />
       </TouchableOpacity>}
       {website && <TouchableOpacity
         style={[
           styles.phoneWrap,
-          crisis && {backgroundColor: Styles.orange},
+          crisis && { backgroundColor: Styles.orange },
         ]}
-        onPress={() => Linking.openURL(website) }>
+        onPress={() => Linking.openURL(website)}>
         <WebLink color={Styles.white} />
       </TouchableOpacity>}
     </View>

@@ -50,7 +50,7 @@ export const Routes = [
       display: 'Legal Support',
     },
     params: {
-      section: 'legal',
+      section: 'legalsupport',
       title: 'Arrested? Witness a false arrest or police brutality? Get support here',
     },
   },
@@ -59,7 +59,7 @@ export const Routes = [
       display: 'Drugs or Poisoning',
     },
     params: {
-      section: 'poison',
+      section: 'drugsorpoisoning',
       title: 'Poison Control or Substance Abuse Hotlines',
     },
   },

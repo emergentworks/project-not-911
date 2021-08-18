@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text as DefaultText, View as DefaultView } from 'react-native';
 
-import {Styles} from '../constants';
+import { Styles } from '../constants';
 import { useTheme } from '../context';
 
 /**
@@ -11,7 +11,7 @@ export function useThemeColor(
   props: { light?: string; dark?: string },
   colorName: keyof typeof Styles.light & keyof typeof Styles.dark,
 ) {
-  const {mode}: {mode: 'light' | 'dark'} = useTheme();
+  const { mode }: { mode: 'light' | 'dark' } = useTheme();
   const colorFromProps = props[mode];
 
   if (colorFromProps) {

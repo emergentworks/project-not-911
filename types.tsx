@@ -14,13 +14,13 @@ export type RootStackParamList = {
 export type CategoryTypes = keyof RootStackParamList;
 
 export type BottomTabParamList = {
-  'Home': undefined,
+  'CitySelect': undefined,
   'About': undefined,
   'Settings': undefined,
 };
 
 export type TabOneParamList = {
-  HomeScreen: undefined,
+  CitySelectScreen: undefined,
 };
 
 export type TabTwoParamList = {

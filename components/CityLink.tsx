@@ -1,75 +1,53 @@
 import React, { memo } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
-import { Text, View } from '../components/Themed';
+import { Text, View } from './Themed';
 import { Styles } from '../constants';
 import {
   Caret,
-  Homelessness,
-  Legal,
-  MentalHealth,
-  Poison,
-  Violence,
 } from '../svgs';
 
 type Props = {
   includeIcon?: true,
   isLast?: boolean,
   navigation: any,
-  route: {
-    btn: {
-      display: string,
-    },
-    params: object,
-  },
+  city?: string,
+  saveLocation?: Function,
+  to: "CategoryScreen" | "PhoneNumberListScreen",
+  route: string,
 };
 
 /**
  * @description Generic category link. optional icon
  */
-export const RowLink = memo((props: Props) => {
+export const CityLink = memo((props: Props) => {
   const { isLast, route } = props;
 
   return (
     <>
       <TouchableOpacity
         style={styles.row}
-        onPress={() => props.navigation.navigate(
-          'PhoneNumberListScreen',
-          route.params,
-        )}>
+        onPress={() => {
+          if (props.saveLocation) {
+            props.saveLocation(route)
+          }
+          props.navigation.navigate(
+            props.to,
+            { location: route }
+          );
+        }}>
         {props.includeIcon && (
           <View
             lightColor={Styles.white}
             darkColor={Styles.blue}
             style={styles.marginRight10}>
-            {props.route.btn.display === 'Violence'
-              && (
-                <Violence />
-              )}
-            {props.route.btn.display === 'Mental Health'
-              && (
-                <MentalHealth />
-              )}
-            {props.route.btn.display === 'Homelessness'
-              && (
-                <Homelessness />
-              )}
-            {props.route.btn.display === 'Legal Support'
-              && (
-                <Legal />
-              )}
-            {props.route.btn.display === 'Drugs or Poisoning'
-              && (
-                <Poison />
-              )}
           </View>
         )}
         <Text
           lightColor={Styles.blue}
           darkColor={Styles.white}
           style={styles.text}>
-          {route.btn.display}
+          {route}
         </Text>
         <Caret />
       </TouchableOpacity>

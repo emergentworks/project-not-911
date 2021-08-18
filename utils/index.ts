@@ -1,0 +1,1 @@
+export { airtable } from './airtable';

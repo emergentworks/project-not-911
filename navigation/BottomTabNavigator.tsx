@@ -6,7 +6,7 @@ import { View } from 'react-native';
 import { Styles } from '../constants';
 import { useTheme } from '../context';
 import { AboutScreen } from '../screens/AboutScreen';
-import { HomeScreen } from '../screens/HomeScreen';
+import { CitySelectScreen } from '../screens/CitySelectScreen';
 import { SettingsScreen } from '../screens/SettingsScreen';
 import { About, Home, Logo, Settings } from '../svgs';
 import {
@@ -22,32 +22,32 @@ const BottomTab = createBottomTabNavigator<BottomTabParamList>();
  * @description This component renders the bottom navigation for the home/about pages
  */
 export default function BottomTabNavigator() {
-  const theme: {mode: 'light' | 'dark'} = useTheme();
-  const {mode} = theme;
+  const theme: { mode: 'light' | 'dark' } = useTheme();
+  const { mode } = theme;
 
   return (
     <BottomTab.Navigator
-      initialRouteName="Home"
+      initialRouteName="CitySelect"
       tabBarOptions={{ activeTintColor: Styles[mode].tint }}>
       <BottomTab.Screen
-        name="Home"
+        name="CitySelect"
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({color}) => <Home color={color} />,
+          tabBarIcon: ({ color }) => <Home color={color} />,
         }}
       />
       <BottomTab.Screen
         name="About"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({color}) => <About color={color} />,
+          tabBarIcon: ({ color }) => <About color={color} />,
         }}
       />
       <BottomTab.Screen
         name="Settings"
         component={TabThreeNavigator}
         options={{
-          tabBarIcon: ({color}) => <Settings color={color} />,
+          tabBarIcon: ({ color }) => <Settings color={color} />,
         }}
       />
     </BottomTab.Navigator>
@@ -59,13 +59,13 @@ export default function BottomTabNavigator() {
 const TabOneStack = createStackNavigator<TabOneParamList>();
 
 function TabOneNavigator() {
-  const {mode}: {mode: 'light' | 'dark'} = useTheme();
+  const { mode }: { mode: 'light' | 'dark' } = useTheme();
 
   return (
     <TabOneStack.Navigator>
       <TabOneStack.Screen
-        name="HomeScreen"
-        component={HomeScreen}
+        name="CitySelectScreen"
+        component={CitySelectScreen}
         options={{
           headerTitle: () => (
             <View
@@ -92,7 +92,7 @@ function TabOneNavigator() {
 const TabTwoStack = createStackNavigator<TabTwoParamList>();
 
 function TabTwoNavigator() {
-  const {mode}: {mode: 'light' | 'dark'} = useTheme();
+  const { mode }: { mode: 'light' | 'dark' } = useTheme();
 
   return (
     <TabTwoStack.Navigator>
@@ -125,7 +125,7 @@ function TabTwoNavigator() {
 const TabThreeStack = createStackNavigator<TabThreeParamList>();
 
 function TabThreeNavigator() {
-  const {mode}: {mode: 'light' | 'dark'} = useTheme();
+  const { mode }: { mode: 'light' | 'dark' } = useTheme();
 
   return (
     <TabThreeStack.Navigator>
