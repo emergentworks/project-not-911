@@ -19,34 +19,24 @@ type Props = {
   city?: string,
   saveLocation?: Function,
   to: "CategoryScreen" | "PhoneNumberListScreen",
-  route: {
-    btn: {
-      display: string,
-    },
-    params: {
-      section: string,
-      title: string,
-    }
-  },
+  category: string,
 };
 
 /**
  * @description Generic category link. optional icon
  */
 export const CategoryLink = memo((props: Props) => {
-  const { isLast, route } = props;
+  const { isLast, category } = props;
+  const section = category.toLowerCase().replaceAll(' ', '');
 
   return (
     <>
       <TouchableOpacity
         style={styles.row}
         onPress={() => {
-          if (props.saveLocation) {
-            props.saveLocation(route)
-          }
           props.navigation.navigate(
             props.to,
-            route.params
+            { section },
           );
         }}>
         {props.includeIcon && (
@@ -54,23 +44,23 @@ export const CategoryLink = memo((props: Props) => {
             lightColor={Styles.white}
             darkColor={Styles.blue}
             style={styles.marginRight10}>
-            {route.btn.display === 'Violence'
+            {category === 'Violence'
               && (
                 <Violence />
               )}
-            {route.btn.display === 'Mental Health'
+            {category === 'Mental Health'
               && (
                 <MentalHealth />
               )}
-            {route.btn.display === 'Homelessness'
+            {category === 'Homelessness'
               && (
                 <Homelessness />
               )}
-            {route.btn.display === 'Legal Support'
+            {category === 'Legal Support'
               && (
                 <LegalSupport />
               )}
-            {route.btn.display === 'Drugs or Poisoning'
+            {category === 'Drugs or Poisoning'
               && (
                 <DrugsOrPoisoning />
               )}
@@ -80,7 +70,7 @@ export const CategoryLink = memo((props: Props) => {
           lightColor={Styles.blue}
           darkColor={Styles.white}
           style={styles.text}>
-          {route.btn.display}
+          {category}
         </Text>
         <Caret />
       </TouchableOpacity>

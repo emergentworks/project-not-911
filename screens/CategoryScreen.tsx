@@ -3,15 +3,16 @@ import React, { memo } from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { CategoryLink, Text, View, BackButton } from '../components';
-import { Styles, Routes } from '../constants';
-import { useTheme, useLocation } from '../context';
+import { Styles } from '../constants';
+import { useTheme, useLocation, useCache } from '../context';
 import { Phone } from '../svgs';
 
 /**
- * @description This component renders the available categories for the selected location.
+ * @description This component renders the available categories for the selected location. It gets the cities from the Airtable 'metaCategories' table.
  */
 export const CategoryScreen = memo((props: any) => {
   const { mode } = useTheme();
+  const { cache } = useCache();
   const { location }: { location: string } = useLocation();
 
   return (
@@ -80,14 +81,14 @@ export const CategoryScreen = memo((props: any) => {
             lightColor={Styles.gray}
             darkColor={Styles.white}
           />
-          {Routes.map((route, i) => (
+          {cache.categories.map((cat: string, i: number) => (
             <CategoryLink
-              key={i}
+              key={cat}
               includeIcon
               to="PhoneNumberListScreen"
-              isLast={i === Routes.length - 1}
+              isLast={i === cache.categories.length - 1}
               navigation={props.navigation}
-              route={route}
+              category={cat}
             />
           ))}
         </View>

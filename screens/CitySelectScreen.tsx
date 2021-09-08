@@ -17,6 +17,7 @@ export const CitySelectScreen = memo((props: any) => {
 
   // Sorts cities alphabetically by name.
   const cities = Object.keys(cache)
+    .filter(key => key !== 'categories')
     .sort((cityA: string, cityB: string) => cityA.localeCompare(cityB));
 
   return (
