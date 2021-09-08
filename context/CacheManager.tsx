@@ -34,7 +34,6 @@ export class CacheManager extends React.Component<any, any> {
       const savedCache = await AsyncStorage.getItem('cache');
       if (typeof savedCache === 'string') {
         const parsedCache = JSON.parse(savedCache);
-
         // We do this to prevent infinite loops.
         if (!_.isEqual(this.state.cache, parsedCache)) {
           this.setState({
@@ -56,26 +55,32 @@ export class CacheManager extends React.Component<any, any> {
       method: 'get',
       url: 'meta',
     });
+
     const cities = meta.records.map((rec: any) => {
-      return rec.fields.name;
-    });
-    const phoneNumbersByCity = {};
+      return rec.fields.city;
+    }).filter((city: string) => !!city);
+
+    const categories = meta.records.map((rec: any) => {
+      return rec.fields.category;
+    }).filter((category: string) => !!category);
+
+    const newCache = { categories };
     await Promise.all(cities.map(async (city: string) => {
       const numbers = await getRecordsFromLocation(city);
       // @ts-ignore
-      phoneNumbersByCity[city] = numbers
+      newCache[city] = numbers
       return null;
     }));
 
-    if (_.isEqual(this.state.cache, phoneNumbersByCity)) {
+    if (_.isEqual(this.state.cache, newCache)) {
       return null;
     }
 
-    const newCache = JSON.stringify(phoneNumbersByCity);
+    const newCacheStr = JSON.stringify(newCache);
     try {
-      await AsyncStorage.setItem('cache', newCache);
+      await AsyncStorage.setItem('cache', newCacheStr);
       this.setState({
-        cache: phoneNumbersByCity,
+        cache: newCache,
       });
     } catch (err) { }
   }

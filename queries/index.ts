@@ -10,3 +10,4 @@ export const getRecordsFromLocation = async (location: string) => {
   });
   return records;
 };
+

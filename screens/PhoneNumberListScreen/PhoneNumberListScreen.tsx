@@ -36,8 +36,8 @@ export const PhoneNumberListScreen = (props: any) => {
       const { fields } = record;
 
       // In case of data error normalizes categories
-      const normalizedCats = fields.categories.map((categories: string) => {
-        return categories.toLowerCase().replaceAll(' ', '');
+      const normalizedCats = fields.categories.map((category: string) => {
+        return category.toLowerCase().replaceAll(' ', '');
       });
 
       if (!normalizedCats.includes(route.params.section)) return false;
