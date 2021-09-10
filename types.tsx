@@ -7,14 +7,15 @@ import { StackNavigationProp } from '@react-navigation/stack';
 
 export type RootStackParamList = {
   NotFound: undefined,
-  Root: undefined,
+  CitySelectScreen: undefined,
   PhoneNumberListScreen: undefined,
+  CategoryScreen: undefined,
 };
 
 export type CategoryTypes = keyof RootStackParamList;
 
 export type BottomTabParamList = {
-  'CitySelect': undefined,
+  'Home': undefined,
   'About': undefined,
   'Settings': undefined,
 };
