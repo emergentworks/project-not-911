@@ -8,6 +8,7 @@ import { PhoneNumberListScreen } from '../screens/PhoneNumberListScreen/PhoneNum
 import { CategoryScreen } from '../screens/CategoryScreen';
 import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
+import { CitySelectScreen } from '../screens/CitySelectScreen';
 
 
 
@@ -18,7 +19,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
     <NavigationContainer
       linking={LinkingConfiguration}
       theme={colorScheme === 'light' ? DefaultTheme : DarkTheme}>
-      <RootNavigator />
+      <BottomTabNavigator />
     </NavigationContainer>
   );
 }
@@ -27,10 +28,11 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
 // Read more here: https://reactnavigation.org/docs/modal
 const Stack = createStackNavigator<any>();
 
-function RootNavigator() {
+export function HomeStackNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Root" component={BottomTabNavigator} />
+      {/*      <Stack.Screen name="Root" component={BottomTabNavigator} />*/}
+      <Stack.Screen name="CitySelectScreen" component={CitySelectScreen} />
       <Stack.Screen name="CategoryScreen" component={CategoryScreen} />
       <Stack.Screen name="PhoneNumberListScreen" component={PhoneNumberListScreen} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
