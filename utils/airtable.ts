@@ -1,4 +1,5 @@
-import axios, { AxiosRequestConfig } from "axios";
+import axios, { AxiosRequestConfig } from 'axios';
+
 // @ts-ignore
 import { AIRTABLE_KEY } from '@env';
 // console.log('Airtable Key: ', AIRTABLE_KEY);
@@ -9,8 +10,8 @@ const instance = axios.create({
   baseURL: 'https://api.airtable.com/v0/appNBdtRINjSfT9Yw/',
   headers: {
     Authorization: `Bearer ${AIRTABLE_KEY}`,
-    "Accept": "application/json",
-    "Content-Type": "application/json",
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
   },
 });
 
@@ -24,5 +25,5 @@ export const airtable = async (opts: AxiosRequestConfig): Promise<any> => {
   } catch (err) {
     console.error(err);
   }
-}
+};
 

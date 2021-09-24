@@ -1,5 +1,5 @@
 import React from 'react';
-import { AsyncStorage } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 /**
  * @description this component sets and saves a city location using React Context
@@ -49,7 +49,7 @@ export class LocationManager extends React.Component<any, any> {
       <ManageLocationContext.Provider
         value={{
           location: this.state.location,
-          saveLocation: this.saveLocation
+          saveLocation: this.saveLocation,
         }}>
         {this.props.children}
       </ManageLocationContext.Provider>

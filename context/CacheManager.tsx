@@ -1,9 +1,9 @@
-import React from 'react';
-import { AsyncStorage } from 'react-native';
 import _ from 'lodash';
+import React from 'react';
+import AsyncStorage from '@react-native-community/async-storage';
 
-import { airtable } from '../utils';
 import { getRecordsFromLocation } from '../queries';
+import { airtable } from '../utils';
 
 /**
  * @description this component sets and saves cache using React Context.
@@ -28,8 +28,12 @@ export class CacheManager extends React.Component<any, any> {
     cache: {},
   };
 
+  static isMounted = false;
+
   // Retrieve cache from storage and save it.
   async componentDidMount() {
+    CacheManager.isMounted = true;
+
     try {
       const savedCache = await AsyncStorage.getItem('cache');
       if (typeof savedCache === 'string') {
@@ -43,7 +47,13 @@ export class CacheManager extends React.Component<any, any> {
       } else {
         this.setCache();
       }
-    } catch (err) { }
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  componentWillUnmount() {
+    CacheManager.isMounted = false;
   }
 
   /**
@@ -51,14 +61,20 @@ export class CacheManager extends React.Component<any, any> {
    * phone numbers. If any change save to cache, else do nothing.
    */
   setCache = async () => {
+    if (!CacheManager.isMounted) return null;
+
     const meta = await airtable({
       method: 'get',
       url: 'meta',
     });
 
+    console.log('meta ? ', meta);
+
     const cities = meta.records.map((rec: any) => {
       return rec.fields.city;
     }).filter((city: string) => !!city);
+
+    console.log('cities ? ', cities);
 
     const categories = meta.records.map((rec: any) => {
       return rec.fields.category;
@@ -68,7 +84,7 @@ export class CacheManager extends React.Component<any, any> {
     await Promise.all(cities.map(async (city: string) => {
       const numbers = await getRecordsFromLocation(city);
       // @ts-ignore
-      newCache[city] = numbers
+      newCache[city] = numbers;
       return null;
     }));
 
@@ -82,7 +98,9 @@ export class CacheManager extends React.Component<any, any> {
       this.setState({
         cache: newCache,
       });
-    } catch (err) { }
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   render() {

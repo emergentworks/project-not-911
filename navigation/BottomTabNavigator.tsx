@@ -6,23 +6,22 @@ import { View } from 'react-native';
 import { Styles } from '../constants';
 import { useTheme } from '../context';
 import { AboutScreen } from '../screens/AboutScreen';
-import { CitySelectScreen } from '../screens/CitySelectScreen';
 import { SettingsScreen } from '../screens/SettingsScreen';
 import { About, Home, Logo, Settings } from '../svgs';
-import { HomeStackNavigator } from '.';
 import {
   BottomTabParamList,
   TabOneParamList,
   TabThreeParamList,
   TabTwoParamList,
 } from '../types';
+import { HomeStackNavigator } from '.';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 /**
  * @description This component renders the bottom navigation for the home/about pages
  */
-export default function BottomTabNavigator() {
+export const BottomTabNavigator = () => {
   const theme: { mode: 'light' | 'dark' } = useTheme();
   const { mode } = theme;
 
@@ -53,7 +52,7 @@ export default function BottomTabNavigator() {
       />
     </BottomTab.Navigator>
   );
-}
+};
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab

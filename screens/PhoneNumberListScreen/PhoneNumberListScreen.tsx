@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 
-import { IconGroup, Text, View, BackButton } from '../../components';
+import { BackButton, IconGroup, Text, View } from '../../components';
 import { Styles } from '../../constants';
-import { useLocation, useCache } from '../../context';
+import { useCache, useLocation } from '../../context';
 import { getRecordsFromLocation } from '../../queries';
 
 /**
@@ -22,7 +22,7 @@ export const PhoneNumberListScreen = (props: any) => {
       } else {
         setRecords(await getRecordsFromLocation(location));
       }
-    }
+    };
     fetchData();
   });
 
@@ -74,7 +74,7 @@ export const PhoneNumberListScreen = (props: any) => {
       darkColor={Styles.black}
       lightColor={Styles.white}
       style={styles.container}>
-      <BackButton darkColor='black' />
+      <BackButton darkColor="black" />
       <ScrollView showsVerticalScrollIndicator={false}>
         {sortedAndFilteredRecords.map((record: any) => (
           <View

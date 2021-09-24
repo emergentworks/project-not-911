@@ -2,12 +2,12 @@ import { Inter_400Regular, Inter_700Bold, useFonts } from '@expo-google-fonts/in
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import { AddToHomeScreen } from './components';
-import { ThemeManager, LocationManager, useTheme, CacheManager } from './context';
-import useCachedResources from './hooks/useCachedResources';
-import Navigation from './navigation';
+import { CacheManager, LocationManager, ThemeManager, useTheme } from './context';
+// import useCachedResources from './hooks/useCachedResources';
+import { Navigation } from './navigation';
 
 const queryClient = new QueryClient();
 
@@ -16,16 +16,17 @@ const queryClient = new QueryClient();
  * mimics native functionality, doesn't render anything until app is fully loaded
  */
 const AppComponent = () => {
-  const isLoadingComplete = useCachedResources();
+  // const isLoadingComplete = useCachedResources();
   const { mode }: { mode: 'light' | 'dark' } = useTheme();
   const [fontsLoaded] = useFonts({
     Inter_400Regular,
     Inter_700Bold,
   });
 
-  if (!isLoadingComplete || !fontsLoaded) {
+  if (!fontsLoaded) {
     return null;
   }
+
   return (
     <QueryClientProvider client={queryClient}>
       <SafeAreaProvider>

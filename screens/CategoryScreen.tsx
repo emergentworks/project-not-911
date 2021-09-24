@@ -2,9 +2,9 @@ import * as Linking from 'expo-linking';
 import React, { memo } from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
-import { CategoryLink, Text, View, BackButton } from '../components';
+import { BackButton, CategoryLink, Text, View } from '../components';
 import { Styles } from '../constants';
-import { useTheme, useLocation, useCache } from '../context';
+import { useCache, useLocation, useTheme } from '../context';
 import { Phone } from '../svgs';
 
 /**
