@@ -14,6 +14,7 @@ export const CategoryScreen = memo((props: any) => {
   const { mode } = useTheme();
   const { cache } = useCache();
   const { location }: { location: string } = useLocation();
+  const { categories = [] } = cache;
 
   return (
     <View
@@ -81,12 +82,12 @@ export const CategoryScreen = memo((props: any) => {
             lightColor={Styles.gray}
             darkColor={Styles.white}
           />
-          {cache.categories.map((cat: string, i: number) => (
+          {categories.map((cat, i) => (
             <CategoryLink
               key={cat}
               includeIcon
               to="PhoneNumberListScreen"
-              isLast={i === cache.categories.length - 1}
+              isLast={i === categories.length - 1}
               navigation={props.navigation}
               category={cat}
             />

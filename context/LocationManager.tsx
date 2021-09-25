@@ -1,13 +1,15 @@
 import React from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
 
+import { tCacheUnion } from '../types';
+
 /**
  * @description this component sets and saves a city location using React Context
  */
 
 // initiate context
 export const ManageLocationContext: React.Context<any> = React.createContext({
-  location: null,
+  location: null as tCacheUnion | null,
   saveLocation: () => { },
 });
 
@@ -16,7 +18,7 @@ export const useLocation = () => React.useContext(ManageLocationContext);
 
 export class LocationManager extends React.Component<any, any> {
   state = {
-    location: null,
+    location: null as tCacheUnion | null,
   };
 
   async componentDidMount() {
@@ -33,7 +35,7 @@ export class LocationManager extends React.Component<any, any> {
     }
   }
 
-  saveLocation = async (newLocation: string) => {
+  saveLocation = async (newLocation: tCacheUnion) => {
     try {
       await AsyncStorage.setItem('location', newLocation);
       this.setState({

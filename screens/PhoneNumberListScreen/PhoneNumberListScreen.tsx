@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 
+import { tCacheUnion } from "../../types";
 import { BackButton, IconGroup, Text, View } from '../../components';
 import { Styles } from '../../constants';
 import { useCache, useLocation } from '../../context';
@@ -12,12 +13,13 @@ import { getRecordsFromLocation } from '../../queries';
 export const PhoneNumberListScreen = (props: any) => {
   const { cache, setCache } = useCache();
   const [records, setRecords] = useState([]);
-  const { location }: { location: string } = useLocation();
+  const { location }: { location: tCacheUnion } = useLocation();
 
   useEffect(() => {
     const fetchData = async () => {
-      if (cache[location]) {
-        setRecords(cache[location]);
+      const phoneNumbers: any = cache[location];
+      if (typeof phoneNumbers !== 'undefined') {
+        setRecords(phoneNumbers);
         setCache();
       } else {
         setRecords(await getRecordsFromLocation(location));
@@ -33,14 +35,14 @@ export const PhoneNumberListScreen = (props: any) => {
   const { route } = props;
   const sortedAndFilteredRecords = records
     .filter((record: any) => {
-      const { fields } = record;
+      const { fields = {} } = record;
+      const { categories = [] as string[] } = fields;
 
       // In case of data error normalizes categories
-      const normalizedCats = fields.categories.map((category: string) => {
-        return category.toLowerCase().replaceAll(' ', '');
-      });
+      const normalizedCats = categories
+        .map((cat = '') => cat.toLowerCase().replaceAll(' ', ''));
 
-      if (!normalizedCats.includes(route.params.section)) return false;
+      if (!normalizedCats.includes(route?.params?.section)) return false;
       return true;
     })
     .sort((record: any) => {
