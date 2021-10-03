@@ -23,7 +23,7 @@ const AppComponent = () => {
     Inter_700Bold,
   });
 
-  if (!fontsLoaded) {
+  if (!isLoadingComplete || !fontsLoaded) {
     return null;
   }
 
