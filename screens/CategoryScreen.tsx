@@ -2,9 +2,9 @@ import * as Linking from 'expo-linking';
 import React, { memo } from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
-import { CategoryLink, Text, View, BackButton } from '../components';
+import { BackButton, CategoryLink, Text, View } from '../components';
 import { Styles } from '../constants';
-import { useTheme, useLocation, useCache } from '../context';
+import { useCache, useLocation, useTheme } from '../context';
 import { Phone } from '../svgs';
 
 /**
@@ -14,6 +14,7 @@ export const CategoryScreen = memo((props: any) => {
   const { mode } = useTheme();
   const { cache } = useCache();
   const { location }: { location: string } = useLocation();
+  const { categories = [] } = cache;
 
   return (
     <View
@@ -81,12 +82,12 @@ export const CategoryScreen = memo((props: any) => {
             lightColor={Styles.gray}
             darkColor={Styles.white}
           />
-          {cache.categories.map((cat: string, i: number) => (
+          {categories.map((cat, i) => (
             <CategoryLink
               key={cat}
               includeIcon
               to="PhoneNumberListScreen"
-              isLast={i === cache.categories.length - 1}
+              isLast={i === categories.length - 1}
               navigation={props.navigation}
               category={cat}
             />

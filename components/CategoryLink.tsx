@@ -1,16 +1,16 @@
 import React, { memo } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
-import { Text, View } from './Themed';
 import { Styles } from '../constants';
 import {
   Caret,
+  DrugsOrPoisoning,
   Homelessness,
   LegalSupport,
   MentalHealth,
-  DrugsOrPoisoning,
   Violence,
 } from '../svgs';
+import { Text, View } from './Themed';
 
 type Props = {
   includeIcon?: true,
@@ -18,7 +18,7 @@ type Props = {
   navigation: any,
   city?: string,
   saveLocation?: Function,
-  to: "CategoryScreen" | "PhoneNumberListScreen",
+  to: 'CategoryScreen' | 'PhoneNumberListScreen',
   category: string,
 };
 
@@ -26,8 +26,11 @@ type Props = {
  * @description Generic category link. optional icon
  */
 export const CategoryLink = memo((props: Props) => {
-  const { isLast, category } = props;
-  const section = category.toLowerCase().replaceAll(' ', '');
+  const { isLast = false, category } = props;
+  if (typeof category !== 'string') return null;
+
+  const re = /\s+/gi;
+  const section = category.toLowerCase().replace(re, '');
 
   return (
     <>

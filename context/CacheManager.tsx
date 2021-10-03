@@ -1,9 +1,9 @@
-import React from 'react';
-import { AsyncStorage } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import _ from 'lodash';
+import React from 'react';
 
-import { airtable } from '../utils';
 import { getRecordsFromLocation } from '../queries';
+import { airtable } from '../utils';
 
 /**
  * @description this component sets and saves cache using React Context.
@@ -13,9 +13,22 @@ import { getRecordsFromLocation } from '../queries';
  * @returns JSON
  */
 
+type tCache = {
+  categories?: string[],
+  Boston?: object[],
+  Chicago?: object[],
+  'New York'?: object[],
+  'San Francisco Bay Area'?: object[]
+};
+
+type tCacheContext = {
+  cache: tCache,
+  setCache: () => void,
+}
+
 // initiate context
-export const ManageCacheContext: React.Context<any> = React.createContext({
-  cache: {},
+export const ManageCacheContext: React.Context<tCacheContext> = React.createContext({
+  cache: {} as tCache,
   setCache: () => { },
 });
 
@@ -25,11 +38,15 @@ export const useCache = () => React.useContext(ManageCacheContext);
 // Initializes cache
 export class CacheManager extends React.Component<any, any> {
   state = {
-    cache: {},
+    cache: {} as tCache,
   };
+
+  static isMounted = false;
 
   // Retrieve cache from storage and save it.
   async componentDidMount() {
+    CacheManager.isMounted = true;
+
     try {
       const savedCache = await AsyncStorage.getItem('cache');
       if (typeof savedCache === 'string') {
@@ -43,7 +60,13 @@ export class CacheManager extends React.Component<any, any> {
       } else {
         this.setCache();
       }
-    } catch (err) { }
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  componentWillUnmount() {
+    CacheManager.isMounted = false;
   }
 
   /**
@@ -51,38 +74,46 @@ export class CacheManager extends React.Component<any, any> {
    * phone numbers. If any change save to cache, else do nothing.
    */
   setCache = async () => {
+    if (!CacheManager.isMounted) return null;
+
+    // the meta table tells us things like, what cities and categories we have atm
     const meta = await airtable({
       method: 'get',
       url: 'meta',
     });
 
-    const cities = meta.records.map((rec: any) => {
+    const cities: string[] = meta.records.map((rec: any) => {
       return rec.fields.city;
     }).filter((city: string) => !!city);
 
-    const categories = meta.records.map((rec: any) => {
-      return rec.fields.category;
+    const categories: string[] = meta.records.map((rec: any) => {
+      return rec.fields.category || '';
     }).filter((category: string) => !!category);
 
-    const newCache = { categories };
+    const newCache: tCache = { categories };
     await Promise.all(cities.map(async (city: string) => {
       const numbers = await getRecordsFromLocation(city);
       // @ts-ignore
-      newCache[city] = numbers
+      newCache[city] = numbers;
       return null;
     }));
 
+    // if we called setCache but it turns out, no change, don't do anything else
     if (_.isEqual(this.state.cache, newCache)) {
       return null;
     }
 
+    // finally, create the new cache, in state as an object (for immediate use in the app)
+    // and also in async storage, where it needs to be a string
     const newCacheStr = JSON.stringify(newCache);
     try {
       await AsyncStorage.setItem('cache', newCacheStr);
       this.setState({
         cache: newCache,
       });
-    } catch (err) { }
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   render() {

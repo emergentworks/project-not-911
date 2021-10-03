@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 
-import { IconGroup, Text, View, BackButton } from '../../components';
+import { BackButton, IconGroup, Text, View } from '../../components';
 import { Styles } from '../../constants';
-import { useLocation, useCache } from '../../context';
+import { useCache, useLocation } from '../../context';
 import { getRecordsFromLocation } from '../../queries';
+import { tCacheUnion } from '../../types';
 
 /**
  * @description This component renders phone numbers from cache or airtable whichever is available
@@ -12,17 +13,18 @@ import { getRecordsFromLocation } from '../../queries';
 export const PhoneNumberListScreen = (props: any) => {
   const { cache, setCache } = useCache();
   const [records, setRecords] = useState([]);
-  const { location }: { location: string } = useLocation();
+  const { location }: { location: tCacheUnion } = useLocation();
 
   useEffect(() => {
     const fetchData = async () => {
-      if (cache[location]) {
-        setRecords(cache[location]);
+      const phoneNumbers: any = cache[location];
+      if (typeof phoneNumbers !== 'undefined') {
+        setRecords(phoneNumbers);
         setCache();
       } else {
         setRecords(await getRecordsFromLocation(location));
       }
-    }
+    };
     fetchData();
   });
 
@@ -33,14 +35,15 @@ export const PhoneNumberListScreen = (props: any) => {
   const { route } = props;
   const sortedAndFilteredRecords = records
     .filter((record: any) => {
-      const { fields } = record;
+      const { fields = {} } = record;
+      const { categories = [] as string[] } = fields;
+      const re = /\s+/gi;
 
       // In case of data error normalizes categories
-      const normalizedCats = fields.categories.map((category: string) => {
-        return category.toLowerCase().replaceAll(' ', '');
-      });
+      const normalizedCats = categories
+        .map((cat = '') => cat.toLowerCase().replace(re, ''));
 
-      if (!normalizedCats.includes(route.params.section)) return false;
+      if (!normalizedCats.includes(route?.params?.section)) return false;
       return true;
     })
     .sort((record: any) => {
@@ -74,7 +77,7 @@ export const PhoneNumberListScreen = (props: any) => {
       darkColor={Styles.black}
       lightColor={Styles.white}
       style={styles.container}>
-      <BackButton darkColor='black' />
+      <BackButton darkColor="black" />
       <ScrollView showsVerticalScrollIndicator={false}>
         {sortedAndFilteredRecords.map((record: any) => (
           <View

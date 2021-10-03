@@ -4,13 +4,16 @@ import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { CityLink, Text, View } from '../components';
 import { Styles } from '../constants';
-import { useTheme, useLocation, useCache } from '../context';
+import { useCache, useLocation, useTheme } from '../context';
 import { Phone } from '../svgs';
+import { PhoneScreenNavigationProp } from '../types';
 
 /**
  * @description This component renders the city selection page. It gets the cities from the Airtable 'meta' table. This is the first page the user sees.
  */
-export const CitySelectScreen = memo((props: any) => {
+export const CitySelectScreen = memo((props: {
+  navigation: PhoneScreenNavigationProp,
+}) => {
   const { mode } = useTheme();
   const { cache } = useCache();
   const { saveLocation }: { saveLocation: Function } = useLocation();
@@ -79,7 +82,7 @@ export const CitySelectScreen = memo((props: any) => {
           {cities.map((city, i) => (
             <CityLink
               key={city}
-              to='CategoryScreen'
+              to="CategoryScreen"
               isLast={i === cities.length - 1}
               navigation={props.navigation}
               route={city}

@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
-import { Text, View } from './Themed';
 import { Styles } from '../constants';
 import {
   Caret,
 } from '../svgs';
+import { Text, View } from './Themed';
 
 type Props = {
   includeIcon?: true,
@@ -13,7 +13,7 @@ type Props = {
   navigation: any,
   city?: string,
   saveLocation?: Function,
-  to: "CategoryScreen" | "PhoneNumberListScreen",
+  to: 'CategoryScreen' | 'PhoneNumberListScreen',
   route: string,
 };
 
@@ -29,19 +29,18 @@ export const CityLink = memo((props: Props) => {
         style={styles.row}
         onPress={() => {
           if (props.saveLocation) {
-            props.saveLocation(route)
+            props.saveLocation(route);
           }
           props.navigation.navigate(
             props.to,
-            { location: route }
+            { location: route },
           );
         }}>
         {props.includeIcon && (
           <View
             lightColor={Styles.white}
             darkColor={Styles.blue}
-            style={styles.marginRight10}>
-          </View>
+            style={styles.marginRight10} />
         )}
         <Text
           lightColor={Styles.blue}
