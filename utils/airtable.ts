@@ -2,7 +2,6 @@ import axios, { AxiosRequestConfig } from 'axios';
 
 // @ts-ignore
 import { AIRTABLE_KEY } from '@env';
-// console.log('Airtable Key: ', AIRTABLE_KEY);
 
 // Axios is a utility library that simplifies api calls.
 // https://axios-http.com/docs/instance

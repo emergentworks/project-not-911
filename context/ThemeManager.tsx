@@ -1,5 +1,5 @@
-import React from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
+import React from 'react';
 import { Appearance } from 'react-native-appearance';
 
 import { Styles } from '../constants';

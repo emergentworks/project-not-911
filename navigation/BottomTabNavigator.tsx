@@ -7,7 +7,6 @@ import { Styles } from '../constants';
 import { useTheme } from '../context';
 import { AboutScreen } from '../screens/AboutScreen';
 import { SettingsScreen } from '../screens/SettingsScreen';
-import { HomeStackNavigator } from './HomeStackNavigator';
 import { About, Home, Logo, Settings } from '../svgs';
 import {
   BottomTabParamList,
@@ -15,6 +14,7 @@ import {
   TabThreeParamList,
   TabTwoParamList,
 } from '../types';
+import { HomeStackNavigator } from './HomeStackNavigator';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 

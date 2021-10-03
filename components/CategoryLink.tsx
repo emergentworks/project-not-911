@@ -26,12 +26,11 @@ type Props = {
  * @description Generic category link. optional icon
  */
 export const CategoryLink = memo((props: Props) => {
-  const { isLast = false, category = '' } = props;
-  if (!category) return null;
+  const { isLast = false, category } = props;
+  if (typeof category !== 'string') return null;
 
-  console.log('category -> ', category);
-
-  const section = category.toLowerCase().replaceAll(' ', '');
+  const re = /\s+/gi;
+  const section = category.toLowerCase().replace(re, '');
 
   return (
     <>

@@ -1,6 +1,6 @@
+import AsyncStorage from '@react-native-community/async-storage';
 import _ from 'lodash';
 import React from 'react';
-import AsyncStorage from '@react-native-community/async-storage';
 
 import { getRecordsFromLocation } from '../queries';
 import { airtable } from '../utils';
@@ -82,19 +82,13 @@ export class CacheManager extends React.Component<any, any> {
       url: 'meta',
     });
 
-    console.log('meta ? ', meta);
-
     const cities: string[] = meta.records.map((rec: any) => {
       return rec.fields.city;
     }).filter((city: string) => !!city);
 
-    console.log('cities ? ', cities);
-
     const categories: string[] = meta.records.map((rec: any) => {
       return rec.fields.category || '';
     }).filter((category: string) => !!category);
-
-    console.log('categories -> ', categories);
 
     const newCache: tCache = { categories };
     await Promise.all(cities.map(async (city: string) => {

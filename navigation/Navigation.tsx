@@ -1,6 +1,6 @@
 import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
-import { ColorSchemeName } from 'react-native';
 import React from 'react';
+import { ColorSchemeName } from 'react-native';
 
 import { BottomTabNavigator } from './BottomTabNavigator';
 import { LinkingConfiguration } from './LinkingConfiguration';

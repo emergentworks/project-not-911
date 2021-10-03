@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 
-import { tCacheUnion } from "../../types";
 import { BackButton, IconGroup, Text, View } from '../../components';
 import { Styles } from '../../constants';
 import { useCache, useLocation } from '../../context';
 import { getRecordsFromLocation } from '../../queries';
+import { tCacheUnion } from '../../types';
 
 /**
  * @description This component renders phone numbers from cache or airtable whichever is available
@@ -37,10 +37,11 @@ export const PhoneNumberListScreen = (props: any) => {
     .filter((record: any) => {
       const { fields = {} } = record;
       const { categories = [] as string[] } = fields;
+      const re = /\s+/gi;
 
       // In case of data error normalizes categories
       const normalizedCats = categories
-        .map((cat = '') => cat.toLowerCase().replaceAll(' ', ''));
+        .map((cat = '') => cat.toLowerCase().replace(re, ''));
 
       if (!normalizedCats.includes(route?.params?.section)) return false;
       return true;

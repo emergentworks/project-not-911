@@ -18,10 +18,6 @@ export const CitySelectScreen = memo((props: {
   const { cache } = useCache();
   const { saveLocation }: { saveLocation: Function } = useLocation();
 
-  console.log('cache -> ', cache);
-  console.log('mode -> ', mode);
-  console.log('all props -> ', props);
-
   // Sorts cities alphabetically by name.
   const cities = Object.keys(cache)
     .filter(key => key !== 'categories')
