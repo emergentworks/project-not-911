@@ -43,7 +43,7 @@ layout: not911
             src="/assets/img/play-store.svg"
           />
         </a>
-        <a href="https://not911.nyc/app">
+        <a href="https://not911.us/app">
           <img
             alt="Or view as an installable web app"
             src="/assets/img/pwa.svg"

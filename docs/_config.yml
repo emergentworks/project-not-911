@@ -33,7 +33,7 @@ theme: null
 # TODO this should not be hardcoded, but this is just a static marketing site so...
 nonce: not911
 
-url: "https://not911.nyc"
+url: "https://not911.us"
 plugins:
   - jekyll-sitemap
   # - jekyll-postcss
