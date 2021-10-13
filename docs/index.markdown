@@ -16,22 +16,25 @@ layout: not911
         Community Based Alternatives to the Police
       </h1>
       <h2 class="text-base text-gray mb-2 d:mb-3 d:pr-5">
-        Not911 is designed to direct you to New York City-based organizations that offer counseling, mediation and intervention services.
+        Not911 is designed to direct you to organizations that offer counseling, mediation and intervention services.
       </h2>
-      <p class='text-blue text-sm mb-0 d:hidden'>
-        <a
-          class="no-underline"
-          href="https://emergentworks.org">
+      <p class='text-blue text-sm mb-1 d:hidden'>
+        🟢 <a class="underline" href="https://emergentworks.org">
           Produced By <b>Emergent Works</b>
         </a>
       </p>
-      <p class='text-blue text-sm mb-3 d:hidden'>
-        <a
-          class="no-underline"
-          href="https://github.com/emergentworks/project-not-911">
-          <b>➡️ Contribute to the project</b>
+      <div class='flex mb-2 d:hidden'>
+      <p class='text-blue text-sm mr-2'>
+        💻 <a class="underline" href="https://github.com/emergentworks/project-not-911">
+          <b>Contribute</b>
         </a>
       </p>
+      <p class='text-blue text-sm'>
+        ✋ <a class="underline" href="https://airtable.com/shr3U34GA1BdMUl8E">
+          <b>Volunteer</b>
+        </a>
+      </p>
+      </div>
       <div class='flex flex-row mb-4 d:mb-0'>
         <a href="https://play.google.com/store/apps/details?id=nyc.not911&hl=en_US">
           <img
@@ -49,23 +52,26 @@ layout: not911
       </div>
     </div>
     <div class="flex">
-      <p class='text-blue-1 text-sm mb-4 d:mb-0 hidden d:block mr-2'>
-        <a
+      <p class='text-blue-1 text-sm mr-2 hidden d:block'>
+        🟢 <a
           class="no-underline"
           href="https://emergentworks.org">
           Produced By <b>Emergent Works</b>
         </a>
       </p>
-      <p class='text-blue-1 text-sm mb-4 d:mb-0 hidden d:block'>
-        <a
-          class="no-underline"
-          href="https://github.com/emergentworks/project-not-911">
-          <b>➡️ Contribute to the project</b>
+      <p class='text-blue-1 text-sm mr-2 hidden d:block'>
+        💻 <a class="underline" href="https://github.com/emergentworks/project-not-911">
+          <b>Contribute</b>
+        </a>
+      </p>
+      <p class='text-blue text-sm hidden d:block'>
+        ✋ <a class="underline" href="https://airtable.com/shr3U34GA1BdMUl8E">
+          <b>Volunteer</b>
         </a>
       </p>
     </div>
   </div>
-  <div class='d:w-6/12 flex justify-center bg-mint pt-4 pr-4 pl-4'>
+  <div class='d:w-6/12 flex justify-center bg-mint pt-4'>
     <div
       aria-label="A preview image of the Not 911 app"
       class="phone d:absolute b">

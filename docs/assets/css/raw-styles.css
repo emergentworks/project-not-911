@@ -98,6 +98,9 @@ img {
   height: 642px;
   width: 375px;
 }
+.underline {
+  text-decoration: underline;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
