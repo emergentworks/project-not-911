@@ -1,5 +1,5 @@
 # project-not-911
-Alternatives to calling 911 in NYC
+Alternatives to calling 911
 
 ## Steps to run this project
 Assuming you have [node](https://nodejs.org/en/) installed on your machine:
@@ -15,7 +15,7 @@ Assuming you have [node](https://nodejs.org/en/) installed on your machine:
 - Boot up the app: `npm start (or expo start)`
 
 ## About Not911
-Not911 is designed to direct you to New York City-based organizations that offer counseling, mediation and intervention services.
+Not911 is designed to direct you to organizations that offer counseling, mediation and intervention services.
 
 Currently, that means a list of community-based groups that offer preventative services and strategies for issues related to mental health, homelessness, legal aid and other topics.
 
