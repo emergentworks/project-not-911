@@ -9,7 +9,7 @@ import { RootStackParamList } from '../types';
  * @description This component renders the 404 page.
  * Should never render if used as app, but exists for web version
  */
-const NotFoundScreen = memo(({
+export const NotFoundScreen = memo(({
   navigation,
 }: StackScreenProps<RootStackParamList, 'NotFound'>) => (
   <View style={styles.container}>
@@ -23,8 +23,6 @@ const NotFoundScreen = memo(({
     </TouchableOpacity>
   </View>
 ));
-
-export default NotFoundScreen;
 
 const styles = StyleSheet.create({
   container: {

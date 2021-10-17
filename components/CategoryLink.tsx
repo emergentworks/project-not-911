@@ -42,7 +42,7 @@ export const CategoryLink = memo((props: Props) => {
             { section },
           );
         }}>
-        {props.includeIcon && (
+        {/* {props.includeIcon && (
           <View
             lightColor={Styles.white}
             darkColor={Styles.blue}
@@ -55,7 +55,7 @@ export const CategoryLink = memo((props: Props) => {
               && (
                 <MentalHealth />
               )}
-            {category === 'Homelessness'
+            {category === 'Homelessness & Housing'
               && (
                 <Homelessness />
               )}
@@ -68,7 +68,7 @@ export const CategoryLink = memo((props: Props) => {
                 <DrugsOrPoisoning />
               )}
           </View>
-        )}
+        )} */}
         <Text
           lightColor={Styles.blue}
           darkColor={Styles.white}

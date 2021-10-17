@@ -12,19 +12,19 @@ import { airtable } from '../utils';
  * and JSON. parse() when loading the data.
  * @returns JSON
  */
-
 type tCache = {
   categories?: string[],
   Boston?: object[],
   Chicago?: object[],
   'New York'?: object[],
+  'Los Angeles'?: object[],
   'San Francisco Bay Area'?: object[]
 };
 
 type tCacheContext = {
   cache: tCache,
   setCache: () => void,
-}
+};
 
 // initiate context
 export const ManageCacheContext: React.Context<tCacheContext> = React.createContext({

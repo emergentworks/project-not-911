@@ -1,4 +1,6 @@
 import * as Linking from 'expo-linking';
+import flatten from 'lodash/flatten';
+import uniq from 'lodash/uniq';
 import React, { memo } from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 
@@ -6,6 +8,7 @@ import { BackButton, CategoryLink, Text, View } from '../components';
 import { Styles } from '../constants';
 import { useCache, useLocation, useTheme } from '../context';
 import { Phone } from '../svgs';
+import { tCacheUnion } from '../types';
 
 /**
  * @description This component renders the available categories for the selected location. It gets the cities from the Airtable 'metaCategories' table.
@@ -13,8 +16,18 @@ import { Phone } from '../svgs';
 export const CategoryScreen = memo((props: any) => {
   const { mode } = useTheme();
   const { cache } = useCache();
-  const { location }: { location: string } = useLocation();
+  const { location }: { location: tCacheUnion } = useLocation();
   const { categories = [] } = cache;
+
+  let getUsedCategories: string[] = [];
+  try {
+    getUsedCategories = uniq(
+      // @ts-ignore
+      flatten(cache[location].map(r => r.fields.categories).filter(r => !!r)),
+    );
+  } catch (err) { }
+
+  const catsToRender = categories.filter(cat => getUsedCategories.includes(cat));
 
   return (
     <View
@@ -82,12 +95,12 @@ export const CategoryScreen = memo((props: any) => {
             lightColor={Styles.gray}
             darkColor={Styles.white}
           />
-          {categories.map((cat, i) => (
+          {catsToRender.map((cat, i) => (
             <CategoryLink
               key={cat}
               includeIcon
               to="PhoneNumberListScreen"
-              isLast={i === categories.length - 1}
+              isLast={i === catsToRender.length - 1}
               navigation={props.navigation}
               category={cat}
             />
