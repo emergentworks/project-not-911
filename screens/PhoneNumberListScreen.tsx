@@ -98,22 +98,26 @@ export const PhoneNumberListScreen = (props: any) => {
                 style={[styles.centerTxt, styles.title]}>
                 {name}
               </Text>
-              {!showDescIds.includes(record.id) && (
-                <Text
-                  onPress={() => {
-                    setShowDescIds([...showDescIds, record.id]);
-                  }}
-                  darkColor={Styles.white}
-                  style={[styles.centerTxt, styles.desc, styles.mb10, styles.pH10]}>
-                  Read description
-                </Text>
-              )}
-              {showDescIds.includes(record.id) && (
-                <Text
-                  darkColor={Styles.white}
-                  style={[styles.centerTxt, styles.mb10, styles.pH10]}>
-                  {description}
-                </Text>
+              {!!description && (
+                <>
+                  {!showDescIds.includes(record.id) && (
+                    <Text
+                      darkColor={Styles.white}
+                      style={[styles.centerTxt, styles.desc, styles.mb10, styles.pH10]}
+                      onPress={() => {
+                        setShowDescIds([...showDescIds, record.id]);
+                      }}>
+                      Read description
+                    </Text>
+                  )}
+                  {showDescIds.includes(record.id) && (
+                    <Text
+                      darkColor={Styles.white}
+                      style={[styles.centerTxt, styles.mb10, styles.pH10]}>
+                      {description}
+                    </Text>
+                  )}
+                </>
               )}
               <Text
                 darkColor={Styles.white}
