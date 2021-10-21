@@ -1,22 +1,31 @@
 {
-  "name": "Not 911",
-  "short_name": "Not 911",
-  "icons":[
-    {
-      "src":"/assets/img/android-chrome-192x192.png",
-      "sizes":"192x192",
-      "type":"image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src":"/assets/img/android-chrome-512x512.png",
-      "sizes":"512x512",
-      "type":"image/png",
-      "purpose": "maskable"
-    }
-  ],
-  "theme_color":"#ffffff",
-  "background_color":"#ffffff",
-  "display":"standalone",
-  "start_url": "/"
+  "files": {
+    "app.js": "/app/static/js/app.1887713f.chunk.js",
+    "app.js.map": "/app/static/js/app.1887713f.chunk.js.map",
+    "runtime~app.js": "/app/static/js/runtime~app.291da1fd.js",
+    "runtime~app.js.map": "/app/static/js/runtime~app.291da1fd.js.map",
+    "static/js/2.60b6ee98.chunk.js": "/app/static/js/2.60b6ee98.chunk.js",
+    "static/js/2.60b6ee98.chunk.js.map": "/app/static/js/2.60b6ee98.chunk.js.map",
+    "fonts/Inter_100Thin.ttf": "/app/./fonts/Inter_100Thin.ttf",
+    "fonts/Inter_200ExtraLight.ttf": "/app/./fonts/Inter_200ExtraLight.ttf",
+    "fonts/Inter_300Light.ttf": "/app/./fonts/Inter_300Light.ttf",
+    "fonts/Inter_400Regular.ttf": "/app/./fonts/Inter_400Regular.ttf",
+    "fonts/Inter_500Medium.ttf": "/app/./fonts/Inter_500Medium.ttf",
+    "fonts/Inter_600SemiBold.ttf": "/app/./fonts/Inter_600SemiBold.ttf",
+    "fonts/Inter_700Bold.ttf": "/app/./fonts/Inter_700Bold.ttf",
+    "fonts/Inter_800ExtraBold.ttf": "/app/./fonts/Inter_800ExtraBold.ttf",
+    "fonts/Inter_900Black.ttf": "/app/./fonts/Inter_900Black.ttf",
+    "favicon-16.png": "/app/favicon-16.png",
+    "favicon-32.png": "/app/favicon-32.png",
+    "favicon.ico": "/app/favicon.ico",
+    "index.html": "/app/index.html",
+    "manifest.json": "/app/manifest.json",
+    "serve.json": "/app/serve.json",
+    "static/js/2.60b6ee98.chunk.js.LICENSE.txt": "/app/static/js/2.60b6ee98.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime~app.291da1fd.js",
+    "static/js/2.60b6ee98.chunk.js",
+    "static/js/app.1887713f.chunk.js"
+  ]
 }
