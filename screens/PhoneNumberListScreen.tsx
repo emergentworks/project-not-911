@@ -5,7 +5,6 @@ import { BackButton, IconGroup, Text, View } from '../components';
 import { Styles } from '../constants';
 import { useCache, useLocation } from '../context';
 import { getRecordsFromLocation } from '../queries';
-import { Caret } from '../svgs';
 import { tCacheUnion } from '../types';
 
 /**
@@ -165,9 +164,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   desc: {
-    border: '1px solid',
+    borderColor: '#fff',
     borderRadius: 4,
+    borderStyle: 'solid',
+    borderWidth: 1,
     fontSize: 14,
+    paddingVertical: 4,
   },
   mb10: {
     marginBottom: 10,

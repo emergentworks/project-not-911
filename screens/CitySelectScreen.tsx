@@ -82,7 +82,7 @@ export const CitySelectScreen = memo((props: {
           {cities.map((city, i) => (
             <CityLink
               key={city}
-              to="CategoryScreen"
+              to="category"
               isLast={i === cities.length - 1}
               navigation={props.navigation}
               route={city}

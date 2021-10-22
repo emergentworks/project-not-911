@@ -1,4 +1,4 @@
 export { BottomTabNavigator } from './BottomTabNavigator';
-export { HomeStackNavigator } from './HomeStackNavigator';
+export { AboutStackNavigator, HomeStackNavigator, SettingsStackNavigator } from './StackNavigators';
 export { LinkingConfiguration } from './LinkingConfiguration';
 export { Navigation } from './Navigation';

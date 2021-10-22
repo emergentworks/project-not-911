@@ -4,11 +4,11 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Styles } from '../constants';
 import {
   Caret,
-  DrugsOrPoisoning,
-  Homelessness,
-  LegalSupport,
-  MentalHealth,
-  Violence,
+  // DrugsOrPoisoning,
+  // Homelessness,
+  // LegalSupport,
+  // MentalHealth,
+  // Violence,
 } from '../svgs';
 import { Text, View } from './Themed';
 
@@ -18,7 +18,7 @@ type Props = {
   navigation: any,
   city?: string,
   saveLocation?: Function,
-  to: 'CategoryScreen' | 'PhoneNumberListScreen',
+  to: string,
   category: string,
 };
 

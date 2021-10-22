@@ -8,31 +8,13 @@ export type tCacheUnion = 'Boston' | 'Chicago' | 'New York' | 'Los Angeles' | 'S
  */
 
 export type RootStackParamList = {
-  NotFound: undefined,
-  CitySelectScreen: undefined,
-  PhoneNumberListScreen: undefined,
-  CategoryScreen: undefined,
+  '404': undefined,
+  'city-select': undefined,
+  'numbers': undefined,
+  'category-select': undefined,
 };
 
 export type CategoryTypes = keyof RootStackParamList;
-
-export type BottomTabParamList = {
-  'Home': undefined,
-  'About': undefined,
-  'Settings': undefined,
-};
-
-export type TabOneParamList = {
-  CitySelectScreen: undefined,
-};
-
-export type TabTwoParamList = {
-  AboutScreen: undefined,
-};
-
-export type TabThreeParamList = {
-  SettingsScreen: undefined,
-};
 
 export type PhoneScreenRouteProp = RouteProp<RootStackParamList, CategoryTypes>;
 
