@@ -1,22 +1,14 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import { View } from 'react-native';
 
+import { HeaderTitle } from '../components';
 import { Styles } from '../constants';
 import { useTheme } from '../context';
-import { AboutScreen } from '../screens/AboutScreen';
-import { SettingsScreen } from '../screens/SettingsScreen';
-import { About, Home, Logo, Settings } from '../svgs';
-import {
-  BottomTabParamList,
-  TabOneParamList,
-  TabThreeParamList,
-  TabTwoParamList,
-} from '../types';
-import { HomeStackNavigator } from './HomeStackNavigator';
+import { About, Home, Settings } from '../svgs';
+import { AboutStackNavigator, HomeStackNavigator, SettingsStackNavigator } from './StackNavigators';
 
-const BottomTab = createBottomTabNavigator<BottomTabParamList>();
+const BottomTab = createBottomTabNavigator();
 
 /**
  * @description This component renders the bottom navigation for the home/about pages
@@ -54,9 +46,10 @@ export const BottomTabNavigator = () => {
   );
 };
 
+
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const TabOneStack = createStackNavigator<TabOneParamList>();
+const TabOneStack = createStackNavigator();
 
 function TabOneNavigator() {
   const { mode }: { mode: 'light' | 'dark' } = useTheme();
@@ -64,19 +57,10 @@ function TabOneNavigator() {
   return (
     <TabOneStack.Navigator>
       <TabOneStack.Screen
-        name="CitySelectScreen"
+        name="Home"
         component={HomeStackNavigator}
         options={{
-          headerTitle: () => (
-            <View
-              style={{
-                alignSelf: 'center',
-                display: 'flex',
-                justifyContent: 'center',
-              }}>
-              <Logo />
-            </View>
-          ),
+          headerTitle: () => <HeaderTitle />,
           headerStyle: {
             backgroundColor: mode === 'light' ? Styles.white : Styles.black,
             borderBottomColor: mode === 'light' ? Styles.white : Styles.black,
@@ -89,7 +73,7 @@ function TabOneNavigator() {
   );
 }
 
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
+const TabTwoStack = createStackNavigator();
 
 function TabTwoNavigator() {
   const { mode }: { mode: 'light' | 'dark' } = useTheme();
@@ -97,19 +81,10 @@ function TabTwoNavigator() {
   return (
     <TabTwoStack.Navigator>
       <TabTwoStack.Screen
-        name="AboutScreen"
-        component={AboutScreen}
+        name="About"
+        component={AboutStackNavigator}
         options={{
-          headerTitle: () => (
-            <View
-              style={{
-                alignSelf: 'center',
-                display: 'flex',
-                justifyContent: 'center',
-              }}>
-              <Logo />
-            </View>
-          ),
+          headerTitle: () => <HeaderTitle />,
           headerStyle: {
             backgroundColor: mode === 'light' ? Styles.white : Styles.black,
             borderBottomColor: mode === 'light' ? Styles.white : Styles.black,
@@ -122,7 +97,7 @@ function TabTwoNavigator() {
   );
 }
 
-const TabThreeStack = createStackNavigator<TabThreeParamList>();
+const TabThreeStack = createStackNavigator();
 
 function TabThreeNavigator() {
   const { mode }: { mode: 'light' | 'dark' } = useTheme();
@@ -130,19 +105,10 @@ function TabThreeNavigator() {
   return (
     <TabThreeStack.Navigator>
       <TabThreeStack.Screen
-        name="SettingsScreen"
-        component={SettingsScreen}
+        name="Settings"
+        component={SettingsStackNavigator}
         options={{
-          headerTitle: () => (
-            <View
-              style={{
-                alignSelf: 'center',
-                display: 'flex',
-                justifyContent: 'center',
-              }}>
-              <Logo />
-            </View>
-          ),
+          headerTitle: () => <HeaderTitle />,
           headerStyle: {
             backgroundColor: mode === 'light' ? Styles.white : Styles.black,
             borderBottomColor: mode === 'light' ? Styles.white : Styles.black,

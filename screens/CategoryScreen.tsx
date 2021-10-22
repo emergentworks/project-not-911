@@ -19,6 +19,8 @@ export const CategoryScreen = memo((props: any) => {
   const { location }: { location: tCacheUnion } = useLocation();
   const { categories = [] } = cache;
 
+  // we don't always have hotlines for every category for every city
+  // this filters out any categories for which there are 0 hotlines for the given city
   let getUsedCategories: string[] = [];
   try {
     getUsedCategories = uniq(
@@ -99,7 +101,7 @@ export const CategoryScreen = memo((props: any) => {
             <CategoryLink
               key={cat}
               includeIcon
-              to="PhoneNumberListScreen"
+              to="numbers"
               isLast={i === catsToRender.length - 1}
               navigation={props.navigation}
               category={cat}

@@ -13,12 +13,12 @@ type Props = {
   navigation: any,
   city?: string,
   saveLocation?: Function,
-  to: 'CategoryScreen' | 'PhoneNumberListScreen',
+  to: 'category' | 'numbers',
   route: string,
 };
 
 /**
- * @description Generic category link. optional icon
+ * @description Generic city link. optional icon
  */
 export const CityLink = memo((props: Props) => {
   const { isLast, route } = props;
