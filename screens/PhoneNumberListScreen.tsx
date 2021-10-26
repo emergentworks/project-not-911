@@ -69,7 +69,8 @@ export const PhoneNumberListScreen = (props: any) => {
             isCrisis,
             name,
             phoneNumber,
-            text,
+            text = '',
+            textContent = '',
             website,
           } = record.fields;
 
@@ -122,15 +123,18 @@ export const PhoneNumberListScreen = (props: any) => {
                 darkColor={Styles.white}
                 style={[styles.centerTxt, styles.tel]}>
                 {Array.isArray(phoneNumber)
-                  && phoneNumber.map((num, i) => (i === phoneNumber.length - 1
-                    ? `${num}, `
-                    : num))}
+                  && phoneNumber.map((num, i) => (
+                    i === phoneNumber.length - 1 ? `${num}, ` : num
+                  ))}
                 {!Array.isArray(phoneNumber) && phoneNumber}
               </Text>
               <IconGroup
                 crisis={isCrisis}
                 tel={phoneNumber}
-                text={text}
+                text={{
+                  content: textContent,
+                  number: text,
+                }}
                 website={website}
               />
             </View>

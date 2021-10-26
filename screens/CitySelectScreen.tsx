@@ -32,7 +32,7 @@ export const CitySelectScreen = memo((props: {
         <View
           lightColor={Styles.white}
           darkColor={Styles.orange}
-          style={styles.danger}>
+          style={[styles.danger, styles.marginBottom30]}>
           <Text
             bold
             lightColor={Styles.orange}
@@ -66,20 +66,41 @@ export const CitySelectScreen = memo((props: {
             </View>
           </TouchableOpacity>
         </View>
-        <View style={styles.innerView}>
+        <View style={styles.ph20}>
           <Text
             bold
             lightColor={Styles.black}
             darkColor={Styles.white}
             style={styles.title}>
-            Select your city.
+            Nationwide Resources
           </Text>
           <View
             style={Styles.separator}
             lightColor={Styles.gray}
             darkColor={Styles.white}
           />
-          {cities.map((city, i) => (
+          <CityLink
+            to="category"
+            isLast
+            navigation={props.navigation}
+            route="National"
+            saveLocation={saveLocation}
+          />
+        </View>
+        <View style={[styles.innerView, styles.ph20]}>
+          <Text
+            bold
+            lightColor={Styles.black}
+            darkColor={Styles.white}
+            style={styles.title}>
+            Resources by City
+          </Text>
+          <View
+            style={Styles.separator}
+            lightColor={Styles.gray}
+            darkColor={Styles.white}
+          />
+          {cities.map((city, i) => city !== 'National' && (
             <CityLink
               key={city}
               to="category"
@@ -136,7 +157,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   innerView: {
-    paddingHorizontal: 20,
     paddingTop: 40,
     paddingBottom: 50,
   },
@@ -148,6 +168,9 @@ const styles = StyleSheet.create({
   },
   marginVertical30: {
     marginVertical: 30,
+  },
+  ph20: {
+    paddingHorizontal: 20,
   },
   title: {
     fontSize: 28,

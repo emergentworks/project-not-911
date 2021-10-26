@@ -20,12 +20,13 @@ export const BackButton = (props: { darkColor?: 'blue' | 'black' }) => {
       darkColor={Styles[darkColor]}
       lightColor={Styles.white}
       style={styles.backBtn}>
-      <Caret style={styles.rotate} />
       <Text
         bold
         darkColor={Styles.white}
         lightColor={Styles.blue}
-        onPress={() => navigation.goBack()}>
+        onPress={() => navigation.goBack()}
+        style={styles.innerBtn}>
+        <Caret style={styles.rotate} />
         Back
       </Text>
     </View>
@@ -34,11 +35,15 @@ export const BackButton = (props: { darkColor?: 'blue' | 'black' }) => {
 
 const styles = StyleSheet.create({
   backBtn: {
+    marginLeft: 24,
+    paddingBottom: 16,
+    paddingRight: 24,
+    width: 80,
+  },
+  innerBtn: {
     alignItems: 'center',
     display: 'flex',
     flexDirection: 'row',
-    paddingBottom: 30,
-    paddingLeft: 30,
   },
   rotate: {
     marginRight: 10,

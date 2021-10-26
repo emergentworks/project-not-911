@@ -9,12 +9,14 @@ import { View } from './Themed';
 interface IconGroupProps {
   crisis?: boolean;
   tel?: string;
-  text?: { content?: string; number: string; }
+  text?: {
+    content?: string;
+    number: string;
+  };
   website?: string;
 }
 
 export const IconGroup: React.FC<IconGroupProps> = ({ crisis, tel, text, website }) => {
-
   const LETTER_TO_TELEPHONE_NUMBER: { [key: string]: string } = {
     'ABC': '2',
     'DEF': '3',
@@ -54,30 +56,40 @@ export const IconGroup: React.FC<IconGroupProps> = ({ crisis, tel, text, website
       lightColor={Styles.white}
       style={styles.iconGroup}
     >
-      {tel && <TouchableOpacity
-        style={[
-          styles.phoneWrap,
-          crisis && { backgroundColor: Styles.orange },
-        ]}
-        onPress={() => Linking.openURL(`tel://${tel}`)}>
-        <Phone color={Styles.white} />
-      </TouchableOpacity>}
-      {text && <TouchableOpacity
-        style={[
-          styles.phoneWrap,
-          crisis && { backgroundColor: Styles.orange },
-        ]}
-        onPress={() => Linking.openURL(`sms:${formatTextNumber(text.number)}?&body=${encodeURI(text.content || '')}`)}>
-        <TextMessage color={Styles.white} />
-      </TouchableOpacity>}
-      {website && <TouchableOpacity
-        style={[
-          styles.phoneWrap,
-          crisis && { backgroundColor: Styles.orange },
-        ]}
-        onPress={() => Linking.openURL(website)}>
-        <WebLink color={Styles.white} />
-      </TouchableOpacity>}
+      {!!tel && (
+        <TouchableOpacity
+          onPress={() => Linking.openURL(`tel://${tel}`)}
+          style={[
+            styles.phoneWrap,
+            crisis && { backgroundColor: Styles.orange },
+          ]}>
+          <Phone color={Styles.white} />
+        </TouchableOpacity>
+      )}
+      {!!text?.number && (
+        <TouchableOpacity
+          onPress={() => {
+            const sms = formatTextNumber(text.number);
+            const content = encodeURI(text.content || '');
+            Linking.openURL(`sms:${sms}?&body=${content}`);
+          }}
+          style={[
+            styles.phoneWrap,
+            crisis && { backgroundColor: Styles.orange },
+          ]}>
+          <TextMessage color={Styles.white} />
+        </TouchableOpacity>
+      )}
+      {!!website && (
+        <TouchableOpacity
+          onPress={() => Linking.openURL(website)}
+          style={[
+            styles.phoneWrap,
+            crisis && { backgroundColor: Styles.orange },
+          ]}>
+          <WebLink color={Styles.white} />
+        </TouchableOpacity>
+      )}
     </View>
   );
 };

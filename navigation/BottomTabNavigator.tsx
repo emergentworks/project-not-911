@@ -26,6 +26,7 @@ export const BottomTabNavigator = () => {
         component={TabOneNavigator}
         options={{
           tabBarIcon: ({ color }) => <Home color={color} />,
+          title: 'Home',
         }}
       />
       <BottomTab.Screen
@@ -33,6 +34,7 @@ export const BottomTabNavigator = () => {
         component={TabTwoNavigator}
         options={{
           tabBarIcon: ({ color }) => <About color={color} />,
+          title: 'About',
         }}
       />
       <BottomTab.Screen
@@ -40,6 +42,7 @@ export const BottomTabNavigator = () => {
         component={TabThreeNavigator}
         options={{
           tabBarIcon: ({ color }) => <Settings color={color} />,
+          title: 'Settings',
         }}
       />
     </BottomTab.Navigator>

@@ -15,23 +15,41 @@ import {
 const HStack = createStackNavigator();
 export const HomeStackNavigator = () => (
   <HStack.Navigator screenOptions={{ headerShown: false }}>
-    <HStack.Screen name="city" component={CitySelectScreen} />
-    <HStack.Screen name="category" component={CategoryScreen} />
-    <HStack.Screen name="numbers" component={PhoneNumberListScreen} />
+    <HStack.Screen
+      name="city"
+      component={CitySelectScreen}
+      options={{ title: 'City Select' }}
+    />
+    <HStack.Screen
+      name="category"
+      component={CategoryScreen}
+      options={{ title: 'Category Select' }}
+    />
+    <HStack.Screen
+      name="numbers"
+      component={PhoneNumberListScreen}
+      options={{ title: 'Hotlines' }}
+    />
   </HStack.Navigator>
 );
 
 const AStack = createStackNavigator();
 export const AboutStackNavigator = () => (
   <AStack.Navigator screenOptions={{ headerShown: false }}>
-    <AStack.Screen name="about" component={AboutScreen} />
+    <AStack.Screen
+      name="about"
+      component={AboutScreen}
+    />
   </AStack.Navigator>
 );
 
 const SetStack = createStackNavigator();
 export const SettingsStackNavigator = () => (
   <SetStack.Navigator screenOptions={{ headerShown: false }}>
-    <SetStack.Screen name="settings" component={SettingsScreen} />
+    <SetStack.Screen
+      name="settings"
+      component={SettingsScreen}
+    />
   </SetStack.Navigator>
 );
 
