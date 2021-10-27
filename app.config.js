@@ -42,7 +42,7 @@ export default {
     'android': {
       'package': 'nyc.not911',
       'permissions': [],
-      'versionCode': 11,
+      'versionCode': 14,
       'adaptiveIcon': {
         'backgroundColor': '#3333ff',
         'foregroundImage': './assets/images/icon.png',
