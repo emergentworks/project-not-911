@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet } from 'react-native';
 
 import { BackButton, IconGroup, Text, View } from '../components';
 import { Styles } from '../constants';
-import { useCache, useLocation } from '../context';
+import { useCache, useLocation, useTheme } from '../context';
 import { getRecordsFromLocation } from '../queries';
 import { tCacheUnion } from '../types';
 
@@ -13,6 +13,7 @@ import { tCacheUnion } from '../types';
 export const PhoneNumberListScreen = (props: any) => {
   const { cache, setCache } = useCache();
   const [records, setRecords] = useState([]);
+  const { mode }: { mode: 'light' | 'dark' } = useTheme();
   const [showDescIds, setShowDescIds] = useState([] as string[]);
   const { location }: { location: tCacheUnion } = useLocation();
 
@@ -103,7 +104,13 @@ export const PhoneNumberListScreen = (props: any) => {
                   {!showDescIds.includes(record.id) && (
                     <Text
                       darkColor={Styles.white}
-                      style={[styles.centerTxt, styles.desc, styles.mb10, styles.pH10]}
+                      style={[
+                        mode === 'dark' ? styles.whiteBorder : styles.blueBorder,
+                        styles.centerTxt,
+                        styles.desc,
+                        styles.mb10,
+                        styles.pH10,
+                      ]}
                       onPress={() => {
                         setShowDescIds([...showDescIds, record.id]);
                       }}>
@@ -167,8 +174,13 @@ const styles = StyleSheet.create({
   centerTxt: {
     textAlign: 'center',
   },
-  desc: {
+  blueBorder: {
+    borderColor: '#3333ff',
+  },
+  whiteBorder: {
     borderColor: '#fff',
+  },
+  desc: {
     borderRadius: 4,
     borderStyle: 'solid',
     borderWidth: 1,
