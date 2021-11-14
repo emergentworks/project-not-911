@@ -14,6 +14,8 @@ const instance = axios.create({
   },
 });
 
+// console.log('Airtable_Key', AIRTABLE_KEY);
+
 /**
  * @description An async function that when called will fetch all records from airtable via our Axios instance.
  */
